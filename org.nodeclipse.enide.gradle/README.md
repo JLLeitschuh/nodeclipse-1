@@ -1,5 +1,4 @@
 
-
 ## org.nodeclipse.enide.gradle
 
 `build.gradle` Run As Gradle GUI
@@ -27,6 +26,10 @@ see [Gradle to execute Java class (without modifying build.gradle)](http://stack
 
 As with Maven, your `build.gradle` should have jetty configuration 
 to enable `gradle jetty:run` Gradle start.
+
+See [#4 Running from Eclipse plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4)
+for [gradle-jetty-eclipse-plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin)
+that has support for jetty 7+
 
 ### Daemon
 
