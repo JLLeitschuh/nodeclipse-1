@@ -146,7 +146,9 @@ List of workspace projects
 - 0.10.6 fix #101 again; total aliases=20 
 - 0.10.8 add maven, gradle features; install from .zip; install all 
 - 0.10.9 comma-sep-list of repositories; lookup for repositories.  
-	Examples: `epm install from kepler jsdt` 
+	Examples: `nci install from kepler jsdt` 
+- 0.10.10 uninstall, materialize
+	Examples: `nci uninstall mongodb.shell` , `nci new from luna to d:/progs/eclipse-diy-luna/`
 
 ## News
 

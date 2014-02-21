@@ -1,6 +1,6 @@
 {
   "name": "nodeclipse",
-  "version": "0.10.9",
+  "version": "0.10.10",
   "description": "nodeclipse CLI - prepare Node.js project to be imported into Eclipse (Nodeclipse); Installer - eclipse plugin CLI installer",
   "main": "copier.js",
   "scripts": {
@@ -8,6 +8,7 @@
   },
   "bin": {
     "nodeclipse": "./bin/nodeclipse.js",
+    "nci": "./bin/nci.js",
     "epm": "./bin/epm.js"
   },
   "repository": {
