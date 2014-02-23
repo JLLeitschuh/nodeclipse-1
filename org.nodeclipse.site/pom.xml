@@ -59,7 +59,7 @@
 		<repository>
 			<id>gfm.viewer</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/satyagraha/generic/1.8.1/</url>
+			<url>http://dl.bintray.com/satyagraha/generic/1.8.3/</url>
 		</repository>
 		<repository>
 			<id>restclient-tool</id>

@@ -101,7 +101,7 @@
    <feature url="features/markdown.editor.feature_1.0.0.qualifier.jar" id="markdown.editor.feature" version="1.0.0.qualifier">
       <category name="Tools"/>
    </feature>
-   <feature url="features/code.satyagraha.gfm.viewer.feature_1.8.1.qualifier.jar" id="code.satyagraha.gfm.viewer.feature" version="1.8.1.qualifier">
+   <feature url="features/code.satyagraha.gfm.viewer.feature_1.8.3.qualifier.jar" id="code.satyagraha.gfm.viewer.feature" version="1.8.3.qualifier">
       <category name="Tools"/>
    </feature>
    <feature url="features/de.bastiankrol.startexplorer.feature_1.5.1.jar" id="de.bastiankrol.startexplorer.feature" version="1.5.1">
