@@ -8,7 +8,8 @@ public class VertxConstants {
 
 	public static final String PROCESS_MESSAGE = "Vert.x Process";
 	
-	public static final String VERTX_PATH = "vertx_path";
+	//public static final String VERTX_PATH = "vertx_path";
+	public static final String VERTX_HOME_TO_USE = "vertx_home_to_use";
 	
 	public static final String ATTR_ENVIRONMENT_VARIABLES = "attr_environment_variables";	
 	

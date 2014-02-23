@@ -9,6 +9,7 @@ import java.util.Map;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -25,14 +26,17 @@ import org.nodeclipse.vertx.Activator;
 import org.nodeclipse.vertx.VertxConstants;
 
 /**
- * Launching `jjs` from Java 8.<br>
+ * Launching `vertx run rhino:path` .<br>
  * see LaunchConfigurationDelegate in .debug and .phantomjs module for comparison.
  * 
- * @since 0.7
+ * @since 0.11
  * @author Paul Verest
  */
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
+	boolean isWindows = Platform.getOS().startsWith("win");
+	private boolean warned = false;
+	
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
@@ -43,15 +47,16 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		// Using configuration to build command line	
 		List<String> cmdLine = new ArrayList<String>();
 
-		String executablePath= preferenceStore.getString(VertxConstants.VERTX_PATH);
-		// Check if the node location is correctly configured
+		String vertxHomeToUse= preferenceStore.getString(VertxConstants.VERTX_HOME_TO_USE);
+		String executablePath=  vertxHomeToUse + (isWindows?"\\bin\\vertx.bat":"/bin/vertx");
+		// Check if the vertx location is correctly configured
 		File executableFile = new File(executablePath);
-		if(!executableFile.exists()){
+		if( ("".equals(vertxHomeToUse)) || (!executableFile.exists()) ){
 			// If the location is not valid than show a dialog which prompts the user to goto the preferences page
 //			Dialogs.showPreferencesDialog("path to jjs util from Java 8 runtime is not correctly configured.\n\n"
 //					+ "Please goto Window -> Prefrences -> Nodeclipse and configure the correct location under 'JJS path:'");
 			CommonDialogs.showPreferencesDialog(VertxConstants.PREFERENCES_PAGE,
-					"Vert.x `vertx` location is not correctly configured.\n\n"
+					"Vert.x installation is not correctly configured.\n\n"
 					+ "Please goto Window -> Preferences -> "+VertxConstants.PREFERENCE_PAGE_NAME
 					+" and configure the correct location");
 			return;
@@ -63,7 +68,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		String file = configuration.getAttribute(VertxConstants.KEY_FILE_PATH,	"");
 		String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 		// path is relative, so cannot find it, unless get absolute path
-		cmdLine.add(filePath);
+		cmdLine.add("rhino:"+filePath);
 		
 		File workingPath = null;
 		String workingDirectory = configuration.getAttribute(Constants.ATTR_WORKING_DIRECTORY, "");
@@ -94,8 +99,6 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		
 	}
 	
-	private boolean warned = false;
-
 	/** Get EnvironmentVariables from ILaunchConfiguration
 	 * and adds JAVA_HOME, GRADLE_HOME, PATH, TEMP, SystemDrive, HOME 
 	 * @param configuration ILaunchConfiguration
