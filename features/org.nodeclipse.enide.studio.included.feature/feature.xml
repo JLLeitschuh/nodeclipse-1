@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.nodeclipse.enide.studio.included.feature"
+      label="Enide Node.js"
+      version="0.11.0.qualifier"
+      provider-name="Nodeclipse/Enide">
+
+   <description url="http://www.nodeclipse.org/">
+      Features included in Enide Studio
+   </description>
+
+   <copyright url="http://www.nodeclipse.org/">
+      Copyright (c) 2012 - 2014 The Nodeclipse licence.
+   </copyright>
+
+   <license url="http://www.nodeclipse.org/license">
+      Copyright (c) 2012 - 2014 The Nodeclipse licence.
+   
+   </license>
+
+   <url>
+      <update label="Nodeclipse Updates" url="http://www.nodeclipse/updates/"/>
+      <discovery label="Nodeclipse Updates" url="http://www.nodeclipse.org/updates"/>
+   </url>
+
+   <requires>
+      <import feature="org.nodeclipse.enide.nodejs.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.phantomjs.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.jjs.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.mongodb.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.vertx.feature" version="0.11.0" match="greaterOrEqual"/>
+      
+      <import feature="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.maven.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
+   </requires>
+
+</feature>
