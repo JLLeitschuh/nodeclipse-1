@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.nodeclipse.enide.studio.included.feature"
-      label="Enide Node.js"
+      label="Features included in Enide Studio"
       version="0.11.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
@@ -32,7 +32,7 @@
       
       <import feature="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
       <import feature="org.nodeclipse.enide.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.maven.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.maven.feature" version="0.11.0" match="greaterOrEqual"/>
    </requires>
 
 </feature>
