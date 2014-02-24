@@ -14,22 +14,22 @@
    <feature url="features/org.chromium.sdk_0.3.9.qualifier.jar" id="org.chromium.sdk" version="0.3.9.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse.enide.nodejs.feature_0.10.0.qualifier.jar" id="org.nodeclipse.enide.nodejs.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.enide.nodejs.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.nodejs.feature" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse_0.10.0.qualifier.jar" id="org.nodeclipse" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse_0.11.0.qualifier.jar" id="org.nodeclipse" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse.jjs.feature_0.10.0.qualifier.jar" id="org.nodeclipse.jjs.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.jjs.feature_0.11.0.qualifier.jar" id="org.nodeclipse.jjs.feature" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse.mongodb.feature_0.10.0.qualifier.jar" id="org.nodeclipse.mongodb.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.mongodb.feature_0.11.0.qualifier.jar" id="org.nodeclipse.mongodb.feature" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse.phantomjs.feature_0.10.0.qualifier.jar" id="org.nodeclipse.phantomjs.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.phantomjs.feature_0.11.0.qualifier.jar" id="org.nodeclipse.phantomjs.feature" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
-   <feature url="features/org.nodeclipse.vertx.feature_0.10.0.qualifier.jar" id="org.nodeclipse.vertx.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.vertx.feature_0.11.0.qualifier.jar" id="org.nodeclipse.vertx.feature" version="0.11.0.qualifier">
       <category name="Nodeclipse"/>
    </feature>
    <feature url="features/com.eclipsesource.jshint.feature" id="com.eclipsesource.jshint.feature" version="0.9.9.qualifier">
@@ -61,13 +61,13 @@
       	YAML YEdit by http://dadacoalition.org/yedit
       </description>
 	</category-def>   
-   <feature url="features/org.nodeclipse.enide.editors.gradle.feature_0.10.0.qualifier.jar" id="org.nodeclipse.enide.editors.gradle.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.enide.editors.gradle.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0.qualifier">
       <category name="Minimalist"/>
    </feature>
-   <feature url="features/org.nodeclipse.enide.gradle.feature_0.10.0.qualifier.jar" id="org.nodeclipse.enide.gradle.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.enide.gradle.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.gradle.feature" version="0.11.0.qualifier">
       <category name="Minimalist"/>
    </feature>
-   <feature url="features/org.nodeclipse.enide.maven.feature_0.10.0.qualifier.jar" id="org.nodeclipse.enide.maven.feature" version="0.10.0.qualifier">
+   <feature url="features/org.nodeclipse.enide.maven.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.maven.feature" version="0.11.0.qualifier">
       <category name="Minimalist"/>
    </feature>
    <!-- 
