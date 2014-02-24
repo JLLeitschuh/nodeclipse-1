@@ -94,7 +94,7 @@
              class= "org.nodeclipse.enide.gradle.launch.jetty.LaunchShortcut"   
              icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
              id= "org.nodeclipse.enide.gradle.launch.jetty.LaunchShortcut"   
-             label= "gradle jetty:run Gradle start"   
+             label= "gradle jettyRun Gradle start"   
              modes= "run" >   
           <configurationType
                 id= "org.nodeclipse.enide.gradle.launch.jetty.LaunchConfigurationType" >
@@ -120,6 +120,64 @@
        </shortcut>   
    </extension>
 
+   <!-- for gradle jettyEclipseRun -->
+	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType" 
+            modes="run" 
+            name="gradle jettyEclipseRun">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType"   
+             icon= "icons/gradle-icon-16x16.png"   
+             id= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <!-- build.gradle run as gradle jettyEclipseRun -->  
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchShortcut"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchShortcut"   
+             label= "gradle jettyEclipseRun Gradle start"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "*.gradle" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
 
    
    <!-- for GUI -->
