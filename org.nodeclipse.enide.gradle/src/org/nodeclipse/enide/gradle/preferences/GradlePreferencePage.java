@@ -56,8 +56,8 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		gradleJvmOpts = new StringFieldEditor(GradleConstants.GRADLE_OPTS, "JVM options GRADLE_OPTS:", getFieldEditorParent());
 		addField(gradleJvmOpts);
 		
-      gradlePath = new FileFieldEditor(GradleConstants.GRADLE_PATH, "Gradle path (@deprecated):", getFieldEditorParent());
-        addField(gradlePath);
+//      gradlePath = new FileFieldEditor(GradleConstants.GRADLE_PATH, "Gradle path (@deprecated):", getFieldEditorParent());
+//        addField(gradlePath);
         
       gradleOptions = new StringFieldEditor(GradleConstants.GRADLE_OPTIONS, "Gradle options (gradle -h):", getFieldEditorParent());
         addField(gradleOptions);

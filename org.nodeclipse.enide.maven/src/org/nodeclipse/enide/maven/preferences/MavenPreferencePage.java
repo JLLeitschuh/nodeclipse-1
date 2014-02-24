@@ -61,8 +61,8 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 		mavenJvmOpts = new StringFieldEditor(MavenConstants.MAVEN_OPTS, "JVM options MAVEN_OPTS:", getFieldEditorParent());
 		addField(mavenJvmOpts);
 		
-		mavenPath = new FileFieldEditor(MavenConstants.MAVEN_PATH, "Maven path (@deprecated)", getFieldEditorParent());
-		addField(mavenPath);
+//		mavenPath = new FileFieldEditor(MavenConstants.MAVEN_PATH, "Maven path (@deprecated)", getFieldEditorParent());
+//		addField(mavenPath);
 		
 		mavenOptions = new StringFieldEditor(MavenConstants.MAVEN_OPTIONS, "Maven options (mvn -h):", getFieldEditorParent());
 		addField(mavenOptions);
