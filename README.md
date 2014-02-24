@@ -95,7 +95,17 @@ For the next time just select the zip entry from Work With drop-down list.
 3. `http-server org.nodeclipse.site\target\repository -p 8010`
 4. start http://localhost:8010/  
 5. // navigate `http://localhost:8010/` in browser to check  
-5. Help->Install New Software, enter http://localhost:8010/ in Work With  
+5. Help->Install New Software, enter http://localhost:8010/ in Work With
+
+#### Tools
+
+[PDE Incubator Dependency Visualization](http://www.eclipse.org/pde/incubator/dependency-visualization/)
+
+Update site http://download.eclipse.org/eclipse/pde/incubator/visualization/site
+Need to uncheck "Group items by category" for item to appear.
+It is version 0.5.0.20090415
+
+![](src/site/markdown/org.nodeclipse.ui-dependants.png)  
 
 ### A lot of words
 
