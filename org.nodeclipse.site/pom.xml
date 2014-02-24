@@ -136,11 +136,6 @@
 			<layout>p2</layout>
 			<url>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</url>
 		</repository>
-		<repository>
-			<id>OpenClosedProjectsFeature</id>
-			<layout>p2</layout>
-			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
-		</repository>
 		
 
 		<!-- Other -->
@@ -153,6 +148,11 @@
 			<id>SelectionExplorer</id>
 			<layout>p2</layout>
 			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/SelectionExplorerUpdateSite</url>
+		</repository>
+		<repository>
+			<id>OpenClosedProjectsFeature</id>
+			<layout>p2</layout>
+			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
 		</repository>
 		
 		
