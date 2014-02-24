@@ -1,5 +1,6 @@
 package org.nodeclipse.enide.maven.preferences;
 
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -13,6 +14,8 @@ import org.nodeclipse.enide.maven.Activator;
  * @author Paul Verest
  */
 public class MavenPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
+	
+	boolean isWindows = Platform.getOS().startsWith("win");
 
 	private DirectoryFieldEditor mavenHome;
 	private DirectoryFieldEditor mavenHomeToUse;
@@ -74,6 +77,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 		mavenOptionOffline = new BooleanFieldEditor(MavenConstants.MAVEN_OPTION_OFFLINE, "-o Offline	(Work offline)", getFieldEditorParent());
         addField(mavenOptionOffline);
         mavenOptionTestSkip = new BooleanFieldEditor(MavenConstants.MAVEN_OPTION_TEST_SKIP,"-Dmaven.test.skip=true	(skip unit testing)", getFieldEditorParent());
+        if (isWindows) mavenOptionTestSkip.setEnabled(false, getFieldEditorParent());
         addField(mavenOptionTestSkip);
 
         mavenOptionAlternativeSettings = new FileFieldEditor(MavenConstants.MAVEN_OPTION_ALTERNATIVE_SETTINGS, "-s Alternative settings.xml:", getFieldEditorParent());
