@@ -94,7 +94,7 @@ First, add jetty-maven-plugin to your pom.xml definition:
 	<plugin>
 	  <groupId>org.eclipse.jetty</groupId>
 	  <artifactId>jetty-maven-plugin</artifactId>
-	  <version>${project.version}</version>
+	  <version>${jetty-maven-plugin.version}</version>
 	</plugin>
 
 Then, from the same directory as your root pom.xml, type:
@@ -109,7 +109,7 @@ Jetty continues to run until you stop it. While it runs, it periodically scans f
 
 ### Developing with PDE
 
-`git clone`, import this project and `org.nodeclipse.coomon` (2) in Eclipse with PDE (e.g. Eclipse SDK/Classic)
+`git clone`, import this project and `org.nodeclipse.coomon` (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic)
  as "Existing Projects into Workspace".
 
 From plugin.xml form click Run as Eclipse application.

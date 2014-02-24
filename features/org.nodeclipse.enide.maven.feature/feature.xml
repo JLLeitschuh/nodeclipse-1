@@ -10,7 +10,7 @@
 
 Launch build or execute Java class.
 Project does not need to be Maven project. Just `pom.xml` would be enough.
-(The project may be General, old classic Java, broken Maven or Gradle project.)
+(The project may be General, old classic Java, Eclipse plugin with Tycho, broken Maven or Gradle project.)
 
 No miracles, this plugins just launches `mvn` with options, as you can do from command line.
 Full path to maven `mvn.bat` or `mvn` is used, so you can try different versions.

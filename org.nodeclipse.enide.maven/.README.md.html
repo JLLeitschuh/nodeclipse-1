@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>D:\workspaces\Nodeclispe-DEV\nodeclipse-1\org.nodeclipse.enide.maven\.README.md.html</title>
+<title>D:\Workspaces\Nodeclipse-DEV\nodeclipse-1\org.nodeclipse.enide.maven\.README.md.html</title>
 
 
 <style type="text/css">
@@ -449,8 +449,185 @@ function setDocumentScrollTop(ypos)
 
 </head>
 <body class="markdown-body">
+<h1> <a name="enide-maven" class="anchor" href="..md.html#enide-maven"><span class="octicon octicon-link"></span></a>Enide Maven</h1> 
+<p>This is alternative and completion to m2e (Maven Eclipse Integration).</p> 
+<p>Launch build or execute Java class. Project does not need to be Maven project. Just <code>pom.xml</code> would be enough. (The project may be General, old classic Java, broken Maven or Gradle project.)</p> 
+<p>No miracles, this plugins just launches <code>mvn</code> with options, as you can do from command line. Full path to maven <code>mvn.bat</code> or <code>mvn</code> is used, so you can try different versions. Specify options to <code>mvn</code> that will be Workspace-wide. Executed string is shown is Console, so you can check and learn. </p> 
+<p>Hint increase Console buffer size in Preferences -&gt; Run\Debug -&gt; Console. and check other preferences there as well.</p> 
+<p><a href="http://stackoverflow.com/questions/16442292/cleaning-maven-m2e-cache-directory">About 2G in <code>.m2/repository/.cache/m2e</code></a> </p> 
 <h2> <a name="orgnodeclipseenidemaven" class="anchor" href="..md.html#orgnodeclipseenidemaven"><span class="octicon octicon-link"></span></a>org.nodeclipse.enide.maven</h2> 
-<p>pom.xml Run As Maven build</p> 
-<p>Minisite <a href="http://www.nodeclipse.org/enide/maven/">http://www.nodeclipse.org/enide/maven/</a> GitHub <a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven">https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven</a></p>
+<ul> 
+ <li>pom.xml Run As <code>mvn package</code> Maven build</li> 
+ <li>*.java Run As <code>mvn compile exec:java -Dexec.mainClass=package.Class</code> </li> 
+</ul>
+<p>Minisite <a href="http://www.nodeclipse.org/enide/maven/">http://www.nodeclipse.org/enide/maven/</a> GitHub <a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven">https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven</a></p> 
+<p><a href="https://github.com/Nodeclipse/nodeclipse-1/issues/117">#117 Run Maven, Gradle or other batch-based script from Java (and then Eclipse)</a></p> 
+<p>Depends on JDT (see link 1).</p> 
+<p><a href="docs/enide-maven-run-as-mvn-package.png" target="_blank"><img src="docs/enide-maven-run-as-mvn-package.png" alt="" style="max-width:100%;" /></a></p> 
+<p><a href="docs/enide-maven-run-as-mvn-package-results-in-console.png" target="_blank"><img src="docs/enide-maven-run-as-mvn-package-results-in-console.png" alt="" style="max-width:100%;" /></a></p> 
+<p><a href="run-maven-build.png" target="_blank"><img src="run-maven-build.png" alt="" style="max-width:100%;" /></a></p> 
+<h3> <a name="tomcat-start" class="anchor" href="..md.html#tomcat-start"><span class="octicon octicon-link"></span></a>Tomcat start</h3> 
+<p>@since 0.11</p> 
+<p>Check <a href="http://tomcat.apache.org/maven-plugin">Apache Tomcat Maven Plugin</a> page.</p> 
+<p>Version 2.2 is release in Nov 2013. <a href="http://tomcat.apache.org/maven-plugin-2.2/index.html">http://tomcat.apache.org/maven-plugin-2.2/index.html</a></p> 
+<pre><code>&lt;pluginManagement&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+      &lt;artifactId&gt;tomcat6-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.2&lt;/version&gt;
+    &lt;/plugin&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
+      &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.2&lt;/version&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/pluginManagement&gt;
+</code></pre> 
+<p><a href="http://tomcat.apache.org/maven-plugin-2.2/context-goals.html">Only for Tomcat6 there is goal <code>:start</code></a> </p> 
+<pre><code>mvn tomcat6:start 
+</code></pre> 
+<h4> <a name="status" class="anchor" href="..md.html#status"><span class="octicon octicon-link"></span></a>Status</h4> 
+<pre><code>[INFO] --- tomcat6-maven-plugin:2.2:start (default-cli) @ mavenwar ---
+[INFO] Starting application at http://localhost:8080/mavenwar
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 34.560s
+[INFO] Finished at: Fri Feb 14 22:46:16 CST 2014
+[INFO] Final Memory: 8M/21M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat6-maven-plugin:2.2:start (default-cli) on project mavenwar: Cannot invoke Tomcat manager: Connection refused: connect -&gt; [Help 1]
+</code></pre> 
+<h3> <a name="jetty-start" class="anchor" href="..md.html#jetty-start"><span class="octicon octicon-link"></span></a>Jetty start</h3> 
+<p>@since 0.11</p> 
+<p>For Jetty 7-8 <a href="https://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin">https://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin</a> For Jetty 9 onward <a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html">http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html</a> <strong>You need to use Maven 3 and Java 1.7 for this plugin.</strong> mvn -Djetty.port=9999 jetty:run</p> 
+<p>First, add jetty-maven-plugin to your pom.xml definition:</p> 
+<pre><code>&lt;plugin&gt;
+  &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
+  &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
+  &lt;version&gt;${jetty-maven-plugin.version}&lt;/version&gt;
+&lt;/plugin&gt;
+</code></pre> 
+<p>Then, from the same directory as your root pom.xml, type:</p> 
+<pre><code>mvn jetty:run
+</code></pre> 
+<p>This starts Jetty and serves up your project on http://localhost:8080/.</p> 
+<p>Jetty continues to run until you stop it. While it runs, it periodically scans for changes to your project files, so if you save changes and recompile your class files, Jetty redeploys your webapp, and you can instantly test the changes you just made.</p> 
+<h3> <a name="developing-with-pde" class="anchor" href="..md.html#developing-with-pde"><span class="octicon octicon-link"></span></a>Developing with PDE</h3> 
+<p><code>git clone</code>, import this project and <code>org.nodeclipse.coomon</code> (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic) as &quot;Existing Projects into Workspace&quot;.</p> 
+<p>From plugin.xml form click Run as Eclipse application.</p> 
+<p>If memory is not enough (getting <code>java.lang.OutOfMemoryError: PermGen space</code> error when when running or debugging), change in launch configuration for Eclipse Application -&gt; Arguments -&gt; VM Arguments</p> 
+<pre><code>-Dosgi.requiredJavaVersion=1.6 -Xms128m -Xmx784m -XX:MaxPermSize=128m -Xss2m
+</code></pre> 
+<p>Maven build is optional for full build with other plugins.</p> 
+<h4> <a name="links" class="anchor" href="..md.html#links"><span class="octicon octicon-link"></span></a>Links</h4> 
+<ol> 
+ <li><a href="http://stackoverflow.com/questions/775709/eclipse-pde-navigator-view-treeselection-obtaining-the-file-type-and-name">http://stackoverflow.com/questions/775709/eclipse-pde-navigator-view-treeselection-obtaining-the-file-type-and-name</a></li> 
+</ol>
+<h3> <a name="idea" class="anchor" href="..md.html#idea"><span class="octicon octicon-link"></span></a>Idea</h3> 
+<p>java-run-javac&amp;java -&gt; bad idea</p> 
+<h3> <a name="done" class="anchor" href="..md.html#done"><span class="octicon octicon-link"></span></a>DONE</h3> 
+<p>1)</p> 
+<p>What is gradle analog for maven compile and run <code>mvn compile exec:java -Dexec.mainClass=example.Example</code></p> 
+<p>2)</p> 
+<p>When executing Java class using maven from within Java (<a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven">Eclipse plugin actualy</a>) <code>-Dexec.mainClass=maven.MainClass</code> becomes <code>maven.MainClass</code></p> 
+<pre><code>package maven;
+
+public class MainClass {
+    public static void main(String[] args) {
+        System.out.println(&quot;app is running!&quot;);
+    }
+}
+</code></pre> 
+<p>from Eclipse using </p> 
+<pre><code>    Process p = DebugPlugin.exec(cmds, workingPath, envp);
+    RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, MavenConstants.PROCESS_MESSAGE);
+</code></pre> 
+<p>for process</p> 
+<p>D:\Code\springsource\3.0\apache-maven-3.0.3\bin\mvn.bat compile exec:java -Dexec.mainClass=maven.MainClass </p> 
+<pre><code>[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building org.example.maven 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.672s
+[INFO] Finished at: Fri Jan 24 23:59:50 CST 2014
+[INFO] Final Memory: 4M/15M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Unknown lifecycle phase &quot;maven.MainClass&quot;. You must specify a valid lifecycle phase or a goal in the format &lt;plugin-prefix&gt;:&lt;goal&gt; or &lt;plugin-group-id&gt;:&lt;plugin-artifact-id&gt;[:&lt;plugin-version&gt;]:&lt;goal&gt;. Available lifecycle phases are: validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-site, site, post-site, site-deploy, pre-clean, clean, post-clean. -&gt; [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException
+</code></pre> 
+<p>but from cmd shell using <code>mvn</code> or full filename is OK</p> 
+<pre><code>D:\Progs\Enide-Monster-08-kepler-win32\runtime-EclipseApplication\org.example.maven&gt;mvn compile exec:java -Dexec.mainClass=maven.MainClass
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building org.example.maven 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ org.example.maven ---
+[WARNING] Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ org.example.maven ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] &gt;&gt;&gt; exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven &gt;&gt;&gt;
+[INFO]
+[INFO] &lt;&lt;&lt; exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven &lt;&lt;&lt;
+[INFO]
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven ---
+app is running!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.342s
+[INFO] Finished at: Fri Jan 24 23:56:41 CST 2014
+[INFO] Final Memory: 5M/15M
+[INFO] ------------------------------------------------------------------------
+
+
+D:\Progs\Enide-Monster-08-kepler-win32\runtime-EclipseApplication\org.example.maven&gt;D:\Code\springsource\3.0\apache-maven-3.0.3\bin\mvn.bat compile exec:java -Dexec.mainClass=maven
+.MainClass
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building org.example.maven 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.4.3:resources (default-resources) @ org.example.maven ---
+[WARNING] Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ org.example.maven ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] &gt;&gt;&gt; exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven &gt;&gt;&gt;
+[INFO]
+[INFO] &lt;&lt;&lt; exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven &lt;&lt;&lt;
+[INFO]
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ org.example.maven ---
+app is running!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.435s
+[INFO] Finished at: Fri Jan 24 23:57:46 CST 2014
+[INFO] Final Memory: 5M/15M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
 </body>
 </html>

@@ -46,7 +46,7 @@ launch `gradle --foreground -i` in a shell or configure Eclipse external tool:
 ### Developing 
 
 1. `git clone`;
-2. import this project and `org.nodeclipse.common` (2) in Eclipse with PDE (e.g. Eclipse SDK/Classic)
+2. import this project and `org.nodeclipse.common` (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic)
  as "Existing Projects into Workspace".
 
 maven build is optional for full build with other plugins.

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>D:\workspaces\Nodeclispe-DEV\nodeclipse-1\org.nodeclipse.enide.gradle\.README.md.html</title>
+<title>D:\Workspaces\Nodeclipse-DEV\nodeclipse-1\org.nodeclipse.enide.gradle\.README.md.html</title>
 
 
 <style type="text/css">
@@ -455,6 +455,41 @@ function setDocumentScrollTop(ypos)
  <li>Minisite <a href="http://www.nodeclipse.org/enide/gradle/">http://www.nodeclipse.org/enide/gradle/</a> </li> 
  <li>GitHub <a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle">https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle</a> </li> 
 </ul>
-<p><em>Description</em>:<br /> Right-click any <code>.gradle</code> file, and select <code>Run As -&gt; Gradle GUI</code></p>
+<p><em>Description</em>:<br /> Right-click any <code>.gradle</code> file, and select <code>Run As -&gt; Gradle GUI</code></p> 
+<p>To run/execute with gradle add this to <code>build.gradle</code> </p> 
+<pre><code>task execute(type:JavaExec) {
+   main = mainClass
+   classpath = sourceSets.main.runtimeClasspath
+}
+</code></pre> 
+<p>then execution is via</p> 
+<pre><code>gradle execute -PmainClass=runclass.RunClass 
+</code></pre> 
+<p>see <a href="http://stackoverflow.com/questions/21358466/gradle-to-execute-java-class-without-modifying-build-gradle">Gradle to execute Java class (without modifying build.gradle)</a></p> 
+<h3> <a name="jetty" class="anchor" href="..md.html#jetty"><span class="octicon octicon-link"></span></a>Jetty</h3> 
+<p>As with Maven, your <code>build.gradle</code> should have jetty configuration to enable <code>gradle jetty:run</code> Gradle start.</p> 
+<p>See <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4">#4 Running from Eclipse plugin</a> for <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin">gradle-jetty-eclipse-plugin</a> that has support for jetty 7+</p> 
+<h3> <a name="daemon" class="anchor" href="..md.html#daemon"><span class="octicon octicon-link"></span></a>Daemon</h3> 
+<p>see <a href="..md.html">Chapter 19. The Gradle Daemon</a>, <a href="..md.html">Appendix D. Gradle Command Line</a></p> 
+<p>Use Gradle daemon to speed up sequential gradle execution:</p> 
+<p>launch <code>gradle --foreground -i</code> in a shell or configure Eclipse external tool:</p> 
+<p><a href="docs/add-gradle-daemon-as-external-tool-1.PNG" target="_blank"><img src="docs/add-gradle-daemon-as-external-tool-1.PNG" alt="" style="max-width:100%;" /></a><br /><a href="docs/add-gradle-daemon-as-external-tool-2.PNG" target="_blank"><img src="docs/add-gradle-daemon-as-external-tool-2.PNG" alt="" style="max-width:100%;" /></a></p> 
+<h3> <a name="developing" class="anchor" href="..md.html#developing"><span class="octicon octicon-link"></span></a>Developing</h3> 
+<ol> 
+ <li> <code>git clone</code>;</li> 
+ <li>import this project and <code>org.nodeclipse.common</code> (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic) as &quot;Existing Projects into Workspace&quot;.</li> 
+</ol>
+<p>maven build is optional for full build with other plugins.</p> 
+<h4> <a name="some-links" class="anchor" href="..md.html#some-links"><span class="octicon octicon-link"></span></a>Some links</h4> 
+<ul> 
+ <li><a href="http://www.javaworld.com/article/2071275/core-java/when-runtime-exec---won-t.html">When Runtime.exec() won't</a></li> 
+</ul>
+<blockquote> 
+ <p>Because some native platforms only provide limited buffer size for standard input and output streams, failure to promptly write the input stream or read the output stream of the subprocess may cause the subprocess to block, and even deadlock.</p> 
+</blockquote> 
+<pre><code>&quot;C:\Program Files\Java\jdk1.7.0_25/bin/java.exe&quot;    &quot;-Dorg.gradle.appname=gradle&quot; -classpath &quot;D:\Progs\gradle-1.10\lib\gradle-launcher-1.10.jar&quot; org.gradle.launcher.GradleMain
+</code></pre> 
+<p>Java without IDE <a href="http://www.cs.swarthmore.edu/%7Enewhall/unixhelp/debuggingtips_Java.html">http://www.cs.swarthmore.edu/~newhall/unixhelp/debuggingtips_Java.html</a></p> 
+<p><a href="http://stackoverflow.com/questions/502494/execute-a-java-program-from-our-java-program">http://stackoverflow.com/questions/502494/execute-a-java-program-from-our-java-program</a></p>
 </body>
 </html>

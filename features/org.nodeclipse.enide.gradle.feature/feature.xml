@@ -6,11 +6,10 @@
       provider-name="Nodeclipse/Enide, Paul Verest">
 
    <description url="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle">
-      Enide Gradle is alternative and completion to m2e (Gradle Integration for Eclipse).
+      Enide Gradle is alternative and completion to `Gradle Integration for Eclipse`.
 
 Launch build or Gradle GUI.
-Project does not need to be Gradle project. Just `build.gradle` would
-be enough.
+Project does not need to be Gradle project. Just `build.gradle` would be enough.
 (The project may be General, old classic Java, Maven or
 broken Gradle project.)
 No miracles, this plugins just launches `gradle` with options, as

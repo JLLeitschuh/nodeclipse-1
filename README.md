@@ -107,7 +107,7 @@ It is version 0.5.0.20090415
 
 ![](src/site/markdown/org.nodeclipse.ui-dependants.png)  
 
-### A lot of words
+### A lot of words from 2013
 
 Below is long and a little bit old notes. You should better start with building yourself, checking <http://www.nodeclipse.org>
 that has all links.
