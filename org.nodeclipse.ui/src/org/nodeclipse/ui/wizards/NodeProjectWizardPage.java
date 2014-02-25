@@ -228,6 +228,7 @@ public class NodeProjectWizardPage extends WizardPage {
         btnHelloNashorn.setText(Constants.TEMPLATE_HELLO_NASHORN);
         btnHelloVertx = new Button(templatesGroup, SWT.RADIO);
         btnHelloVertx.setText(Constants.TEMPLATE_HELLO_VERTX);
+        btnHelloVertx.setEnabled(false);
     }
 
     public String getSelectedTemplate() {
