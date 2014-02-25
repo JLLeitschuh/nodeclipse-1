@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.nodeclipse.enide.nodejs.feature"
-      label="Enide Node.js"
+      label="Enide Node.js .Features Set"
       version="0.11.0.qualifier"
       provider-name="Nodeclipse/Enide">
 

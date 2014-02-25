@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.nodeclipse.enide.studio.included.feature"
-      label="Features included in Enide Studio"
+      label="Features included in Enide Studio .Features Set"
       version="0.11.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
-      Features included in Enide Studio
+      Features included in Enide Studio (nodejs jjs mongodb phantomjs vertx maven gradle)
    </description>
 
    <copyright url="http://www.nodeclipse.org/">
@@ -33,6 +33,14 @@
       <import feature="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
       <import feature="org.nodeclipse.enide.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
       <import feature="org.nodeclipse.enide.maven.feature" version="0.11.0" match="greaterOrEqual"/>
+      
+      <!--  pluginslist markdown gfm startexplorer restclient
+      <import feature="org.nodeclipse.pluginslist.feature" version="0.1.0" match="greaterOrEqual"/>
+      <import feature="markdown.editor.feature" version="1.1.0" match="greaterOrEqual"/>
+      <import feature="code.satyagraha.gfm.viewer.feature" version="1.8.3" match="greaterOrEqual"/>
+      <import feature="de.bastiankrol.startexplorer.feature" version="1.5.1" match="greaterOrEqual"/>
+      <import feature="code.google.restclient.tool.feature" version="1.0.3" match="greaterOrEqual"/>
+      -->
    </requires>
 
 </feature>

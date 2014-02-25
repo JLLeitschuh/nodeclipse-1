@@ -54,18 +54,20 @@
 		<repository>
 			<id>winterwell.markdown</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/enide/Markdown/1.0.0/</url>
+			<url>http://dl.bintray.com/enide/Markdown/1.1.0/</url>
 		</repository>
 		<repository>
 			<id>gfm.viewer</id>
 			<layout>p2</layout>
 			<url>http://dl.bintray.com/satyagraha/generic/1.8.3/</url>
 		</repository>
+		<!-- [ERROR] Internal error: java.lang.RuntimeException: org.eclipse.equinox.p2.core.ProvisionException: Unable to connect to repository https://svn.codespot.com/a/eclipselabs.org/restclient-tool/trunk/eclipse/update/artifacts.xml: Connection to https://svn.codespot.com refused: Connection timed out: connect -> [Help 1]
 		<repository>
 			<id>restclient-tool</id>
 			<layout>p2</layout>
 			<url>https://svn.codespot.com/a/eclipselabs.org/restclient-tool/trunk/eclipse/update/</url>
 		</repository>
+		 -->
 		<repository>
 			<id>startexplorer</id>
 			<layout>p2</layout>
@@ -105,11 +107,6 @@
 		
 		<!-- General --> 
 		<repository>
-			<id>EclipseRunner</id>
-			<layout>p2</layout>
-			<url>http://eclipserunnerplugin.googlecode.com/svn/trunk/EclipseRunnerSite</url>
-		</repository>
-		<repository>
 			<id>it.unibz.instasearch.feature.indigo</id>
 			<layout>p2</layout>
 			<url>http://code.inf.unibz.it/instasearch/downloads/</url>
@@ -139,6 +136,11 @@
 		
 
 		<!-- Other -->
+		<repository>
+			<id>EclipseRunner</id>
+			<layout>p2</layout>
+			<url>http://eclipserunnerplugin.googlecode.com/svn/trunk/EclipseRunnerSite</url>
+		</repository>
 		<repository>
 			<id>practicallymacro</id>
 			<layout>p2</layout>
