@@ -12,9 +12,10 @@ if (argv[2]=='help') argv[2]='--help'; // to make it visible to optimist (don't 
 
 if ( argv[2]=='install' || argv[2]=='i' //install
 		|| argv[2]=='list' //list repository
-		|| argv[2]=='materialize' || argv[2]=='new'	|| argv[2]=='uninstall'
+		|| argv[2]=='materialize' || argv[2]=='new'	|| argv[2]=='uninstall' || argv[2]=='update'
 		|| ( argv[2]=='help' || argv[2]=='--help' || argv[2]=='-h') 
-			&& (argv[3]=='aliases' || argv[3]=='install' || argv[3]=='list' || argv[3]=='materialize' || argv[3]=='uninstall') ) // help on nci,epm
+			&& (argv[3]=='aliases' || argv[3]=='install' || argv[3]=='list' 
+				|| argv[3]=='materialize' || argv[2]=='new'	|| argv[2]=='uninstall' || argv[2]=='update') ) // help on nci,epm
 {  
 	var installerjs  = path.join(path.dirname(fs.realpathSync(__filename)), '../nodeclipse-install.js');
 	var c = require(installerjs);

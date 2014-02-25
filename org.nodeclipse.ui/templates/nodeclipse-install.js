@@ -105,7 +105,7 @@ var plugins = [
 	{alias: 'icons', name: 'org.eclipse_icons.editor.feature.feature.group'},
 	{alias: 'jjs', name: 'org.nodeclipse.jjs.feature.feature.group'},
 	{alias: 'jsdt', name: 'org.eclipse.wst.jsdt.feature.feature.group', repository: 'current'}, // requires kepler,etc update site
-	{alias: 'less', name: 'net.vtst.ow.eclipse.less.feature.feature.group', repository: 'enide'}, // TODO
+	{alias: 'less', name: 'net.vtst.ow.eclipse.less.feature.feature.group', repository: 'enide-repository'}, // TODO
 	{alias: 'markdown', name: 'markdown.editor.feature.feature.group'},
 	{alias: 'maven', name: 'org.nodeclipse.enide.maven.feature.feature.group'}, //org.nodeclipse.enide.maven.feature.feature.jar,
 	{alias: 'mongodb', name: 'net.jumperz.app.MMonjaDB.feature.group'},
@@ -123,13 +123,14 @@ var plugins = [
 ];
 var repositories = [
 	{name: 'dev', url: 'jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/'},//hack to help author                    
-	{name: 'nodeclipse', url: 'http://www.nodeclipse.org/updates/'},
-	{name: 'enide', url: 'https://raw.github.com/Enide/eclipse-p2-composite-repository/master/'},
+	{name: 'nodeclipse-updates', url: 'http://www.nodeclipse.org/updates/'},
+	{name: 'enide-repository', url: 'https://raw.github.com/Enide/eclipse-p2-composite-repository/master/'},
 	{name: 'indigo', url: 'http://download.eclipse.org/releases/indigo'},
 	{name: 'juno', url: 'http://download.eclipse.org/releases/juno'},
-	{name: '4.3', url: 'http://download.eclipse.org/eclipse/updates/4.3'}, // likely is part of kepler
+	{name: '4.3', url: 'http://download.eclipse.org/eclipse/updates/4.3'}, // is part of kepler
 	{name: 'kepler', url: 'http://download.eclipse.org/releases/kepler'}, //current
 	{name: 'current', url: 'http://download.eclipse.org/releases/kepler'}, //current
+	{name: '4.4', url: 'http://download.eclipse.org/eclipse/updates/4.4'},
 	{name: 'luna', url: 'http://download.eclipse.org/releases/luna'},
 ];
 
@@ -219,7 +220,8 @@ if (argv[2]=='i'){
 if (argv.length === 2 
 	|| argv[2]=='help' || argv[2]=='--help' || argv[2]=='-h' 
 	//|| ( argv[2]=='list' && !argv[3]) //will list default repository
-	|| !(argv[2]=='install' || argv[2]=='i' || argv[2]=='materialize' || argv[2]=='new' || argv[2]=='list'  || argv[2]=='uninstall') 
+	|| !(argv[2]=='install' || argv[2]=='i' || argv[2]=='materialize' || argv[2]=='new' || argv[2]=='list'  
+		|| argv[2]=='uninstall' || argv[2]=='update') 
 	)
 {
 	console.log('    nodeclipse help');
@@ -237,6 +239,8 @@ if (argv.length === 2
 //	console.log('      repositoryURL may be file e.g. jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/');
 	console.log('    nodeclipse install <alias|exact.feature.name.feature.group> [...]');
 	console.log('    nodeclipse install from <repository> <alias|exact.feature.name.feature.group> [...]');
+	console.log('    nodeclipse uninstall <alias|exact.feature.name.feature.group> [...]');
+	console.log('    nodeclipse update [from <repository>] <alias|exact.feature.name.feature.group> [...]');
     console.log('    nodeclipse install all from <repository> // BE CAREFUL WHAT YOU ASK FOR');
 //	console.log('    nodeclipse install [-repository repositoryURL] <alias|exact.feature.name.feature.group> [...]');
     console.log('    nodeclipse materialize [from <repository>] to <folder>');
@@ -300,6 +304,15 @@ if (argv[2]=='list'){ // this does not work (from http://www.jshint.com/docs/): 
 //TODO nci uninstall mongodb.shell
 else if (argv[2]=='uninstall'){
 	var command = 'uninstall';
+} 
+else if (argv[2]=='update'){
+	var command = 'update';
+	if (argv[3]=='from'){// was  || argv[3]=='-repository'
+		if (argv[4]){
+			repository = argv[4];
+			startingIndex = 5;
+		}
+	}
 } 
 //TODO nci new [from kepler] to e:/builder/eclipse1/
 else if (argv[2]=='materialize' || argv[2]=='new'){
@@ -403,6 +416,8 @@ var optionsInstall = ['-nosplash', '-application', 'org.eclipse.equinox.p2.direc
                '-installIU', plugin, '-tag', plugin, '-vmargs', '-Declipse.p2.mirrors=false'];
 var optionsUninstall = ['-nosplash', '-application', 'org.eclipse.equinox.p2.director', '-repository', repository,
                       '-uninstallIU', plugin, '-tag', plugin];
+var optionsUpdate = ['-nosplash', '-application', 'org.eclipse.equinox.p2.director', '-repository', repository,
+                     '-uninstallIU', plugin, '-installIU', plugin, '-tag', plugin, '-vmargs', '-Declipse.p2.mirrors=false'];
 
 //DONE nci materialize from kepler to e:/builder/eclipse1/
 
@@ -492,6 +507,8 @@ if ( command == 'list'){
 	}
 } else if ( command == 'uninstall'){
 	var spawned = spawning(what, optionsUninstall, log2console, onExitShowCode);
+} else if ( command == 'update'){
+	var spawned = spawning(what, optionsUpdate, log2console, onExitShowCode);
 } else {
 	console.log("Unexpected command "+command);
 	console.log("Try nodeclipse help");

@@ -149,6 +149,7 @@ List of workspace projects
 	Examples: `nci install from kepler jsdt` 
 - 0.10.10 uninstall, materialize
 	Examples: `nci uninstall mongodb.shell` , `nci new from luna to d:/progs/eclipse-diy-luna/`
+- 0.11.0 `update` command as p2-director needs uninstall then install (example `nodeclipse update markdown`)
 
 ## News
 
