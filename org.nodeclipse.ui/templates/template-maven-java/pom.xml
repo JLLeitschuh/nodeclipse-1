@@ -6,6 +6,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 	
 	<properties>
+		<jdk.version>1.6</jdk.version>
 		<!-- use UTF-8 for everything -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -28,8 +29,8 @@
 	        <groupId>org.apache.maven.plugins</groupId>
 	        <artifactId>maven-compiler-plugin</artifactId>
 	        <configuration>
-	          <source>1.6</source>
-	          <target>1.6</target>
+	          <source>${jdk.version}</source>
+	          <target>${jdk.version}</target>
 	        </configuration>
 	      </plugin>
 	    </plugins>
