@@ -42,7 +42,10 @@ public class LaunchConfigurationDelegate implements
 		ILaunchConfigurationDelegate {
 	private static RuntimeProcess nodeProcess = null; //since 0.7 it should be debuggable instance
 	//@since 0.7. contain all running Node thread, including under debug. Non Thread-safe, as it should be only in GUI thread
-	//private static List<RuntimeProcess> nodeRunningProcesses = new LinkedList<RuntimeProcess>(); 
+	//private static List<RuntimeProcess> nodeRunningProcesses = new LinkedList<RuntimeProcess>();
+	
+	private boolean warned = false;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -244,17 +247,45 @@ public class LaunchConfigurationDelegate implements
 	private String[] getEnvironmentVariables(ILaunchConfiguration configuration) throws CoreException {
 		Map<String, String> envm = new HashMap<String, String>();
 		envm = configuration.getAttribute(Constants.ATTR_ENVIRONMENT_VARIABLES, envm);
-		String[] envp = new String[envm.size()+4]; // see below
+		int envmSizeDelta = 4;
+		Map<String,String> all = null;
+		
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		boolean passAllEnvVars = preferenceStore.getBoolean(PreferenceConstants.NODE_PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
+		if (passAllEnvVars){
+			all = System.getenv();
+			envmSizeDelta = all.size();
+		}
+		
+		String[] envp = new String[envm.size()+envmSizeDelta]; // see below
 		int idx = 0;
 		for(String key : envm.keySet()) {
 			String value = envm.get(key);
 			envp[idx++] = key + "=" + value;
 		}
-		//+ #81
-		envp[idx++] = "PATH=" + System.getenv("PATH");
-		envp[idx++] = "TEMP=" + System.getenv("TEMP");
-		envp[idx++] = "TMP=" + System.getenv("TMP");
-		envp[idx++] = "SystemDrive=" + System.getenv("SystemDrive");
+		
+		if (passAllEnvVars){
+			for (Map.Entry<String, String> entry : all.entrySet())
+			{
+			    //System.out.println(entry.getKey() + "/" + entry.getValue());
+			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
+			}
+		}else{
+			//+ #81
+			envp[idx++] = "PATH=" + System.getenv("PATH");
+			envp[idx++] = "TEMP=" + System.getenv("TEMP");
+			envp[idx++] = "TMP=" + System.getenv("TMP");
+			envp[idx++] = "SystemDrive=" + System.getenv("SystemDrive");
+		}
+		if (!warned ){
+			NodeclipseConsole.write("  These environment variables will be applied automatically to every `node` launch.\n");
+			StringBuilder sb = new StringBuilder(100);
+			for(int i=0; i<envp.length; i++){
+				sb.append("  ").append(envp[i]).append('\n');	
+			}
+			NodeclipseConsole.write(sb.toString());
+			warned = true;
+		}
 		return envp;
 	}
 

@@ -24,6 +24,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private StringFieldEditor nodeOptions;
     private StringFieldEditor nodeApplicationArguments;
     private BooleanFieldEditor nodeAllowMany;
+    private BooleanFieldEditor nodePassAllEnvVars;
     private DirectoryFieldEditor nodeSourcesPath;
     private FileFieldEditor completionsPath;
     private BooleanFieldEditor nodeDebugNoBreak;
@@ -84,6 +85,10 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         nodeAllowMany = new BooleanFieldEditor(PreferenceConstants.NODE_ALLOW_MANY, 
         		"allow many Node.js instances running", getFieldEditorParent());
         addField(nodeAllowMany);
+        
+        nodePassAllEnvVars = new BooleanFieldEditor(PreferenceConstants.NODE_PASS_ALL_ENVIRONMENT_VARIABLES, 
+        		"pass all environment variables of Eclipse to launched Node.js app", getFieldEditorParent());
+        addField(nodePassAllEnvVars);
 
         nodeSourcesPath = new DirectoryFieldEditor(PreferenceConstants.NODE_SOURCES_PATH, "Node sources directory path:", getFieldEditorParent());
         addField(nodeSourcesPath);
