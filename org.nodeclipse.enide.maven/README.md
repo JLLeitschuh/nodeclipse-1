@@ -61,7 +61,9 @@ Version 2.2 is release in Nov 2013. http://tomcat.apache.org/maven-plugin-2.2/in
     
 [Only for Tomcat6 there is goal `:start`](http://tomcat.apache.org/maven-plugin-2.2/context-goals.html)   
 
-	mvn tomcat6:start 
+	mvn tomcat6:start
+	
+[Tomcat version differences](http://tomcat.apache.org/whichversion.html)	 
 	
 #### Status
 
