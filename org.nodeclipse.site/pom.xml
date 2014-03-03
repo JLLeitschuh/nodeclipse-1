@@ -103,6 +103,11 @@
 			<layout>p2</layout>
 			<url>https://sourceforge.net/projects/eclipsejsonedit/files/update</url>
 		</repository>
+		<repository>
+			<id>jsontools</id>
+			<layout>p2</layout>
+			<url>https://bitbucket.org/denmiroch/jsontools/src/default/JsonSite/</url>
+		</repository>
 		
 		
 		<!-- General --> 
