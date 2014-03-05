@@ -1,4 +1,10 @@
 
+
+<script type="text/javascript">
+       url_site = 'http://marketplace.eclipse.org/node/1512180';
+</script>
+<script src="http://marketplace.eclipse.org/sites/all/modules/custom/eclipse_drigg_external/js/button.js" type="text/javascript"></script>
+
 ## org.nodeclipse.enide.gradle
 
 `build.gradle` Run As Gradle GUI

@@ -1,5 +1,10 @@
 
 
+<script type="text/javascript">
+       url_site = 'http://marketplace.eclipse.org/node/1451713';
+</script>
+<script src="http://marketplace.eclipse.org/sites/all/modules/custom/eclipse_drigg_external/js/button.js" type="text/javascript"></script>
+
 # Enide Maven
 
 This is alternative and completion to m2e (Maven Eclipse Integration).
