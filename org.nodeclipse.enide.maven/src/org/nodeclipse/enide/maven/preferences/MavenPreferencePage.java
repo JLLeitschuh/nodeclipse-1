@@ -20,7 +20,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 	private DirectoryFieldEditor mavenHome;
 	private DirectoryFieldEditor mavenHomeToUse;
 	private StringFieldEditor mavenJvmOpts;
-    private FileFieldEditor mavenPath;
+    //private FileFieldEditor mavenPath;
 
     private StringFieldEditor mavenOptions;
     private BooleanFieldEditor mavenOptionShowVersion;
@@ -31,6 +31,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
     private BooleanFieldEditor mavenOptionTestSkip;
     private FileFieldEditor mavenOptionAlternativeSettings;
     private StringFieldEditor mavenOptionJettyPort;
+    private BooleanFieldEditor passAllEnvVars;
 
     public MavenPreferencePage() {
         super(GRID);
@@ -85,6 +86,10 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 
 		mavenOptionJettyPort = new StringFieldEditor(MavenConstants.MAVEN_OPTION_JETTY_PORT, "-Djetty.port=", getFieldEditorParent());
 		addField(mavenOptionJettyPort);
+
+        passAllEnvVars = new BooleanFieldEditor(MavenConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
+        		"pass all environment variables of Eclipse to launched app", getFieldEditorParent());
+        addField(passAllEnvVars);
 	}
 
 

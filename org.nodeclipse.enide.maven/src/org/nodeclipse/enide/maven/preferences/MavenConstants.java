@@ -31,6 +31,7 @@ public class MavenConstants {
 	public static final String MAVEN_OPTION_TEST_SKIP = "maven_option_test_skip";
 	public static final String MAVEN_OPTION_ALTERNATIVE_SETTINGS = "maven_option_alternative_settings";
 	public static final String MAVEN_OPTION_JETTY_PORT = "maven_option_jetty_port";
+	public static final String PASS_ALL_ENVIRONMENT_VARIABLES = "pass_all_environment_variables";
 
 	public static final String PREFERENCES_PAGE = "org.nodeclipse.enide.maven.preferences.MavenPreferencePage";
 	public static final String PREFERENCE_PAGE_NAME ="Maven(Enide)"; // the same as in plugin.xml	

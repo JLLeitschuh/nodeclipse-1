@@ -190,12 +190,23 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		//, IPreferenceStore preferenceStore
 		Map<String, String> envm = new HashMap<String, String>();
 		envm = configuration.getAttribute(MavenConstants.ATTR_ENVIRONMENT_VARIABLES, envm);
-		String[] envp = new String[envm.size() + (2+2) + 4 + 2];
+		
+		int envmSizeDelta = 4 + 2;
+		Map<String,String> all = null;
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		boolean passAllEnvVars = preferenceStore.getBoolean(MavenConstants.PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
+		if (passAllEnvVars){
+			all = System.getenv();
+			envmSizeDelta = all.size();
+		}
+		
+		String[] envp = new String[envm.size() + (2+2) + envmSizeDelta];
 		int idx = 0;
 		for(String key : envm.keySet()) {
 			String value = envm.get(key);
 			envp[idx++] = key + "=" + value;
 		}
+		
 		envp[idx++] = "JAVA_HOME=" + System.getProperty("java.home"); //System.getenv("JAVA_HOME");
 		//ERROR: M2_HOME not found in your environment.
 		//Please set the M2_HOME variable in your environment to match the
@@ -204,15 +215,23 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		envp[idx++] = "M2_HOME=" + preferenceStore.getString(MavenConstants.MAVEN_HOME_TO_USE); 
 		envp[idx++] = "MAVEN_OPTS=" + preferenceStore.getString(MavenConstants.MAVEN_OPTS); 
 		envp[idx++] = getEnvVariableEqualsString("JAVA_OPTS");
-		//+ #81
-		envp[idx++] = getEnvVariableEqualsString("PATH");
-		envp[idx++] = getEnvVariableEqualsString("TEMP");
-		envp[idx++] = getEnvVariableEqualsString("TMP");
-		envp[idx++] = getEnvVariableEqualsString("SystemDrive");
-		//+
-		envp[idx++] = getEnvVariableEqualsString("HOME");
-		envp[idx++] = getEnvVariableEqualsString("USERPROFILE");
-		
+
+		if (passAllEnvVars){
+			for (Map.Entry<String, String> entry : all.entrySet())
+			{
+			    //System.out.println(entry.getKey() + "/" + entry.getValue());
+			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
+			}
+		}else{
+			//+ #81
+			envp[idx++] = getEnvVariableEqualsString("PATH");
+			envp[idx++] = getEnvVariableEqualsString("TEMP");
+			envp[idx++] = getEnvVariableEqualsString("TMP");
+			envp[idx++] = getEnvVariableEqualsString("SystemDrive");
+			//+
+			envp[idx++] = getEnvVariableEqualsString("HOME");
+			envp[idx++] = getEnvVariableEqualsString("USERPROFILE");
+		}
 		if (!warned ){
 			NodeclipseLogger.log("  Warning: JAVA_HOME, M2_HOME and others environment variables will be applied automatically to every `mvn` launch.\n");
 			StringBuilder sb = new StringBuilder(100);

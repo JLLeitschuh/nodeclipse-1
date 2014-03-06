@@ -247,9 +247,9 @@ public class LaunchConfigurationDelegate implements
 	private String[] getEnvironmentVariables(ILaunchConfiguration configuration) throws CoreException {
 		Map<String, String> envm = new HashMap<String, String>();
 		envm = configuration.getAttribute(Constants.ATTR_ENVIRONMENT_VARIABLES, envm);
+		
 		int envmSizeDelta = 4;
 		Map<String,String> all = null;
-		
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		boolean passAllEnvVars = preferenceStore.getBoolean(PreferenceConstants.NODE_PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
 		if (passAllEnvVars){
