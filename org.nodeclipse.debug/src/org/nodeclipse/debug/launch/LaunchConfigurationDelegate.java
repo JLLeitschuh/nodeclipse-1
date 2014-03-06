@@ -272,10 +272,10 @@ public class LaunchConfigurationDelegate implements
 			}
 		}else{
 			//+ #81
-			envp[idx++] = "PATH=" + System.getenv("PATH");
-			envp[idx++] = "TEMP=" + System.getenv("TEMP");
-			envp[idx++] = "TMP=" + System.getenv("TMP");
-			envp[idx++] = "SystemDrive=" + System.getenv("SystemDrive");
+			envp[idx++] = getEnvVariableEqualsString("PATH");
+			envp[idx++] = getEnvVariableEqualsString("TEMP");
+			envp[idx++] = getEnvVariableEqualsString("TMP");
+			envp[idx++] = getEnvVariableEqualsString("SystemDrive");
 		}
 		if (!warned ){
 			NodeclipseConsole.write("  These environment variables will be applied automatically to every `node` launch.\n");
@@ -289,6 +289,12 @@ public class LaunchConfigurationDelegate implements
 		return envp;
 	}
 
+	protected String getEnvVariableEqualsString(String envvarName){
+		String envvarValue = System.getenv(envvarName);
+		if (envvarValue==null) envvarValue = "";
+		return envvarName + "=" + envvarValue;		
+	}
+	
 	private void showErrorDialog(final String message) {
 		Display.getDefault().syncExec(new Runnable() {
 			public void run() {
