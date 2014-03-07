@@ -86,7 +86,7 @@ class ContentFromSources {
     
     public static String inputStream2String(InputStream is) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(is));
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder(); // no need for thread-safe StringBuffer buffer = new StringBuffer();
         String line = "";
         while ((line = in.readLine()) != null) {
             buffer.append(line);
