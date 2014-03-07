@@ -2,6 +2,8 @@
 
 # Nodeclipse CLI & Installer
 
+[![NPM version](https://badge.fury.io/js/nodeclipse.png)](http://badge.fury.io/js/nodeclipse)
+
 ## Node.js Development with Eclipse or Enide Studio
 
 Install with `npm install -g nodeclipse`
