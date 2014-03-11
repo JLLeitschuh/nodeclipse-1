@@ -9,12 +9,6 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* 
- * Run this As Java Application to check .indexFiles 
- * 
- * Reading Libraries IndexFiles finished in 40 ms. errorCounter=2
- * 
- * */
 /**
  * Using Orion IndexFiles for libraries for content assist</br>
  * 
@@ -38,6 +32,11 @@ public class ContentFromOrionIndexFiles {
 	private static int errorCounter = 0;
 	private static Model model = null;
 
+	/* 
+	 * Run this As Java Application to check .indexFiles 
+	 * 
+	 * Reading Libraries IndexFiles finished in 40 ms. errorCounter=2
+	 * */
 	public static void main(String[] args) {
 		model = new Model();
 		long startTime = System.currentTimeMillis(); //nanoTime();
@@ -59,8 +58,9 @@ public class ContentFromOrionIndexFiles {
 	// see analog ContentFromSources.populateModel()
 	private static boolean addIndexFile(Model model, String libname) {
 		JSONObject libraryIndex = jsonForLibrary(libname);
-		if (libraryIndex == null)
+		if (libraryIndex == null){
 			return false;
+		}
 		try {
 			String moduleName = libraryIndex.getString("!name");
 			debug(", " + moduleName);
@@ -68,12 +68,14 @@ public class ContentFromOrionIndexFiles {
 			model.addModule(moduleObj);
 			
 			JSONObject module = (JSONObject) libraryIndex.get("!define");
-			debug("("+module.length()+")");
+			if (verbose) debug("(("+module.length()+")):");
 			
 			//DONE add moduleDesc as list of higher level objects
 			String moduleDesc = formatedName(moduleName)+module.names();
 			Entry moduleEntry = new Entry(moduleObj,EntryType.module,moduleName,moduleName,moduleDesc,null);
 			model.addEntry(moduleEntry);	
+			
+			if (verbose) debug("\n    Model size="+model.entries.size());
 			
 //	        "response": {
 //  	      "send": {"!type": "fn(body: String) -> response"},
@@ -81,27 +83,35 @@ public class ContentFromOrionIndexFiles {
 			Iterator keysIterator = module.keys();
 		    while (keysIterator.hasNext()){
 		    	String key = keysIterator.next().toString();
-		    	System.out.println(key);
-		    	JSONObject obj = (JSONObject) libraryIndex.get(key);
+		    	JSONObject obj = (JSONObject) module.get(key);
+		    	if (verbose) debug("\n"+key+"("+obj.length()+"):");
 		    	
 		    	String trigger = moduleName+'.'+key;
 				String name = key;
 				String desc = formatedName(name,trigger);
+				//read !proto, !type to make desc
+				String proto = obj.optString("!proto");
+				if (""!=proto){ desc+="prototype:"+proto+' ';}
+				String type = obj.optString("!type");
+				if (""!=type){ desc+="type:"+type+' ';}
 				
-				//TODO read !proto, !type to make desc
-
-				Entry entry = new Entry(moduleObj,EntryType.method,name,trigger,desc,moduleEntry);
+				Entry entry = new Entry(moduleObj,EntryType.unknown,name,trigger,desc,moduleEntry);
 				model.addEntry(entry);
 				
-				// property may have properties, see http.IncomingMessage -> message.httpVersion
-				populateCheckProperties(obj, trigger, moduleObj, entry);
+				// obj may have other objects inside
+				populateCheckObj(obj, trigger, moduleObj, entry);
 		    	
-		    	
-		    }			
+				if (verbose) debug("\n    Model size="+model.entries.size());
+		    }
+		    if (verbose) debug(";\n");
 						
 			
+		} catch (ClassCastException e) {
+			errorCounter++;
+			error(e.getLocalizedMessage() + "\n" + e + "\n");
 		} catch (JSONException e) {
-			log(e.getLocalizedMessage() + "\n" + e);
+			errorCounter++;
+			error(e.getLocalizedMessage() + "\n" + e + "\n");
 		}
 
 		return true;
@@ -109,10 +119,42 @@ public class ContentFromOrionIndexFiles {
 	
 	public static boolean checkProperties = true;
 	
-	private static void populateCheckProperties(JSONObject obj, String moduleName, Module moduleObj, Entry parent) throws JSONException {
+	private static void populateCheckObj(JSONObject obj, String objTrigger, Module moduleObj, Entry parent) throws JSONException {
 		if (!checkProperties){
 			return;
 		}
+		
+		Iterator keysIterator = obj.keys();
+	    while (keysIterator.hasNext()){
+	    	String key = keysIterator.next().toString();
+	    	if (verbose) debug(key+'`');
+	    	if (key.equals("!proto")||key.equals("!type")) { 
+	    		continue;
+	    	}
+	    	//JSONObject objEement = (JSONObject) obj.get(key);
+	    	Object objEementObject = obj.get(key);
+	    	JSONObject objEement = null;
+	    	
+	    	String trigger = objTrigger+'.'+key;
+	    	String name = key;
+	    	String desc = formatedName(name,trigger);
+	    	
+	    	if (objEementObject instanceof String ){
+//		        "express": {
+//	    	      "response": "response",
+	    	} else{
+	    		objEement = (JSONObject) objEementObject;
+				//read !proto, !type to make desc
+				String proto = objEement.optString("!proto");
+				if (""!=proto){ desc+="prototype:"+proto+' ';}
+				String type = objEement.optString("!type");
+				if (""!=type){ desc+="type:"+type+' ';}
+	    	}
+			
+			Entry entry = new Entry(moduleObj,EntryType.unknown,name,trigger,desc,parent);
+			model.addEntry(entry);
+	    }
+		
 	}	
 	
 	private static String formatedName(String name) {
