@@ -8,6 +8,10 @@ import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.nodeclipse.enide.gradle.Activator;
+//+
+import org.eclipse.swt.widgets.Link;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionAdapter;
 
 /**
  * @author Paul Verest
@@ -30,7 +34,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 	private StringFieldEditor gradleEnvVarAlternativeKeyAlias;
 	private StringFieldEditor gradleEnvVarAlternativeKeyPassword;
 	private BooleanFieldEditor passAllEnvVars;
-
+	
     public GradlePreferencePage() {
         super(GRID);
         setPreferenceStore(Activator.getDefault().getPreferenceStore());
@@ -51,6 +55,22 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 
 	@Override
 	protected void createFieldEditors() {
+		
+		
+		//TODO link to project home page
+		// http://stackoverflow.com/questions/22107112/how-to-create-a-hyperlink-in-eclipse-plugin-preferences-page
+//		final Link link = new Link(getFieldEditorParent(), SWT.NONE);
+//		link.setText("link");
+//		link.setLayoutData(getFieldEditorParent().getLayout());
+//
+//		link.addSelectionListener(new SelectionAdapter() [
+//		  @Override
+//		  public void widgetSelected(final SelectionEvent e)
+//		  {
+//		    // TODO deal with hyperlink selection
+//		  }
+//		});		
+		
 		
 
 	    gradleHome = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME, "Gradle home directory:", getFieldEditorParent());
