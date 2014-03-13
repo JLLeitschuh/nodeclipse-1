@@ -3,6 +3,7 @@ package org.nodeclipse.enide.gradle.preferences;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -22,8 +23,13 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
     private BooleanFieldEditor gradleOptionInfo;
     private BooleanFieldEditor gradleOptionQuiet;
     private BooleanFieldEditor gradleOptionOffline;
-    private DirectoryFieldEditor gradleOptionAlternativeAndroidHome;
-    private BooleanFieldEditor passAllEnvVars;
+    private DirectoryFieldEditor gradleEnvVarAlternativeAndroidHome;
+    private BooleanFieldEditor passAndroidSigningEnvVars;
+	private FileFieldEditor gradleEnvVarAlternativeKeystoreFile;
+	private StringFieldEditor gradleEnvVarAlternativeKeystorePassword;
+	private StringFieldEditor gradleEnvVarAlternativeKeyAlias;
+	private StringFieldEditor gradleEnvVarAlternativeKeyPassword;
+	private BooleanFieldEditor passAllEnvVars;
 
     public GradlePreferencePage() {
         super(GRID);
@@ -67,9 +73,21 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
       gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
 
-        gradleOptionAlternativeAndroidHome = new DirectoryFieldEditor(GradleConstants.GRADLE_OPTION_ALTERNATIVE_ANDROID_HOME, "alternative ANDROID_HOME:", getFieldEditorParent());
-		addField(gradleOptionAlternativeAndroidHome);
+        gradleEnvVarAlternativeAndroidHome = new DirectoryFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME, "alternative ANDROID_HOME:", getFieldEditorParent());
+		addField(gradleEnvVarAlternativeAndroidHome);
         
+        passAndroidSigningEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ANDROID_SIGNING_ENVIRONMENT_VARIABLES, 
+        		"pass Android signing environment variables (4) // experimental, see #129", getFieldEditorParent());
+        addField(passAndroidSigningEnvVars);
+        gradleEnvVarAlternativeKeystoreFile = new FileFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEYSTORE_FILE, "alternative KEYSTORE file:", getFieldEditorParent());
+		addField(gradleEnvVarAlternativeKeystoreFile);
+        gradleEnvVarAlternativeKeystorePassword = new StringFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEYSTORE_PASSWORD, "alternative KEYSTORE_PASSWORD:", getFieldEditorParent());
+		addField(gradleEnvVarAlternativeKeystorePassword);
+        gradleEnvVarAlternativeKeyAlias = new StringFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEY_ALIAS, "alternative KEY_ALIAS:", getFieldEditorParent());
+		addField(gradleEnvVarAlternativeKeyAlias);
+        gradleEnvVarAlternativeKeyPassword = new StringFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEY_PASSWORD, "alternative KEY_PASSWORD:", getFieldEditorParent());
+		addField(gradleEnvVarAlternativeKeyPassword);
+		
         passAllEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
         		"pass all environment variables of Eclipse to launched app", getFieldEditorParent());
         addField(passAllEnvVars);

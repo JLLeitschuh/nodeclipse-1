@@ -135,10 +135,16 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		int envmSizeDelta = (2+2+1) + 4 + 2;
 		Map<String,String> all = null;
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		boolean passAndroidSigningEnvVars = preferenceStore.getBoolean(GradleConstants.PASS_ANDROID_SIGNING_ENVIRONMENT_VARIABLES);//@since 0.12
 		boolean passAllEnvVars = preferenceStore.getBoolean(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
-		if (passAllEnvVars){
-			all = System.getenv();
-			envmSizeDelta = all.size();
+		if (passAndroidSigningEnvVars){
+			passAllEnvVars = false; // make passAllEnvVars incompatible with passAndroidSigningEnvVars to simplify things //TODO logic
+			envmSizeDelta+=4;
+		} else { 
+			if (passAllEnvVars){
+				all = System.getenv();
+				envmSizeDelta = all.size();
+			}
 		}
 		
 		String[] envp = new String[envm.size() + envmSizeDelta];
@@ -159,11 +165,25 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		envp[idx++] = "GRADLE_OPTS=" + preferenceStore.getString(GradleConstants.GRADLE_OPTS);
 		envp[idx++] = getEnvVariableEqualsString("JAVA_OPTS");
 		//+ #125
-		String alternativeAndroidHome = preferenceStore.getString(GradleConstants.GRADLE_OPTION_ALTERNATIVE_ANDROID_HOME);
-		if (""!=alternativeAndroidHome){
-			envp[idx++] = "ANDROID_HOME=" + alternativeAndroidHome;
-		} else {
-			envp[idx++] = getEnvVariableEqualsString("ANDROID_HOME");
+//		String alternativeAndroidHome = preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME);
+//		if (""!=alternativeAndroidHome){
+//			envp[idx++] = "ANDROID_HOME=" + alternativeAndroidHome;
+//		} else {
+//			envp[idx++] = getEnvVariableEqualsString("ANDROID_HOME");
+//		}
+		envp[idx++] = getEnvVariableEqualsStringIfNoAlternativeSpecified("ANDROID_HOME", 
+				preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME));
+
+		//+ #129
+		if (passAndroidSigningEnvVars){ 
+			envp[idx++] = getEnvVariableEqualsStringIfNoAlternativeSpecified("KEYSTORE", 
+					preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEYSTORE_FILE));
+			envp[idx++] = getEnvVariableEqualsStringIfNoAlternativeSpecified("KEYSTORE_PASSWORD", 
+					preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEYSTORE_PASSWORD));
+			envp[idx++] = getEnvVariableEqualsStringIfNoAlternativeSpecified("KEY_ALIAS", 
+					preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEY_ALIAS));
+			envp[idx++] = getEnvVariableEqualsStringIfNoAlternativeSpecified("KEY_PASSWORD", 
+					preferenceStore.getString(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEY_PASSWORD));
 		}
 		
 		if (passAllEnvVars){
@@ -195,6 +215,14 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		return envp;
 	}
 	
+	private String getEnvVariableEqualsStringIfNoAlternativeSpecified(String envvarName, String alternativeValue) {
+		if (""!=alternativeValue){
+			return envvarName + "=" + alternativeValue;
+		} else {
+			return getEnvVariableEqualsString(envvarName);
+		}
+	}
+
 	protected String getEnvVariableEqualsString(String envvarName){
 		String envvarValue = System.getenv(envvarName);
 		if (envvarValue==null) envvarValue = "";
