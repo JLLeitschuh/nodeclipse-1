@@ -131,7 +131,17 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 	protected String[] getEnvironmentVariables(ILaunchConfiguration configuration) throws CoreException {
 		Map<String, String> envm = new HashMap<String, String>();
 		envm = configuration.getAttribute(GradleConstants.ATTR_ENVIRONMENT_VARIABLES, envm);
-		String[] envp = new String[envm.size() + (2+2) + 4 + 2];
+		
+		int envmSizeDelta = (2+2+1) + 4 + 2;
+		Map<String,String> all = null;
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		boolean passAllEnvVars = preferenceStore.getBoolean(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
+		if (passAllEnvVars){
+			all = System.getenv();
+			envmSizeDelta = all.size();
+		}
+		
+		String[] envp = new String[envm.size() + envmSizeDelta];
 		int idx = 0;
 		for(String key : envm.keySet()) {
 			String value = envm.get(key);
@@ -148,15 +158,31 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		envp[idx++] = "GRADLE_HOME=" + preferenceStore.getString(GradleConstants.GRADLE_HOME_TO_USE); 
 		envp[idx++] = "GRADLE_OPTS=" + preferenceStore.getString(GradleConstants.GRADLE_OPTS);
 		envp[idx++] = getEnvVariableEqualsString("JAVA_OPTS");
-		//+ #81
-		envp[idx++] = getEnvVariableEqualsString("PATH");
-		envp[idx++] = getEnvVariableEqualsString("TEMP");
-		envp[idx++] = getEnvVariableEqualsString("TMP");
-		envp[idx++] = getEnvVariableEqualsString("SystemDrive");
-		//+
-		envp[idx++] = getEnvVariableEqualsString("HOME");
-		envp[idx++] = getEnvVariableEqualsString("USERPROFILE");
+		//+ #125
+		String alternativeAndroidHome = preferenceStore.getString(GradleConstants.GRADLE_OPTION_ALTERNATIVE_ANDROID_HOME);
+		if (""!=alternativeAndroidHome){
+			envp[idx++] = "ANDROID_HOME=" + alternativeAndroidHome;
+		} else {
+			envp[idx++] = getEnvVariableEqualsString("ANDROID_HOME");
+		}
 		
+		if (passAllEnvVars){
+			for (Map.Entry<String, String> entry : all.entrySet())
+			{
+			    //System.out.println(entry.getKey() + "/" + entry.getValue());
+			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
+			}
+		}else{
+			//+ #81
+			envp[idx++] = getEnvVariableEqualsString("PATH");
+			envp[idx++] = getEnvVariableEqualsString("TEMP");
+			envp[idx++] = getEnvVariableEqualsString("TMP");
+			envp[idx++] = getEnvVariableEqualsString("SystemDrive");
+			//+
+			envp[idx++] = getEnvVariableEqualsString("HOME");
+			envp[idx++] = getEnvVariableEqualsString("USERPROFILE");
+		}	
+			
 		if (!warned ){
 			NodeclipseLogger.log("  Warning: JAVA_HOME, GRADLE_HOME and others environment variables will be applied automatically to every `gradle` launch.\n");
 			StringBuilder sb = new StringBuilder(100);

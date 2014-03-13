@@ -3,7 +3,6 @@ package org.nodeclipse.enide.gradle.preferences;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -17,13 +16,14 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 	private DirectoryFieldEditor gradleHome;
 	private DirectoryFieldEditor gradleHomeToUse;
 	private StringFieldEditor gradleJvmOpts;
-    private FileFieldEditor gradlePath;
     
     private StringFieldEditor gradleOptions;
     private BooleanFieldEditor gradleOptionDebug;
     private BooleanFieldEditor gradleOptionInfo;
     private BooleanFieldEditor gradleOptionQuiet;
     private BooleanFieldEditor gradleOptionOffline;
+    private DirectoryFieldEditor gradleOptionAlternativeAndroidHome;
+    private BooleanFieldEditor passAllEnvVars;
 
     public GradlePreferencePage() {
         super(GRID);
@@ -56,9 +56,6 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		gradleJvmOpts = new StringFieldEditor(GradleConstants.GRADLE_OPTS, "JVM options GRADLE_OPTS:", getFieldEditorParent());
 		addField(gradleJvmOpts);
 		
-//      gradlePath = new FileFieldEditor(GradleConstants.GRADLE_PATH, "Gradle path (@deprecated):", getFieldEditorParent());
-//        addField(gradlePath);
-        
       gradleOptions = new StringFieldEditor(GradleConstants.GRADLE_OPTIONS, "Gradle options (gradle -h):", getFieldEditorParent());
         addField(gradleOptions);
       gradleOptionDebug = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DEBUG,"-d, --debug Log in debug mode (includes normal stacktrace).", getFieldEditorParent());
@@ -69,6 +66,13 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         addField(gradleOptionQuiet);
       gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
+
+        gradleOptionAlternativeAndroidHome = new DirectoryFieldEditor(GradleConstants.GRADLE_OPTION_ALTERNATIVE_ANDROID_HOME, "alternative ANDROID_HOME:", getFieldEditorParent());
+		addField(gradleOptionAlternativeAndroidHome);
+        
+        passAllEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
+        		"pass all environment variables of Eclipse to launched app", getFieldEditorParent());
+        addField(passAllEnvVars);
 	}
 
 

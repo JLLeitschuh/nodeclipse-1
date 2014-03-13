@@ -29,6 +29,8 @@ public class GradleConstants {
 	public static final String GRADLE_OPTION_INFO = "gradle_option_info";
 	public static final String GRADLE_OPTION_QUIET = "gradle_option_quiet";
 	public static final String GRADLE_OPTION_OFFLINE = "gradle_option_offline";
+	public static final String GRADLE_OPTION_ALTERNATIVE_ANDROID_HOME = "gradle_option_alternative_android_home";
+	public static final String PASS_ALL_ENVIRONMENT_VARIABLES = "pass_all_environment_variables";
 
 	public static final String PREFERENCES_PAGE = "org.nodeclipse.enide.gradle.preferences.GradlePreferencePage";
 	public static final String PREFERENCE_PAGE_NAME ="Gradle(Enide)"; // the same as in plugin.xml	
