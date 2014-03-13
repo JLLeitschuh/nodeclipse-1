@@ -35,12 +35,12 @@
 			<url>http://dadacoalition.org/yedit</url>
 		</repository>
 		<!-- 
+		-->
 		<repository>
 			<id>git-addon</id>
 			<layout>p2</layout>
 			<url>http://www.nodeclipse.org/git/addon/</url>
 		</repository>
-		-->
 		
 
 		<!-- Enide Tools Collection -->
@@ -167,7 +167,7 @@
 		<repository>
 			<id>fail-back</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.9.0/</url>
+			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.11/</url>
 		</repository>
 		
 		
