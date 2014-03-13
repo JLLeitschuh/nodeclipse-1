@@ -89,7 +89,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		addField(gradleEnvVarAlternativeKeyPassword);
 		
         passAllEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
-        		"pass all environment variables of Eclipse to launched app", getFieldEditorParent());
+        		"pass all environment variables of Eclipse to launched app // incompatible with #129", getFieldEditorParent());
         addField(passAllEnvVars);
 	}
 

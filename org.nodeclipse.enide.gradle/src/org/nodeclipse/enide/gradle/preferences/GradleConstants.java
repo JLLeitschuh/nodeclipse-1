@@ -4,6 +4,7 @@ public class GradleConstants {
 	
 	public static final String PLUGIN_ID = "org.nodeclipse.enide.gradle";
 	public static final String LAUNCH_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.LaunchConfigurationType";
+	public static final String LAUNCH_ANDROID_INSTALLDEBUG_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.android.LaunchConfigurationType";
 	public static final String LAUNCH_JETTY_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jetty.LaunchConfigurationType";
 	public static final String LAUNCH_JETTYECLIPSE_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType";
 	public static final String LAUNCHGUI_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launchgui.LaunchConfigurationType";
