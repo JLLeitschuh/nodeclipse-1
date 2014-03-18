@@ -44,4 +44,7 @@ public class Entry implements Comparable<Entry>{
 	public String toString(){
 		return trigger;
 	}
+	public String toFullString(){
+		return trigger+' '+module+" "+type+" "+name+" "+desc;
+	}
 }

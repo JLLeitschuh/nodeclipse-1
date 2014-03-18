@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 /**
  * Using Orion IndexFiles for libraries for content assist</br>
- * 
+ * This is logic class without Eclipse API dependencies. Just run it as Java App 
 <pre>
 express={
   "!define": {
@@ -39,17 +39,30 @@ public class ContentFromOrionIndexFiles {
 	 * */
 	public static void main(String[] args) {
 		model = new Model();
+		initModel(model);
+		//code example from https://github.com/demodays/bjdd/issues/1
+//		model.processWith(new EntryProcessor(){
+//			entry -> System.out.println(entry.toFullString());
+//		} 
+		model.processWith(new EntryProcessor(){ 
+			@Override
+			public void process(Entry entry) {
+				System.out.println(entry.toFullString());
+			}			
+		});
+	}
+	
+	public static void initModel(Model model) {
 		long startTime = System.currentTimeMillis(); //nanoTime();
-//		addIndexFile("amqp");
-//		addIndexFile("browser");
-//		addIndexFile("ecma5");
-//		addIndexFile("express");
-//		addIndexFile("mongodb");
-//		addIndexFile("mysql");
-//		addIndexFile("node");
-//		addIndexFile("postgres");
-//		addIndexFile("redis");
+		addIndexFile(model, "amqp");
+//		addIndexFile(model, "browser");
+//		addIndexFile(model, "ecma5");
 		addIndexFile(model, "express");
+		addIndexFile(model, "mongodb");
+		addIndexFile(model, "mysql");
+//		addIndexFile(model, "node");
+		addIndexFile(model, "postgres");
+		addIndexFile(model, "redis");
 		
 		long time = System.currentTimeMillis() - startTime;		
 		log("Reading Libraries IndexFiles finished in "+time+" ms. errorCounter="+errorCounter);
@@ -99,7 +112,7 @@ public class ContentFromOrionIndexFiles {
 				model.addEntry(entry);
 				
 				// obj may have other objects inside
-				populateCheckObj(obj, trigger, moduleObj, entry);
+				populateCheckObj(model, obj, name, moduleObj, entry);
 		    	
 				if (verbose) debug("\n    Model size="+model.entries.size());
 		    }
@@ -119,7 +132,7 @@ public class ContentFromOrionIndexFiles {
 	
 	public static boolean checkProperties = true;
 	
-	private static void populateCheckObj(JSONObject obj, String objTrigger, Module moduleObj, Entry parent) throws JSONException {
+	private static void populateCheckObj(Model model, JSONObject obj, String word, Module moduleObj, Entry parent) throws JSONException {
 		if (!checkProperties){
 			return;
 		}
@@ -135,7 +148,7 @@ public class ContentFromOrionIndexFiles {
 	    	Object objEementObject = obj.get(key);
 	    	JSONObject objEement = null;
 	    	
-	    	String trigger = objTrigger+'.'+key;
+	    	String trigger = word+'.'+key;
 	    	String name = key;
 	    	String desc = formatedName(name,trigger);
 	    	
@@ -215,6 +228,5 @@ public class ContentFromOrionIndexFiles {
     	//NodeclipseConsole.write(s);
     	System.out.print(s);
     }
-	
 
 }

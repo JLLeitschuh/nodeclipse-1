@@ -19,7 +19,7 @@ import org.nodeclipse.ui.util.ProcessUtils;
  * @author Paul Verest
  * TODO don't use static {}
  */
-public class ContentProvider {
+public class ContentFromCompletionsJson {
 
     public static JSONArray COMPLETIONS = null;
 
@@ -30,7 +30,7 @@ public class ContentProvider {
         	String completionJsonPath = ProcessUtils.getCompletionsJsonPath();
         	if (completionJsonPath == null || completionJsonPath.equals("")) {
         		completionJsonPath = Constants.COMPLETIONS_JSON;
-        		is = ContentProvider.class.getClassLoader().getResourceAsStream(completionJsonPath);
+        		is = ContentFromCompletionsJson.class.getClassLoader().getResourceAsStream(completionJsonPath);
         	} else {
     			File file = new File(completionJsonPath);
     			if (!file.exists()) {

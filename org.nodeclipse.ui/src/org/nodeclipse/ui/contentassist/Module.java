@@ -1,7 +1,7 @@
 package org.nodeclipse.ui.contentassist;
 
 /**
- * @author pverest
+ * @author Paul Verest
  */
 public class Module {
 	
@@ -11,4 +11,8 @@ public class Module {
 		this.name=name;
 	}
 
+	@Override
+	public String toString(){
+		return name;
+	}
 }

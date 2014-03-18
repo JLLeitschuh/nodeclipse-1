@@ -1,6 +1,14 @@
 
 # Notes
 
+Initial completion was procession completions.json file every time.  
+Then one more type from all.json (from Node.js sources) was added `ContentFromSources`,
+ that was precompiled into sorted TreeSet inside Model class.
+As one more type from Orion IndexFiles was added `ContentFromOrionIndexFiles`, it is clear that all types should be precompiled,
+ and Model should be passed as parameter.
+
+## Eclipse API 
+
 org.eclipse.jface.text.contentassist.IContentAssistProcessor
 
 

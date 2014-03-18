@@ -4,9 +4,10 @@ public class Constants {
     public static final String ICONS_PATH = "$nl$/icons/";
     //TODO find 3 good icons:
 	public static final String MODULE_ICON = ICONS_PATH + "npm/npm.png";
+	public static final String CLASS_ICON = ICONS_PATH + "node.png";
     public static final String METHOD_ICON = ICONS_PATH + "contentassist/method.gif";
-    public static final String CLASS_ICON = ICONS_PATH + "node.png";
 	public static final String PROPERTY_ICON = ICONS_PATH + "contentassist/property.gif";
+	public static final String UNKNOWN_BLUE_ICON = ICONS_PATH + "contentassist/method_blue.png"; //+
     public static final String COMPLETIONS_JSON = "org/nodeclipse/ui/contentassist/completions.json";
     public static final String COMPLETIONS_KEY = "completions";
     

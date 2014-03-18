@@ -44,4 +44,10 @@ public class Model implements IRepo {
 		}
 		return matches;
 	}
+	
+	public void processWith(EntryProcessor proc){
+		for(Entry entry: entries){
+			proc.process(entry);
+		}
+	}
 }
