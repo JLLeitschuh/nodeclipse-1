@@ -221,15 +221,23 @@
 			<view id="winterwell.markdown.views.MarkdownPreview" 
                 relative="org.eclipse.debug.ui.DebugView" 
                 relationship="stack"/>          	
+			<view id="org.eclipse.ui.views.ProblemView" 
+                relative="winterwell.markdown.views.MarkdownPreview" 
+                relationship="stack"/>   
+			<view id="org.eclipse.pde.runtime.LogView" 
+                relative="org.eclipse.ui.views.ProblemView" 
+                relationship="stack"/> 
+<!-- was Markdown, GFM, Problems
+			<view id="winterwell.markdown.views.MarkdownPreview" 
+                relative="org.eclipse.debug.ui.DebugView" 
+                relationship="stack"/>          	
 			<view id="code.satyagraha.gfm.viewer.views.GfmView" 
                 relative="winterwell.markdown.views.MarkdownPreview" 
                 relationship="stack"/>          	
 			<view id="org.eclipse.ui.views.ProblemView" 
                 relative="code.satyagraha.gfm.viewer.views.GfmView" 
                 relationship="stack"/>   
-			<view id="org.eclipse.pde.runtime.LogView" 
-                relative="org.eclipse.ui.views.ProblemView" 
-                relationship="stack"/> 
+-->
                         	
       </perspectiveExtension>
       <perspectiveExtension
