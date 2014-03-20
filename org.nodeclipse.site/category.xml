@@ -101,7 +101,8 @@
  		Regular Expression by Igor Zapletnev,
  		MonjaDB (MongoDB GUI) by Kanatoko Anvil,
  		ShellEd https://sourceforge.net/projects/shelled/ requires 'bundle org.eclipse.dltk.core [4.0.0,6.0.0)'
- 		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools          
+ 		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools
+ 		Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html         
       </description>
    </category-def>
    <!--    
@@ -137,6 +138,9 @@
    </feature>
    -->
    <feature url="features/org.sweetlemonade.eclipse.json.feature_1.0.3.qualifier.jar" id="org.sweetlemonade.eclipse.json.feature" version="1.0.3.qualifier">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/net.vtst.ow.eclipse.less.feature_1.0.18.qualifier.jar" id="net.vtst.ow.eclipse.less.feature" version="1.0.18.qualifier">
       <category name="Tools"/>
    </feature>
 

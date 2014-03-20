@@ -108,6 +108,11 @@
 			<layout>p2</layout>
 			<url>https://bitbucket.org/denmiroch/jsontools/src/default/JsonSite/</url>
 		</repository>
+		<repository>
+			<id>less</id>
+			<layout>p2</layout>
+			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
+		</repository>
 		
 		
 		<!-- General --> 
