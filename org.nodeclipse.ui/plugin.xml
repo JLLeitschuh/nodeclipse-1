@@ -53,6 +53,17 @@
             Create a new CoffeeScript file
          </description>
       </wizard>
+      <wizard
+            category="org.nodeclipse.ui.wizards.category"
+            class="org.nodeclipse.ui.wizards.TypeScriptFileWizard"
+            finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
+            icon="icons/typescript_16_top_right_corner_new.png"
+            id="org.nodeclipse.ui.wizards.TypeScriptFileWizard"
+            name="TypeScript File">
+         <description>
+            Create a new TypeScript file
+         </description>
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
@@ -277,6 +288,12 @@
             menuGroupId="org.nodeclipse.ui.wizards.category"
             type="new"
             wizardId="org.nodeclipse.ui.wizards.CoffeeFileWizard">
+         <enablement></enablement>
+      </commonWizard>
+      <commonWizard
+            menuGroupId="org.nodeclipse.ui.wizards.category"
+            type="new"
+            wizardId="org.nodeclipse.ui.wizards.TypeScriptFileWizard">
          <enablement></enablement>
       </commonWizard>
    </extension>
