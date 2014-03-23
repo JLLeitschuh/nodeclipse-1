@@ -27,7 +27,8 @@ express={
  * @author Paul Verest
  * @since 0.12
  */
-public class ContentFromOrionIndexFiles {
+public class ContentFromOrionIndexFiles // implements IModelFiller 
+{
 	private static boolean verbose = true;
 	private static int errorCounter = 0;
 	private static Model model = null;
@@ -52,6 +53,7 @@ public class ContentFromOrionIndexFiles {
 		});
 	}
 	
+	//@Override
 	public static void initModel(Model model) {
 		long startTime = System.currentTimeMillis(); //nanoTime();
 		addIndexFile(model, "amqp");
