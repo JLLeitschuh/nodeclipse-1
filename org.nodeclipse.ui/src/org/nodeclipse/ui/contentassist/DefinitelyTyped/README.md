@@ -1,4 +1,4 @@
-
+See #24 Improving Code Assist with TypeScript
 
 github.com/borisyankov/DefinitelyTyped
 has accumulated type definitions for a lot of JS frameworks
