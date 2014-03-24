@@ -102,7 +102,9 @@
  		MonjaDB (MongoDB GUI) by Kanatoko Anvil,
  		ShellEd https://sourceforge.net/projects/shelled/ requires 'bundle org.eclipse.dltk.core [4.0.0,6.0.0)'
  		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools
- 		Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html         
+ 		Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html
+ 		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
+ 		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/     
       </description>
    </category-def>
    <!--    
@@ -141,6 +143,12 @@
       <category name="Tools"/>
    </feature>
    <feature url="features/net.vtst.ow.eclipse.less.feature_1.0.18.qualifier.jar" id="net.vtst.ow.eclipse.less.feature" version="1.0.18.qualifier">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/net.mihai-nita.ansicon_1.2.1.qualifier.jar" id="net.mihai-nita.ansicon" version="1.2.1.qualifier">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/name.schedenig.eclipse.grepconsole_3.5.1.qualifier.jar" id="name.schedenig.eclipse.grepconsole" version="3.5.1.qualifier">
       <category name="Tools"/>
    </feature>
 

@@ -113,6 +113,16 @@
 			<layout>p2</layout>
 			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
+		<repository>
+			<id>ansy-console</id>
+			<layout>p2</layout>
+			<url>http://www.mihai-nita.net/eclipse</url>
+		</repository>
+		<repository>
+			<id>grep-console</id>
+			<layout>p2</layout>
+			<url>http://eclipse.schedenig.name</url>
+		</repository>
 		
 		
 		<!-- General --> 
@@ -190,11 +200,6 @@
 			<id>Closure-by-Vincent.Simonet.p2f</id>
 			<layout>p2</layout>
 			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
-		</repository>
-		<repository>
-			<id>net.jeeeyul.eclipse.themes.updatesite</id>
-			<layout>p2</layout>
-			<url>https://raw.github.com/jeeeyul/eclipse-themes/master/net.jeeeyul.eclipse.themes.updatesite/</url>
 		</repository>
 		<repository>
 			<id>quicksearch</id>
