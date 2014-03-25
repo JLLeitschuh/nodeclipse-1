@@ -123,6 +123,11 @@
 			<layout>p2</layout>
 			<url>http://eclipse.schedenig.name</url>
 		</repository>
+		<repository>
+			<id>editbox</id>
+			<layout>p2</layout>
+			<url>http://editbox.sourceforge.net/updates</url>
+		</repository>
 		
 		
 		<!-- General --> 

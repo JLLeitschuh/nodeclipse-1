@@ -104,7 +104,8 @@
  		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools
  		Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html
  		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
- 		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/     
+ 		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/
+ 		EditBox by Piotr Metel http://editbox.sourceforge.net/     
       </description>
    </category-def>
    <!--    
@@ -149,6 +150,9 @@
       <category name="Tools"/>
    </feature>
    <feature url="features/name.schedenig.eclipse.grepconsole_3.5.1.qualifier.jar" id="name.schedenig.eclipse.grepconsole" version="3.5.1.qualifier">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/pm.eclipse.editbox.feature_0.0.22.qualifier.jar" id="pm.eclipse.editbox.feature" version="0.0.22.qualifier">
       <category name="Tools"/>
    </feature>
 
