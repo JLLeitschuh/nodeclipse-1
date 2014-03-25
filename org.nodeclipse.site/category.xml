@@ -105,7 +105,6 @@
  		Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html
  		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
  		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/
- 		EditBox by Piotr Metel http://editbox.sourceforge.net/     
       </description>
    </category-def>
    <!--    
@@ -152,10 +151,8 @@
    <feature url="features/name.schedenig.eclipse.grepconsole_3.5.1.qualifier.jar" id="name.schedenig.eclipse.grepconsole" version="3.5.1.qualifier">
       <category name="Tools"/>
    </feature>
-   <feature url="features/pm.eclipse.editbox.feature_0.0.22.qualifier.jar" id="pm.eclipse.editbox.feature" version="0.0.22.qualifier">
-      <category name="Tools"/>
-   </feature>
 
+ 
    <!--    
    <category-def name="General" label="General plugins">
       <description>
@@ -223,6 +220,14 @@
       <category name="Tools"/>
    </feature>
     -->
+<!-- 
+ 		EditBox by Piotr Metel http://editbox.sourceforge.net/     
+   Failed to load p2 repository with ID 'editbox' from location http://editbox.sourceforge.net/updates/
+   Failed to load p2 repository with ID 'editbox' from location http://editbox.sourceforge.net/updates
+   <feature url="features/pm.eclipse.editbox.feature_0.0.22.qualifier.jar" id="pm.eclipse.editbox.feature" version="0.0.22.qualifier">
+      <category name="Tools"/>
+   </feature>
+ -->
    <!-- Eclipse Quicksearch (Ctrl+Shift+L) by Pivotal,
    <feature url="org.springsource.ide.eclipse.commons.quicksearch.feature_3.3.0.201307040632-RELEASE.jar" id="org.springsource.ide.eclipse.commons.quicksearch.feature" version="3.3.0.201307040632-RELEASE">
       <category name="Tools"/>
