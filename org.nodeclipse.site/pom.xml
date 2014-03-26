@@ -130,6 +130,17 @@
 			<url>http://editbox.sourceforge.net/updates/</url>
 		</repository>
 		 -->
+		<repository>
+			<id>editbox</id>
+			<layout>p2</layout>
+			<url>http://dl.bintray.com/nodeclipse/EditBox/0.22.0/</url>
+		</repository>
+		<repository>
+			<id>axmor-typescript</id>
+			<layout>p2</layout>
+			<url>http://axmor.bitbucket.org/typecs/stable/update-site/</url>
+		</repository>
+		 
 		
 		<!-- General --> 
 		<repository>
