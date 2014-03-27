@@ -74,6 +74,9 @@
    <feature url="features/org.nodeclipse.enide.editors.gradle.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0.qualifier">
       <category name="Minimalist"/>
    </feature>
+   <feature url="features/org.nodeclipse.enide.editors.jade.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.editors.jade.feature" version="0.11.0.qualifier">
+      <category name="Minimalist"/>
+   </feature>
    <feature url="features/org.nodeclipse.enide.gradle.feature_0.11.0.qualifier.jar" id="org.nodeclipse.enide.gradle.feature" version="0.11.0.qualifier">
       <category name="Minimalist"/>
    </feature>
