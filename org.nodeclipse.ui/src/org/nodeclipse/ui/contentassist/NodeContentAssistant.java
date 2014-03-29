@@ -3,6 +3,7 @@ package org.nodeclipse.ui.contentassist;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextViewer;
@@ -16,6 +17,7 @@ import org.eclipse.swt.graphics.Image;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.nodeclipse.ui.Activator;
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.NodeclipseConsole;
 
@@ -46,7 +48,12 @@ public class NodeContentAssistant implements IContentAssistProcessor {
 	
     private boolean indexFilesInitialized = false;
     
-    //Model model = new Model();
+	private IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+	boolean useNodejsBaseModuleDefinitions = preferenceStore.getBoolean(PreferenceConstants.USE_NODEJS_BASE_MODULE_DEFINITIONS);//@since 0.12
+	boolean useOrionIndexFiles = preferenceStore.getBoolean(PreferenceConstants.USE_ORION_INDEX_FILES);//@since 0.12
+	boolean useCompletionJson = preferenceStore.getBoolean(PreferenceConstants.USE_COMPLETIONS_JSON);//@since 0.12
+    
+    private Model model = null ; //new Model();
 
     public String getInputString(IDocument doc, int offset) {
         StringBuffer buf = new StringBuffer();
@@ -152,8 +159,12 @@ public class NodeContentAssistant implements IContentAssistProcessor {
     private void addCompletionProposalFromModel(List<CompletionProposal> list, String input, int offset) {
         int length = input.length();
         //TODO create Model here and pass it as parameter
-        Model model = ContentFromSources.getDefaultInstances().model;
-        if (!indexFilesInitialized){ //@since 0.12 context from Orion IndexFiles
+        if (useNodejsBaseModuleDefinitions){
+        	model = ContentFromSources.getDefaultInstances().model;
+        }else{
+        	model = new Model();
+        }
+        if (useOrionIndexFiles && !indexFilesInitialized){ //@since 0.12 context from Orion IndexFiles
         	ContentFromOrionIndexFiles.initModel(model);
         	indexFilesInitialized = true;
         }
@@ -177,7 +188,6 @@ public class NodeContentAssistant implements IContentAssistProcessor {
         }
 	}
 
-    //TODO
 	public void addCompletionProposalFromCompletionJson(
     		List<CompletionProposal> list, String input, int offset) {
         //List<CompletionProposal> list = new ArrayList<CompletionProposal>();
@@ -198,7 +208,7 @@ public class NodeContentAssistant implements IContentAssistProcessor {
         //return list;
     }
 
-	// Entry point
+	// Entry point for JSDT API call
     @Override
     public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
         IDocument doc = viewer.getDocument();
@@ -207,7 +217,7 @@ public class NodeContentAssistant implements IContentAssistProcessor {
         //list = getCompletionProposalFromCompletionJson(inputString , offset);
         //addCompletionProposalFromNodejsSources(list, inputString , offset);
         addCompletionProposalFromModel(list, inputString , offset);
-        if (ContentFromCompletionsJson.COMPLETIONS!=null){
+        if (useCompletionJson && ContentFromCompletionsJson.COMPLETIONS!=null){
         	addCompletionProposalFromCompletionJson(list, inputString , offset);
         }	
         return (CompletionProposal[]) list.toArray(new CompletionProposal[list.size()]);
@@ -240,9 +250,9 @@ public class NodeContentAssistant implements IContentAssistProcessor {
         return null;
     }
 
-//    private static void debug(String s){
-//    	//NodeclipseConsole.write(s);
-//    }
+	//    private static void debug(String s){
+	//    	//NodeclipseConsole.write(s);
+	//    }
     private static void log(String s){
     	NodeclipseConsole.write(s);
     }

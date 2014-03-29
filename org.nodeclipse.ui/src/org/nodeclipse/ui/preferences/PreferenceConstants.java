@@ -9,7 +9,6 @@ package org.nodeclipse.ui.preferences;
 public class PreferenceConstants {
 
 	public static final String NODECLIPSE_CONSOLE_ENABLED = "nodeclipse_console_enabled";
-	public static final String COMPLETIONS_JSON_PATH = "completionsjson_path";
 	public static final String NODE_JUST_NODE = "node_just_node";
 	public static final String NODE_PATH = "node_path";
 	public static final String NODE_OPTIONS = "node_options";
@@ -17,6 +16,10 @@ public class PreferenceConstants {
 	public static final String NODE_ALLOW_MANY = "node_allow_many";
 	public static final String NODE_PASS_ALL_ENVIRONMENT_VARIABLES = "node_pass_all_environment_variables";
 	public static final String NODE_SOURCES_PATH = "node_sources_lib_path";
+	public static final String USE_NODEJS_BASE_MODULE_DEFINITIONS = "use_nodejs_base_module_definitions";
+	public static final String USE_ORION_INDEX_FILES = "use_orion_index_files";
+	public static final String USE_COMPLETIONS_JSON = "use_completions_json";
+	public static final String COMPLETIONS_JSON_PATH = "completionsjson_path";
 	public static final String NODE_DEBUG_NO_BREAK = "node_debug_no_break";
 	public static final String NODE_DEBUG_PORT = "node_debug_port";
 	public static final String NODE_MONITOR_PATH = "node_monitor_path";

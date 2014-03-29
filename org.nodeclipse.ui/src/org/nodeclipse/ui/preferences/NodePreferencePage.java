@@ -26,6 +26,9 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private BooleanFieldEditor nodeAllowMany;
     private BooleanFieldEditor nodePassAllEnvVars;
     private DirectoryFieldEditor nodeSourcesPath;
+    private BooleanFieldEditor useNodejsBaseModuleDefinitions;
+    private BooleanFieldEditor useOrionIndexFiles;
+    private BooleanFieldEditor useCompletionJson;
     private FileFieldEditor completionsPath;
     private BooleanFieldEditor nodeDebugNoBreak;
     private IntegerFieldEditor nodeDebugPort;
@@ -38,8 +41,6 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private FileFieldEditor typescriptCompilerPath;
     private StringFieldEditor typescriptCompilerOptions;
 
-//	private StringFieldEditor nodeclipseVersionsString;
-    
     public NodePreferencePage() {
         super(GRID);
         setPreferenceStore(Activator.getDefault().getPreferenceStore());
@@ -57,12 +58,12 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     protected void createFieldEditors() {
 
     	//TODO possible to copy version string
-//    	String verString = VersionUtil.getLongString();
-//        nodeclipseVersionsString = new StringFieldEditor(PreferenceConstants.NODE_OPTIONS, "Node options (node -h):", getFieldEditorParent());
-//        nodeclipseVersionsString.setStringValue(verString);
-//        nodeclipseVersionsString.setTextLimit(verString.length());
-//        nodeclipseVersionsString.setEnabled(false, (Composite) this);
-//        addField(nodeclipseVersionsString);
+		//    	String verString = VersionUtil.getLongString();
+		//        nodeclipseVersionsString = new StringFieldEditor(PreferenceConstants.NODE_OPTIONS, "Node options (node -h):", getFieldEditorParent());
+		//        nodeclipseVersionsString.setStringValue(verString);
+		//        nodeclipseVersionsString.setTextLimit(verString.length());
+		//        nodeclipseVersionsString.setEnabled(false, (Composite) this);
+		//        addField(nodeclipseVersionsString);
 
     	
         nodeclipseConsoleEnabled = new BooleanFieldEditor(PreferenceConstants.NODECLIPSE_CONSOLE_ENABLED, 
@@ -93,6 +94,16 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         nodeSourcesPath = new DirectoryFieldEditor(PreferenceConstants.NODE_SOURCES_PATH, "Node sources directory path:", getFieldEditorParent());
         addField(nodeSourcesPath);
 
+        useNodejsBaseModuleDefinitions = new BooleanFieldEditor(PreferenceConstants.USE_NODEJS_BASE_MODULE_DEFINITIONS, 
+        		"use Node.js base module definitions (changed after restart)", getFieldEditorParent());
+        addField(useNodejsBaseModuleDefinitions);
+        useOrionIndexFiles = new BooleanFieldEditor(PreferenceConstants.USE_ORION_INDEX_FILES, 
+        		"use Orion IndexFiles (changed after restart)", getFieldEditorParent());
+        addField(useOrionIndexFiles);
+        useCompletionJson = new BooleanFieldEditor(PreferenceConstants.USE_COMPLETIONS_JSON, 
+        		"use completion.json (changed after restart)", getFieldEditorParent());
+        addField(useCompletionJson);
+
         completionsPath = new FileFieldEditor(PreferenceConstants.COMPLETIONS_JSON_PATH, "Alternative completions.json path:", getFieldEditorParent());
         addField(completionsPath);
     	
@@ -113,14 +124,14 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         coffeePath = new FileFieldEditor(PreferenceConstants.COFFEE_PATH, "Coffee path:", getFieldEditorParent());
         addField(coffeePath);
 
-//        coffeeJustCoffee = new BooleanFieldEditor(PreferenceConstants.COFFEE_JUST_COFFEE, 
-//        		"just coffee (let Node.js find coffee CLI)", getFieldEditorParent());
-//        addField(coffeeJustCoffee);
+		//        coffeeJustCoffee = new BooleanFieldEditor(PreferenceConstants.COFFEE_JUST_COFFEE, 
+		//        		"just coffee (let Node.js find coffee CLI)", getFieldEditorParent());
+		//        addField(coffeeJustCoffee);
 
         coffeeCompileOptions = new StringFieldEditor(PreferenceConstants.COFFEE_COMPILE_OPTIONS, "Coffee compile options:", getFieldEditorParent());
         addField(coffeeCompileOptions);
 
-        coffeeCompileOutputFolder = new StringFieldEditor(PreferenceConstants.COFFEE_COMPILE_OUTPUT_FOLDER, "Coffee output folder Help! #76", getFieldEditorParent());
+        coffeeCompileOutputFolder = new StringFieldEditor(PreferenceConstants.COFFEE_COMPILE_OUTPUT_FOLDER, "Coffee output folder #76", getFieldEditorParent());
         addField(coffeeCompileOutputFolder);
 
         typescriptCompilerPath = new FileFieldEditor(PreferenceConstants.TYPESCRIPT_COMPILER_PATH, "TypeScript compiler path:", getFieldEditorParent());
