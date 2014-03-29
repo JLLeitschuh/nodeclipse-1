@@ -112,12 +112,12 @@
 		<module>features/org.nodeclipse.vertx.feature</module>
 		
 		<module>features/org.nodeclipse.feature</module>
-		<module>features/org.nodeclipse.enide.nodejs.feature</module>		
 		
 		<!-- @since 0.12.0 Jade Editor -->
 		<module>org.nodeclipse.enide.editors.jade</module>
 		<module>features/org.nodeclipse.enide.editors.jade.feature</module>
 		
+		<module>features/org.nodeclipse.enide.nodejs.feature</module>		
 		
 		<!-- @since 0.9.0 Gradle Editor -->
 		<module>org.nodeclipse.enide.editors.gradle</module>
