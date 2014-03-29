@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Nodeclipse/Enide minimal Editor for build.Gradle
+Bundle-Name: Minimalist Gradle Editor
 Bundle-SymbolicName: org.nodeclipse.enide.editors.gradle;singleton:=true
 Bundle-Version: 0.11.0.qualifier
 Bundle-Activator: org.nodeclipse.enide.editors.gradle.Activator
