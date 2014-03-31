@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.enide.nodejs.feature"
       label="Enide Node.js .Features Set"
-      version="0.11.0.qualifier"
+      version="0.12.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
@@ -201,8 +201,8 @@ http://www.apache.org/licenses/
    <requires>
       <import feature="org.chromium.sdk" version="0.3.9" match="compatible"/>
       <import feature="org.chromium.debug" version="0.3.9" match="compatible"/>
-      <import feature="org.nodeclipse" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.enide.editors.jade.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.editors.jade.feature" version="0.12.0" match="greaterOrEqual"/>
       <!-- build: Unable to satisfy dependency:
       <import feature="com.eclipsesource.jshint.feature" version="0.9.9" match="greaterOrEqual"/>
       -->      

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Nodeclipse Vert.x
 Bundle-SymbolicName: org.nodeclipse.vertx;singleton:=true
-Bundle-Version: 0.11.0.qualifier
+Bundle-Version: 0.12.0.qualifier
 Bundle-Activator: org.nodeclipse.vertx.Activator
 Bundle-Vendor: Enide, Paul Verest, other Nodeclipse authors. http://www.nodeclipse.org/
 Require-Bundle: org.eclipse.ui,

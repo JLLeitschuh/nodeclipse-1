@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.enide.studio.included.feature"
       label="Features included in Enide Studio .Features Set"
-      version="0.11.0.qualifier"
+      version="0.12.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
@@ -24,15 +24,15 @@
    </url>
 
    <requires>
-      <import feature="org.nodeclipse.enide.nodejs.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.phantomjs.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.jjs.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.mongodb.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.vertx.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.nodejs.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.phantomjs.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.jjs.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.mongodb.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.vertx.feature" version="0.12.0" match="greaterOrEqual"/>
       
-      <import feature="org.nodeclipse.enide.editors.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.enide.gradle.feature" version="0.11.0" match="greaterOrEqual"/>
-      <import feature="org.nodeclipse.enide.maven.feature" version="0.11.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.editors.gradle.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.gradle.feature" version="0.12.0" match="greaterOrEqual"/>
+      <import feature="org.nodeclipse.enide.maven.feature" version="0.12.0" match="greaterOrEqual"/>
       
       <!--  pluginslist markdown gfm startexplorer restclient
       <import feature="org.nodeclipse.pluginslist.feature" version="0.1.0" match="greaterOrEqual"/>

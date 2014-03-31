@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse"
       label="Nodeclipse Core and Node.js"
-      version="0.11.0.qualifier"
+      version="0.12.0.qualifier"
       provider-name="Nodeclipse organization">
 
    <description url="http://www.nodeclipse.org/">
