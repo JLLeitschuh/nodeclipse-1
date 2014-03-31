@@ -108,11 +108,13 @@
 			<layout>p2</layout>
 			<url>https://bitbucket.org/denmiroch/jsontools/src/default/JsonSite/</url>
 		</repository>
+		<!-- 
 		<repository>
 			<id>less</id>
 			<layout>p2</layout>
 			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
+		 -->
 		<repository>
 			<id>ansy-console</id>
 			<layout>p2</layout>
@@ -165,6 +167,14 @@
 			<url>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</url>
 		</repository>
 		
+		
+		<!-- coffeescript-eclipse -->
+		<repository>
+			<id>coffeescript-eclipse</id>
+			<layout>p2</layout>
+			<url>http://dl.bintray.com/nodeclipse/CoffeeScriptEditor/0.4.0-201403250304/</url>
+		</repository>
+
 
 		<!-- Other -->
 		<repository>
@@ -186,6 +196,12 @@
 			<id>OpenClosedProjectsFeature</id>
 			<layout>p2</layout>
 			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
+		</repository>
+		<!-- can't be fully bundled -->
+		<repository>
+			<id>Closure-by-Vincent.Simonet</id>
+			<layout>p2</layout>
+			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
 		
 		
