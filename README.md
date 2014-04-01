@@ -32,7 +32,8 @@ Hello, I am Paul Verest, one of Nodeclipse [contributors](https://github.com/Nod
 I am Java developer adopting Node.js ( and less PhantomJS, Nashorn etc Javascript ) into my set of tools.
 In January 2013 I just started developing Node.js in Eclipse without any plugins, but then I came to the point "how to debug?".
 That lead me to know Nodeclipse 0.2 by Tomoyuki Inagaki, that by that time was fork in his own account.
-We unified 0.2 back into Nodeclipse organization, the rest can be seen in [history](http://www.nodeclipse.org/history).
+We unified 0.2 back into Nodeclipse organization (it automatically got name `nodeclipse-1` because `nodeclipse` repository was there),
+the rest can be seen in [history](http://www.nodeclipse.org/history).
 
 ## Diving-In
 
