@@ -7,6 +7,8 @@
 
 ## org.nodeclipse.enide.gradle
 
+![](docs/from-getting-started.PNG)
+
 `build.gradle` Run As Gradle GUI
 
 - Minisite <http://www.nodeclipse.org/enide/gradle/>

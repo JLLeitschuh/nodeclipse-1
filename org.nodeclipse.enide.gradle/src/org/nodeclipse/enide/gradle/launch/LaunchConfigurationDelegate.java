@@ -153,7 +153,13 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 			String value = envm.get(key);
 			envp[idx++] = key + "=" + value;
 		}
-		envp[idx++] = "JAVA_HOME=" + System.getProperty("java.home"); //System.getenv("JAVA_HOME");
+		// #137
+		String javaHomeToUse = preferenceStore.getString(GradleConstants.GRADLE_JAVA_HOME_TO_USE);//@since 0.15
+		if(!javaHomeToUse.equals("")) {
+			envp[idx++] = "JAVA_HOME=" + javaHomeToUse;
+		}else{
+			envp[idx++] = "JAVA_HOME=" + System.getProperty("java.home"); //System.getenv("JAVA_HOME");
+		}
 		//FAILURE: Build failed with an exception.
 		//
 		//* What went wrong:
