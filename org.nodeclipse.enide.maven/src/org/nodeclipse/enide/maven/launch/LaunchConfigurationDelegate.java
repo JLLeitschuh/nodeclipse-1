@@ -207,7 +207,13 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 			envp[idx++] = key + "=" + value;
 		}
 		
-		envp[idx++] = "JAVA_HOME=" + System.getProperty("java.home"); //System.getenv("JAVA_HOME");
+		// #137
+		String javaHomeToUse = preferenceStore.getString(MavenConstants.MAVEN_JAVA_HOME_TO_USE);//@since 0.15
+		if(!javaHomeToUse.equals("")) {
+			envp[idx++] = "JAVA_HOME=" + javaHomeToUse;
+		}else{
+			envp[idx++] = "JAVA_HOME=" + System.getProperty("java.home"); //System.getenv("JAVA_HOME");
+		}
 		//ERROR: M2_HOME not found in your environment.
 		//Please set the M2_HOME variable in your environment to match the
 		//location of the Maven installation

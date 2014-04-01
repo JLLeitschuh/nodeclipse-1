@@ -20,6 +20,7 @@ public class MavenConstants {
 	
 	public static final String MAVEN_HOME = "maven_home";
 	public static final String MAVEN_HOME_TO_USE = "maven_home_to_use";
+	public static final String MAVEN_JAVA_HOME_TO_USE = "java_home_to_use";
 	public static final String MAVEN_PATH = "maven_path"; //@deprecated	
 	public static final String MAVEN_OPTS = "maven_opts";
 	public static final String MAVEN_OPTIONS = "maven_options";

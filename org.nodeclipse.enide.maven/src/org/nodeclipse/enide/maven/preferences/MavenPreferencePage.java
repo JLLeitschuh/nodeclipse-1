@@ -19,6 +19,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 
 	private DirectoryFieldEditor mavenHome;
 	private DirectoryFieldEditor mavenHomeToUse;
+	private DirectoryFieldEditor javaHomeToUse;
 	private StringFieldEditor mavenJvmOpts;
     //private FileFieldEditor mavenPath;
 
@@ -59,6 +60,8 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 		//TODO show maven version in this Preference Page
 		mavenHomeToUse = new DirectoryFieldEditor(MavenConstants.MAVEN_HOME_TO_USE, "Maven home to use:", getFieldEditorParent());
 		addField(mavenHomeToUse);
+		javaHomeToUse = new DirectoryFieldEditor(MavenConstants.MAVEN_HOME_TO_USE, "alternative JAVA_HOME to use:", getFieldEditorParent());
+		addField(javaHomeToUse);
 		mavenJvmOpts = new StringFieldEditor(MavenConstants.MAVEN_OPTS, "JVM options MAVEN_OPTS:", getFieldEditorParent());
 		addField(mavenJvmOpts);
 		
