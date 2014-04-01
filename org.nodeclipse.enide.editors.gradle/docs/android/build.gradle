@@ -5,6 +5,7 @@
 * http://tools.android.com/tech-docs/new-build-system/user-guide
 * History
 * 2014-03-13 android plugin updated to 0.9, see http://tools.android.com/tech-docs/new-build-system/migrating_to_09
+* 2014-04-01 check for gradle version
 * @author Paul Verest 
 */
 
@@ -16,6 +17,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
+assert gradle.gradleVersion >= "1.10" // android plugin 0.9 requires Gradle 1.10, 1.11
 apply plugin: 'android'
 
 dependencies {
