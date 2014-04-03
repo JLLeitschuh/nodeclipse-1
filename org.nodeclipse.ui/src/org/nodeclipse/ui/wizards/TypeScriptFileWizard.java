@@ -33,7 +33,10 @@ import org.eclipse.ui.ide.IDE;
 public class TypeScriptFileWizard extends Wizard implements INewWizard {
 
 	private static final String WINDOW_TITLE = "New TypeScript File";
-	private static final String NEW_FILE_CONTENT = "###\n * New TypeScript file\n###\n";
+	/*
+	* New TypeScript file
+	*/
+	private static final String NEW_FILE_CONTENT = "/*\n* New TypeScript file\n*/\n";
 
     private TypeScriptFileWizardPage page;
     private ISelection selection;
