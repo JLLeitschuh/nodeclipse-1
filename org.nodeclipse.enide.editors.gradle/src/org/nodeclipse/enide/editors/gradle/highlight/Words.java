@@ -3,7 +3,7 @@ package org.nodeclipse.enide.editors.gradle.highlight;
 public class Words {
 
     public static final String[] KEYWORDS = 
-    	{ "apply", "plugin", "sourceCompatibility", 
+    	{ "task", "apply", "plugin", "sourceCompatibility", 
             "repositories", "dependencies", "test",
             "version","group", "name",
             "buildscript", 
