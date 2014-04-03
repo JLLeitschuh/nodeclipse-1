@@ -80,7 +80,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		//TODO show version in this Preference Page
 		gradleHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME_TO_USE, "Gradle home to use:", getFieldEditorParent());
 		addField(gradleHomeToUse);
-		javaHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME_TO_USE, "alternative JAVA_HOME to use:", getFieldEditorParent());
+		javaHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_JAVA_HOME_TO_USE, "alternative JAVA_HOME to use:", getFieldEditorParent());
 		addField(javaHomeToUse);
 		gradleJvmOpts = new StringFieldEditor(GradleConstants.GRADLE_OPTS, "JVM options GRADLE_OPTS:", getFieldEditorParent());
 		addField(gradleJvmOpts);
