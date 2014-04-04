@@ -95,7 +95,7 @@
              label= "gradle installDebug Gradle Android start"   
              modes= "run" >   
           <configurationType
-                id= "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType" >
+                id= "org.nodeclipse.enide.gradle.launch.android.LaunchConfigurationType" >
           </configurationType>   
            <contextualLaunch>   
               <enablement>   
@@ -117,6 +117,66 @@
            </contextualLaunch>   
        </shortcut>   
    </extension>
+
+
+   <!-- for gradle Deamon @since 0.15 -->
+	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType" 
+            modes="run" 
+            name="gradle daemon">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.gradle.launch.daemon.LaunchShortcut"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchShortcut"   
+             label= "gradle --foreground Gradle daemon (experimental)"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "*.gradle" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
+
 
 
    <!-- for gradle jettyRun -->
