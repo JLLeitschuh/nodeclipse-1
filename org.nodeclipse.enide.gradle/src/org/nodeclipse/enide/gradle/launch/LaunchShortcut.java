@@ -23,6 +23,10 @@ import org.nodeclipse.enide.gradle.util.NodeclipseLogger;
  * Using "Run As" --> "gradle build" will lead here
  **/
 public class LaunchShortcut implements ILaunchShortcut {
+	
+    protected String getLaunchConfigurationTypeConstant() {
+		return GradleConstants.LAUNCH_CONFIGURATION_TYPE_ID;
+	}
 
     /**
      * (non-Javadoc)
@@ -78,13 +82,13 @@ public class LaunchShortcut implements ILaunchShortcut {
         // check for an existing launch config for the file
         String path = file.getFullPath().toString();
         ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
-        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(GradleConstants.LAUNCH_CONFIGURATION_TYPE_ID); 
+        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(getLaunchConfigurationTypeConstant()); 
         ILaunchConfiguration configuration = createLaunchConfiguration(type, path, file);
         DebugUITools.launch(configuration, mode);
         // then execution goes in LaunchConfigurationDelegate.java launch() method
     }
 
-    /**
+	/**
      * Create a new configuration and set useful data.
      * 
      * @param type
