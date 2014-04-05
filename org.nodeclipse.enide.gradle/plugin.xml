@@ -151,7 +151,7 @@
              class= "org.nodeclipse.enide.gradle.launch.daemon.LaunchShortcut"   
              icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
              id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchShortcut"   
-             label= "gradle --foreground Gradle daemon (experimental)"   
+             label= "gradle --foreground Gradle daemon [incubating]"   
              modes= "run" >   
           <configurationType
                 id= "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType" >

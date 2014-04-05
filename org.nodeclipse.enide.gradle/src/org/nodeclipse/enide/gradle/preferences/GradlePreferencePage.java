@@ -28,6 +28,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
     private BooleanFieldEditor gradleOptionInfo;
     private BooleanFieldEditor gradleOptionQuiet;
     private BooleanFieldEditor gradleOptionOffline;
+    private BooleanFieldEditor gradleOptionDaemon;
     private DirectoryFieldEditor gradleEnvVarAlternativeAndroidHome;
     private BooleanFieldEditor passAndroidSigningEnvVars;
 	private FileFieldEditor gradleEnvVarAlternativeKeystoreFile;
@@ -95,6 +96,8 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         addField(gradleOptionQuiet);
         gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
+        gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,"--daemon	Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
+        addField(gradleOptionDaemon);
 
         gradleEnvVarAlternativeAndroidHome = new DirectoryFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME, "alternative ANDROID_HOME:", getFieldEditorParent());
 		addField(gradleEnvVarAlternativeAndroidHome);
