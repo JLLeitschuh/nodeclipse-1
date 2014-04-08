@@ -132,35 +132,26 @@
 		
 		<module>features/org.nodeclipse.enide.studio.included.feature</module>
 
-		<module>org.nodeclipse.site</module>
 		<!-- 
-		<module>org.nodeclipse.updates</module>
+		<module>org.nodeclipse.site</module>
 		 -->
+		<module>org.nodeclipse.updates</module>
 	</modules>
 
-<!-- 
-TODO
-mvn clean package -Pquick	
-mvn clean package -Pfull
-  <profiles>
-    <profile>
-      <id>quick</id>
-      <modules>
-        <module>packages/org.eclipse.epp.package.automotive</module>
-        <module>packages/org.eclipse.epp.package.automotive.feature</module>
-        <module>packages/org.eclipse.epp.package.automotive.product</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>full</id>
-      <modules>
-        <module>packages/org.eclipse.epp.package.cpp</module>
-        <module>packages/org.eclipse.epp.package.cpp.feature</module>
-        <module>packages/org.eclipse.epp.package.cpp.product</module>
-      </modules>
-    </profile>
-   </profiles>
- -->	
+	<profiles>
+	    <profile>
+	      <id>quick</id>
+	      <modules>
+	        <module>org.nodeclipse.updates</module>
+	      </modules>
+	    </profile>
+	    <profile>
+	      <id>full</id>
+	      <modules>
+	        <module>org.nodeclipse.site</module>
+	      </modules>
+	    </profile>
+	</profiles>
 
 	<repositories>
 		<repository>

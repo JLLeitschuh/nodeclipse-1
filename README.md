@@ -56,7 +56,7 @@ If memory is not enough (getting `java.lang.OutOfMemoryError: PermGen space` err
 
 [see src/site/markdown/developing.md file](src/site/markdown/developing.md)
 
-FYI when luanching Eclipse Application
+FYI when launching Eclipse Application
     
     Command-line arguments:  -product org.eclipse.platform.ide -data D:\Progs\Enide-Monster-08-kepler-win32\ws/../runtime-EclipseApplication -dev file:D:/Progs/Enide-Monster-08-kepler-win32/ws/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os win32 -ws win32 -arch x86 -consoleLog
     
@@ -68,7 +68,12 @@ Maven build is optional for full build with other plugins.
 
 Build
 
-	mvn package
+`mvn package` or `mvn clean package -Pquick` builds in `org.nodeclipse.updates/target` with less external dependencies.
+Not enought for release, e.g. because JSHint is external plugin and there are 20 more others. 
+
+`mvn clean package -Pfull` builds in `org.nodeclipse.site/target`. For release.
+
+-[] TODO: How to not repeat definitions in `.site` and `.updates` 
 
 Before release
 
