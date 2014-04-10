@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.debug.core.DebugPlugin;
@@ -50,19 +51,31 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		// Using configuration to build command line	
 		List<String> cmdLine = new ArrayList<String>();
 		
-		// Gradle installation path should be stored in preference.
-		String gradleHomeToUse = preferenceStore.getString(GradleConstants.GRADLE_HOME_TO_USE); //NPE!
-		String gradlePath = gradleHomeToUse + (isWindows?"\\bin\\gradle.bat":"/bin/gradle");
-		// Check if the gradle location is correctly configured
-		File gradleFile = new File(gradlePath);
-		if( ("".equals(gradleHomeToUse)) || (!gradleFile.exists()) ){
-			// If the location is not valid than show a dialog which prompts the user to goto the preferences page
-			CommonDialogs.showPreferencesDialog(GradleConstants.PREFERENCES_PAGE,
-					"Gradle installation is not correctly configured.\n\n"
-					+ "Please goto Window -> Preferences -> "+GradleConstants.PREFERENCE_PAGE_NAME
-					+" and configure the correct location");
-			return;
-		}			
+		String gradlePath = null;
+		boolean useWrapper = preferenceStore.getBoolean(GradleConstants.GRADLE_USE_WRAPPER);
+		if (useWrapper){
+			String file1 = configuration.getAttribute(GradleConstants.KEY_FILE_PATH,	"");
+			IPath ipath = ResourcesPlugin.getWorkspace().getRoot().findMember(file1).getLocation();
+			String filePath1 = ipath.removeLastSegments(1).toOSString();
+			gradlePath = filePath1 + (isWindows?"\\gradlew.bat":"/gradlew");
+			File gradlewFile = (new File(gradlePath));
+			useWrapper = gradlewFile.exists();
+		}
+		if (!useWrapper){
+			// Gradle installation path should be stored in preference.
+			String gradleHomeToUse = preferenceStore.getString(GradleConstants.GRADLE_HOME_TO_USE); //NPE!
+			gradlePath = gradleHomeToUse + (isWindows?"\\bin\\gradle.bat":"/bin/gradle");
+			// Check if the gradle location is correctly configured
+			File gradleFile = new File(gradlePath);
+			if( ("".equals(gradleHomeToUse)) || (!gradleFile.exists()) ){
+				// If the location is not valid than show a dialog which prompts the user to goto the preferences page
+				CommonDialogs.showPreferencesDialog(GradleConstants.PREFERENCES_PAGE,
+						"Gradle installation is not correctly configured.\n\n"
+						+ "Please goto Window -> Preferences -> "+GradleConstants.PREFERENCE_PAGE_NAME
+						+" and configure the correct location");
+				return;
+			}
+		}
 		cmdLine.add(gradlePath);
 		
 		//{ TODO should be special as --gui mode is likely doesn't care
@@ -86,7 +99,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 			}			
 		}
 		//{
-
+		
 		String file = configuration.getAttribute(GradleConstants.KEY_FILE_PATH,	"");
 		String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 		// path is relative, so cannot find it, unless get absolute path

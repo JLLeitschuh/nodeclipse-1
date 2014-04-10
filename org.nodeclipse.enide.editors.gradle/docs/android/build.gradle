@@ -25,7 +25,7 @@ buildscript {
     }
 }
 assert gradle.gradleVersion >= "1.10" // android plugin 0.9 requires Gradle 1.10, 1.11
-// after `gradle wrapper` it is possible use './gradlew build' with Gradle version specified
+// after `gradle wrapper` it is possible to use './gradlew build' with Gradle version specified
 task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
