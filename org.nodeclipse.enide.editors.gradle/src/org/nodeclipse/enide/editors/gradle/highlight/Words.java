@@ -13,6 +13,9 @@ public class Words {
             "srcFile", "srcDirs", "setRoot",//
             "defaultConfig", "signingConfigs", "buildTypes",//
             "productFlavors", "debug", "release",//
+            // Java keywords
+            "assert",
+            "if", "else"
     };
 
     public static final String[] RESERVEDWORDS = { "let", "yield",//
@@ -23,7 +26,8 @@ public class Words {
             "class", "float", "package", "throws",//
             "const", "goto", "private", "transient",//
             "debugger", "implements", "protected", "volatile",//
-            "double", "import", "public"//
+            "double", "import", "public",//
+            
     };
 
     public static final String[] NODE_WORDS = new String[] { "require", "__filename",//
