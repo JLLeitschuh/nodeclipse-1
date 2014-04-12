@@ -14,19 +14,32 @@ import org.eclipse.jface.text.rules.WhitespaceRule;
 import org.eclipse.jface.text.rules.WordRule;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
+import org.nodeclipse.enide.editors.gradle.Activator;
+import org.nodeclipse.enide.editors.gradle.preferences.GradleEditorConstants;
 
 /**
  * JavaScript code scanner for source code highlighting.
+ * @author Benjamin gurok
+ * @author Paul Verest
  */
 public class GradleCodeScanner extends RuleBasedScanner {
 
-    // TODO Preferences
-    private TextAttribute commentAttribute = new TextAttribute(EditorColors.getColor(new RGB(63, 127, 95)), null, SWT.NORMAL);
-    private TextAttribute docAttribute = new TextAttribute(EditorColors.getColor(new RGB(127, 127, 159)), null, SWT.NORMAL);
-    private TextAttribute keywordAttribute = new TextAttribute(EditorColors.getColor(new RGB(127, 0, 85)), null, SWT.BOLD);
-    private TextAttribute stringAttribute = new TextAttribute(EditorColors.getColor(new RGB(42, 0, 255)), null, SWT.NORMAL);
-    private TextAttribute numberAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
-    private TextAttribute normalAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
+    // DONE Preferences
+//    private TextAttribute commentAttribute = new TextAttribute(EditorColors.getColor(new RGB(63, 127, 95)), null, SWT.NORMAL);
+//    private TextAttribute docAttribute = new TextAttribute(EditorColors.getColor(new RGB(127, 127, 159)), null, SWT.NORMAL);
+//    private TextAttribute keywordAttribute = new TextAttribute(EditorColors.getColor(new RGB(127, 0, 85)), null, SWT.BOLD);
+//    private TextAttribute stringAttribute = new TextAttribute(EditorColors.getColor(new RGB(42, 0, 255)), null, SWT.NORMAL);
+//    private TextAttribute numberAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
+//    private TextAttribute normalAttribute = new TextAttribute(EditorColors.getColor(new RGB(0, 0, 0)), null, SWT.NORMAL);
+    private TextAttribute commentAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_COMMENT), null, SWT.NORMAL);
+    private TextAttribute docAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_DOC), null, SWT.NORMAL);
+    private TextAttribute keywordAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_KEYWORD), null, 
+    		Activator.getDefault().getPreferenceStore().getBoolean(GradleEditorConstants.KEY_BOLD_KEYWORD) ? SWT.BOLD : SWT.NORMAL);
+    private TextAttribute stringAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_STRING), null, SWT.NORMAL);
+    private TextAttribute numberAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_NUMBER), null, SWT.NORMAL);
+    private TextAttribute normalAttribute = new TextAttribute(EditorColors.getColor(GradleEditorConstants.KEY_COLOR_NORMAL), null, SWT.NORMAL);
+
+     
 
     public GradleCodeScanner() {
         createRules();

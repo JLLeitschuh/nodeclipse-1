@@ -7,12 +7,16 @@ package org.nodeclipse.enide.editors.gradle.highlight;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
+import org.nodeclipse.enide.editors.gradle.Activator;
 
 /**
  * Converts RGB to Color, reuses the existing Color instances. A singleton.
+ * @author Benjamin gurok
+ * @author Paul Verest
  */
 public class EditorColors {
 
@@ -26,6 +30,10 @@ public class EditorColors {
             intToColor.put(colorInt, color);
         }
         return color;
+    }
+    
+    public static Color getColor(String preference) {
+    	return getColor(PreferenceConverter.getColor(Activator.getDefault().getPreferenceStore(), preference));
     }
 
     private static Integer rgbToInteger(RGB rgb) {

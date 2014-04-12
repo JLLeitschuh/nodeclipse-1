@@ -14,4 +14,23 @@
             name="Nodeclipse/Enide minimal Editor for build.Gradle">
       </editor>
    </extension>
+   
+   
+  <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.nodeclipse.enide.editors.gradle.preferences.GradleEditorPreferenceInitializer">
+      </initializer>
+  </extension>
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+      		category="org.nodeclipse.enide.gradle.preferences.GradlePreferencePage"
+            class="org.nodeclipse.enide.editors.gradle.preferences.GradleEditorPreferencePage"
+            id="org.nodeclipse.enide.editors.gradle.preferences.GradleEditorPreferencePage"
+            name="Gradle Editor">
+      </page>
+   </extension>
+   
+   
 </plugin>
