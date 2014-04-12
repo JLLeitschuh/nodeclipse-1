@@ -1,11 +1,18 @@
 /*
 * Nodeclipse/Enide build.gradle template for classic Android project
-* https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/android/build.gradle
+*	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/android/build.gradle
 * Gradle Plugin User Guide:
-* http://tools.android.com/tech-docs/new-build-system/user-guide
+*	http://tools.android.com/tech-docs/new-build-system/user-guide
+* Usage
+*	1. put in project root
+*	2. check version numbers
+*	3. use from command line or with Gradle for Android	http://marketplace.eclipse.org/content/gradle
+* Support for this template
+*	https://github.com/nodeclipse/nodeclipse-1/issues/
 * History
-* 2014-03-13 android plugin updated to 0.9, see http://tools.android.com/tech-docs/new-build-system/migrating_to_09
-* 2014-04-01 check for gradle version
+*	2014-03-13 android plugin updated to 0.9, see http://tools.android.com/tech-docs/new-build-system/migrating_to_09
+*	2014-04-01 check for gradle version
+*	2014-04-10 wrapper and runAndroidApplication tasks
 * @author Paul Verest 
 */
 
@@ -14,10 +21,14 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.android.tools.build:gradle:0.9.+' //0.9.2
     }
 }
 assert gradle.gradleVersion >= "1.10" // android plugin 0.9 requires Gradle 1.10, 1.11
+// after `gradle wrapper` it is possible to use './gradlew build' with Gradle version specified
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
 apply plugin: 'android'
 
 dependencies {
@@ -26,8 +37,8 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 8
-    buildToolsVersion "19.0.0"
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
 
     sourceSets {
         main {
@@ -53,3 +64,16 @@ android {
         release.setRoot('build-types/release')
     }
 }
+
+task runAndroidApplication(type: Exec, dependsOn: ':installDebug') {
+	//TODO update Activity name below or find a way to get it from AndroidManifest.xml
+	if (System.properties['os.name'].toLowerCase().contains('windows')) {
+	    // windows
+	    commandLine 'cmd', '/c', 'adb', 'shell', 'am', 'start', '-n', "com.example.androidapptorun.MainActivity"      
+	} else {
+	    // linux 
+	    commandLine 'adb', 'shell', 'am', 'start', '-n', "com.example.androidapptorun.MainActivity"
+	}
+}
+
+

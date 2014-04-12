@@ -3,7 +3,7 @@
       id="org.nodeclipse.vertx.feature"
       label="Nodeclipse Vert.x"
       version="0.12.0.qualifier"
-      provider-name="Enide, Paul Verest &amp; other Nodeclipse authors. http://www.nodeclipse.org/">
+      provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
       Vert.x JS

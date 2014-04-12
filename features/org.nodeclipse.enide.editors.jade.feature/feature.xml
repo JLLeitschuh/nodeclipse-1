@@ -3,7 +3,7 @@
       id="org.nodeclipse.enide.editors.jade.feature"
       label="Minimalist Jade Editor"
       version="0.12.0.qualifier"
-      provider-name="Paul Verest">
+      provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
       Minimalist Jade Editor gives you minimal Editor for .jade files.

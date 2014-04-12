@@ -20,6 +20,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 
 	private DirectoryFieldEditor gradleHome;
 	private DirectoryFieldEditor gradleHomeToUse;
+	private BooleanFieldEditor gradleUseWrapper;
 	private DirectoryFieldEditor javaHomeToUse;
 	private StringFieldEditor gradleJvmOpts;
     
@@ -81,6 +82,8 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		//TODO show version in this Preference Page
 		gradleHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME_TO_USE, "Gradle home to use:", getFieldEditorParent());
 		addField(gradleHomeToUse);
+		gradleUseWrapper = new BooleanFieldEditor(GradleConstants.GRADLE_USE_WRAPPER,"use wrapper if `gralew[.bat]` is present (appears after `gradle wrapper`)", getFieldEditorParent());
+		addField(gradleUseWrapper);
 		javaHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_JAVA_HOME_TO_USE, "alternative JAVA_HOME to use:", getFieldEditorParent());
 		addField(javaHomeToUse);
 		gradleJvmOpts = new StringFieldEditor(GradleConstants.GRADLE_OPTS, "JVM options GRADLE_OPTS:", getFieldEditorParent());
@@ -99,8 +102,13 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,"--daemon	Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
         addField(gradleOptionDaemon);
 
+        
         gradleEnvVarAlternativeAndroidHome = new DirectoryFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME, "alternative ANDROID_HOME:", getFieldEditorParent());
 		addField(gradleEnvVarAlternativeAndroidHome);
+
+		passAllEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
+        		"pass all environment variables of Eclipse to launched app // incompatible with #129", getFieldEditorParent());
+        addField(passAllEnvVars);
         
         passAndroidSigningEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ANDROID_SIGNING_ENVIRONMENT_VARIABLES, 
         		"pass Android signing environment variables (4) // experimental, see #129", getFieldEditorParent());
@@ -114,9 +122,6 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         gradleEnvVarAlternativeKeyPassword = new StringFieldEditor(GradleConstants.GRADLE_ENVVAR_ALTERNATIVE_ANDROID_KEY_PASSWORD, "alternative KEY_PASSWORD:", getFieldEditorParent());
 		addField(gradleEnvVarAlternativeKeyPassword);
 		
-        passAllEnvVars = new BooleanFieldEditor(GradleConstants.PASS_ALL_ENVIRONMENT_VARIABLES, 
-        		"pass all environment variables of Eclipse to launched app // incompatible with #129", getFieldEditorParent());
-        addField(passAllEnvVars);
 	}
 
 

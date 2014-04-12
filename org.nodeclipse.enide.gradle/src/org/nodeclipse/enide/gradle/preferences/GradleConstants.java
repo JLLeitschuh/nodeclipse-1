@@ -24,6 +24,7 @@ public class GradleConstants {
 
 	public static final String GRADLE_HOME = "gradle_home";
 	public static final String GRADLE_HOME_TO_USE = "gradle_home_to_use";
+	public static final String GRADLE_USE_WRAPPER = "gradle_use_wrapper";
 	public static final String GRADLE_JAVA_HOME_TO_USE = "java_home_to_use";
 	public static final String GRADLE_OPTS = "gradle_opts";
 	public static final String GRADLE_PATH = "gradle_path";	
