@@ -6,12 +6,19 @@ Title:  Nodeclipse Help - Run/Debug with Monitor
 https://github.com/Nodeclipse/nodeclipse-1/issues/57
 running app.js with node-dev, forever, supervisor, nodemon etc
 
-Configure your source file monitor of your choice:
+Select monitor
 
-- `forever [action] [options] SCRIPT [script-options]`
-- `nodemon [your node app]`
-- `node-dev foo.js`
-- `supervisor [options] <program>`
+- https://www.npmjs.org/package/forever 
+- https://www.npmjs.org/package/nodemon 
+- https://www.npmjs.org/package/node-dev 
+- https://www.npmjs.org/package/supervisor
+
+They all have similar command line
+
+forever [action] [options] SCRIPT [script-options]   
+nodemon [your node app]   
+node-dev foo.js   
+supervisor [options] <program>  
 
 Below are some remarks about GitHub stars:
 
@@ -19,6 +26,15 @@ Below are some remarks about GitHub stars:
 - [node-dev](https://github.com/fgnass/node-dev) - 380 stars (doesn't require any configuration)
 - [nodemon](https://github.com/remy/nodemon) 1500 stars - support running .coffee
 - [supervisor](https://github.com/isaacs/node-supervisor) 1100 stars 
+
+
+After installing with `npm install * -g`, browse for CLI file
+
+e.g. `C:\Users\weibl\AppData\Roaming\npm\node_modules\forever\bin\forever`
+
+Configure path to your source file monitor in Preferences -> Nodeclipse -> Node monitor path
+
+
 
 ### Contribute
 
