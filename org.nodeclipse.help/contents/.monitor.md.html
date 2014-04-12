@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>C:\Users\weibl\git\Enide-nodeclipse-1\org.nodeclipse.help\contents\.monitor.md.html</title>
+<title>D:\workspaces\Nodeclispe-DEV\nodeclipse-1\org.nodeclipse.help\contents\.monitor.md.html</title>
 
 
 <style type="text/css">
@@ -450,15 +450,17 @@ function setDocumentScrollTop(ypos)
 </head>
 <body class="markdown-body">
 <p>Title: Nodeclipse Help - Run/Debug with Monitor</p> 
-<h2> <a name="rundebug-with-monitor" class="anchor" href="..md.html#rundebug-with-monitor"><span class="octicon octicon-link"></span></a>Run/Debug with Monitor</h2> 
+<h2> <a name="user-content-rundebug-with-monitor" class="anchor" href="..md.html#rundebug-with-monitor"><span class="octicon octicon-link"></span></a>Run/Debug with Monitor</h2> 
 <p><a href="https://github.com/Nodeclipse/nodeclipse-1/issues/57">https://github.com/Nodeclipse/nodeclipse-1/issues/57</a> running app.js with node-dev, forever, supervisor, nodemon etc</p> 
-<p>Configure your source file monitor of your choice:</p> 
+<p>Select monitor</p> 
 <ul> 
- <li><code>forever [action] [options] SCRIPT [script-options]</code></li> 
- <li><code>nodemon [your node app]</code></li> 
- <li><code>node-dev foo.js</code></li> 
- <li><code>supervisor [options] &lt;program&gt;</code></li> 
+ <li> <a href="https://www.npmjs.org/package/forever">https://www.npmjs.org/package/forever</a> </li> 
+ <li> <a href="https://www.npmjs.org/package/nodemon">https://www.npmjs.org/package/nodemon</a> </li> 
+ <li> <a href="https://www.npmjs.org/package/node-dev">https://www.npmjs.org/package/node-dev</a> </li> 
+ <li><a href="https://www.npmjs.org/package/supervisor">https://www.npmjs.org/package/supervisor</a></li> 
 </ul>
+<p>They all have similar command line</p> 
+<p>forever [action] [options] SCRIPT [script-options]<br /> nodemon [your node app]<br /> node-dev foo.js<br /> supervisor [options] </p> 
 <p>Below are some remarks about GitHub stars:</p> 
 <ul> 
  <li> <a href="https://github.com/nodejitsu/forever">forever</a> - 2700 stars</li> 
@@ -466,7 +468,10 @@ function setDocumentScrollTop(ypos)
  <li> <a href="https://github.com/remy/nodemon">nodemon</a> 1500 stars - support running .coffee</li> 
  <li> <a href="https://github.com/isaacs/node-supervisor">supervisor</a> 1100 stars </li> 
 </ul>
-<h3> <a name="contribute" class="anchor" href="..md.html#contribute"><span class="octicon octicon-link"></span></a>Contribute</h3> 
+<p>After installing with <code>npm install * -g</code>, browse for CLI file</p> 
+<p>e.g. <code>C:\Users\weibl\AppData\Roaming\npm\node_modules\forever\bin\forever</code></p> 
+<p>Configure path to your source file monitor in Preferences -&gt; Nodeclipse -&gt; Node monitor path</p> 
+<h3> <a name="user-content-contribute" class="anchor" href="..md.html#contribute"><span class="octicon octicon-link"></span></a>Contribute</h3> 
 <p><a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.help/contents/monitor.md" target="_blank">Edit online on GitHub</a></p>
 </body>
 </html>
