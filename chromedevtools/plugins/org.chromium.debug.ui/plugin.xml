@@ -514,4 +514,21 @@
       </action>
     </actionSet>
   </extension>
+  
+  <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.chromium.debug.ui.preferences.PreferenceInitializer">
+      </initializer>
+  </extension>
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+      		category="org.nodeclipse.ui.preferences.NodePreferencePage"
+            class="org.chromium.debug.ui.preferences.PreferencePage"
+            id="org.chromium.debug.ui.preferences.PreferencePage"
+            name="Chromium Debugger Editor">
+      </page>
+   </extension>
+
 </plugin>

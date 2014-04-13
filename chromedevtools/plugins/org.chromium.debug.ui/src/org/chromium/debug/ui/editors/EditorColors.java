@@ -7,6 +7,9 @@ package org.chromium.debug.ui.editors;
 import java.util.HashMap;
 import java.util.Map;
 
+//import org.chromium.debug.ui.Activator;
+import org.chromium.debug.ui.ChromiumDebugUIPlugin;
+import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
@@ -28,11 +31,11 @@ public class EditorColors {
     }
     return color;
   }
+  public static Color getColor(String preference) {
+  	return getColor(PreferenceConverter.getColor(ChromiumDebugUIPlugin.getDefault().getPreferenceStore(), preference));
+  }
 
   private static Integer rgbToInteger(RGB rgb) {
-    return
-        ((rgb.red & 0xFF) << 16) +
-        ((rgb.green & 0xFF) << 8) +
-        (rgb.blue & 0xFF);
+  	return ((rgb.red & 0xFF) << 16) + ((rgb.green & 0xFF) << 8) + (rgb.blue & 0xFF);
   }
 }

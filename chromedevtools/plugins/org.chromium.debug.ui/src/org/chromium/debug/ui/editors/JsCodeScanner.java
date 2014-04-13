@@ -4,6 +4,8 @@
 
 package org.chromium.debug.ui.editors;
 
+import org.chromium.debug.ui.ChromiumDebugUIPlugin;
+import org.chromium.debug.ui.preferences.PreferenceConstants;
 import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.jface.text.rules.BufferedRuleBasedScanner;
 import org.eclipse.jface.text.rules.EndOfLineRule;
@@ -29,10 +31,10 @@ public class JsCodeScanner extends BufferedRuleBasedScanner {
   private Token commentToken;
 
   private final TextAttribute commentAttribute =
-      new TextAttribute(EditorColors.getColor(new RGB(63, 127, 95)), null, SWT.NORMAL); //! hard-coded
+      new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_COMMENT), null, SWT.NORMAL);
 
   private final TextAttribute jsDocAttribute =
-      new TextAttribute(EditorColors.getColor(new RGB(127,127,159)), null, SWT.NORMAL); //! hard-coded
+      new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_DOC), null, SWT.NORMAL);
 
   public JsCodeScanner() {
     createRules();
@@ -51,22 +53,23 @@ public class JsCodeScanner extends BufferedRuleBasedScanner {
    */
   private void createRules() {
     Token keywordToken = new Token(
-        new TextAttribute(EditorColors.getColor(new RGB(127, 0, 85)), null, SWT.BOLD)); //! hard-coded
+        new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_KEYWORD), null, 
+        		ChromiumDebugUIPlugin.getDefault().getPreferenceStore().getBoolean(PreferenceConstants.KEY_BOLD_KEYWORD) ? SWT.BOLD : SWT.NORMAL));
 
     commentToken = new Token(commentAttribute);
 
     Token jsDocToken = new Token(jsDocAttribute);
 
     Token stringToken = new Token(
-        new TextAttribute(EditorColors.getColor(new RGB(42, 0, 255)), null, SWT.NORMAL)); //! hard-coded
+        new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_STRING), null, SWT.NORMAL));
 
     RGB blackRgb = new RGB(0, 0, 0);
 
     Token numberToken = new Token(
-        new TextAttribute(null, null, SWT.NORMAL)); //EditorColors.getColor(blackRgb) //! hard-coded
+        new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_NUMBER), null, SWT.NORMAL));
 
     Token normalToken = new Token(
-        new TextAttribute(null, null, SWT.NORMAL)); //EditorColors.getColor(blackRgb) //! hard-coded
+        new TextAttribute(EditorColors.getColor(PreferenceConstants.KEY_COLOR_NORMAL), null, SWT.NORMAL));
     setDefaultReturnToken(normalToken);
 
     setRules(new IRule[] {
