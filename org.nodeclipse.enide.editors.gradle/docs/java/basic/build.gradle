@@ -27,7 +27,9 @@ task wrapper(type: Wrapper) {
 repositories {
     // Use Maven Central for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
+    // see 50.6. Repositories http://www.gradle.org/docs/current/userguide/dependency_management.html
     mavenCentral()
+    //jcenter()
 }
 
 // In this section you declare the dependencies for your production and test code
