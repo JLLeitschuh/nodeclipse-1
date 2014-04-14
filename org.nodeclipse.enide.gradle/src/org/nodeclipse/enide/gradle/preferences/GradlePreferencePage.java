@@ -82,7 +82,8 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		//TODO show version in this Preference Page
 		gradleHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME_TO_USE, "Gradle home to use:", getFieldEditorParent());
 		addField(gradleHomeToUse);
-		gradleUseWrapper = new BooleanFieldEditor(GradleConstants.GRADLE_USE_WRAPPER,"use wrapper if `gralew[.bat]` is present (appears after `gradle wrapper`)", getFieldEditorParent());
+		gradleUseWrapper = new BooleanFieldEditor(GradleConstants.GRADLE_USE_WRAPPER,
+				"use wrapper if `gradlew[.bat]` is present (appears after `gradle wrapper`)", getFieldEditorParent());
 		addField(gradleUseWrapper);
 		javaHomeToUse = new DirectoryFieldEditor(GradleConstants.GRADLE_JAVA_HOME_TO_USE, "alternative JAVA_HOME to use:", getFieldEditorParent());
 		addField(javaHomeToUse);
@@ -97,9 +98,11 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         addField(gradleOptionInfo);
         gradleOptionQuiet = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_QUIET,"-q, --quiet Log errors only.", getFieldEditorParent());
         addField(gradleOptionQuiet);
-        gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,"--offline The build should operate without accessing network resources.", getFieldEditorParent());
+        gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,
+        		"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
-        gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,"--daemon Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
+        gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,
+        		"--daemon Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
         addField(gradleOptionDaemon);
 
         
