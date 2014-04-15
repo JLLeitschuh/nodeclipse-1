@@ -15,7 +15,7 @@ Marketplace: http://marketplace.eclipse.org/content/gradle
 
 Support: https://github.com/Nodeclipse/nodeclipse-1/issues
 
-- Minisite <http://www.nodeclipse.org/enide/gradle/>
+- Minisite <http://www.nodeclipse.org/projects/gradle>
 ( GitHub README has more information )
 
 ## Start & Preferences
