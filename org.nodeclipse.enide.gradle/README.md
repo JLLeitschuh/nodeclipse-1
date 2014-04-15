@@ -5,6 +5,27 @@
 </script>
 <script src="http://marketplace.eclipse.org/sites/all/modules/custom/eclipse_drigg_external/js/button.js" type="text/javascript"></script>
 
+# Gradle for Eclipse (by Nodeclipse/Enide)
+
+GitHub: 
+- main: https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.gradle 
+- editor: https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.editors.gradle/ 
+
+Marketplace: http://marketplace.eclipse.org/content/gradle
+
+Support: https://github.com/Nodeclipse/nodeclipse-1/issues
+
+- Minisite <http://www.nodeclipse.org/enide/gradle/>
+( GitHub README has more information )
+
+## Start & Preferences
+
+You don't have to configure Preferences to start using,  
+however looking to learn a bit will help.
+
+![](https://raw.githubusercontent.com/Nodeclipse/nodeclipse-1/master/org.nodeclipse.enide.gradle/docs/Preferences.png)
+
+
 ## Creating Gradle project
 
 Finally after comparing all solution, I think starting from `build.gradle` file can be convenient. 
@@ -71,14 +92,33 @@ or with [(Enide) Gradle for Eclipse, Jetty, Android](http://marketplace.eclipse.
   [1]: http://i.stack.imgur.com/q9RHN.png
   [2]: http://i.stack.imgur.com/ZGOah.png
 
-## org.nodeclipse.enide.gradle
+## Jetty
 
-![](docs/from-getting-started.PNG)
+As with Maven, your `build.gradle` should have jetty configuration 
+to enable `gradle jetty:run` Gradle start.
+
+See [#4 Running from Eclipse plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4)
+for [gradle-jetty-eclipse-plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin)
+that has support for jetty 7+
+
+## Android with Gradle for Eclipse
+
+Naturally <a href="http://marketplace.eclipse.org/content/android-development-tools-eclipse">Android Development Tools for Eclipse</a>
+ are required for Android Development. For the latest <code>build.gradle</code> template for classic Android project check 
+ <a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/android/build.gradle">gh.c/N/n-1/b/m/o.n.e.e.g/docs/android/build.gradle</a>.
+
+This lets create new Android project in Eclipse with ADT and use ADT tools for most of things,
+but additionally have newer build with gradle
+
+![](http://marketplace.eclipse.org/sites/default/files/styles/ds_solution_screenshot/public/EditBox-plugin-gradle-example.PNG?itok=Fe_8TGFM)
+
+and execute defined gradle tasks
+
+![](http://marketplace.eclipse.org/sites/default/files/styles/ds_solution_screenshot/public/Gradle-GUI.png)
+
+## org.nodeclipse.enide.gradle project
 
 `build.gradle` Run As Gradle GUI
-
-- Minisite <http://www.nodeclipse.org/enide/gradle/>
-- GitHub <https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle>
 
 *Description*:  
 Right-click any `.gradle` file, and select `Run As -> Gradle GUI`
@@ -96,20 +136,13 @@ then execution is via
 
 see [Gradle to execute Java class (without modifying build.gradle)](http://stackoverflow.com/questions/21358466/gradle-to-execute-java-class-without-modifying-build-gradle)
 
-### Jetty
-
-As with Maven, your `build.gradle` should have jetty configuration 
-to enable `gradle jetty:run` Gradle start.
-
-See [#4 Running from Eclipse plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4)
-for [gradle-jetty-eclipse-plugin](https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin)
-that has support for jetty 7+
-
 ### Daemon
 
 see [Chapter 19. The Gradle Daemon](?), [Appendix D. Gradle Command Line](?)
 
-Use Gradle daemon to speed up sequential gradle execution:
+Use Gradle daemon to speed up sequential gradle execution.
+
+It is enable by default since 0.15, however you can disable and do manually:
 
 launch `gradle --foreground -i` in a shell or configure Eclipse external tool:
 
@@ -120,8 +153,8 @@ launch `gradle --foreground -i` in a shell or configure Eclipse external tool:
 ### Developing 
 
 1. `git clone`;
-2. import this project and `org.nodeclipse.common` (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic)
- as "Existing Projects into Workspace".
+2. import this `org.nodeclipse.enide.gradle` project and `org.nodeclipse.common` (only 2 is enough) in Eclipse with PDE 
+(e.g. Eclipse Standard or Enide Studio) as "Existing Projects into Workspace".
 
 maven build is optional for full build with other plugins.
 
