@@ -102,6 +102,83 @@ C:\Program Files\Java\jdk1.8.0\bin>jrunscript.exe  -q
 Language ECMAScript ECMA - 262 Edition 5.1 implemention "Oracle Nashorn" 1.8.0
 </code></pre>
 
+### Examples
+
+#### Using threads in JavaScript
+
+From <http://www.infoq.com/articles/nashorn>
+
+```javascript
+// this is how we get access to Java class Thread 
+var Thread = Java.type("java.lang.Thread"); 
+
+// subclass with our run method 
+var MyThread = Java.extend(Thread, { 
+    run: function() { 
+        print("Run in separate thread"); 
+    } 
+}); 
+var th = new MyThread(); 
+th.start(); 
+th.join(); 
+```
+
+More
+
+```javascript
+var r = new java.lang.Runnable({
+    run: function() {
+        print("running...\n");
+    }
+});
+```
+
+#### Lambdas
+
+Compare
+
+```javascript
+var jsArray = [4,1,3,2]; 
+jsArray.forEach(function(el) { print(el) } ); 
+```
+
+and the same with Java Collections and lambda usage:
+
+```javascript
+var jsArray = [1,2,3,4];
+var list = java.util.Arrays.asList(jsArray);
+list.forEach(function(el) { print(el) } ); 
+```
+
+#### Scripting
+
+From <https://blogs.oracle.com/nashorn/entry/csi_nashorn_shell_scripting_in>
+
+```javascript
+#!/usr/bin/jjs
+# This script hunts down the change set associated with a
+# source file and a line number.
+#
+
+// Report proper command usage.
+function usage() {
+    error(<<EOS);
+usage: suspect javaFileName lineNumber
+    javaFileName - name of file in local mercurial repository
+    lineNumber   - file line number
+EOS
+}
+
+// Provide meaningful names for arguments.
+var fileName   = $ARG[0];
+var lineNumber = $ARG[1];
+
+// If arguments are missing, report proper usage.
+if (!fileName || !lineNumber) {
+    usage();
+}
+```
+
 ### Contribute
 
 <a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.help/contents/nashorn.md" target="_blank">Edit online on GitHub</a>
