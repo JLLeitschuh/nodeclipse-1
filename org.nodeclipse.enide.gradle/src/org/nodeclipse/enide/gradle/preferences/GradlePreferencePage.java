@@ -25,6 +25,8 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 	private StringFieldEditor gradleJvmOpts;
     
     private StringFieldEditor gradleOptions;
+    private StringFieldEditor gradleTask1;
+    private StringFieldEditor gradleTask2;
     private BooleanFieldEditor gradleOptionDebug;
     private BooleanFieldEditor gradleOptionInfo;
     private BooleanFieldEditor gradleOptionQuiet;
@@ -92,6 +94,10 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 		
 		gradleOptions = new StringFieldEditor(GradleConstants.GRADLE_OPTIONS, "Gradle options (gradle -h):", getFieldEditorParent());
         addField(gradleOptions);
+		gradleTask1 = new StringFieldEditor(GradleConstants.GRADLE_TASK1, "Gradle task1:", getFieldEditorParent());
+        addField(gradleTask1);
+        gradleTask2 = new StringFieldEditor(GradleConstants.GRADLE_TASK2, "Gradle task2:", getFieldEditorParent());
+        addField(gradleTask2);
         gradleOptionDebug = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DEBUG,"-d, --debug Log in debug mode (includes normal stacktrace).", getFieldEditorParent());
         addField(gradleOptionDebug);
         gradleOptionInfo = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_INFO,"-i, --info Set log level to info.", getFieldEditorParent());

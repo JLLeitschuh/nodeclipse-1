@@ -297,6 +297,124 @@
        </shortcut>   
    </extension>
 
+
+   <!-- for gradle task1 @since 0.15 -->
+	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType" 
+            modes="run" 
+            name="gradle task1">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.gradle.launch.task1.LaunchShortcut"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.gradle.launch.task1.LaunchShortcut"   
+             label= "gradle task1"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "*.gradle" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
+
+
+   <!-- for gradle task2 @since 0.15 -->
+	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType" 
+            modes="run" 
+            name="gradle task2">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.gradle.launch.task2.LaunchShortcut"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.gradle.launch.task2.LaunchShortcut"   
+             label= "gradle task2"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "*.gradle" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
+
    
    <!-- for GUI -->
 	<extension 

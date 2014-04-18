@@ -8,6 +8,8 @@ public class GradleConstants {
 	public static final String LAUNCH_DAEMON_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType";
 	public static final String LAUNCH_JETTY_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jetty.LaunchConfigurationType";
 	public static final String LAUNCH_JETTYECLIPSE_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType";
+	public static final String LAUNCH_TASK1_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType";
+	public static final String LAUNCH_TASK2_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType";
 	public static final String LAUNCHGUI_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launchgui.LaunchConfigurationType";
 	
 	public static final String PROCESS_MESSAGE = "Gradle Process";
@@ -29,6 +31,8 @@ public class GradleConstants {
 	public static final String GRADLE_OPTS = "gradle_opts";
 	public static final String GRADLE_PATH = "gradle_path";	
 	public static final String GRADLE_OPTIONS = "gradle_options";	
+	public static final String GRADLE_TASK1 = "gradle_task1";
+	public static final String GRADLE_TASK2 = "gradle_task2";
 	public static final String GRADLE_OPTION_DEBUG = "gradle_option_debug";
 	public static final String GRADLE_OPTION_INFO = "gradle_option_info";
 	public static final String GRADLE_OPTION_QUIET = "gradle_option_quiet";
