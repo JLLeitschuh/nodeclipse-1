@@ -12,4 +12,21 @@
             name="Minimalist Jade Editor">
       </editor>
    </extension>
+   
+  <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.nodeclipse.enide.editors.jade.preferences.JadePreferenceInitializer">
+      </initializer>
+  </extension>
+  <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+       category="org.nodeclipse.ui.preferences.NodePreferencePage"
+            class="org.nodeclipse.enide.editors.jade.preferences.JadePreferencePage"
+            id="org.nodeclipse.enide.editors.jade.preferences.JadePreferencePage"
+            name="Jade Editor">
+      </page>
+  </extension>
+     
 </plugin>
