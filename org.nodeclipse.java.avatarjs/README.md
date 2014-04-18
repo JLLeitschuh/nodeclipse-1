@@ -23,6 +23,7 @@ Read also built-in <kbd>F1</kbd>
 - https://avatar.java.net/
 - http://blog.jonasbandi.net/2014/03/running-nodejs-applications-on-jvm-with.html
 - http://strongloop.com/strongblog/how-to-run-node-js-on-the-jvm-with-avatar-js-and-loopback/
+- https://github.com/DJCordhose/NashornSandbox
 
 ## Developing
 

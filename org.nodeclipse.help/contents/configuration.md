@@ -14,10 +14,11 @@ Team -> Git -> History : Check "Follow renames"
 
 Switch to Node perspective (e.g. Window -> Open Perspective -> Other ... -> Node)
 
-Window -> Show View -> Other... -> REST Client -> REST Client Tool  
-or Ctrl+3 type `rest`
+[REST Client Tool](http://www.nodeclipse.org/restclient-tool/) is also nice to use in Debug perspective.
 
-REST Client Tool is also nice to use in Debug perspective.
+<kbd>Window -> Show View -> Other... -> REST Client -> REST Client Tool</kbd>  
+or <kbd>Ctrl+3</kbd> type `rest`
+
 
 #### Optional general Eclipse configuration
 

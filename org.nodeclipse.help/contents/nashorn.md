@@ -142,11 +142,11 @@ var jsArray = [4,1,3,2];
 jsArray.forEach(function(el) { print(el) } ); 
 ```
 
-and the same with Java Collections and lambda usage:
+and the same with Java Collections and lambda usage [1](http://stackoverflow.com/questions/23100392/java-lang-classcastexception-jdk-nashorn-internal-objects-nativearray-cannot-be):
 
 ```javascript
 var jsArray = [1,2,3,4];
-var list = java.util.Arrays.asList(jsArray);
+var list = Java.to(jsArray, Java.type('java.util.List'));
 list.forEach(function(el) { print(el) } ); 
 ```
 
