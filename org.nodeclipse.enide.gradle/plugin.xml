@@ -496,7 +496,7 @@
       <page
             class="org.nodeclipse.enide.gradle.preferences.GradlePreferencePage"
             id="org.nodeclipse.enide.gradle.preferences.GradlePreferencePage"
-            name="Gradle(Enide)">
+            name="Gradle EnIDE">
       </page>
    </extension>
 

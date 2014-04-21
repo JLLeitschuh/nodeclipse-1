@@ -265,7 +265,7 @@
       <page
             class="org.nodeclipse.enide.maven.preferences.MavenPreferencePage"
             id="org.nodeclipse.enide.maven.preferences.MavenPreferencePage"
-            name="Maven(Enide)">
+            name="Maven EnIDE">
       </page>
    </extension>
    

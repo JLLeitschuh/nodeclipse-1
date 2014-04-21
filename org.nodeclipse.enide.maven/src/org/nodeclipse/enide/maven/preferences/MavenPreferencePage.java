@@ -42,7 +42,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 //        	"\n"+
     		"Maven requires to set JAVA_HOME (that Eclipse does not use) and MAVEN_HOME environment variable to use from shell.\n"
     		+"MAVEN_HOME is to be folder where you extracted downloaded Maven distribution,"
-    		+" e.g. D:\\Progs\\Maven\\apache-maven-3.1.1\n" //D:\Progs\Maven\apache-maven-3.1.1
+    		+" e.g. D:\\Progs\\Maven\\apache-maven-3.2.1\n" //D:\Progs\Maven\apache-maven-3.1.1
     		+"Then it is easy to add mvn to Path like following string \"%JAVA_HOME%\\bin;%MAVEN_HOME%\\bin;\"."
         		);
     }
