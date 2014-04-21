@@ -449,12 +449,84 @@ function setDocumentScrollTop(ypos)
 
 </head>
 <body class="markdown-body">
-<h2> <a name="orgnodeclipseenidegradle" class="anchor" href="..md.html#orgnodeclipseenidegradle"><span class="octicon octicon-link"></span></a>org.nodeclipse.enide.gradle</h2> 
-<p><code>build.gradle</code> Run As Gradle GUI</p> 
+<h1> <a name="user-content-gradle-for-eclipse-by-nodeclipseenide" class="anchor" href="..md.html#gradle-for-eclipse-by-nodeclipseenide"><span class="octicon octicon-link"></span></a>Gradle for Eclipse (by Nodeclipse/Enide)</h1> 
+<p>GitHub: </p> 
 <ul> 
- <li>Minisite <a href="http://www.nodeclipse.org/enide/gradle/">http://www.nodeclipse.org/enide/gradle/</a> </li> 
- <li>GitHub <a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle">https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle</a> </li> 
+ <li>main: <a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.gradle">https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.gradle</a> </li> 
+ <li>editor: <a href="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.editors.gradle/">https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.editors.gradle/</a> </li> 
 </ul>
+<p>Marketplace: <a href="http://marketplace.eclipse.org/content/gradle">http://marketplace.eclipse.org/content/gradle</a></p> 
+<p>Support: <a href="https://github.com/Nodeclipse/nodeclipse-1/issues">https://github.com/Nodeclipse/nodeclipse-1/issues</a></p> 
+<ul> 
+ <li>Minisite <a href="http://www.nodeclipse.org/projects/gradle">http://www.nodeclipse.org/projects/gradle</a> ( GitHub README has more information )</li> 
+</ul>
+<h2> <a name="user-content-start--preferences" class="anchor" href="..md.html#start--preferences"><span class="octicon octicon-link"></span></a>Start &amp; Preferences</h2> 
+<p>You don't have to configure Preferences to start using,<br /> however looking to learn a bit will help.</p> 
+<p><a href="https://raw.githubusercontent.com/Nodeclipse/nodeclipse-1/master/org.nodeclipse.enide.gradle/docs/Preferences.png" target="_blank"><img src="https://raw.githubusercontent.com/Nodeclipse/nodeclipse-1/master/org.nodeclipse.enide.gradle/docs/Preferences.png" alt="" style="max-width:100%;" /></a></p> 
+<h2> <a name="user-content-creating-gradle-project" class="anchor" href="..md.html#creating-gradle-project"><span class="octicon octicon-link"></span></a>Creating Gradle project</h2> 
+<p>Finally after comparing all solution, I think starting from <code>build.gradle</code> file can be convenient. </p> 
+<p>Gradle distribution has <code>samples</code> folder with a lot of examples, and there is <code>gradle init --type basic</code> comand see <a href="http://www.gradle.org/docs/1.11/userguide/userguide_single.html#build_init_plugin">Chapter 47. Build Init Plugin</a>. But they all needs some editing.</p> 
+<p>You can use <a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/java/basic/build.gradle">template</a> below as well, then run <code>gradle initSourceFolders eclipse</code></p> 
+<pre><code>/*
+* Nodeclipse/Enide build.gradle template for basic Java project
+*   https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/java/basic/build.gradle
+* Initially asked on
+*   http://stackoverflow.com/questions/14017364/how-to-create-java-gradle-project
+* Usage
+*   1. create folder (or general Eclipse project) and put this file inside
+*   2. run `gradle initSourceFolders eclipse` or `gradle initSourceFolders idea`
+* @author Paul Verest; 
+* based on `gradle init --type basic`, that does not create source folders 
+*/
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+task initSourceFolders &lt;&lt; {
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use Maven Central for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    mavenCentral()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    //compile fileTree(dir: 'libs', include: '*.jar')
+    // The production code uses the SLF4J logging API at compile time
+    //compile 'org.slf4j:slf4j-api:1.7.5'
+
+    // Declare the dependency for your favourite test framework you want to use in your tests.
+    // TestNG is also supported by the Gradle Test task. Just change the
+    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
+    // 'test.useTestNG()' to your build script.
+    testCompile &quot;junit:junit:4.11&quot;
+}
+</code></pre> 
+<p>The result is like below. </p> 
+<p><a href="https://camo.githubusercontent.com/37a8fd42df48d88b9d1d0fa18389ba7214990ea9/687474703a2f2f692e737461636b2e696d6775722e636f6d2f713952484e2e706e67" target="_blank"><img src="https://camo.githubusercontent.com/37a8fd42df48d88b9d1d0fa18389ba7214990ea9/687474703a2f2f692e737461636b2e696d6775722e636f6d2f713952484e2e706e67" alt="overview" data-canonical-src="http://i.stack.imgur.com/q9RHN.png" style="max-width:100%;" /></a></p> 
+<p>That can be used without any Gradle plugin for Eclipse,<br /> or with <a href="http://marketplace.eclipse.org/content/gradle">(Enide) Gradle for Eclipse, Jetty, Android</a> alternative to <a href="http://marketplace.eclipse.org/content/gradle-integration-eclipse">Gradle Integration for Eclipse</a></p> 
+<p><a href="https://camo.githubusercontent.com/65a2f3f213925ccb6123df971d1bfb3ff36f8f8d/687474703a2f2f692e737461636b2e696d6775722e636f6d2f5a474f61682e706e67" target="_blank"><img src="https://camo.githubusercontent.com/65a2f3f213925ccb6123df971d1bfb3ff36f8f8d/687474703a2f2f692e737461636b2e696d6775722e636f6d2f5a474f61682e706e67" alt="editbox" data-canonical-src="http://i.stack.imgur.com/ZGOah.png" style="max-width:100%;" /></a></p> 
+<h2> <a name="user-content-jetty" class="anchor" href="..md.html#jetty"><span class="octicon octicon-link"></span></a>Jetty</h2> 
+<p>As with Maven, your <code>build.gradle</code> should have jetty configuration to enable <code>gradle jetty:run</code> Gradle start.</p> 
+<p>See <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4">#4 Running from Eclipse plugin</a> for <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin">gradle-jetty-eclipse-plugin</a> that has support for jetty 7+</p> 
+<h2> <a name="user-content-android-with-gradle-for-eclipse" class="anchor" href="..md.html#android-with-gradle-for-eclipse"><span class="octicon octicon-link"></span></a>Android with Gradle for Eclipse</h2> 
+<p>Naturally <a href="http://marketplace.eclipse.org/content/android-development-tools-eclipse">Android Development Tools for Eclipse</a> are required for Android Development. For the latest <code>build.gradle</code> template for classic Android project check <a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/android/build.gradle">gh.c/N/n-1/b/m/o.n.e.e.g/docs/android/build.gradle</a>.</p> 
+<p>This lets create new Android project in Eclipse with ADT and use ADT tools for most of things, but additionally have newer build with gradle</p> 
+<p><a href="https://camo.githubusercontent.com/b88f5cef1efd7324f2a4a0c21cce5926512ba90b/687474703a2f2f6d61726b6574706c6163652e65636c697073652e6f72672f73697465732f64656661756c742f66696c65732f7374796c65732f64735f736f6c7574696f6e5f73637265656e73686f742f7075626c69632f45646974426f782d706c7567696e2d677261646c652d6578616d706c652e504e473f69746f6b3d46655f385447464d" target="_blank"><img src="https://camo.githubusercontent.com/b88f5cef1efd7324f2a4a0c21cce5926512ba90b/687474703a2f2f6d61726b6574706c6163652e65636c697073652e6f72672f73697465732f64656661756c742f66696c65732f7374796c65732f64735f736f6c7574696f6e5f73637265656e73686f742f7075626c69632f45646974426f782d706c7567696e2d677261646c652d6578616d706c652e504e473f69746f6b3d46655f385447464d" alt="" data-canonical-src="http://marketplace.eclipse.org/sites/default/files/styles/ds_solution_screenshot/public/EditBox-plugin-gradle-example.PNG?itok=Fe_8TGFM" style="max-width:100%;" /></a></p> 
+<p>and execute defined gradle tasks</p> 
+<p><a href="https://camo.githubusercontent.com/00cb93a9c4171129131159a21b3cac9364853e9b/687474703a2f2f6d61726b6574706c6163652e65636c697073652e6f72672f73697465732f64656661756c742f66696c65732f7374796c65732f64735f736f6c7574696f6e5f73637265656e73686f742f7075626c69632f477261646c652d4755492e706e67" target="_blank"><img src="https://camo.githubusercontent.com/00cb93a9c4171129131159a21b3cac9364853e9b/687474703a2f2f6d61726b6574706c6163652e65636c697073652e6f72672f73697465732f64656661756c742f66696c65732f7374796c65732f64735f736f6c7574696f6e5f73637265656e73686f742f7075626c69632f477261646c652d4755492e706e67" alt="" data-canonical-src="http://marketplace.eclipse.org/sites/default/files/styles/ds_solution_screenshot/public/Gradle-GUI.png" style="max-width:100%;" /></a></p> 
+<h2> <a name="user-content-orgnodeclipseenidegradle-project" class="anchor" href="..md.html#orgnodeclipseenidegradle-project"><span class="octicon octicon-link"></span></a>org.nodeclipse.enide.gradle project</h2> 
+<p><code>build.gradle</code> Run As Gradle GUI</p> 
 <p><em>Description</em>:<br /> Right-click any <code>.gradle</code> file, and select <code>Run As -&gt; Gradle GUI</code></p> 
 <p>To run/execute with gradle add this to <code>build.gradle</code> </p> 
 <pre><code>task execute(type:JavaExec) {
@@ -466,21 +538,19 @@ function setDocumentScrollTop(ypos)
 <pre><code>gradle execute -PmainClass=runclass.RunClass 
 </code></pre> 
 <p>see <a href="http://stackoverflow.com/questions/21358466/gradle-to-execute-java-class-without-modifying-build-gradle">Gradle to execute Java class (without modifying build.gradle)</a></p> 
-<h3> <a name="jetty" class="anchor" href="..md.html#jetty"><span class="octicon octicon-link"></span></a>Jetty</h3> 
-<p>As with Maven, your <code>build.gradle</code> should have jetty configuration to enable <code>gradle jetty:run</code> Gradle start.</p> 
-<p>See <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin/issues/4">#4 Running from Eclipse plugin</a> for <a href="https://github.com/Khoulaiz/gradle-jetty-eclipse-plugin">gradle-jetty-eclipse-plugin</a> that has support for jetty 7+</p> 
-<h3> <a name="daemon" class="anchor" href="..md.html#daemon"><span class="octicon octicon-link"></span></a>Daemon</h3> 
+<h3> <a name="user-content-daemon" class="anchor" href="..md.html#daemon"><span class="octicon octicon-link"></span></a>Daemon</h3> 
 <p>see <a href="..md.html">Chapter 19. The Gradle Daemon</a>, <a href="..md.html">Appendix D. Gradle Command Line</a></p> 
-<p>Use Gradle daemon to speed up sequential gradle execution:</p> 
+<p>Use Gradle daemon to speed up sequential gradle execution.</p> 
+<p>It is enable by default since 0.15, however you can disable and do manually:</p> 
 <p>launch <code>gradle --foreground -i</code> in a shell or configure Eclipse external tool:</p> 
 <p><a href="docs/add-gradle-daemon-as-external-tool-1.PNG" target="_blank"><img src="docs/add-gradle-daemon-as-external-tool-1.PNG" alt="" style="max-width:100%;" /></a><br /><a href="docs/add-gradle-daemon-as-external-tool-2.PNG" target="_blank"><img src="docs/add-gradle-daemon-as-external-tool-2.PNG" alt="" style="max-width:100%;" /></a></p> 
-<h3> <a name="developing" class="anchor" href="..md.html#developing"><span class="octicon octicon-link"></span></a>Developing</h3> 
+<h3> <a name="user-content-developing" class="anchor" href="..md.html#developing"><span class="octicon octicon-link"></span></a>Developing</h3> 
 <ol> 
  <li> <code>git clone</code>;</li> 
- <li>import this project and <code>org.nodeclipse.common</code> (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic) as &quot;Existing Projects into Workspace&quot;.</li> 
+ <li>import this <code>org.nodeclipse.enide.gradle</code> project and <code>org.nodeclipse.common</code> (only 2 is enough) in Eclipse with PDE (e.g. Eclipse Standard or Enide Studio) as &quot;Existing Projects into Workspace&quot;.</li> 
 </ol>
 <p>maven build is optional for full build with other plugins.</p> 
-<h4> <a name="some-links" class="anchor" href="..md.html#some-links"><span class="octicon octicon-link"></span></a>Some links</h4> 
+<h4> <a name="user-content-some-links" class="anchor" href="..md.html#some-links"><span class="octicon octicon-link"></span></a>Some links</h4> 
 <ul> 
  <li><a href="http://www.javaworld.com/article/2071275/core-java/when-runtime-exec---won-t.html">When Runtime.exec() won't</a></li> 
 </ul>

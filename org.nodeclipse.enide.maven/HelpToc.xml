@@ -2,4 +2,5 @@
 <?NLS TYPE="org.eclipse.help.toc"?>
 
 <toc label="Enide Maven README" topic=".README.md.html">
+	<topic label="mvn -help"  href="maven-help.txt"/>
 </toc>

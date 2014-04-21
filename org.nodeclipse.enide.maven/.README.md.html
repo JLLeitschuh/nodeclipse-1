@@ -449,13 +449,13 @@ function setDocumentScrollTop(ypos)
 
 </head>
 <body class="markdown-body">
-<h1> <a name="enide-maven" class="anchor" href="..md.html#enide-maven"><span class="octicon octicon-link"></span></a>Enide Maven</h1> 
+<h1> <a name="user-content-enide-maven" class="anchor" href="..md.html#enide-maven"><span class="octicon octicon-link"></span></a>Enide Maven</h1> 
 <p>This is alternative and completion to m2e (Maven Eclipse Integration).</p> 
 <p>Launch build or execute Java class. Project does not need to be Maven project. Just <code>pom.xml</code> would be enough. (The project may be General, old classic Java, broken Maven or Gradle project.)</p> 
 <p>No miracles, this plugins just launches <code>mvn</code> with options, as you can do from command line. Full path to maven <code>mvn.bat</code> or <code>mvn</code> is used, so you can try different versions. Specify options to <code>mvn</code> that will be Workspace-wide. Executed string is shown is Console, so you can check and learn. </p> 
 <p>Hint increase Console buffer size in Preferences -&gt; Run\Debug -&gt; Console. and check other preferences there as well.</p> 
 <p><a href="http://stackoverflow.com/questions/16442292/cleaning-maven-m2e-cache-directory">About 2G in <code>.m2/repository/.cache/m2e</code></a> </p> 
-<h2> <a name="orgnodeclipseenidemaven" class="anchor" href="..md.html#orgnodeclipseenidemaven"><span class="octicon octicon-link"></span></a>org.nodeclipse.enide.maven</h2> 
+<h2> <a name="user-content-orgnodeclipseenidemaven" class="anchor" href="..md.html#orgnodeclipseenidemaven"><span class="octicon octicon-link"></span></a>org.nodeclipse.enide.maven</h2> 
 <ul> 
  <li>pom.xml Run As <code>mvn package</code> Maven build</li> 
  <li>*.java Run As <code>mvn compile exec:java -Dexec.mainClass=package.Class</code> </li> 
@@ -466,7 +466,7 @@ function setDocumentScrollTop(ypos)
 <p><a href="docs/enide-maven-run-as-mvn-package.png" target="_blank"><img src="docs/enide-maven-run-as-mvn-package.png" alt="" style="max-width:100%;" /></a></p> 
 <p><a href="docs/enide-maven-run-as-mvn-package-results-in-console.png" target="_blank"><img src="docs/enide-maven-run-as-mvn-package-results-in-console.png" alt="" style="max-width:100%;" /></a></p> 
 <p><a href="run-maven-build.png" target="_blank"><img src="run-maven-build.png" alt="" style="max-width:100%;" /></a></p> 
-<h3> <a name="tomcat-start" class="anchor" href="..md.html#tomcat-start"><span class="octicon octicon-link"></span></a>Tomcat start</h3> 
+<h3> <a name="user-content-tomcat-start" class="anchor" href="..md.html#tomcat-start"><span class="octicon octicon-link"></span></a>Tomcat start</h3> 
 <p>@since 0.11</p> 
 <p>Check <a href="http://tomcat.apache.org/maven-plugin">Apache Tomcat Maven Plugin</a> page.</p> 
 <p>Version 2.2 is release in Nov 2013. <a href="http://tomcat.apache.org/maven-plugin-2.2/index.html">http://tomcat.apache.org/maven-plugin-2.2/index.html</a></p> 
@@ -486,9 +486,10 @@ function setDocumentScrollTop(ypos)
 &lt;/pluginManagement&gt;
 </code></pre> 
 <p><a href="http://tomcat.apache.org/maven-plugin-2.2/context-goals.html">Only for Tomcat6 there is goal <code>:start</code></a> </p> 
-<pre><code>mvn tomcat6:start 
+<pre><code>mvn tomcat6:start
 </code></pre> 
-<h4> <a name="status" class="anchor" href="..md.html#status"><span class="octicon octicon-link"></span></a>Status</h4> 
+<p><a href="http://tomcat.apache.org/whichversion.html">Tomcat version differences</a> </p> 
+<h4> <a name="user-content-status" class="anchor" href="..md.html#status"><span class="octicon octicon-link"></span></a>Status</h4> 
 <pre><code>[INFO] --- tomcat6-maven-plugin:2.2:start (default-cli) @ mavenwar ---
 [INFO] Starting application at http://localhost:8080/mavenwar
 SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
@@ -503,7 +504,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.tomcat.maven:tomcat6-maven-plugin:2.2:start (default-cli) on project mavenwar: Cannot invoke Tomcat manager: Connection refused: connect -&gt; [Help 1]
 </code></pre> 
-<h3> <a name="jetty-start" class="anchor" href="..md.html#jetty-start"><span class="octicon octicon-link"></span></a>Jetty start</h3> 
+<h3> <a name="user-content-jetty-start" class="anchor" href="..md.html#jetty-start"><span class="octicon octicon-link"></span></a>Jetty start</h3> 
 <p>@since 0.11</p> 
 <p>For Jetty 7-8 <a href="https://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin">https://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin</a> For Jetty 9 onward <a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html">http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html</a> <strong>You need to use Maven 3 and Java 1.7 for this plugin.</strong> mvn -Djetty.port=9999 jetty:run</p> 
 <p>First, add jetty-maven-plugin to your pom.xml definition:</p> 
@@ -518,20 +519,20 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 </code></pre> 
 <p>This starts Jetty and serves up your project on http://localhost:8080/.</p> 
 <p>Jetty continues to run until you stop it. While it runs, it periodically scans for changes to your project files, so if you save changes and recompile your class files, Jetty redeploys your webapp, and you can instantly test the changes you just made.</p> 
-<h3> <a name="developing-with-pde" class="anchor" href="..md.html#developing-with-pde"><span class="octicon octicon-link"></span></a>Developing with PDE</h3> 
+<h3> <a name="user-content-developing-with-pde" class="anchor" href="..md.html#developing-with-pde"><span class="octicon octicon-link"></span></a>Developing with PDE</h3> 
 <p><code>git clone</code>, import this project and <code>org.nodeclipse.coomon</code> (only 2 is enough) in Eclipse with PDE (e.g. Eclipse SDK/Classic) as &quot;Existing Projects into Workspace&quot;.</p> 
 <p>From plugin.xml form click Run as Eclipse application.</p> 
 <p>If memory is not enough (getting <code>java.lang.OutOfMemoryError: PermGen space</code> error when when running or debugging), change in launch configuration for Eclipse Application -&gt; Arguments -&gt; VM Arguments</p> 
 <pre><code>-Dosgi.requiredJavaVersion=1.6 -Xms128m -Xmx784m -XX:MaxPermSize=128m -Xss2m
 </code></pre> 
 <p>Maven build is optional for full build with other plugins.</p> 
-<h4> <a name="links" class="anchor" href="..md.html#links"><span class="octicon octicon-link"></span></a>Links</h4> 
+<h4> <a name="user-content-links" class="anchor" href="..md.html#links"><span class="octicon octicon-link"></span></a>Links</h4> 
 <ol> 
  <li><a href="http://stackoverflow.com/questions/775709/eclipse-pde-navigator-view-treeselection-obtaining-the-file-type-and-name">http://stackoverflow.com/questions/775709/eclipse-pde-navigator-view-treeselection-obtaining-the-file-type-and-name</a></li> 
 </ol>
-<h3> <a name="idea" class="anchor" href="..md.html#idea"><span class="octicon octicon-link"></span></a>Idea</h3> 
+<h3> <a name="user-content-idea" class="anchor" href="..md.html#idea"><span class="octicon octicon-link"></span></a>Idea</h3> 
 <p>java-run-javac&amp;java -&gt; bad idea</p> 
-<h3> <a name="done" class="anchor" href="..md.html#done"><span class="octicon octicon-link"></span></a>DONE</h3> 
+<h3> <a name="user-content-done" class="anchor" href="..md.html#done"><span class="octicon octicon-link"></span></a>DONE</h3> 
 <p>1)</p> 
 <p>What is gradle analog for maven compile and run <code>mvn compile exec:java -Dexec.mainClass=example.Example</code></p> 
 <p>2)</p> 

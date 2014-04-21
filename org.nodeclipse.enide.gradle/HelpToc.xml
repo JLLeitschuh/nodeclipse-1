@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?NLS TYPE="org.eclipse.help.toc"?>
 
-<toc label="`build.gradle` Run As Gradle GUI" topic=".README.md.html">
+<toc label="Enide Gradle README" topic=".README.md.html">
+	<topic label="gradle -help"  href="gradle-help.txt"/>
 </toc>
