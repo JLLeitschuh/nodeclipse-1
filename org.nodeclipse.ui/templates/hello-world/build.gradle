@@ -10,11 +10,11 @@
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
 * @author Paul Verest
 */
+println GradleVersion.current().prettyPrint()
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-
-println GradleVersion.current().prettyPrint()
 
 repositories {
 	maven {

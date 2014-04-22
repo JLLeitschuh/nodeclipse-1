@@ -9,6 +9,7 @@
 * @author Paul Verest; 
 * based on `gradle init --type basic`, that does not create source folders 
 */
+println GradleVersion.current().prettyPrint()
 
 apply plugin: 'java'
 apply plugin: 'eclipse'

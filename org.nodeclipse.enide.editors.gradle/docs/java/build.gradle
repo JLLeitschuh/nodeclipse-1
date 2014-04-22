@@ -6,6 +6,7 @@
 * 1. create folder and put this file inside
 * 2. run `gradle initSourceFolders eclipse`
 */
+println GradleVersion.current().prettyPrint()
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
