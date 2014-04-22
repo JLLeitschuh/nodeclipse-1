@@ -136,6 +136,11 @@
 			<layout>p2</layout>
 			<url>http://axmor.bitbucket.org/typecs/stable/update-site/</url>
 		</repository>
+		<repository>
+			<id>io.emmet.eclipse</id>
+			<layout>p2</layout>
+			<url>http://emmet.io/eclipse/updates/</url>
+		</repository>
 		 
 		
 		<!-- General --> 

@@ -94,6 +94,7 @@
    -->
 
    <!--    
+   -->
    <category-def name="Tools" label="Enide Tools Collection">
       <description>
       	Nodeclipse Plugins List by Paul Verest,
@@ -110,6 +111,8 @@
  		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
  		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/
  		Nodeclipse EditBox (created in 2009-2011 by Piotr Metel) https://github.com/Nodeclipse/EditBox
+ 		TypEcs by axmor.com
+ 		Emmet (ex-Zen Coding) Eclipse plugin by Sergey Chikuyonok
       </description>
    </category-def>
    <feature url="features/org.nodeclipse.pluginslist.feature_0.1.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.1.0.qualifier">
@@ -139,9 +142,6 @@
    <feature url="features/net.sourceforge.shelled_2.0.3.qualifier.jar" id="net.sourceforge.shelled" version="2.0.3.qualifier">
       <category name="Tools"/>
    </feature>
-   <feature url="features/jsonedit-feature_0.9.7.qualifier.jar" id="jsonedit-feature" version="0.9.7.qualifier">
-      <category name="Tools"/>
-   </feature>
    <feature url="features/org.sweetlemonade.eclipse.json.feature_1.0.3.qualifier.jar" id="org.sweetlemonade.eclipse.json.feature" version="1.0.3.qualifier">
       <category name="Tools"/>
    </feature>
@@ -157,8 +157,9 @@
    <feature url="features/com.axmor.eclipse.typescript.feature_1.5.0.qualifier.jar" id="com.axmor.eclipse.typescript.feature" version="1.5.0.qualifier">
       <category name="Tools"/>
    </feature>
-   -->
-
+   <feature url="features/io.emmet.eclipse_1.0.0.qualifier.jar" id="io.emmet.eclipse" version="1.0.0.qualifier">
+      <category name="Tools"/>
+   </feature>
  
    <!--    
    <category-def name="General" label="General plugins">
@@ -207,6 +208,7 @@
    <!--    
    <category-def name="Other" label="Other Optional Tools">
       <description>
+      	JSON Edit by https://sourceforge.net/projects/eclipsejsonedit
         EclipseRunner by Lukasz Wachowicz and Bartosz Roznowski (Runner View) http://code.google.com/p/eclipserunnerplugin/
         PracticallyMacro by Ernest Pasour (Macros for Editors using BeanShell.org) http://sourceforge.net/projects/practicalmacro/ 
         SelectionExplorer by Sandip Chitales
@@ -214,6 +216,9 @@
  		(some parts are missing) Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html
       </description>
    </category-def>
+   <feature url="features/jsonedit-feature_0.9.7.qualifier.jar" id="jsonedit-feature" version="0.9.7.qualifier">
+      <category name="Tools"/>
+   </feature>
    <feature url="features/EclipseRunnerFeature_1.3.0.qualifier.jar" id="EclipseRunnerFeature" version="1.3.0.qualifier">
       <category name="Other"/>
    </feature>
