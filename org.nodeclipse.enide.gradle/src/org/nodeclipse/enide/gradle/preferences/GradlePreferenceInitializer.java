@@ -15,7 +15,7 @@ public class GradlePreferenceInitializer extends AbstractPreferenceInitializer {
 			store.setDefault(GradleConstants.GRADLE_HOME_TO_USE, envGradleHome );
 		}
 		
-		store.setDefault(GradleConstants.GRADLE_USE_WRAPPER, true );
+		//store.setDefault(GradleConstants.GRADLE_USE_WRAPPER, true );
 		
 		String envGradleOpts = System.getenv("GRADLE_OPTS");
 		if (envGradleOpts!=null)
