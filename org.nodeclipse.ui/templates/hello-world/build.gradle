@@ -7,7 +7,7 @@
 *	3. use from command line `gradle run` or http://marketplace.eclipse.org/content/gradle
 * Support for this template
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
-* @author Paul Verest, Opal 
+* @author Paul Verest
 */
 apply plugin: 'java'
 apply plugin: 'eclipse'
