@@ -1,10 +1,11 @@
 /*
 * Nodeclipse/Enide build.gradle template for Node.js/Avatar.js project
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
+* This file lets you optionally run Node.js app as Java Avatar.js app
 * Usage
 *	1. put in project root
 *	2. check version numbers
-*	3. use from command line `gradle run` or http://marketplace.eclipse.org/content/gradle
+*	3. use from command line `gradle run` or with http://marketplace.eclipse.org/content/gradle Run As ->
 * Support for this template
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
 * @author Paul Verest, Opal 
@@ -49,15 +50,15 @@ sourceSets {
 //http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
 task run(type: Exec) {
 	println 'runHelloWorld1'
-	// java -Djava.library.path=lib -jar lib/avatar-js.jar helloWorld.js
-    commandLine 'java', '-Djava.library.path=lib', '-jar', 'lib/avatar-js.jar', 'hello-world-server.js'
-    println 'runHelloWorld1 finished'
+	// java -Djava.library.path=lib -jar lib/avatar-js.jar hello-world-server.js
+	commandLine 'java', '-Djava.library.path=lib', '-jar', 'lib/avatar-js.jar', 'hello-world-server.js'
+	println 'runHelloWorld1 finished'
 }
 task run2(type: JavaExec) {
 	println 'runHelloWorld2'
-    args 'hello-world-server.js'
-    main 'com.oracle.avatar.js.Server'
-    systemProperties 'java.library.path':'lib'
-    classpath 'lib/avatar-js.jar'
-    println 'runHelloWorld2 finished'
+	args 'hello-world-server.js'
+	main 'com.oracle.avatar.js.Server'
+	systemProperties 'java.library.path':'lib'
+	classpath 'lib/avatar-js.jar'
+	println 'runHelloWorld2 finished'
 }
