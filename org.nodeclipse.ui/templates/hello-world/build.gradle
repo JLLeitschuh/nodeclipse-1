@@ -1,0 +1,63 @@
+/*
+* Nodeclipse/Enide build.gradle template for Node.js/Avatar.js project
+*	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
+* Usage
+*	1. put in project root
+*	2. check version numbers
+*	3. use from command line `gradle run` or http://marketplace.eclipse.org/content/gradle
+* Support for this template
+*	https://github.com/nodeclipse/nodeclipse-1/issues/
+* @author Paul Verest, Opal 
+*/
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+println "Gradle "+gradle.gradleVersion
+println "Java "+org.gradle.internal.jvm.Jvm.current()
+
+repositories {
+	maven {
+        url "https://maven.java.net/content/repositories/public/"
+    }
+}
+
+dependencies {
+    compile "com.oracle:avatar-js:0.10.25-SNAPSHOT"
+    compile "com.oracle:libavatar-js-win-x64:0.10.25-SNAPSHOT"
+}
+
+task copyLibs(type: Copy) {
+    from configurations.compile
+    into 'lib'
+    //TODO files need to be renamed
+}
+
+/*
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+}
+*/
+
+//http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
+task run(type: Exec) {
+	println 'runHelloWorld1'
+	// java -Djava.library.path=lib -jar lib/avatar-js.jar helloWorld.js
+    commandLine 'java', '-Djava.library.path=lib', '-jar', 'lib/avatar-js.jar', 'hello-world-server.js'
+    println 'runHelloWorld1 finished'
+}
+task run2(type: JavaExec) {
+	println 'runHelloWorld2'
+    args 'hello-world-server.js'
+    main 'com.oracle.avatar.js.Server'
+    systemProperties 'java.library.path':'lib'
+    classpath 'lib/avatar-js.jar'
+    println 'runHelloWorld2 finished'
+}
