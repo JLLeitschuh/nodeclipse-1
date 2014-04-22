@@ -297,6 +297,64 @@
        </shortcut>   
    </extension>
 
+   <!-- for gradle run @since 0.15 -->
+	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationType" 
+            modes="run" 
+            name="gradle run">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationType"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.gradle.launch.run.LaunchShortcut"   
+             icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.gradle.launch.run.LaunchShortcut"   
+             label= "gradle run"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationType" >
+          </configurationType>   
+          <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "*.gradle" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+          </contextualLaunch>   
+       </shortcut>   
+   </extension>
+
 
    <!-- for gradle task1 @since 0.15 -->
 	<extension 

@@ -8,6 +8,7 @@ public class GradleConstants {
 	public static final String LAUNCH_DAEMON_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.daemon.LaunchConfigurationType";
 	public static final String LAUNCH_JETTY_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jetty.LaunchConfigurationType";
 	public static final String LAUNCH_JETTYECLIPSE_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.jettyeclipse.LaunchConfigurationType";
+	public static final String LAUNCH_RUN_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.run.LaunchConfigurationType";
 	public static final String LAUNCH_TASK1_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType";
 	public static final String LAUNCH_TASK2_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType";
 	public static final String LAUNCHGUI_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.gradle.launchgui.LaunchConfigurationType";
