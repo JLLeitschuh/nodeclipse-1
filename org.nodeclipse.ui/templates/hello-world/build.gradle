@@ -14,8 +14,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
-println "Gradle "+gradle.gradleVersion
-println "Java "+org.gradle.internal.jvm.Jvm.current()
+println GradleVersion.current().prettyPrint()
 
 repositories {
 	maven {
