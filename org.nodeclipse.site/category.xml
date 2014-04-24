@@ -55,12 +55,14 @@
          TODO make them really optional.
       </description>
    </category-def>
+   <!--  
    <feature url="features/org.nodeclipse.bundle.coffee.feature_1.6.3.qualifier.jar" id="org.nodeclipse.bundle.coffee.feature" version="1.6.3.qualifier">
       <category name="npm-bundle"/>
    </feature>
    <feature url="features/org.nodeclipse.bundle.express.feature_3.2.5.qualifier.jar" id="org.nodeclipse.bundle.express.feature" version="3.2.5.qualifier">
       <category name="npm-bundle"/>
    </feature>
+   -->
    
 
 	<category-def name="Minimalist" label="Minimalist Tools">
@@ -113,6 +115,7 @@
  		Nodeclipse EditBox (created in 2009-2011 by Piotr Metel) https://github.com/Nodeclipse/EditBox
  		TypEcs by axmor.com
  		Emmet (ex-Zen Coding) Eclipse plugin by Sergey Chikuyonok
+ 		Rinzo XML Editor by Claudio Cancinos
       </description>
    </category-def>
    <feature url="features/org.nodeclipse.pluginslist.feature_0.1.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.1.0.qualifier">
@@ -160,6 +163,14 @@
    <feature url="features/io.emmet.eclipse_1.0.0.qualifier.jar" id="io.emmet.eclipse" version="1.0.0.qualifier">
       <category name="Tools"/>
    </feature>
+   <!--  
+   <feature url="features/ar.com.tadp.xml.rinzo.core.feature_0.0.0.qualifier.jar" id="ar.com.tadp.xml.rinzo.core.feature" version="0.0.0">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/ar.com.tadp.xml.rinzo.jdt.feature_0.0.0.qualifier.jar" id="ar.com.tadp.xml.rinzo.jdt.feature" version="0.0.0">
+      <category name="Tools"/>
+   </feature>
+   -->
  
    <!--    
    <category-def name="General" label="General plugins">

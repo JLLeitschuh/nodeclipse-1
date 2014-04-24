@@ -141,7 +141,14 @@
 			<layout>p2</layout>
 			<url>http://emmet.io/eclipse/updates/</url>
 		</repository>
-		 
+		<!--
+		<repository>
+			<id>Rinzo-XML-Editor</id>
+			<layout>p2</layout>
+			<url>http://editorxml.sourceforge.net/updates/</url>
+		</repository>
+		-->
+				 
 		
 		<!-- General --> 
 		<repository>
