@@ -12,17 +12,21 @@ import org.eclipse.debug.ui.ILaunchShortcut;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IFileEditorInput;
 import org.nodeclipse.enide.maven.preferences.MavenConstants;
 import org.nodeclipse.enide.maven.util.NodeclipseLogger;
-//import org.nodeclipse.ui.util.NodeclipseConsole;
 
 /**
  * Using "Run As" --> "mvn package Maven build" will lead here
  **/
 public class LaunchShortcut implements ILaunchShortcut {
+	
+    protected String getLaunchConfigurationTypeConstant() {
+		return MavenConstants.LAUNCH_CONFIGURATION_TYPE_ID;
+	}
+	
 
     /**
      * (non-Javadoc)
@@ -78,7 +82,7 @@ public class LaunchShortcut implements ILaunchShortcut {
         // check for an existing launch config for the file
         String path = file.getFullPath().toString();
         ILaunchManager launchManager = DebugPlugin.getDefault().getLaunchManager();
-        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(MavenConstants.LAUNCH_CONFIGURATION_TYPE_ID); 
+        ILaunchConfigurationType type = launchManager.getLaunchConfigurationType(getLaunchConfigurationTypeConstant()); 
         ILaunchConfiguration configuration = createLaunchConfiguration(type, path, file);
         DebugUITools.launch(configuration, mode);
         // then execution goes in LaunchConfigurationDelegate.java launch() method
