@@ -4,6 +4,8 @@ public class MavenConstants {
 	
 	public static final String PLUGIN_ID = "org.nodeclipse.enide.maven";
 	public static final String LAUNCH_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launch.LaunchConfigurationType";
+	public static final String LAUNCH_GOAL1_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType";
+	public static final String LAUNCH_GOAL2_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType";
 	public static final String LAUNCH_EXEC_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launchexec.LaunchConfigurationType";
 	public static final String LAUNCH_JETTY_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launch.jetty.LaunchConfigurationType";
 	public static final String LAUNCH_TOMCAT_CONFIGURATION_TYPE_ID = "org.nodeclipse.enide.maven.launch.tomcat.LaunchConfigurationType";
@@ -24,6 +26,8 @@ public class MavenConstants {
 	public static final String MAVEN_PATH = "maven_path"; //@deprecated	
 	public static final String MAVEN_OPTS = "maven_opts";
 	public static final String MAVEN_OPTIONS = "maven_options";
+	public static final String MAVEN_GOAL1 = "maven_goal1";
+	public static final String MAVEN_GOAL2 = "maven_goal2";
 	public static final String MAVEN_OPTION_SHOW_VERSION = "maven_option_show_version";
 	public static final String MAVEN_OPTION_DEBUG = "maven_option_debug";
 	public static final String MAVEN_OPTION_QUIET = "maven_option_quite";

@@ -60,6 +60,126 @@
        </shortcut>   
    </extension>
    
+   <!-- goal2 -->
+ 	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" 
+            modes="run" 
+            name="Maven goal2">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType"   
+             icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <!-- pom.xml run as goal2 -->  
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
+             icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
+             label= "mvn goal2 Maven goal"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "pom*.xml" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
+   
+   
+   <!-- goal2 -->
+ 	<extension 
+          point="org.eclipse.debug.core.launchConfigurationTypes"> 
+        <launchConfigurationType 
+            delegate="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" 
+            modes="run" 
+            name="Maven goal2">
+        </launchConfigurationType> 
+    </extension>
+    <extension
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
+       <launchConfigurationTypeImage   
+             configTypeID= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType"   
+             icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"   
+             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTypeImage" >   
+       </launchConfigurationTypeImage>   
+    </extension>
+    <extension
+        point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+        <launchConfigurationTabGroup   
+       		class= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >   
+		</launchConfigurationTabGroup>
+   </extension>
+    <!-- pom.xml run as goal2 -->  
+    <extension   
+          point= "org.eclipse.debug.ui.launchShortcuts" >   
+       <shortcut   
+             class= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
+             icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
+             label= "mvn goal2 Maven goal"   
+             modes= "run" >   
+          <configurationType
+                id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >
+          </configurationType>   
+           <contextualLaunch>   
+              <enablement>   
+                 <with   
+                       variable= "selection" >   
+                    <count   
+                          value= "1" >   
+                    </count>   
+                    <iterate>   
+                       <or>   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "pom*.xml" >   
+                          </test>   
+                       </or>   
+                    </iterate>   
+                 </with>   
+              </enablement>   
+           </contextualLaunch>   
+       </shortcut>   
+   </extension>
+   
+   
    <!-- jetty:run -->
  	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
