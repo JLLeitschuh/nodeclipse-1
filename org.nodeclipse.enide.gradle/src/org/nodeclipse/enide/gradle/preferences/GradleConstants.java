@@ -38,6 +38,7 @@ public class GradleConstants {
 	public static final String GRADLE_OPTION_INFO = "gradle_option_info";
 	public static final String GRADLE_OPTION_QUIET = "gradle_option_quiet";
 	public static final String GRADLE_OPTION_OFFLINE = "gradle_option_offline";
+	public static final String GRADLE_OPTION_TEST_SKIP = "gradle_option_test_skip";
 	public static final String GRADLE_OPTION_DAEMON = "gradle_option_daemon";
 	public static final String GRADLE_ENVVAR_ALTERNATIVE_ANDROID_HOME = "gradle_envvar_alternative_android_home";
 	/* http://stackoverflow.com/questions/18328730/how-to-create-a-release-signed-apk-file-using-gradle

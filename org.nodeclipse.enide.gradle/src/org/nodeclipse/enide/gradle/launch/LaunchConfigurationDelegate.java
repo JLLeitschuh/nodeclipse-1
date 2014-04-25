@@ -87,6 +87,10 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 			cmdLine.add("-q");
 		if (preferenceStore.getBoolean(GradleConstants.GRADLE_OPTION_OFFLINE))
 			cmdLine.add("--offline");
+		if (preferenceStore.getBoolean(GradleConstants.GRADLE_OPTION_TEST_SKIP)){
+			cmdLine.add("--exclude-task");
+			cmdLine.add("test");
+		}
 		if (preferenceStore.getBoolean(GradleConstants.GRADLE_OPTION_DAEMON))
 			cmdLine.add("--daemon");
 		

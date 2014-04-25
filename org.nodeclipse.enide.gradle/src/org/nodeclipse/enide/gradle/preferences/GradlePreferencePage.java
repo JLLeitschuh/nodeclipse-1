@@ -31,6 +31,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
     private BooleanFieldEditor gradleOptionInfo;
     private BooleanFieldEditor gradleOptionQuiet;
     private BooleanFieldEditor gradleOptionOffline;
+    private BooleanFieldEditor gradleOptionSkipTest;
     private BooleanFieldEditor gradleOptionDaemon;
     private DirectoryFieldEditor gradleEnvVarAlternativeAndroidHome;
     private BooleanFieldEditor passAndroidSigningEnvVars;
@@ -107,6 +108,9 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         gradleOptionOffline = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_OFFLINE,
         		"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
+        gradleOptionSkipTest = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_TEST_SKIP,
+        		"-x test (--exclude-task test) or use `gralde assemble`", getFieldEditorParent());
+        addField(gradleOptionSkipTest);
         gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,
         		"--daemon Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
         addField(gradleOptionDaemon);
