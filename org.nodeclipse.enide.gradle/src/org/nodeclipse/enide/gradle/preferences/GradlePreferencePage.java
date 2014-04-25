@@ -109,7 +109,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
         		"--offline The build should operate without accessing network resources.", getFieldEditorParent());
         addField(gradleOptionOffline);
         gradleOptionSkipTest = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_TEST_SKIP,
-        		"-x test (--exclude-task test) or use `gralde assemble`", getFieldEditorParent());
+        		"-x test (--exclude-task test) or use `gradle assemble`", getFieldEditorParent());
         addField(gradleOptionSkipTest);
         gradleOptionDaemon = new BooleanFieldEditor(GradleConstants.GRADLE_OPTION_DAEMON,
         		"--daemon Uses the Gradle daemon to run the build. Starts the daemon if not running.", getFieldEditorParent());
