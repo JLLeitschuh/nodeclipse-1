@@ -13,6 +13,7 @@
 *	2014-03-13 android plugin updated to 0.9, see http://tools.android.com/tech-docs/new-build-system/migrating_to_09
 *	2014-04-01 check for gradle version
 *	2014-04-10 wrapper and runAndroidApplication tasks
+*	2014-04-25 rename to run, add <<
 * @author Paul Verest 
 */
 println GradleVersion.current().prettyPrint()
@@ -67,7 +68,9 @@ android {
     }
 }
 
-task runAndroidApplication(type: Exec, dependsOn: ':installDebug') {
+// runAndroidApplication
+task run (type: Exec, dependsOn: ':installDebug') << {
+	println 'asdasd'
 	//TODO update Activity name below or find a way to get it from AndroidManifest.xml
 	if (System.properties['os.name'].toLowerCase().contains('windows')) {
 	    // windows
@@ -77,5 +80,3 @@ task runAndroidApplication(type: Exec, dependsOn: ':installDebug') {
 	    commandLine 'adb', 'shell', 'am', 'start', '-n', "com.example.androidapptorun.MainActivity"
 	}
 }
-
-

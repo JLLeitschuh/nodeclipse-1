@@ -8,6 +8,8 @@
 *	3. use from command line `gradle run` or with http://marketplace.eclipse.org/content/gradle Run As ->
 * Support for this template
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
+* History
+*	2014-04-25 rename to run, add <<
 * @author Paul Verest
 */
 println GradleVersion.current().prettyPrint()
@@ -44,16 +46,20 @@ sourceSets {
         }
     }
 }
+task initSourceFolders { // add << before { to prevent executing during configuration phase
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+   sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
 */
 
 //http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
-task run(type: Exec) {
+task run(type: Exec) <<{
 	println 'runHelloWorld1'
 	// java -Djava.library.path=lib -jar lib/avatar-js.jar hello-world-server.js
 	commandLine 'java', '-Djava.library.path=lib', '-jar', 'lib/avatar-js.jar', 'hello-world-server.js'
 	println 'runHelloWorld1 finished'
 }
-task run2(type: JavaExec) {
+task run2(type: JavaExec) <<{
 	println 'runHelloWorld2'
 	args 'hello-world-server.js'
 	main 'com.oracle.avatar.js.Server'

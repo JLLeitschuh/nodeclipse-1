@@ -92,6 +92,45 @@ or with [(Enide) Gradle for Eclipse, Jetty, Android](http://marketplace.eclipse.
   [1]: http://i.stack.imgur.com/q9RHN.png
   [2]: http://i.stack.imgur.com/ZGOah.png
 
+## Notes about tasks and Build Lifecycle
+
+from Chapter 55. The Build Lifecycle http://www.gradle.org/docs/current/userguide/build_lifecycle.html
+    
+    // in `settings.gradle`
+    // println 'This is executed during the initialization phase.'
+    
+    println 'This is executed during the configuration phase.'
+    
+    task configure {
+        println 'This is also executed during the configuration phase.'
+    }
+    
+    task execute << {
+        println 'This is executed during the execution phase.'
+    }
+
+run with `gradle help`
+
+output:
+
+    This is executed during the initialization phase.
+    This is executed during the configuration phase.
+    This is also executed during the configuration phase.
+    :help
+    
+    Welcome to Gradle 1.10.
+    
+    To run a build, run gradle <task> ...
+    
+    To see a list of available tasks, run gradle tasks
+    
+    To see a list of command-line options, run gradle --help
+    
+    BUILD SUCCESSFUL
+    
+    Total time: 1.882 secs
+
+
 ## Jetty
 
 As with Maven, your `build.gradle` should have jetty configuration 

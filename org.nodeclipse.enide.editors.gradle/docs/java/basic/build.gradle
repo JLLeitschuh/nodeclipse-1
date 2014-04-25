@@ -6,8 +6,10 @@
 * Usage
 *	1. create folder (or general Eclipse project) and put this file inside
 *	2. run `gradle initSourceFolders eclipse` or `gradle initSourceFolders idea`
-* @author Paul Verest; 
 * based on `gradle init --type basic`, that does not create source folders 
+* History
+*	2014-04-25 remove <<
+* @author Paul Verest; 
 */
 println GradleVersion.current().prettyPrint()
 
@@ -15,7 +17,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
-task initSourceFolders << {
+task initSourceFolders { // add << before { to prevent executing during configuration phase
    sourceSets*.java.srcDirs*.each { it.mkdirs() }
    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
 }
