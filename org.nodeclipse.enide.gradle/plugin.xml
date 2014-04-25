@@ -388,7 +388,7 @@
              class= "org.nodeclipse.enide.gradle.launch.task1.LaunchShortcut"   
              icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
              id= "org.nodeclipse.enide.gradle.launch.task1.LaunchShortcut"   
-             label= "gradle task1"   
+             label= "1 gradle task1"   
              modes= "run" >   
           <configurationType
                 id= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType" >
@@ -447,7 +447,7 @@
              class= "org.nodeclipse.enide.gradle.launch.task2.LaunchShortcut"   
              icon= "icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"
              id= "org.nodeclipse.enide.gradle.launch.task2.LaunchShortcut"   
-             label= "gradle task2"   
+             label= "2 gradle task2"   
              modes= "run" >   
           <configurationType
                 id= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType" >
