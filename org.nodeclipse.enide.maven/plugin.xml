@@ -60,43 +60,43 @@
        </shortcut>   
    </extension>
    
-   <!-- goal2 -->
+   <!-- goal1 -->
  	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
         <launchConfigurationType 
-            delegate="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationDelegate" 
-            id="org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" 
+            delegate="org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationDelegate" 
+            id="org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType" 
             modes="run" 
-            name="Maven goal2">
+            name="Maven goal1">
         </launchConfigurationType> 
     </extension>
     <extension
           point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
        <launchConfigurationTypeImage   
-             configTypeID= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType"   
+             configTypeID= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType"   
              icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"   
-             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTypeImage" >   
+             id= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationTypeImage" >   
        </launchConfigurationTypeImage>   
     </extension>
     <extension
         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
         <launchConfigurationTabGroup   
-       		class= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
-      		id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
-        	type= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >   
+       		class= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationTabGroup"   
+      		id= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationTabGroup"   
+        	type= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType" >   
 		</launchConfigurationTabGroup>
    </extension>
-    <!-- pom.xml run as goal2 -->  
+    <!-- pom.xml run as goal1 -->  
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
-             class= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
+             class= "org.nodeclipse.enide.maven.launch.goal1.LaunchShortcut"   
              icon= "icons/feather-ma16_bottom_right_corner_run_half_size.png"
-             id= "org.nodeclipse.enide.maven.launch.goal2.LaunchShortcut"   
-             label= "mvn goal2 Maven goal"   
+             id= "org.nodeclipse.enide.maven.launch.goal1.LaunchShortcut"   
+             label= "mvn goal1 Maven goal"   
              modes= "run" >   
           <configurationType
-                id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >
+                id= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType" >
           </configurationType>   
            <contextualLaunch>   
               <enablement>   

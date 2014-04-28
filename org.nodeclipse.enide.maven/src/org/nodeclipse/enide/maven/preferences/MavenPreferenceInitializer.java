@@ -18,6 +18,9 @@ public class MavenPreferenceInitializer extends AbstractPreferenceInitializer {
 		if (envMavenOpts!=null)
 		store.setDefault(MavenConstants.MAVEN_OPTS, envMavenOpts );
 		//store.setDefault(MavenConstants.MAVEN_OPTION_JETTY_PORT, "8080" );
+		
+		store.setDefault(MavenConstants.MAVEN_GOAL1, "verify" );
+		store.setDefault(MavenConstants.MAVEN_GOAL2, "install" );
 	}
 
 }

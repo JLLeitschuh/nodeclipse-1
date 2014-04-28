@@ -23,6 +23,9 @@ public class GradlePreferenceInitializer extends AbstractPreferenceInitializer {
 		//store.setDefault(MavenConstants.MAVEN_OPTION_JETTY_PORT, "8080" );
 		
 		store.setDefault(GradleConstants.GRADLE_OPTION_DAEMON, true );
+		
+		store.setDefault(GradleConstants.GRADLE_TASK1, "assemble" );
+		store.setDefault(GradleConstants.GRADLE_TASK2, "run" );
 	}
 
 }
