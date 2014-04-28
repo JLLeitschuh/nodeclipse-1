@@ -28,7 +28,7 @@ import org.nodeclipse.ui.util.NodeclipseConsole;
  * Launching `jjs` from Java 8.<br>
  * see LaunchConfigurationDelegate in .debug and .phantomjs module for comparison.
  * 
- * @since 0.7
+ * @since 0.15
  * @author Paul Verest
  */
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
@@ -53,7 +53,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 //			Dialogs.showPreferencesDialog("path to jjs util from Java 8 runtime is not correctly configured.\n\n"
 //					+ "Please goto Window -> Prefrences -> Nodeclipse and configure the correct location under 'JJS path:'");
 			CommonDialogs.showPreferencesDialog(AvatarjsConstants.PREFERENCES_PAGE,
-					"Java 8 Nashorn jjs location is not correctly configured.\n\n"
+					"Java 8 location is not correctly configured.\n\n"
 					+ "Please goto Window -> Preferences -> "+AvatarjsConstants.PREFERENCE_PAGE_NAME
 					+" and configure the correct location");
 			return;

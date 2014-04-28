@@ -3,10 +3,10 @@ package org.nodeclipse.java.avatarjs.preferences;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
+import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.nodeclipse.ui.Activator;
-import org.nodeclipse.ui.preferences.PreferenceConstants;
+import org.nodeclipse.java.avatarjs.Activator;
 
 /**
  * @author Paul Verest
@@ -14,14 +14,15 @@ import org.nodeclipse.ui.preferences.PreferenceConstants;
  */
 public class AvatarjsPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
-    private FileFieldEditor jjsPath;
-    private BooleanFieldEditor jjsJustJJS;
+    private FileFieldEditor javaPath;
+    private BooleanFieldEditor javaJustJava;
+    private StringFieldEditor javaOptions;
+    private StringFieldEditor javaOptionsToRunWithAvatarjs;
     
 	public AvatarjsPreferencePage(){
 	       super(GRID);
-	        // ! uses .ui
 	        setPreferenceStore(Activator.getDefault().getPreferenceStore());
-	        setDescription("Java 8 Nashorn jjs settings");
+	        setDescription("Java 8 Avatar.js settings");
 	}
 	
 	@Override
@@ -30,13 +31,19 @@ public class AvatarjsPreferencePage extends FieldEditorPreferencePage implements
 
 	@Override
 	protected void createFieldEditors() {
-	       jjsPath = new FileFieldEditor(PreferenceConstants.JJS_PATH, "`jjs` path:", getFieldEditorParent());
-	        addField(jjsPath);
-
-	        jjsJustJJS = new BooleanFieldEditor(PreferenceConstants.JJS_JUST_JJS, 
-	        		"just `jjs` (find `jjs` on PATH. Useful when there are 2 or more JDK 8 instances)", getFieldEditorParent());
-	        addField(jjsJustJJS);
-	        
+		javaPath = new FileFieldEditor(AvatarjsConstants.JAVA_PATH, "Java path:", getFieldEditorParent());
+	    addField(javaPath);
+	
+	    javaJustJava = new BooleanFieldEditor(AvatarjsConstants.JAVA_JUST_JAVA, 
+	    		"just `java` (find `java` on PATH. Useful when there are 2 or more JDK 8 instances)", getFieldEditorParent());
+	    addField(javaJustJava);
+	
+	    javaOptions = new StringFieldEditor(AvatarjsConstants.JAVA_OPTIONS, "`Java options:", getFieldEditorParent());
+        addField(javaOptions);
+    
+        javaOptionsToRunWithAvatarjs = new StringFieldEditor(AvatarjsConstants.JAVA_OPTIONS_TO_RUN_WITH_AVATARJS, 
+        		"`Java options to run with Avatar.js:", getFieldEditorParent());
+        addField(javaOptionsToRunWithAvatarjs);
 	}
 
 }
