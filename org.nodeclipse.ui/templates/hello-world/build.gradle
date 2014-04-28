@@ -1,5 +1,5 @@
 /*
-* Nodeclipse/Enide build.gradle template for Node.js/Avatar.js project
+* Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
 * This file lets you optionally run Node.js app as Java Avatar.js app
 * Usage
@@ -35,7 +35,7 @@ task copyLibs(type: Copy) {
     //TODO files need to be renamed
 }
 
-/*
+/* uncomment for adding Java sources
 sourceSets {
     main {
         java {
