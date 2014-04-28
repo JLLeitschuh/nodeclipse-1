@@ -129,7 +129,7 @@
 			<id>editbox</id>
 			<layout>p2</layout>
 			<!-- <url>http://editbox.sourceforge.net/updates/</url> -->
-			<url>http://dl.bintray.com/nodeclipse/EditBox/0.50.0/</url>
+			<url>http://dl.bintray.com/nodeclipse/EditBox/0.55.0/</url>
 		</repository>
 		<repository>
 			<id>axmor-typescript</id>
