@@ -221,7 +221,7 @@
 		<repository>
 			<id>fail-back</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.12/</url>
+			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.15/</url>
 		</repository>
 		
 		
