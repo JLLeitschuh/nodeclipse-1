@@ -42,6 +42,9 @@
    <feature url="features/org.nodeclipse.vertx.feature_0.0.0.qualifier.jar" id="org.nodeclipse.vertx.feature" version="0.0.0">
       <category name="Nodeclipse"/>
    </feature>
+   <feature url="features/org.nodeclipse.enide.editors.jade.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.editors.jade.feature" version="0.0.0">
+      <category name="Nodeclipse"/>
+   </feature>
    <!-- 
    -->
    <feature url="features/com.eclipsesource.jshint.feature" id="com.eclipsesource.jshint.feature" version="0.9.9.qualifier">
@@ -65,7 +68,7 @@
    </feature>
    
 
-	<category-def name="Minimalist" label="Minimalist Tools">
+	<category-def name="Minimalist" label="Enide Minimalist Tools">
       <description>
       	Enide Gradle,
       	Minimalist Gradle Editor by Paul Verest,
@@ -75,9 +78,6 @@
       </description>
 	</category-def>   
    <feature url="features/org.nodeclipse.enide.editors.gradle.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.editors.gradle.feature" version="0.0.0">
-      <category name="Minimalist"/>
-   </feature>
-   <feature url="features/org.nodeclipse.enide.editors.jade.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.editors.jade.feature" version="0.0.0">
       <category name="Minimalist"/>
    </feature>
    <feature url="features/org.nodeclipse.enide.gradle.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.gradle.feature" version="0.0.0">
