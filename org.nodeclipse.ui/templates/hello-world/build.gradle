@@ -1,15 +1,17 @@
 /*
-* Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project
+* Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project, version 0.15.1
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
 * This file lets you optionally run Node.js app as Java Avatar.js app
 * Usage
 *	1. put in project root
-*	2. check version numbers
-*	3. use from command line `gradle run` or with http://marketplace.eclipse.org/content/gradle Run As ->
+*	2. check version numbers, OS
+*	3. execute `gradle copyLibs` to get libraries locally (then you can proceed even without gradle)
+*	4. use from command line `gradle run` or with http://marketplace.eclipse.org/content/gradle Run As ->
 * Support for this template
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
 * History
 *	2014-04-25 rename to run, add <<
+*	2014-04-29 state that `gradle copyLibs` step is required
 * @author Paul Verest
 */
 println GradleVersion.current().prettyPrint()
