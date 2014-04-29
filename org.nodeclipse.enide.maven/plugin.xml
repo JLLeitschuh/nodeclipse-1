@@ -60,7 +60,7 @@
        </shortcut>   
    </extension>
    
-   <!-- goal1 -->
+    <!-- goal1 
  	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
         <launchConfigurationType 
@@ -85,8 +85,7 @@
       		id= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.enide.maven.launch.goal1.LaunchConfigurationType" >   
 		</launchConfigurationTabGroup>
-   </extension>
-    <!-- pom.xml run as goal1 -->  
+    </extension>
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
@@ -118,9 +117,10 @@
            </contextualLaunch>   
        </shortcut>   
    </extension>
+   -->
    
    
-   <!-- goal2 -->
+    <!-- goal2 
  	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
         <launchConfigurationType 
@@ -145,8 +145,7 @@
       		id= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.enide.maven.launch.goal2.LaunchConfigurationType" >   
 		</launchConfigurationTabGroup>
-   </extension>
-    <!-- pom.xml run as goal2 -->  
+    </extension>
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
@@ -178,6 +177,7 @@
            </contextualLaunch>   
        </shortcut>   
    </extension>
+   -->
    
    
    <!-- jetty:run -->

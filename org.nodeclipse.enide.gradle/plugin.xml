@@ -356,7 +356,7 @@
    </extension>
 
 
-   <!-- for gradle task1 @since 0.15 -->
+    <!-- for gradle task1 @since 0.15 
 	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
         <launchConfigurationType 
@@ -381,7 +381,7 @@
       		id= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.enide.gradle.launch.task1.LaunchConfigurationType" >   
 		</launchConfigurationTabGroup>
-   </extension>
+    </extension>
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
@@ -412,10 +412,10 @@
               </enablement>   
            </contextualLaunch>   
        </shortcut>   
-   </extension>
+    </extension>
+	-->
 
-
-   <!-- for gradle task2 @since 0.15 -->
+    <!-- for gradle task2 @since 0.15 
 	<extension 
           point="org.eclipse.debug.core.launchConfigurationTypes"> 
         <launchConfigurationType 
@@ -440,7 +440,7 @@
       		id= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationTabGroup"   
         	type= "org.nodeclipse.enide.gradle.launch.task2.LaunchConfigurationType" >   
 		</launchConfigurationTabGroup>
-   </extension>
+    </extension>
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
@@ -471,8 +471,8 @@
               </enablement>   
            </contextualLaunch>   
        </shortcut>   
-   </extension>
-
+    </extension>
+	-->
    
    <!-- for GUI -->
 	<extension 
