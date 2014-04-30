@@ -77,7 +77,7 @@ Not enought for release, e.g. because JSHint is external plugin and there are 20
 
 Before release
 
-	mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.15.0-SNAPSHOT
+`mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.15.1-SNAPSHOT -Pfull`
 
 
 [Maven](http://maven.apache.org/) build (using [Tycho plugin](http://eclipse.org/tycho/)) is headless build, that doesn't require Eclipse.

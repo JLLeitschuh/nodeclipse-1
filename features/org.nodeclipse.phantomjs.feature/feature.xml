@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.phantomjs.feature"
       label="Nodeclipse PhantomJS"
-      version="0.15.0.qualifier"
+      version="0.15.1.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
