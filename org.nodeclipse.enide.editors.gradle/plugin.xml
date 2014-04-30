@@ -11,7 +11,7 @@
             extensions="gradle"
             icon="icons/gradle-icon-16x16.png"
             id="org.nodeclipse.enide.editors.gradle.editors.GradleEditor"
-            name="Nodeclipse/Enide minimal Editor for build.Gradle">
+            name="Minimalist Gradle Editor">
       </editor>
    </extension>
    
