@@ -1,7 +1,7 @@
 
 # Minimalist Jade Editor
 
-see <http://jade-lang.com/>
+see <http://jade-lang.com/>, [#142](https://github.com/Nodeclipse/nodeclipse-1/issues/142) Express Template engines
 
 Only highlight HTML tags as keywords. Use [Nodeclipse EditBox](https://github.com/Nodeclipse/editbox) for background colors.
 
