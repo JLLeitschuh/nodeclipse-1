@@ -105,11 +105,14 @@ For the next time just select the zip entry from Work With drop-down list.
 
 #### Tools
 
-[PDE Incubator Dependency Visualization](http://www.eclipse.org/pde/incubator/dependency-visualization/)
+- [![InstallLink][1]](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1508744)
+ [PDE Incubator Dependency Visualization](http://www.eclipse.org/pde/incubator/dependency-visualization/) v0.5.0.200904151517
+ [mp](https://marketplace.eclipse.org/content/pde-incubator-dependency-visualization)
 
-Update site http://download.eclipse.org/eclipse/pde/incubator/visualization/site
+  [1]: http://marketplace.eclipse.org/sites/all/modules/custom/marketplace/images/installbutton.png
+
+Or use update site `http://download.eclipse.org/eclipse/pde/incubator/visualization/site`  
 Need to uncheck "Group items by category" for item to appear.
-It is version 0.5.0.20090415
 
 ![](src/site/markdown/org.nodeclipse.ui-dependants.png)  
 
