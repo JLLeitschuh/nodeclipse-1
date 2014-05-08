@@ -1,10 +1,11 @@
 /*
+*	http://www.nodeclipse.org/projects/gradle
 * Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project, version 0.15.1
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
 * This file lets you optionally run Node.js app as Java Avatar.js app
 * Usage
 *	1. put in project root
-*	2. check version numbers, OS
+*	2. check version numbers, OS (no x32 bit OS support)
 *	3. execute `gradle copyLibs` to get libraries locally (then you can proceed even without gradle)
 *	4. use from command line `gradle run` or with http://marketplace.eclipse.org/content/gradle Run As ->
 * Support for this template
@@ -54,7 +55,6 @@ task initSourceFolders { // add << before { to prevent executing during configur
 }
 */
 
-//http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
 task run(type: Exec) <<{
 	println 'runHelloWorld1'
 	// java -Djava.library.path=lib -jar lib/avatar-js.jar hello-world-server.js
