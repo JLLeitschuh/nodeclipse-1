@@ -321,7 +321,7 @@
             icon= "icons/npm/npm_bottom_right_corner_run_half_size.png"
             id= "org.nodeclipse.ui.npm.InstallLaunchShortcut"
             label= "npm install"
-            modes= "run, debug" >
+            modes= "run" >
          <configurationType
                 id= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
          </configurationType>
@@ -353,7 +353,7 @@
             icon= "icons/npm/npm_bottom_right_corner_run_half_size.png"
             id= "org.nodeclipse.ui.npm.LaunchShortcut"
             label= "npm ..."
-            modes= "run, debug" >
+            modes= "run" >
          <configurationType
                 id= "org.nodeclipse.ui.npm.LaunchConfigurationType" >
          </configurationType>
