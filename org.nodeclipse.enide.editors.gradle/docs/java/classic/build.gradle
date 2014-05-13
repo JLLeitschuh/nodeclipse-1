@@ -1,0 +1,38 @@
+/*
+*	http://www.nodeclipse.org/projects/gradle
+* build.gradle drop-in template for classic Eclipse (ant) Java project
+*	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/java/classic/build.gradle
+* Usage
+*	1. new Java project and put this file inside
+*	2. after dependency changed, run `gradle build eclipse`
+* History
+*	2014-05-13 organize section by plugin
+* @author Paul Verest 
+*/
+
+version = '1.0'
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    testCompile "junit:junit:4.11"
+}
+
+apply plugin: 'application'
+mainClassName = "com.example.MainClass"
+
+apply plugin: 'eclipse'
