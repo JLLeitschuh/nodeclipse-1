@@ -6,8 +6,10 @@
 *	1. new Java project and put this file inside
 *	2. after dependency changed, run `gradle build eclipse`
 * History
-*	2014-05-13 organize section by plugin
-* @author Paul Verest 
+*	2014-05-13 organize sections by plugins
+* @author Paul Verest
+* Refererences
+*	http://www.gradle.org/docs/current/dsl/org.gradle.plugins.ide.eclipse.model.EclipseProject.html 
 */
 
 version = '1.0'
