@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.jjs.feature"
       label="Nodeclipse Java 8 Nashorn JJS"
-      version="0.15.1.qualifier"
+      version="0.16.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">

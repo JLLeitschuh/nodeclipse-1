@@ -172,6 +172,16 @@
    </feature>
    -->
  
+ 
+   <category-def name="JavaTools" label="Java Tools">
+      <description>
+      	JDT Spelling by Stuart Hendren http://www.stuarthendren.net
+      </description>
+   </category-def>
+   <feature url="features/jdt.spelling.feature_0.0.0.qualifier.jar" id="jdt.spelling.feature" version="0.0.0">
+      <category name="JavaTools"/>
+   </feature>
+ 
    <!--    
    --> 
    <category-def name="General" label="General plugins">
@@ -189,7 +199,7 @@
    <feature url="features/com.xored.glance_1.1.1.qualifier.jar" id="com.xored.glance" version="1.1.1.qualifier">
       <category name="General"/>
    </feature>
-   <feature url="com.github.eclipsecolortheme.feature_0.13.0.qualifier.jar" id="com.github.eclipsecolortheme.feature" version="0.13.0.qualifier">
+   <feature url="com.github.eclipsecolortheme.feature_0.0.0.qualifier.jar" id="com.github.eclipsecolortheme.feature" version="0.0.0">
 	  <category name="General"/>
    </feature>
    <feature url="net.jeeeyul.eclipse.themes.feature_0.0.0.qualifier.jar" id="net.jeeeyul.eclipse.themes.feature" version="0.0.0">

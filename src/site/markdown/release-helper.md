@@ -23,3 +23,31 @@ http://marketplace.eclipse.org/content/maven/edit
 http://marketplace.eclipse.org/content/nodeclipse-git-addon/edit
 http://marketplace.eclipse.org/content/gradle
 http://marketplace.eclipse.org/content/vertx
+
+
+# Notes 2
+
+org.nodeclipse.mongodb.feature_0.15.1.201404300203.jar
+
+commit with close # issues
+
+rename zip
+copy to E:
+upload to bintray
+upload to sourceforge
+
+push to github
+Github release to add tag
+pull
+
+announce index.html 
+edit nodeclipse updates repository
+edit Enide eclipse-p2-composite-repository
+edit Enide-NodeX
+'0.12.0-201403310510'
+'0.15.1-201404300203'
+
+close issues, milestone on GitHUb
+
+http://marketplace.eclipse.org/content/nodeclipse/edit
+http://marketplace.eclipse.org/content/enide-eclipse-nodejs-ide/edit

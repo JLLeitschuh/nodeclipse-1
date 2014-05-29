@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.nodeclipse.nodeclipse-1</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.15.1-SNAPSHOT</version>
+		<version>0.16.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.nodeclipse.site</artifactId>
@@ -148,8 +148,16 @@
 			<url>http://editorxml.sourceforge.net/updates/</url>
 		</repository>
 		-->
-				 
 		
+				 
+		<!-- JavaTools -->
+		<repository>
+			<id>jdt.spelling.feature</id>
+			<layout>p2</layout>
+			<url>http://www.stuarthendren.net/update/</url>
+		</repository>
+		
+					
 		<!-- General --> 
 		<repository>
 			<id>it.unibz.instasearch.feature.indigo</id>
@@ -162,11 +170,16 @@
 			<url>http://eclipse-glance.googlecode.com/svn/site/</url>
 		</repository>
 		<repository>
+			<id>nodeclipse.github.io</id>
+			<layout>p2</layout>
+			<url>http://nodeclipse.github.io/updates/eclipse-color-theme/</url>
+		</repository>
+		<!-- 
+		<repository>
 			<id>com.github.eclipsecolortheme.feature</id>
 			<layout>p2</layout>
 			<url>http://eclipse-color-theme.github.com/update</url>
 		</repository>
-		<!-- 
 		<repository>
 			<id>net.jeeeyul.eclipse.themes.updatesite</id>
 			<layout>p2</layout>
