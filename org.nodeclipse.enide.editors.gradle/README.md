@@ -4,7 +4,7 @@ and play with Eclipse Editor API,
 and then maybe find some foundation for Editors in Nodeclipse
 
 If to continue, look at examples in `docs\`,
-and \src\org\nodeclipse\enide\editors\gradle\highlight\Words.java
+and [src/org/nodeclipse/enide/editors/gradle/highlight/Words.java](src/org/nodeclipse/enide/editors/gradle/highlight/Words.java)
 
 ## To Develop
 
