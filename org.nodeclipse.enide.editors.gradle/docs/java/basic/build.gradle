@@ -1,6 +1,6 @@
-/*
+/*		Basic
 *	http://www.nodeclipse.org/projects/gradle
-* Nodeclipse/Enide build.gradle template for basic Java project
+* Nodeclipse/Enide build.gradle template for basic Java project (with Maven standart folder layout)
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.gradle/docs/java/basic/build.gradle
 * Initially asked on
 *	http://stackoverflow.com/questions/14017364/how-to-create-java-gradle-project

@@ -1,6 +1,6 @@
-/*
+/*		Node.js
 *	http://www.nodeclipse.org/projects/gradle
-* Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project, version 0.15.1
+* Nodeclipse/Enide build.gradle template/drop-in for Node.js/Avatar.js project, version 0.16
 *	https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/hello-world/build.gradle
 * This file lets you optionally run Node.js app as Java Avatar.js app
 * Usage
@@ -13,6 +13,7 @@
 * History
 *	2014-04-25 rename to run, add <<
 *	2014-04-29 state that `gradle copyLibs` step is required
+*	2014-05-20 =['src'] instead of 'src'
 * @author Paul Verest
 */
 println GradleVersion.current().prettyPrint()
@@ -25,28 +26,32 @@ repositories {
 	maven {
         url "https://maven.java.net/content/repositories/public/"
     }
+    //mavenCentral()
+    //jcenter()
 }
 
 dependencies {
     compile "com.oracle:avatar-js:0.10.25-SNAPSHOT"
     compile "com.oracle:libavatar-js-win-x64:0.10.25-SNAPSHOT"
+    //compile fileTree(dir: 'libs', include: '*.jar')
+    //testCompile "junit:junit:4.11"
 }
 
 task copyLibs(type: Copy) {
     from configurations.compile
-    into 'lib'
+    into 'lib' // ! not libs
     //TODO files need to be renamed
 }
 
 /* uncomment for adding Java sources
 sourceSets {
     main {
-        java {
-            srcDir 'src'
-        }
-        resources {
-            srcDir 'src'
-        }
+        java.srcDirs = ['src']
+        resources.srcDirs = ['src']
+    }
+    test {
+        java.srcDirs = ['tests']
+        resources.srcDirs = ['tests']
     }
 }
 task initSourceFolders { // add << before { to prevent executing during configuration phase
