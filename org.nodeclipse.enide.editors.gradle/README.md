@@ -12,6 +12,6 @@ Read first at <http://www.nodeclipse.org/projects/gradle>
 
 ## To Develop
 
-- Import `org.nodeclipse.enide.editors.gradle` as existing Eclipse project in Eclipse with PDE (e.g. Eclipse Standard)
+- Import `org.nodeclipse.enide.editors.gradle` as existing Eclipse project in Eclipse with PDE (e.g. Eclipse Standard or Enide Studio)
 - open `plugins.xml`
 - click `Launch an Eclipse application in Debug mode`
