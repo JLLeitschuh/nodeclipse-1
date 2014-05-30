@@ -15,7 +15,8 @@ public class Words {
             "productFlavors", "debug", "release",//
             // Java keywords
             "assert",
-            "if", "else"
+            "if", "else",
+            "void"
     };
 
     public static final String[] RESERVEDWORDS = { "let", "yield",//
