@@ -16,10 +16,17 @@
 *	2014-04-10 wrapper and runAndroidApplication tasks
 *	2014-04-25 rename to run, add <<
 *	2014-05-23 defaut plugin version 0.10.x
+*	2014-06-06 show "boilerplate part"	
 * @author Paul Verest 
 */
 println GradleVersion.current().prettyPrint()
+assert gradle.gradleVersion >= "1.10" // android plugin 0.10 requires Gradle 1.10, 1.11, 1.12
+// after `gradle wrapper` it is possible to use './gradlew build' with Gradle version specified
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
 
+//{ "boilerplate part"
 buildscript {
     repositories {
         mavenCentral()
@@ -29,16 +36,19 @@ buildscript {
         classpath 'com.android.tools.build:gradle:0.10.+'
     }
 }
-assert gradle.gradleVersion >= "1.10" // android plugin 0.10 requires Gradle 1.10, 1.11, 1.12
-// after `gradle wrapper` it is possible to use './gradlew build' with Gradle version specified
-task wrapper(type: Wrapper) {
-    gradleVersion = '1.12'
-}
 apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     //androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3.1'
+    
+    // http://blog.futurice.com/android_unit_testing_in_ides_and_ci_environments
+    //androidTestCompile 'org.robolectric:robolectric:2.+'
+    //androidTestCompile 'junit:junit:4.+'
+    
+    // for multi-module project build (needs `settings.gradle`): 
+    // reference needed modules or App under test (for Eclipse Android Test project)
+    //compile project(':Module')
 }
 
 android {
@@ -69,6 +79,7 @@ android {
         release.setRoot('build-types/release')
     }
 }
+//} "boilerplate part"
 
 // runAndroidApplication
 task run (type: Exec, dependsOn: ':installDebug') << {

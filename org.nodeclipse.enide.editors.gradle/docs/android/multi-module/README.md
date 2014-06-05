@@ -7,6 +7,9 @@ In multi-module project `settting.gradle` is required to specify module location
  ( While for simple project you can play with build using `gradle -b` option
  to specify what `build.gradle` to use, e.g. `gradle -b second.gradle`,
  for multi-module project `settings.gradle` is the only way. )
+ 
+> `-b` allows to pass a different build script for a single-project build.
+> It is not meant to be used for multi-project builds, where `settings.gradle` alone determines where build scripts are located. 
 
 hierarchical project layout
 

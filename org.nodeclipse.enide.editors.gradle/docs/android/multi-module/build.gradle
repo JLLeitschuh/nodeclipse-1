@@ -9,6 +9,7 @@ buildscript {
     }
 }
 
+// using key Gradle features like the allprojects and subprojects keywords automatically cause your projects to be coupled. 
 /*
 allprojects {
     repositories {
