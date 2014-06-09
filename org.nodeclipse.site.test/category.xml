@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+
+   <category-def name="Tools" label="Enide Tools Collection">
+      <description>
+        eExplorer (embedded Explorer, Windows only) by Matthias Cullmann https://github.com/culmat/eExplorer, 
+      </description>
+   </category-def>
+   <feature url="features/com.github.culmat.eexplorer.feature_0.0.0.jar" id="com.github.culmat.eexplorer.feature" version="0.0.0" os="win32">
+      <category name="Tools"/>
+   </feature>
+   
+
+</site>

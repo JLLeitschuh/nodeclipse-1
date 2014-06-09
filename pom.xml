@@ -135,8 +135,8 @@
 
 		<!-- 
 		<module>org.nodeclipse.site</module>
-		 -->
 		<module>org.nodeclipse.updates</module>
+		 -->
 	</modules>
 
 	<profiles>
@@ -150,6 +150,12 @@
 	      <id>full</id>
 	      <modules>
 	        <module>org.nodeclipse.site</module>
+	      </modules>
+	    </profile>
+	    <profile>
+	      <id>test</id>
+	      <modules>
+	        <module>org.nodeclipse.site.test</module>
 	      </modules>
 	    </profile>
 	</profiles>

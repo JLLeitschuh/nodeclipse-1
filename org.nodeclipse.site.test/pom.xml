@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.nodeclipse.nodeclipse-1</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.16.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>org.nodeclipse.site.test</artifactId>
+	<packaging>eclipse-repository</packaging>
+
+	<name>org.nodeclipse.site.test</name>
+	<description>org.nodeclipse.site.test (p2 repository / update site)</description>
+
+	<repositories>
+		<repository>
+			<id>eexplorer</id>
+			<layout>p2</layout>
+			<url>http://culmat.github.io/eExplorer/updatesite/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.9</version>
+				<configuration>
+					<repositoryOwner>culmat</repositoryOwner>
+					<repositoryName>eExplorer</repositoryName>
+					<message>Releasing update site for ${project.version}</message>
+					<path>updatesite</path>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
+			
+		</plugins>
+	</build>
+</project>

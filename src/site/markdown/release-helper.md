@@ -38,7 +38,7 @@ upload to sourceforge
 
 push to github
 Github release to add tag
-pull
+pull to get tag
 
 announce index.html 
 edit nodeclipse updates repository
