@@ -17,6 +17,7 @@
 *	2014-04-25 rename to run, add <<
 *	2014-05-23 defaut plugin version 0.10.x
 *	2014-06-06 show "boilerplate part"	
+*	2014-06-17 defaut plugin version 0.11.x, requires buildToolsVersion "19.1.0"
 * @author Paul Verest 
 */
 println GradleVersion.current().prettyPrint()
@@ -26,34 +27,41 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
 
-//{ "boilerplate part"
+//{ "boilerplate part", possible extentions are commented
 buildscript {
     repositories {
         mavenCentral()
         //jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.10.+'
+        classpath 'com.android.tools.build:gradle:0.11.+'
     }
 }
 apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
+    
+    // to use appcomat: in SDK Manager install/update Extras / Android Support Repository
+    // or from command line
+    //	android list sdk
+    //	android update sdk --no-ui --filter <number>
+    //compile 'com.android.support:appcompat-v7:19.+'
+
+    // for multi-module project build (needs `settings.gradle`): 
+    // reference needed modules or App under test (for Eclipse Android Test project)
+    //compile project(':Module')
+
     //androidTestCompile 'com.jayway.android.robotium:robotium-solo:4.3.1'
     
     // http://blog.futurice.com/android_unit_testing_in_ides_and_ci_environments
     //androidTestCompile 'org.robolectric:robolectric:2.+'
     //androidTestCompile 'junit:junit:4.+'
-    
-    // for multi-module project build (needs `settings.gradle`): 
-    // reference needed modules or App under test (for Eclipse Android Test project)
-    //compile project(':Module')
 }
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.3"
+    buildToolsVersion "19.1.0" // "19.0.3" for 0.10
 
     sourceSets {
         main {
@@ -80,6 +88,17 @@ android {
     }
 }
 //} "boilerplate part"
+
+/*
+android {
+    lintOptions {
+        //checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+*/
 
 // runAndroidApplication
 task run (type: Exec, dependsOn: ':installDebug') << {
