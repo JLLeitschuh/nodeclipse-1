@@ -1,4 +1,4 @@
-# Nodeclipse - Node.js development in Eclipse-based IDE
+# Nodeclipse - Node.js & Java development in Eclipse-based IDE
 
 [![Build Status](https://secure.travis-ci.org/Nodeclipse/nodeclipse-1.png)](http://travis-ci.org/Nodeclipse/nodeclipse-1)
 <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=759140" title="Drag and drop into a running Eclipse
