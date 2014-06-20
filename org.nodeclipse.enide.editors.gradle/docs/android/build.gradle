@@ -8,6 +8,9 @@
 *	1. put in project root
 *	2. check version numbers
 *	3. use from command line or with Gradle for Android	http://marketplace.eclipse.org/content/gradle
+* Optionally: import in Android Studio 
+*	1. Ctrl+Alt+C (copy path of) build.gradle
+*	2. in Android Studio File -> Import Project , paste path of build.gradle
 * Support for this template
 *	https://github.com/nodeclipse/nodeclipse-1/issues/
 * History
