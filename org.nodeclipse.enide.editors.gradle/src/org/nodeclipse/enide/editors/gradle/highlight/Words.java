@@ -13,7 +13,7 @@ public class Words {
             "srcFile", "srcDirs", "setRoot",//
             "defaultConfig", "signingConfigs", "buildTypes",//
             "productFlavors", "debug", "release",//
-            "lintOptions",
+            "lintOptions", "packagingOptions",
             // Java keywords
             "assert",
             "if", "else",
