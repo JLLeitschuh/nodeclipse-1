@@ -22,6 +22,7 @@
 *	2014-06-06 show "boilerplate part"	
 *	2014-06-17 defaut plugin version 0.11.x, requires buildToolsVersion "19.1.0"
 *	2014-06-18 add gradle-android-command-plugin
+*	2014-06-24 add sdk-manager-plugin (enabled by default)
 * @author Paul Verest 
 */
 println GradleVersion.current().prettyPrint()
@@ -39,10 +40,14 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.11.+'
+    	// https://github.com/JakeWharton/sdk-manager-plugin
+    	classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.10.+'
         // https://github.com/novoda/gradle-android-command-plugin
         classpath 'com.novoda:gradle-android-command-plugin:1.2.1'
     }
 }
+// https://github.com/JakeWharton/sdk-manager-plugin says it hsould be applied before 'android' 
+apply plugin: 'android-sdk-manager'
 apply plugin: 'android'
 
 dependencies {
