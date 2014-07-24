@@ -41,7 +41,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		//store.setDefault(PreferenceConstants.NODE_DEBUG_NO_BREAK, ""); //default is empty,null,no
 		store.setDefault(PreferenceConstants.NODE_DEBUG_PORT, "5858");
 		
-		String path = "/usr/local/bin/node";
+		String node_path = "/usr/local/bin/node";
 		String node_monitor_path = "/usr/local/lib/node_modules/node-dev/bin/node-dev";
 		String express_path = "/usr/local/lib/node_modules/express/bin/express";
 		String coffee_path = "/usr/local/bin/coffee";
@@ -50,10 +50,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		File file;
 		if (OSUtils.isWindows()) {
 			store.setDefault(PreferenceConstants.NODE_JUST_NODE, true); 
-			path = "C:/Program Files/nodejs/node.exe".replace('/', File.separatorChar);
-			file = new File(path);
+			node_path = "C:/Program Files/nodejs/node.exe".replace('/', File.separatorChar);
+			file = new File(node_path);
 			if (!file.exists()) {
-				path = "C:/Program Files (x86)/nodejs/node.exe".replace('/', File.separatorChar);
+				node_path = "C:/Program Files (x86)/nodejs/node.exe".replace('/', File.separatorChar);
 			}
 			String windowsNodeModulesPath = System.getProperty("user.home") 
 					+ "/AppData/Roaming/npm/node_modules/";
@@ -62,9 +62,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			coffee_path = (windowsNodeModulesPath+"coffee-script/bin/coffee").replace('/', File.separatorChar);
 			typescript_compiler_path = (windowsNodeModulesPath+"typescript/bin/tsc").replace('/', File.separatorChar);
 		} else if (OSUtils.isMacOS()) {
-			file = new File(path);
+			file = new File(node_path);
 			if (!file.exists()) {
-				path = "/opt/local/bin/node";
+				node_path = "/opt/local/bin/node";
 			}
 			file = new File(node_monitor_path);
 			if (!file.exists()) {
@@ -86,9 +86,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		
 		// Check & set Preferences
 		
-		file = new File(path);
+		file = new File(node_path);
 		if (file.exists()) {
-			store.setDefault(PreferenceConstants.NODE_PATH, path);
+			store.setDefault(PreferenceConstants.NODE_PATH, node_path);
 		} else {
 			file = findNode();
 			if (file != null && file.exists()) {
