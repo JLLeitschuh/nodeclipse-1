@@ -109,8 +109,18 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
+	//} "boilerplate part"
+
+    defaultConfig { //gradle can override values in AndroidManifest.xml
+        //minSdkVersion 15
+        //targetSdkVersion 19
+        //versionCode 1
+        //versionName "1.0"
+        //applicationId  // (was packageName )
+        //applicationIdSuffix
+    }
+
 }
-//} "boilerplate part"
 
 /*
 android {
