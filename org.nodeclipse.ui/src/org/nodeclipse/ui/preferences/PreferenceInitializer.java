@@ -9,6 +9,7 @@ import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.Constants;
+import org.nodeclipse.ui.util.LogUtil;
 import org.nodeclipse.ui.util.NodeclipseConsole;
 import org.nodeclipse.ui.util.OSUtils;
 import org.nodeclipse.ui.util.ProcessUtils;
@@ -90,7 +91,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			store.setDefault(PreferenceConstants.NODE_PATH, path);
 		} else {
 			file = findNode();
-			if (file.exists()) {
+			if (file != null && file.exists()) {
 				store.setDefault(PreferenceConstants.NODE_PATH, file.getAbsolutePath());
 			}			
 		}
@@ -155,7 +156,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
             }
         }
 
-        throw new IllegalStateException("Could not find Node.js.");
+        // #158 do not throw Exception for not standard Node path or name, let Node path be empty in Preferences
+        //throw new IllegalStateException("Could not find Node.js.");
+        LogUtil.error("Node.js executable can't be found!");
+        return null;
     }
 
     private static String getNodeFileName() {
