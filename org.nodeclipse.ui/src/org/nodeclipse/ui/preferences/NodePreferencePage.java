@@ -44,6 +44,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     public NodePreferencePage() {
         super(GRID);
         setPreferenceStore(Activator.getDefault().getPreferenceStore());
+	    setImageDescriptor(Activator.getImageDescriptor("icons/node.png"));
         setDescription(
         	VersionUtil.getLongString()+
         	"\n"+

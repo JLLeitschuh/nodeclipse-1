@@ -6,7 +6,6 @@ import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 
 /**
@@ -21,8 +20,8 @@ public class PhantomjsPreferencePage extends FieldEditorPreferencePage implement
     
 	public PhantomjsPreferencePage(){
 	       super(GRID);
-	        // ! uses .ui
-	        setPreferenceStore(Activator.getDefault().getPreferenceStore());
+		    setPreferenceStore(org.nodeclipse.ui.Activator.getDefault().getPreferenceStore());
+		    setImageDescriptor(org.nodeclipse.phantomjs.Activator.getImageDescriptor("icons/phantomjs.png"));
 	        setDescription("PhantomJS settings");
 	}
 	

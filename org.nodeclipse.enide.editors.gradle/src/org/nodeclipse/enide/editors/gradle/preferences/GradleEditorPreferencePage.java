@@ -32,6 +32,7 @@ public class GradleEditorPreferencePage extends FieldEditorPreferencePage implem
         IPreferenceStore store = Activator.getDefault().getPreferenceStore();
         setPreferenceStore(store);
         setDescription("Gradle Editor Settings");
+        setImageDescriptor(Activator.getImageDescriptor("icons/gradle-icon-16x16.png"));
     }
 	@Override
 	public void init(IWorkbench workbench) {

@@ -44,6 +44,7 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
     public GradlePreferencePage() {
         super(GRID);
         setPreferenceStore(Activator.getDefault().getPreferenceStore());
+        setImageDescriptor(Activator.getImageDescriptor("icons/gradle-icon-16x16_bottom_right_corner_run_half_size.png"));
         setDescription(
 //        	VersionUtil.getLongString()+  //TODO make plugin to collect Eclipse utils
 //        	"\n"+

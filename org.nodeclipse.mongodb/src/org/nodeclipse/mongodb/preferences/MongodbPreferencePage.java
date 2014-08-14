@@ -18,10 +18,10 @@ public class MongodbPreferencePage extends FieldEditorPreferencePage implements 
     private StringFieldEditor mongoDBShellOptions;
     
 	public MongodbPreferencePage(){
-	       super(GRID);
-	        // ! uses .ui
-	        setPreferenceStore(Activator.getDefault().getPreferenceStore());
-	        setDescription("Mongodb Shell settings");
+	    super(GRID);
+	    setPreferenceStore(org.nodeclipse.ui.Activator.getDefault().getPreferenceStore());
+	    setImageDescriptor(org.nodeclipse.mongodb.Activator.getImageDescriptor("icons/mongodb.png"));
+	    setDescription("Mongodb Shell settings");
 	}
 	
 	@Override

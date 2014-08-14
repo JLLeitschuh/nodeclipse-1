@@ -1,5 +1,6 @@
 package org.nodeclipse.jjs;
 
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.nodeclipse.jjs.preferences.JJSConstants;
 import org.osgi.framework.BundleContext;
@@ -48,4 +49,8 @@ public class Activator extends AbstractUIPlugin {
 		return plugin;
 	}
 
+	public static ImageDescriptor getImageDescriptor(String path) {
+		return imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
+	
 }

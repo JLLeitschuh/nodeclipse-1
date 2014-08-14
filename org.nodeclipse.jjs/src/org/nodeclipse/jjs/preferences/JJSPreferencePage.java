@@ -5,7 +5,6 @@ import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 
 /**
@@ -19,8 +18,8 @@ public class JJSPreferencePage extends FieldEditorPreferencePage implements IWor
     
 	public JJSPreferencePage(){
 	       super(GRID);
-	        // ! uses .ui
-	        setPreferenceStore(Activator.getDefault().getPreferenceStore());
+	        setPreferenceStore(org.nodeclipse.ui.Activator.getDefault().getPreferenceStore());
+	        setImageDescriptor(org.nodeclipse.jjs.Activator.getImageDescriptor("icons/nashorn_16x16.png"));
 	        setDescription("Java 8 Nashorn jjs settings");
 	}
 	
