@@ -21,13 +21,15 @@
             id="org.nodeclipse.debug.launch.LaunchConfigurationType" 
             modes="run, debug" 
             name="Node Application">
-        </launchConfigurationType> 
+        </launchConfigurationType>
+        <!-- 
         <launchConfigurationType 
             delegate="org.nodeclipse.debug.launch.LaunchConfigurationDelegate" 
             id="org.nodeclipse.debug.launch.LaunchConfigurationTypeNodeWithMonitor" 
             modes="run, debug" 
             name="Node with monitor">
-        </launchConfigurationType> 
+        </launchConfigurationType>
+        --> 
         <launchConfigurationType 
             delegate="org.nodeclipse.debug.launch.LaunchConfigurationDelegate" 
             id="org.nodeclipse.debug.launch.LaunchConfigurationTypeCoffee" 
@@ -65,11 +67,13 @@
              icon= "icons/node_bottom_right_corner_run_half_size.png"   
              id= "org.nodeclipse.debug.launch.LaunchConfigurationTypeImage" >   
        </launchConfigurationTypeImage>
+       <!--
        <launchConfigurationTypeImage   
              configTypeID= "org.nodeclipse.debug.launch.LaunchConfigurationTypeNodeWithMonitor"   
              icon= "icons/node_with_monitor.png"   
              id= "org.nodeclipse.debug.launch.LaunchConfigurationTypeNodeWithMonitor.image" >   
        </launchConfigurationTypeImage>
+       -->
        <launchConfigurationTypeImage   
              configTypeID= "org.nodeclipse.debug.launch.LaunchConfigurationTypeCoffee"   
              icon= "icons/coffee_bottom_right_corner_run_half_size.png"   
@@ -131,7 +135,7 @@
        </shortcut>   
    </extension>
    
-   <!-- http://stackoverflow.com/questions/1437323/assigning-a-keyboard-shortcut-for-a-specific-eclipse-build-configuration -->
+    <!-- http://stackoverflow.com/questions/1437323/assigning-a-keyboard-shortcut-for-a-specific-eclipse-build-configuration -->
 	<extension point="org.eclipse.ui.commands">
 	    <command id="org.nodeclipse.nodejs.run"
 	             categoryId="org.eclipse.debug.ui.category.run"
@@ -151,6 +155,7 @@
 	 
       
    <!-- node run/debug with monitor-->
+   <!--
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   
        <shortcut   
@@ -186,6 +191,7 @@
            </contextualLaunch>   
        </shortcut>   
    </extension>
+   -->
    <!-- coffee run/debug -->
     <extension   
           point= "org.eclipse.debug.ui.launchShortcuts" >   

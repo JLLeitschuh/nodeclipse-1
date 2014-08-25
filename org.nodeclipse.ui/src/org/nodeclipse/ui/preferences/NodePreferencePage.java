@@ -32,7 +32,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private FileFieldEditor completionsPath;
     private BooleanFieldEditor nodeDebugNoBreak;
     private IntegerFieldEditor nodeDebugPort;
-    private FileFieldEditor nodeMonitorPath;
+    //private FileFieldEditor nodeMonitorPath;
     private FileFieldEditor expressPath;
     private FileFieldEditor coffeePath;
     //private BooleanFieldEditor coffeeJustCoffee;
@@ -116,8 +116,8 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         nodeDebugPort = new IntegerFieldEditor(PreferenceConstants.NODE_DEBUG_PORT, "Node debug port:", getFieldEditorParent());
         addField(nodeDebugPort);
 
-        nodeMonitorPath = new FileFieldEditor(PreferenceConstants.NODE_MONITOR_PATH, "Node monitor path:", getFieldEditorParent());
-        addField(nodeMonitorPath);
+//        nodeMonitorPath = new FileFieldEditor(PreferenceConstants.NODE_MONITOR_PATH, "Node monitor path:", getFieldEditorParent());
+//        addField(nodeMonitorPath);
 
         expressPath = new FileFieldEditor(PreferenceConstants.EXPRESS_PATH, "Express path:", getFieldEditorParent());
         addField(expressPath);
