@@ -15,6 +15,8 @@ public class PreferenceConstants {
 	public static final String NODE_APPLICATION_ARGUMENTS = "node_application_arguments";
 	public static final String NODE_ALLOW_MANY = "node_allow_many";
 	public static final String NODE_PASS_ALL_ENVIRONMENT_VARIABLES = "node_pass_all_environment_variables";
+	public static final String ADD_TERN_NATURE = "add_tern_nature";
+	public static final String ADD_TERN_NATURE_VALUE = "tern.eclipse.ide.core.ternnature";
 	public static final String NODE_SOURCES_PATH = "node_sources_lib_path";
 	public static final String USE_NODEJS_BASE_MODULE_DEFINITIONS = "use_nodejs_base_module_definitions";
 	public static final String USE_ORION_INDEX_FILES = "use_orion_index_files";

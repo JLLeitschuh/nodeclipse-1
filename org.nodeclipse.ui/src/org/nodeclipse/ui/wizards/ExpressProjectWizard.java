@@ -95,7 +95,7 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 		description.setNatureIds(newNatures);
 */
 		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean exists = isExistsProjectFolder(description);
+		final boolean exists = isExistingProjectFolder(description);
 		final String projectName = mainPage.getProjectName();
 		final String templateEngine = mainPage.getSelectedTemplateEngine();
 		final String stylesheetEngine = mainPage.getSelectedStylesheetEngine();

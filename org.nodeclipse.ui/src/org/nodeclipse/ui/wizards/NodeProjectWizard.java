@@ -83,7 +83,7 @@ public class NodeProjectWizard extends AbstractNodeProjectWizard implements INew
 		description.setNatureIds(newNatures);
 */
 		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean exists = isExistsProjectFolder(description);
+		final boolean existingProjectFolder = isExistingProjectFolder(description);
 		final String template = mainPage.getSelectedTemplate();
 
 		IRunnableWithProgress op = new IRunnableWithProgress() {
@@ -100,7 +100,7 @@ public class NodeProjectWizard extends AbstractNodeProjectWizard implements INew
 				}
 				
 				try {
-					if(!exists) {
+					if(!existingProjectFolder) {
 						// copy README.md, package.json & hello-world-server.js
 						generateTemplates("templates/common-templates", newProjectHandle);
 						//generateTemplates("templates/hello-world", newProjectHandle);

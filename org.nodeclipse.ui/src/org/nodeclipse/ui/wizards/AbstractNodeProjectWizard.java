@@ -21,6 +21,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
@@ -38,6 +39,7 @@ import org.eclipse.wst.jsdt.core.JavaScriptCore;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.nature.NodeNature;
 import org.nodeclipse.ui.perspectives.NodePerspective;
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.LogUtil;
 import org.osgi.framework.Bundle;
 
@@ -48,6 +50,8 @@ import org.osgi.framework.Bundle;
 
 @SuppressWarnings("restriction")
 public abstract class AbstractNodeProjectWizard extends Wizard implements INewWizard {
+	
+	protected IPreferenceStore store = org.nodeclipse.ui.Activator.getDefault().getPreferenceStore();
 
     private IWorkbench workbench;
     private IStructuredSelection selection;
@@ -102,10 +106,18 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
 		final IProjectDescription description = workspace.newProjectDescription(newProjectHandle.getName());
 		description.setLocationURI(location);
 		String[] natures = description.getNatureIds();
-		String[] newNatures = new String[natures.length + 2];
+		int numberOfAddedNatures = 2;
+		boolean addTernNature = store.getBoolean(PreferenceConstants.ADD_TERN_NATURE);
+		if (addTernNature){
+			numberOfAddedNatures++;
+		}
+		String[] newNatures = new String[natures.length + numberOfAddedNatures];
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
 		newNatures[natures.length] = getProjectNature();
 		newNatures[natures.length+1] = JavaScriptCore.NATURE_ID;
+		if (addTernNature){
+			newNatures[natures.length+2] = PreferenceConstants.ADD_TERN_NATURE_VALUE;
+		}		
 		description.setNatureIds(newNatures);    	
 		
 		return description;
@@ -192,7 +204,7 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
 		triggerClean(projectHandle, builderId);
 	}
 	
-	protected boolean isExistsProjectFolder(IProjectDescription description) {
+	protected boolean isExistingProjectFolder(IProjectDescription description) {
 		URI location = description.getLocationURI();
 		String name = description.getName();
 		

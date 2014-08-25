@@ -34,6 +34,8 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		
 		store.setDefault(PreferenceConstants.NODE_ALLOW_MANY, true);
 		
+		store.setDefault(PreferenceConstants.ADD_TERN_NATURE, true);
+		
 		store.setDefault(PreferenceConstants.USE_NODEJS_BASE_MODULE_DEFINITIONS, true);
 		store.setDefault(PreferenceConstants.USE_ORION_INDEX_FILES, true);
 		store.setDefault(PreferenceConstants.USE_COMPLETIONS_JSON, true);
