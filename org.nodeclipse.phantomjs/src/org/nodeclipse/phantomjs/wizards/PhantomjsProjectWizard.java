@@ -82,7 +82,7 @@ public class PhantomjsProjectWizard extends AbstractPhantomjsProjectWizard imple
 		description.setNatureIds(newNatures);
 */
 		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean exists = isExistsProjectFolder(description);
+		final boolean exists = isExistingProjectFolder(description);
 
 		IRunnableWithProgress op = new IRunnableWithProgress() {
 			@Override
