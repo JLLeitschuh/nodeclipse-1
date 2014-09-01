@@ -84,7 +84,7 @@ public class VertxProjectWizard extends AbstractVertxProjectWizard implements IN
 		description.setNatureIds(newNatures);
 */
 		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean exists = isExistsProjectFolder(description);
+		final boolean exists = isExistingProjectFolder(description);
 
 		IRunnableWithProgress op = new IRunnableWithProgress() {
 			@Override
