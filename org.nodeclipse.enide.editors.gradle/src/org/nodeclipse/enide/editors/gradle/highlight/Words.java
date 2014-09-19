@@ -7,6 +7,7 @@ public class Words {
             "repositories", "dependencies", "test",
             "version","group", "name",
             "buildscript", 
+            "allprojects", "subprojects", "project",
             "plugins", //since 2.1
             
             "android", "compileSdkVersion", "buildToolsVersion",//
