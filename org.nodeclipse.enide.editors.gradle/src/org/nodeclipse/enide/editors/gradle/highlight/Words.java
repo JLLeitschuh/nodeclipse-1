@@ -2,24 +2,33 @@ package org.nodeclipse.enide.editors.gradle.highlight;
 
 public class Words {
 
-    public static final String[] KEYWORDS = 
-    	{ "task", "apply", "sourceCompatibility", 
-            "repositories", "dependencies", "test",
-            "version","group", "name",
-            "buildscript", 
-            "allprojects", "subprojects", "project",
-            "plugins", //since 2.1
-            
-            "android", "compileSdkVersion", "buildToolsVersion",//
-            "sourceSets", "main", "manifest",//
-            "srcFile", "srcDirs", "setRoot",//
-            "defaultConfig", "signingConfigs", "buildTypes",//
-            "productFlavors", "debug", "release",//
-            "lintOptions", "packagingOptions",
-            // Java keywords
-            "assert",
-            "if", "else",
-            "void"
+    public static final String[] KEYWORDS = {
+		// Java keywords
+        "assert",
+        "if", "else",
+        "void",
+        "new", "return", 
+        
+        // Groovy stuff
+        "def", 
+        
+		// Gradle
+		"task", "apply", "sourceCompatibility", 
+        "repositories", "dependencies", "test",
+        "version","group", "name",
+        "buildscript", 
+        "allprojects", "subprojects", "project",
+        "plugins", //since 2.1
+        
+        // Android plugin
+        "android", "compileOptions", 
+        "compileSdkVersion", "buildToolsVersion",//
+        "sourceSets", "main", "manifest",//
+        "srcFile", "srcDirs", "setRoot",//
+        "defaultConfig", "signingConfigs", "buildTypes",//
+        "productFlavors", "debug", "release",//
+        "lintOptions", "packagingOptions",
+
     };
 
     public static final String[] RESERVEDWORDS = { "let", "yield",//
