@@ -126,6 +126,11 @@
                           <test   
                                 property= "org.eclipse.debug.ui.matchesPattern"   
                                 value= "*.njs" >   
+                          </test>
+                          <!-- for Express 4.x -->   
+                          <test   
+                                property= "org.eclipse.debug.ui.matchesPattern"   
+                                value= "www" >   
                           </test>   
                        </or>   
                     </iterate>   

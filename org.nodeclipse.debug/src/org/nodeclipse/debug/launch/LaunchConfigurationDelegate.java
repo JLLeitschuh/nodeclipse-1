@@ -137,8 +137,10 @@ public class LaunchConfigurationDelegate implements
 		if(i > 0) {
 			extension = file.substring(i+1);
 		} else {
-			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID,
-				"Target file does not have extension: " + file, null));
+			//			throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID,
+			//				"Target file does not have extension: " + file, null));
+			// by default assume
+			extension = "js";
 		}
 		
 		// #57 running app.js with node-dev, forever, supervisor, nodemon etc

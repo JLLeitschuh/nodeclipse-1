@@ -86,6 +86,14 @@
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
       </editor>
+      <editor
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            filenames = "www"
+            icon="icons/node_red.png"
+            id="org.nodeclipse.ui.editors.NodeEditor"
+            name="Nodeclipse JSDT-based Editor">
+      </editor>
       <!-- just for different icons for json,jshintrc -->
       <editor 
             class="org.nodeclipse.ui.editors.NodeEditor"
@@ -94,7 +102,7 @@
             extensions="json,jshintrc,tern-project"
             icon="icons/node_blue.png"
             id="org.nodeclipse.ui.editors.NodeEditor"
-            name="Nodeclipse JSDT Editor">
+            name="Nodeclipse JSDT-based Editor">
       </editor>
       <!-- class is not on plugin classpath!
       <editor
