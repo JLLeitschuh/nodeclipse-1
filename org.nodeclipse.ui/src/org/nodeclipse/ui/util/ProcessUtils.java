@@ -52,6 +52,31 @@ public class ProcessUtils {
 		return Activator.getDefault().getPreferenceStore()
 				.getString(PreferenceConstants.EXPRESS_VERSION);
 	}
+	/* actually getting from PreferenceConstants.EXPRESS_VERSION */
+	public static int getExpressMajorVersion() {
+		String ver = getExpressVersion();
+		int idx = ver.indexOf('.');
+		if(idx < 0) {
+			return 3;
+		}
+		ver = ver.substring(0, idx);
+		int ret = Integer.parseInt(ver);
+		return ret;
+	}
+	
+	public static String getCurrentVersionOf(String nodeAppPath) {
+		List<String> cmdLine = new ArrayList<String>();
+		cmdLine.add(getNodePath());
+		cmdLine.add(nodeAppPath);
+		cmdLine.add("--version");
+		String ret = Constants.BLANK_STRING;
+		try {
+			ret = exec(cmdLine, null);
+		} catch (InvocationTargetException e) {
+			NodeclipseConsole.write(e.getLocalizedMessage()+"\n");
+		}
+		return ret;
+	}
 	
 	public static String getCompletionsJsonPath() {
 		return Activator.getDefault().getPreferenceStore()
@@ -81,16 +106,6 @@ public class ProcessUtils {
 		return path;
 	}
 	
-	public static int getExpressMajorVersion() {
-		String ver = getExpressVersion();
-		int idx = ver.indexOf('.');
-		if(idx < 0) {
-			return 3;
-		}
-		ver = ver.substring(0, idx);
-		int ret = Integer.parseInt(ver);
-		return ret;
-	}
 	
 	public static String getBundledExpressPath() {
 		try {
@@ -103,10 +118,7 @@ public class ProcessUtils {
 		return "";
 //		return getBundledPath("node_modules/express/bin/express");
 	}
-	
-	
-	
-	
+
 	public static String getBundledCoffeePath() {
 		try {
 			Class clazz = Class.forName("org.nodeclipse.bundle.coffee.BundlePath");
@@ -152,6 +164,7 @@ public class ProcessUtils {
 		return true;
 	}
 	
+	/* run command and return output as String*/
 	public static String exec(List<String> cmdLine, File dir)
 			throws InvocationTargetException {
 		String[] cmds = {};

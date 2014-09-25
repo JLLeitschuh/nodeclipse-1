@@ -46,6 +46,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		String node_path = "/usr/local/bin/node";
 		String node_monitor_path = "/usr/local/lib/node_modules/node-dev/bin/node-dev";
 		String express_path = "/usr/local/lib/node_modules/express/bin/express";
+		String express_generator_path = "/usr/local/lib/node_modules/express-generator/bin/express";
 		String coffee_path = "/usr/local/bin/coffee";
 		String typescript_compiler_path = "/usr/local/lib/node_modules/typescript/bin/tsc";
 		
@@ -61,6 +62,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 					+ "/AppData/Roaming/npm/node_modules/";
 			node_monitor_path = (windowsNodeModulesPath+"node-dev/bin/node-dev").replace('/', File.separatorChar);
 			express_path = (windowsNodeModulesPath+"express/bin/express").replace('/', File.separatorChar);
+			express_generator_path = (windowsNodeModulesPath+"express-generator/bin/express").replace('/', File.separatorChar);
 			coffee_path = (windowsNodeModulesPath+"coffee-script/bin/coffee").replace('/', File.separatorChar);
 			typescript_compiler_path = (windowsNodeModulesPath+"typescript/bin/tsc").replace('/', File.separatorChar);
 		} else if (OSUtils.isMacOS()) {
@@ -75,6 +77,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 			file = new File(express_path);
 			if (!file.exists()) {
 				express_path = "/opt/local/lib/node_modules/express/bin/express";
+			}
+			file = new File(express_generator_path);
+			if (!file.exists()) {
+				express_generator_path = "/opt/local/lib/node_modules/express-generator/bin/express";
 			}
 			file = new File(coffee_path);
 			if (!file.exists()) {
@@ -101,21 +107,32 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		if (file.exists()) {
 			store.setDefault(PreferenceConstants.NODE_MONITOR_PATH, node_monitor_path);
 		}
-		// using bundles Node.js modules for Express & CoffeeScript
-		file = new File(express_path);
+		
+		// using bundles Node.js modules for Express & CoffeeScript {
+		
+		// Express: try to use express-generator (for Express 4.x)		
+		file = new File(express_generator_path);
 		if (file.exists()) {
-			store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
+			store.setDefault(PreferenceConstants.EXPRESS_PATH, express_generator_path);
 			store.setDefault(PreferenceConstants.EXPRESS_VERSION,
-					getExpressVersion(express_path));
+					ProcessUtils.getCurrentVersionOf(express_generator_path));
 		} else {
-			express_path = ProcessUtils.getBundledExpressPath();
 			file = new File(express_path);
 			if (file.exists()) {
 				store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
 				store.setDefault(PreferenceConstants.EXPRESS_VERSION,
-						getExpressVersion(express_path));
+						ProcessUtils.getCurrentVersionOf(express_path));
+			} else {
+				express_path = ProcessUtils.getBundledExpressPath();
+				file = new File(express_path);
+				if (file.exists()) {
+					store.setDefault(PreferenceConstants.EXPRESS_PATH, express_path);
+					store.setDefault(PreferenceConstants.EXPRESS_VERSION,
+							ProcessUtils.getCurrentVersionOf(express_path));
+				}
 			}
 		}
+		//coffee
 		file = new File(coffee_path);
 		if (file.exists()) {
 			store.setDefault(PreferenceConstants.COFFEE_PATH, coffee_path);
@@ -126,6 +143,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 				store.setDefault(PreferenceConstants.COFFEE_PATH, coffee_path);
 			}
 		}
+		//}
 		store.setDefault(PreferenceConstants.COFFEE_COMPILE_OPTIONS, "--watch");
 		file = new File(typescript_compiler_path);
 		if (file.exists()) {
@@ -135,6 +153,13 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		store.setDefault(PreferenceConstants.MONGODB_SHELL_OPTIONS, "--shell");
 	}
 	
+    private static String getNodeFileName() {
+        if (OSUtils.isWindows()) {
+            return "node.exe";
+        }
+        return "node";
+    }
+
     private static File findNode() {
         String nodeFileName = getNodeFileName();
         String path = System.getenv("PATH");
@@ -163,28 +188,4 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         LogUtil.error("Node.js executable can't be found!");
         return null;
     }
-
-    private static String getNodeFileName() {
-        if (OSUtils.isWindows()) {
-            return "node.exe";
-        }
-
-        return "node";
-    }
-	
-
-	private String getExpressVersion(String express) {
-		List<String> cmdLine = new ArrayList<String>();
-		cmdLine.add(ProcessUtils.getNodePath());
-		cmdLine.add(ProcessUtils.getExpressPath());
-		cmdLine.add("--version");
-		String ret = Constants.BLANK_STRING;
-		try {
-			ret = ProcessUtils.exec(cmdLine, null);
-		} catch (InvocationTargetException e) {
-			//e.printStackTrace();
-			NodeclipseConsole.write(e.getLocalizedMessage()+"\n");
-		}
-		return ret;
-	}
 }

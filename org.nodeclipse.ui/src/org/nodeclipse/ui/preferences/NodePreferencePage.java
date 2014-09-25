@@ -1,14 +1,20 @@
 package org.nodeclipse.ui.preferences;
 
+import java.io.File;
+
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
+import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
+import org.eclipse.jface.util.IPropertyChangeListener;
+import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.nodeclipse.ui.Activator;
+import org.nodeclipse.ui.util.ProcessUtils;
 import org.nodeclipse.ui.util.VersionUtil;
 
 /**
@@ -35,6 +41,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private IntegerFieldEditor nodeDebugPort;
     //private FileFieldEditor nodeMonitorPath;
     private FileFieldEditor expressPath;
+    private StringFieldEditor expressVersion;
     private FileFieldEditor coffeePath;
     //private BooleanFieldEditor coffeeJustCoffee;
     private StringFieldEditor coffeeCompileOptions;
@@ -126,6 +133,10 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 
         expressPath = new FileFieldEditor(PreferenceConstants.EXPRESS_PATH, "Express path:", getFieldEditorParent());
         addField(expressPath);
+        
+        expressVersion = new StringFieldEditor(PreferenceConstants.EXPRESS_VERSION, "Selected Express version:", getFieldEditorParent());
+        expressVersion.setEnabled(false, getFieldEditorParent());
+        addField(expressVersion);        
 
         coffeePath = new FileFieldEditor(PreferenceConstants.COFFEE_PATH, "Coffee path:", getFieldEditorParent());
         addField(coffeePath);
@@ -147,10 +158,45 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         addField(typescriptCompilerOptions);
 
     }
-
+    
     @Override
-    public boolean isValid() {
-        return super.isValid();
+    protected void initialize() {
+    	super.initialize();
+		expressPath.setPropertyChangeListener(new MyPropertyChangeListener(this));
     }
+    
+    private class MyPropertyChangeListener implements IPropertyChangeListener{
+    	
+    	private FieldEditorPreferencePage page;
+    	private boolean isValidPath = true;
 
+		public MyPropertyChangeListener(FieldEditorPreferencePage nodePreferencePage) {
+			page = nodePreferencePage;
+		}
+
+		@Override
+		public void propertyChange(PropertyChangeEvent event) {
+			page.propertyChange(event);
+			
+			// The IS_VALID property is only fired when the valid state changes.
+	        if (event.getProperty().equals(FieldEditor.IS_VALID)) {
+	            isValidPath = ((Boolean) event.getNewValue()).booleanValue();
+	            if (!isValidPath) {
+	            	expressVersion.setStringValue( "Selected path is not valid" );
+	            }
+	            return;
+	        }
+        	if (!isValidPath) { // if it is still not valid file, we don't need to check again
+        		return;
+        	}
+	        if (event.getProperty().equals(FieldEditor.VALUE)) {
+		        String newExecutablePath = (String) event.getNewValue();
+//		        File file = new File(newExecutablePath);
+//		        if (!file.exists() && file.isFile() ){
+//		        	return;
+//		        }
+	            expressVersion.setStringValue( ProcessUtils.getCurrentVersionOf(newExecutablePath) );
+	        }
+		}
+    }
 }
