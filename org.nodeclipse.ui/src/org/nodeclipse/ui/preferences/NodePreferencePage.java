@@ -122,7 +122,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     	
         // "Node debug no -break (disable interruption of Node.js app on first line, check debug Help)" would make dialog wider
         nodeDebugNoBreak = new BooleanFieldEditor(PreferenceConstants.NODE_DEBUG_NO_BREAK, 
-        		"Node debug without -brk (disable interruption of Node.js app)", getFieldEditorParent());
+        		"Node debug without -brk (disable interruption of Node.js app start)", getFieldEditorParent());
         addField(nodeDebugNoBreak);
 
         nodeDebugPort = new IntegerFieldEditor(PreferenceConstants.NODE_DEBUG_PORT, "Node debug port:", getFieldEditorParent());
