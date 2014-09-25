@@ -31,6 +31,7 @@ import org.eclipse.ui.wizards.datatransfer.ImportOperation;
 import org.eclipse.wst.jsdt.internal.ui.workingsets.JavaWorkingSetUpdater;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.npm.InstallLaunchShortcut;
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.LogUtil;
 import org.nodeclipse.ui.util.NodeclipseConsole;
@@ -134,6 +135,11 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 					rewriteFile("README.md", newProjectHandle);
 					
 					rewritePackageJson(monitor, newProjectHandle);
+					
+					boolean addTernNature = store.getBoolean(PreferenceConstants.ADD_TERN_NATURE);
+					if (addTernNature){
+						generateTemplates("templates/tern-node", newProjectHandle);
+					}						
 
 					// JSHint support
 					runJSHint(newProjectHandle);

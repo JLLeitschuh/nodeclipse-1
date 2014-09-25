@@ -20,6 +20,7 @@ import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.ide.undo.CreateProjectOperation;
 import org.eclipse.ui.ide.undo.WorkspaceUndoUtil;
 import org.eclipse.wst.jsdt.internal.ui.workingsets.JavaWorkingSetUpdater;
+import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
 import org.nodeclipse.ui.util.LogUtil;
 import org.nodeclipse.ui.util.ProcessUtils;
@@ -109,6 +110,11 @@ public class NodeProjectWizard extends AbstractNodeProjectWizard implements INew
 						}
 						rewriteFile("README.md", newProjectHandle);
 						rewriteFile("package.json", newProjectHandle);
+						
+						boolean addTernNature = store.getBoolean(PreferenceConstants.ADD_TERN_NATURE);
+						if (addTernNature){
+							generateTemplates("templates/tern-node", newProjectHandle);
+						}						
 					}
 					// JSHint support
 					runJSHint(newProjectHandle);
