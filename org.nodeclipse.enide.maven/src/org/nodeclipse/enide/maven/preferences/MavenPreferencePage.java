@@ -1,13 +1,22 @@
 package org.nodeclipse.enide.maven.preferences;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.nodeclipse.enide.maven.Activator;
 
 /**
@@ -53,9 +62,29 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 	public void init(IWorkbench workbench) {
 	}
 
+    private void addLinkWidget(String text, String urlString){
+       	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
+        Link link = new Link(getFieldEditorParent(), SWT.NONE);
+        link.setText(text);
+        link.addSelectionListener(new SelectionAdapter() {
+        	public void widgetSelected(final SelectionEvent event) {
+				try {
+					URL url = new URL(urlString);
+					try {
+						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url );
+					} catch (PartInitException e) {
+					}
+				} catch (MalformedURLException e) {
+				}
+        	}
+        });
+    }
+	
 	@Override
 	protected void createFieldEditors() {
-
+    	addLinkWidget("Visit <A>Nodeclipse maven project page</A>", "http://www.nodeclipse.org/projects/maven/");
+    	addLinkWidget(" and <A>maven.apache.org</A> for news and docs.", "http://maven.apache.org/");
+    	addLinkWidget("<A>GitHub</A>", "https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven");
 
 		mavenHome = new DirectoryFieldEditor(MavenConstants.MAVEN_HOME, "Maven home directory:", getFieldEditorParent());
 		mavenHome.setEnabled(false, getFieldEditorParent());

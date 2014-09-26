@@ -1,5 +1,8 @@
 package org.nodeclipse.enide.gradle.preferences;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -7,7 +10,10 @@ import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.nodeclipse.enide.gradle.Activator;
+import org.eclipse.swt.SWT;
 //+
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.events.SelectionEvent;
@@ -60,26 +66,30 @@ public class GradlePreferencePage extends FieldEditorPreferencePage implements I
 	public void init(IWorkbench workbench) {
 	}
 
+    private void addLinkWidget(String text, String urlString){
+       	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
+        Link link = new Link(getFieldEditorParent(), SWT.NONE);
+        link.setText(text);
+        link.addSelectionListener(new SelectionAdapter() {
+        	public void widgetSelected(final SelectionEvent event) {
+				try {
+					URL url = new URL(urlString);
+					try {
+						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url );
+					} catch (PartInitException e) {
+					}
+				} catch (MalformedURLException e) {
+				}
+        	}
+        });
+    }
+	
 	@Override
 	protected void createFieldEditors() {
+    	addLinkWidget("Visit <A>Nodeclipse gradle project page</A>", "http://www.nodeclipse.org/projects/gradle/");
+    	addLinkWidget(" and <A>www.gradle.org</A> for news and docs.", "http://www.gradle.org/");
+    	addLinkWidget("<A>GitHub</A>", "https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle");
 		
-		
-		//TODO link to project home page
-		// http://stackoverflow.com/questions/22107112/how-to-create-a-hyperlink-in-eclipse-plugin-preferences-page
-//		final Link link = new Link(getFieldEditorParent(), SWT.NONE);
-//		link.setText("link");
-//		link.setLayoutData(getFieldEditorParent().getLayout());
-//
-//		link.addSelectionListener(new SelectionAdapter() [
-//		  @Override
-//		  public void widgetSelected(final SelectionEvent e)
-//		  {
-//		    // TODO deal with hyperlink selection
-//		  }
-//		});		
-		
-		
-
 	    gradleHome = new DirectoryFieldEditor(GradleConstants.GRADLE_HOME, "Gradle home directory:", getFieldEditorParent());
 		gradleHome.setEnabled(false, getFieldEditorParent());
 		addField(gradleHome);

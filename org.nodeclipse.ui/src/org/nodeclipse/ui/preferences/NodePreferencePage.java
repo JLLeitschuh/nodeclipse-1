@@ -1,6 +1,7 @@
 package org.nodeclipse.ui.preferences;
 
-import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
@@ -11,8 +12,21 @@ import org.eclipse.jface.preference.IntegerFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.browser.IWebBrowser;
+import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
+import org.eclipse.ui.internal.browser.WorkbenchBrowserSupport;
+import org.eclipse.ui.preferences.IWorkbenchPreferenceContainer;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.util.ProcessUtils;
 import org.nodeclipse.ui.util.VersionUtil;
@@ -61,11 +75,67 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 
 	@Override
     public void init(IWorkbench workbench) {
+	}
+	
+//    @Override
+//	protected Control createContents(Composite parent) {
+//    	return super.createContents(parent); // will call createFieldEditors()
+//    }
+	
+    private void addLinkWidget(String text, String urlString){
+       	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
+        Link link = new Link(getFieldEditorParent(), SWT.NONE);
+        link.setText(text);
+        //link.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false, 3, 1));
+        link.addSelectionListener(new SelectionAdapter() {
+        	public void widgetSelected(final SelectionEvent event) {
+				try {
+					URL url = new URL(urlString);
+					try {
+						//WorkbenchBrowserSupport.getInstance().getExternalBrowser().openURL(url );
+						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url );
+					} catch (PartInitException e) {
+					}
+				} catch (MalformedURLException e) {
+				}
+        	}
+        });
     }
 
-    @Override
-    protected void createFieldEditors() {
-
+//       	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
+//        Link link = new Link(getFieldEditorParent(), SWT.NONE);
+//        link.setText("Visit <A>www.nodeclipse.org</A>.");
+//        //link.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false, 3, 1));
+//        link.addSelectionListener(new SelectionAdapter() {
+//        	public void widgetSelected(final SelectionEvent event) {
+////                int style = IWorkbenchBrowserSupport.AS_EDITOR | IWorkbenchBrowserSupport.LOCATION_BAR | IWorkbenchBrowserSupport.NAVIGATION_BAR | IWorkbenchBrowserSupport.STATUS;
+////                IWebBrowser browser;
+////                try {
+////                    browser = WorkbenchBrowserSupport.getInstance().createBrowser(style, "NodeclipsePluginsListID", "NodeclipsePluginsList", "Nodeclipse Plugins List");
+////                    browser.openURL(new URL("http://www.nodeclipse.org/updates"));
+////                } catch (PartInitException e) {
+////                    e.printStackTrace();
+////                } catch (MalformedURLException e) {
+////                    e.printStackTrace();
+////                }
+//        		
+////				IWorkbenchPreferenceContainer container= (IWorkbenchPreferenceContainer) getContainer();
+////				container.openPage("org.eclipse.ui.preferencePages.GeneralTextEditor", null);
+//				
+//				try {
+//					URL url = new URL("http://www.nodeclipse.org/");
+//					try {
+//						//WorkbenchBrowserSupport.getInstance().getExternalBrowser().openURL(url );
+//						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url );
+//					} catch (PartInitException e) {
+//					}
+//				} catch (MalformedURLException e) {
+//				}
+//                
+//        	}
+//        });
+    	
+ 
     	//TODO possible to copy version string
 		//    	String verString = VersionUtil.getLongString();
 		//        nodeclipseVersionsString = new StringFieldEditor(PreferenceConstants.NODE_OPTIONS, "Node options (node -h):", getFieldEditorParent());
@@ -74,6 +144,12 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 		//        nodeclipseVersionsString.setEnabled(false, (Composite) this);
 		//        addField(nodeclipseVersionsString);
 
+    	
+    @Override
+    protected void createFieldEditors() {
+    	addLinkWidget("Visit <A>www.nodeclipse.org</A> for news", "http://www.nodeclipse.org/");
+    	addLinkWidget(" and <A>history</A>.", "http://www.nodeclipse.org/history");
+    	addLinkWidget("<A>GitHub</A>", "https://github.com/nodeclipse/nodeclipse-1/");
     	
         nodeclipseConsoleEnabled = new BooleanFieldEditor(PreferenceConstants.NODECLIPSE_CONSOLE_ENABLED, 
         		"enable Nodeclipse Console", getFieldEditorParent());
