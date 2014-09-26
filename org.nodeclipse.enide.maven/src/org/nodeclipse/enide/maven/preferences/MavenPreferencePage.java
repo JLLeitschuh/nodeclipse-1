@@ -62,7 +62,7 @@ public class MavenPreferencePage extends FieldEditorPreferencePage implements IW
 	public void init(IWorkbench workbench) {
 	}
 
-    private void addLinkWidget(String text, String urlString){
+    private void addLinkWidget(String text, final String urlString){
        	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
         Link link = new Link(getFieldEditorParent(), SWT.NONE);
         link.setText(text);

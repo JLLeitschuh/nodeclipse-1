@@ -77,12 +77,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     public void init(IWorkbench workbench) {
 	}
 	
-//    @Override
-//	protected Control createContents(Composite parent) {
-//    	return super.createContents(parent); // will call createFieldEditors()
-//    }
-	
-    private void addLinkWidget(String text, String urlString){
+    private void addLinkWidget(String text, final String urlString){
        	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
         Link link = new Link(getFieldEditorParent(), SWT.NONE);
         link.setText(text);
@@ -102,12 +97,6 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         });
     }
 
-//       	// http://stackoverflow.com/questions/22424993/eclipse-plugin-dev-how-to-add-hyperlink-on-fieldeditorpreferencepage
-//        Link link = new Link(getFieldEditorParent(), SWT.NONE);
-//        link.setText("Visit <A>www.nodeclipse.org</A>.");
-//        //link.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false, 3, 1));
-//        link.addSelectionListener(new SelectionAdapter() {
-//        	public void widgetSelected(final SelectionEvent event) {
 ////                int style = IWorkbenchBrowserSupport.AS_EDITOR | IWorkbenchBrowserSupport.LOCATION_BAR | IWorkbenchBrowserSupport.NAVIGATION_BAR | IWorkbenchBrowserSupport.STATUS;
 ////                IWebBrowser browser;
 ////                try {
@@ -121,20 +110,6 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 //        		
 ////				IWorkbenchPreferenceContainer container= (IWorkbenchPreferenceContainer) getContainer();
 ////				container.openPage("org.eclipse.ui.preferencePages.GeneralTextEditor", null);
-//				
-//				try {
-//					URL url = new URL("http://www.nodeclipse.org/");
-//					try {
-//						//WorkbenchBrowserSupport.getInstance().getExternalBrowser().openURL(url );
-//						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(url );
-//					} catch (PartInitException e) {
-//					}
-//				} catch (MalformedURLException e) {
-//				}
-//                
-//        	}
-//        });
-    	
  
     	//TODO possible to copy version string
 		//    	String verString = VersionUtil.getLongString();
@@ -143,8 +118,6 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
 		//        nodeclipseVersionsString.setTextLimit(verString.length());
 		//        nodeclipseVersionsString.setEnabled(false, (Composite) this);
 		//        addField(nodeclipseVersionsString);
-
-    	
     @Override
     protected void createFieldEditors() {
     	addLinkWidget("Visit <A>www.nodeclipse.org</A> for news", "http://www.nodeclipse.org/");
