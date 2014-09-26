@@ -115,6 +115,7 @@
  		Nodeclipse EditBox (created in 2009-2011 by Piotr Metel) https://github.com/Nodeclipse/EditBox
  		TypEcs by axmor.com
  		Emmet (ex-Zen Coding) Eclipse plugin by Sergey Chikuyonok
+ 		Zip Editor by Uwe Voigt with refresh from https://github.com/Nodeclipse/zipeditor
       </description>
    </category-def>
    <feature url="features/org.nodeclipse.pluginslist.feature_0.1.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.1.0.qualifier">
@@ -160,6 +161,9 @@
       <category name="Tools"/>
    </feature>
    <feature url="features/io.emmet.eclipse_0.0.0.qualifier.jar" id="io.emmet.eclipse" version="0.0.0">
+      <category name="Tools"/>
+   </feature>
+   <feature url="features/zipeditor_0.0.0.qualifier.jar" id="zipeditor" version="0.0.0">
       <category name="Tools"/>
    </feature>
    <!--  

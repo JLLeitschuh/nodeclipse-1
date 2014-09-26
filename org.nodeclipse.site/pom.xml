@@ -149,13 +149,19 @@
 			<url>http://editorxml.sourceforge.net/updates/</url>
 		</repository>
 		-->
+		<repository>
+			<id>zipeditor</id>
+			<layout>p2</layout>
+			<url>http://nodeclipse.github.io/updates/zipeditor/</url>
+		</repository>
 		
 				 
 		<!-- JavaTools -->
 		<repository>
 			<id>jdt.spelling.feature</id>
 			<layout>p2</layout>
-			<url>http://www.stuarthendren.net/update/</url>
+			<!-- <url>http://www.stuarthendren.net/update/</url>  -->
+			<url>http://jdt.spelling.s3-website-us-east-1.amazonaws.com</url>
 		</repository>
 		
 					
