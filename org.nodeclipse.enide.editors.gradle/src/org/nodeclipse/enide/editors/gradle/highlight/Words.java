@@ -7,7 +7,8 @@ public class Words {
         "assert",
         "if", "else",
         "void",
-        "new", "return", 
+        "new", "return",
+        "try", "catch", 
         
         // Groovy stuff
         "def", 
@@ -18,6 +19,7 @@ public class Words {
         "version","group", "name",
         "buildscript", 
         "allprojects", "subprojects", "project",
+        "ext", 
         "plugins", //since 2.1
         
         // Android plugin
@@ -28,6 +30,9 @@ public class Words {
         "defaultConfig", "signingConfigs", "buildTypes",//
         "productFlavors", "debug", "release",//
         "lintOptions", "packagingOptions",
+        
+        // other plugins
+        "robolectric",
 
     };
 
