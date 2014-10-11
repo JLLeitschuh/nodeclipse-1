@@ -14,7 +14,8 @@ Usage (incl Video, Demo) with all shortcuts, Help and Hints,
 
 ## Enhancing Nodeclipse
 
-First give a try (using [Eclipse IDE for Eclipse Committers](https://www.eclipse.org/downloads/)):
+First give a try (using [Eclipse IDE for Eclipse Committers](https://www.eclipse.org/downloads/)
+or any Eclipse/Enide Studio with PDE installed):
 
 - `git clone https://github.com/Nodeclipse/nodeclipse-1.git` or EGit equivalent
 - import as existing project "nodeclipse-1" (only root)
