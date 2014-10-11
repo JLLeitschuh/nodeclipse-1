@@ -14,7 +14,20 @@ Usage (incl Video, Demo) with all shortcuts, Help and Hints,
 
 ## Enhancing Nodeclipse
 
-Some minimal Java & Eclipse plugin development skills are needed for improving code base.
+First give a try (using [Eclipse IDE for Eclipse Committers](https://www.eclipse.org/downloads/)):
+
+- `git clone https://github.com/Nodeclipse/nodeclipse-1.git` or EGit equivalent
+- import as existing project "nodeclipse-1" (only root)
+- in Project Explorer right-click a plugin project folder, e.g. "org.nodeclipse.enide.editors.jade",
+ select "Select Import as Project"
+- right-click chosen plugin project as select Run As -> Eclipse Application
+
+Now you have Eclipse running with the latest version of chosen plugin!  
+Make your changes to the code and see it running (for some cases without launch Eclipse restart).
+For example try changes Jade keywords in 
+[`src/org/nodeclipse/enide/editors/jade/highlight/Words.java`](https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.jade/src/org/nodeclipse/enide/editors/jade/highlight/Words.java) 
+
+To go on some minimal Java & Eclipse plugin development skills are needed for improving code base.
 Check "Plug-in development 101" <http://www.ibm.com/developerworks/library/os-eclipse-plugindev1/> as great tutorial by Chris Aniszczyk (2008).
 That will be great starting point, that lets you get understanding.
 For future references there is also often updated "Eclipse 4 RCP - Tutorial" 
