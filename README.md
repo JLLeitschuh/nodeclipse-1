@@ -69,7 +69,7 @@ Maven build is optional for full build with other plugins.
 Build
 
 `mvn package` or `mvn clean package -Pquick` builds in `org.nodeclipse.updates/target` with less external dependencies.
-Not enought for release, e.g. because JSHint is external plugin and there are 20 more others. 
+It is not enough for release, e.g. because JSHint is external plugin and there are 20 more others. 
 
 `mvn clean package -Pfull` builds in `org.nodeclipse.site/target`. For release.
 

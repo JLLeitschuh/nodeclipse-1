@@ -91,6 +91,14 @@ body {
 .markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre {
     margin: 15px 0;
 }
+.markdown-body hr {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC") repeat-x;
+    border: 0;
+    color: #CCC;
+    height: 4px;
+    margin: 15px 0;
+    padding: 0;
+}
 .markdown-body ul, .markdown-body ol {
     padding-left: 30px;
 }
@@ -450,34 +458,35 @@ function setDocumentScrollTop(ypos)
 </head>
 <body class="markdown-body">
 <p>Title: Nodeclipse Online Help - Configuration </p> 
-<h2> <a name="configuration" class="anchor" href="..md.html#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2> 
+<h2> <a name="user-content-configuration" class="anchor" href="..md.html#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2> 
 <p>Some recommended configuration (These steps are needed for every new workspace):</p> 
 <p>Goto Window-&gt;Preferences </p> 
 <p>General select Show heap status<br /> General-&gt;Workspace -&gt; Text file encoding select other UTF-8<br /> (if Eclipse 4.x Chrome Theme installed (Optional, recommended) )<br /> General-&gt;Appearance -&gt;Theme select Jeeeyul's themes - Chrome Theme, restart Eclipse<br /> Team -&gt; Git -&gt; History : Check &quot;Follow renames&quot; </p> 
 <p>Switch to Node perspective (e.g. Window -&gt; Open Perspective -&gt; Other ... -&gt; Node)</p> 
-<p>Window -&gt; Show View -&gt; Other... -&gt; REST Client -&gt; REST Client Tool<br /> or Ctrl+3 type <code>rest</code></p> 
-<p>REST Client Tool is also nice to use in Debug perspective.</p> 
-<h4> <a name="optional-general-eclipse-configuration" class="anchor" href="..md.html#optional-general-eclipse-configuration"><span class="octicon octicon-link"></span></a>Optional general Eclipse configuration</h4> 
+<p>In Project Explorer press small triangle to open View Menu and select Customize View... Then on Filter tab deselect <code>.* resources</code></p> 
+<p><a href="http://www.nodeclipse.org/restclient-tool/">REST Client Tool</a> is also nice to use in Debug perspective.</p> 
+<p><kbd>Window -&gt; Show View -&gt; Other... -&gt; REST Client -&gt; REST Client Tool</kbd><br /> or <kbd>Ctrl+3</kbd> type <code>rest</code></p> 
+<h4> <a name="user-content-optional-general-eclipse-configuration" class="anchor" href="..md.html#optional-general-eclipse-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional general Eclipse configuration</h4> 
 <p>General -&gt; Workspace -&gt; Refresh on access General -&gt; Workspace -&gt; Refresh using native hooks or polling (so that you don't need to press <kbd>F5</kbd> after <code>npm install<code> or other changes on file system) General -&gt; Workspace -&gt; Text file encoding - select UTF-8 </code></code></p> 
 <p>General -&gt; Editors -&gt; Text Editors -&gt; Show print margin, 120</p> 
 <p>General -&gt; Editors -&gt; Text Editors -&gt; Show whitespace characters (just remeber where is this setting)</p> 
 <p>Take a time to explore other Eclipse setting, you may be rewarded with findings. </p> 
-<h3> <a name="nodeclipse-preferences" class="anchor" href="..md.html#nodeclipse-preferences"><span class="octicon octicon-link"></span></a>Nodeclipse Preferences</h3> 
+<h3> <a name="user-content-nodeclipse-preferences" class="anchor" href="..md.html#nodeclipse-preferences" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nodeclipse Preferences</h3> 
 <p>Check preferences ( Window -&gt; Preferences ) for Node.js, PhantomJS, MongoDB and Nashorn related settings.</p> 
-<h2> <a name="in-previous-versions" class="anchor" href="..md.html#in-previous-versions"><span class="octicon octicon-link"></span></a>In previous versions</h2> 
-<h3> <a name="before-06" class="anchor" href="..md.html#before-06"><span class="octicon octicon-link"></span></a>Before 0.6</h3> 
+<h2> <a name="user-content-in-previous-versions" class="anchor" href="..md.html#in-previous-versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>In previous versions</h2> 
+<h3> <a name="user-content-before-06" class="anchor" href="..md.html#before-06" aria-hidden="true"><span class="octicon octicon-link"></span></a>Before 0.6</h3> 
 <p>Window -&gt; Show View -&gt; Other... -&gt; GFM Support -&gt; GFM View<br /> (Very useful when exploring <code>node_modules</code> folders) </p> 
-<h4> <a name="file-associations" class="anchor" href="..md.html#file-associations"><span class="octicon octicon-link"></span></a>File associations</h4> 
+<h4> <a name="user-content-file-associations" class="anchor" href="..md.html#file-associations" aria-hidden="true"><span class="octicon octicon-link"></span></a>File associations</h4> 
 <p>Window -&gt; Preferences -&gt; General -&gt; Editors -&gt; File Associations <kbd>Add...</kbd></p> 
 <ul> 
  <li>*.jade - associate with Scrapbook (from JDT)</li> 
  <li>*.ejs - associate with HTML Editor (from WebTools, Aptana, etc) or better with Amateras HTML Editor (check on Nodeclipse Plugin List)</li> 
-</ul>
-<h4> <a name="nts-only" class="anchor" href="..md.html#nts-only"><span class="octicon octicon-link"></span></a><a href="http://www.nodeclipse.org/nts/">NTS</a> Only</h4> 
+</ul> 
+<h4> <a name="user-content-nts-only" class="anchor" href="..md.html#nts-only" aria-hidden="true"><span class="octicon octicon-link"></span></a> <a href="http://www.nodeclipse.org/nts/">NTS</a> Only</h4> 
 <p>Window -&gt; Show View -&gt; Other... -&gt; MiniMap -&gt; MiniMap</p> 
-<h3> <a name="before-04" class="anchor" href="..md.html#before-04"><span class="octicon octicon-link"></span></a>Before 0.4</h3> 
+<h3> <a name="user-content-before-04" class="anchor" href="..md.html#before-04" aria-hidden="true"><span class="octicon octicon-link"></span></a>Before 0.4</h3> 
 <p>Window -&gt; Show View -&gt; Other... -&gt; Markdown -&gt; Markdown HTML Preview<br /> (Very useful when exploring <code>node_modules</code> folders) </p> 
-<h3> <a name="contribute" class="anchor" href="..md.html#contribute"><span class="octicon octicon-link"></span></a>Contribute</h3> 
+<h3> <a name="user-content-contribute" class="anchor" href="..md.html#contribute" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribute</h3> 
 <p><a href="https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.help/contents/configuration.md" target="_blank">Edit online on GitHub</a></p>
 </body>
 </html>

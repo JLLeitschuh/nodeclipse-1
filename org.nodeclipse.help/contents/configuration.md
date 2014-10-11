@@ -14,6 +14,9 @@ Team -> Git -> History : Check "Follow renames"
 
 Switch to Node perspective (e.g. Window -> Open Perspective -> Other ... -> Node)
 
+In Project Explorer press small triangle to open View Menu
+ and select Customize View... Then on Filter tab deselect `.* resources`
+
 [REST Client Tool](http://www.nodeclipse.org/restclient-tool/) is also nice to use in Debug perspective.
 
 <kbd>Window -> Show View -> Other... -> REST Client -> REST Client Tool</kbd>  
