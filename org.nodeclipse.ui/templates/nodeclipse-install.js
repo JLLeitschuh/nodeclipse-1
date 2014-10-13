@@ -3,91 +3,6 @@
  * All well-known open source licenses http://choosealicense.com/licenses/
  * require showing license and copyright notice from author
  */
-/*
-The Eclipse runtime options
- http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html
- ! but not in kepler Help as "Platform Plug-in Developer Guide" is missing
- http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html
-using p2 director
- https://wiki.eclipse.org/Equinox/p2/Director_application
- http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html
- https://wiki.eclipse.org/Equinox_p2_director_application/Examples/Install_into_eclipse_using_SDKProfile
-
-<targetProductFolder>/eclipsec.exe
-   -application org.eclipse.equinox.p2.director
-   -repository http://download.eclipse.org/releases/helios/
-   -installIU org.eclipse.cdt.feature.group/<version>
-
-Arguments Description
-    -application org.eclipse.equinox.p2.director: the application ID.
-    -metadataRepository: a comma separated list of metadata repository URLs where the software to be installed can be found.
-    -artifactRepository: a comma separated list of artifact repository URLs where the software artifacts can be found.
-    -repository: a comma separated list of repository URL where each entry denotes colocated meta-data and artifact repositories.
-    -installIU: a comma separated list of IUs to install. Each entry in the list is in the form <id> [ '/' <version> ]. If you are looking to install a feature, the identifier of the feature has to be suffixed with ".feature.group".
-    -uninstallIU: a comma separated list of IUs to uninstall. Each entry in the list is in the form <id> [ '/' <version> ].
-    -revert: Revert the installation to a previous state. The previous state can either be a tag (see -tag / -listtags) or a previous profile state [ the number representing the previous state of the profile as found in p2/org.eclipse.equinox.p2.engine/<profileId>/ ].
-    -purgeHistory: Remove the history of the profile registry.
-    -destination: the path of a folder in which the targeted product is located.
-    -list: lists all IU's found in the given repositories in a property like format. The optional arguments can be an comma separated list of entries where each entry is in the form <id> [ '/' <version> ], or a p2 QL query prefixed with Q:, or Q:group as shortcut for groups.
-    -listTags: list all the tags found for the given profile.
-    -listInstalledRoots: list all the roots IUs found in the given profile. Each entry is the list in the form id / version
-    -profile: the profile id containing the description of the targeted product. This ID is is defined by the eclipse.p2.profile property contained in the config.ini of the targeted product. For the Eclipse SDK the ID is "SDKProfile"
-    -profileProperties: a comma separated list of <key>=<value> pair. The property org.eclipse.update.install.features=true will cause the update manager features to be installed.
-    -bundlepool: the location of where the plug-ins and features will be stored. This value is only taken into account when a new profile is created. For an application where all the bundles are located into the plugins/ folder of the destination, set it to <destination>.
-    -p2.os: the OS to use when the profile is created. This will be used to filter which OS specific installable units need to be installed.
-    -p2.ws: the windowing system to use when the profile is created. This will be used to filter which WS specific installable units need to be installed.
-    -p2.arch: the architecture to use when the profile is created. This will be used to filter which architecture specific installable units need to be installed.
-    -roaming: indicates that the product resulting from the installation can be moved. This property only makes sense when the destination and bundle pool are in the same location. This value is only taken into account when the profile is created.
-    -shared: use a shared location for the install. The path defaults to ${user.home}/.p2.
-    -tag: a label. This allows to tag the profile state resulting from the operation being executed.
-    -verifyOnly: only verify that the actions can be performed. Don't actually install or remove anything.
-While doing these operations, you can disable the automatic mirror selection mechanism by setting the VM argument eclipse.p2.mirrors to false.
-
-eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -list
-OK
-
-http://www.vijayp.ca/blog/2011/09/why-eclipses-check-for-updates-is-horribly-slow-and-how-to-fix-it/
- Add it after “eclipse”, or in eclipse.ini
--Declipse.p2.mirrors=false
-
-org.nodeclipse.jjs.feature.feature.group[/0.10.0.201401270634]
-Succeeded with
-eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
--> http://stackoverflow.com/questions/21574010/eclipse-how-to-pass-vm-arguments-from-command-line-without-changing-eclipse-i
-
-eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -tag org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
--> -tag works!
-
-eclipsec -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.jjs.feature.feature.group -vmargs -Declipse.p2.mirrors=false
--> file URL works!
-nodeclipse list jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/
--> Operation completed in 1528 ms.
-
-eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.enide.maven.feature.feature.group -tag org.nodeclipse.enide.maven.feature.feature.jar,org.nodeclipse.enide.maven.feature.feature.group -vmargs -Declipse.p2.mirrors=false
-eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.enide.maven.feature.feature.group -tag org.nodeclipse.enide.maven.feature.feature.group -vmargs -Declipse.p2.mirrors=false
-nodeclipse install -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ maven
-all 3 OK
-
-nodeclipse install -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ maven gradle
-OK in ADT, but not in STS 3.4
-
-From http://stackoverflow.com/questions/19651482/how-to-install-all-features-from-a-p2-update-site-to-an-eclipse-using-the-comman
-eclipsec.exe -application org.eclipse.equinox.p2.director \
-   -repository <URL of some repository> \
-   -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
-
-eclipsec.exe -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
--> produces list
-eclipsec.exe -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter("(org.eclipse.equinox.p2.type.group=true)"))"
-without \" -> empty output
-st. eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
-from Node -> empty output
-=> filtering list using JavaScript
-
-eclipsec.exe -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.3 -installIU org.eclipse.sdk.ide -tag InitialState -destination e:/eclipsediy/ -profile  SDKProfile -profileProperties org.eclipse.update.install.features=true -bundlepool d:/eclipsediy/ -p2.os win32 -p2.ws win32 -p2.arch x86 -roaming
-
-*/
-
 //TODO can't update
 //TODO epm install from nodeclipse,kepler nodejs
 // -> too long wating time, recommend to split or use &&
@@ -104,6 +19,7 @@ var plugins = [
 	{alias: 'hudson', name: 'org.eclipse.mylyn.hudson.feature.group'},
 	{alias: 'icons', name: 'org.eclipse_icons.editor.feature.feature.group'},
 	{alias: 'jjs', name: 'org.nodeclipse.jjs.feature.feature.group'},
+	{alias: 'jshint', name: 'com.eclipsesource.jshint.feature.feature.group'},
 	{alias: 'jsdt', name: 'org.eclipse.wst.jsdt.feature.feature.group', repository: 'current'}, // requires kepler,etc update site
 	{alias: 'less', name: 'net.vtst.ow.eclipse.less.feature.feature.group', repository: 'enide-repository'}, // TODO
 	{alias: 'markdown', name: 'markdown.editor.feature.feature.group'},
@@ -111,7 +27,8 @@ var plugins = [
 	{alias: 'mongodb', name: 'net.jumperz.app.MMonjaDB.feature.group'},
 	{alias: 'mongodb.shell', name: 'org.nodeclipse.mongodb.feature.feature.group'},
 	{alias: 'moonrise', name: 'com.github.eclipseuitheme.themes.feature.feature.group'},
-	{alias: 'nodejs', name: "org.nodeclipse.feature.group,org.chromium.sdk.feature.group,org.chromium.debug.feature.group,com.eclipsesource.jshint.feature.feature.group"}, //TODO org.nodeclipse.enide.nodejs.feature
+	//TODO org.nodeclipse.enide.nodejs.feature
+	{alias: 'nodejs', name: "org.nodeclipse.feature.group,org.chromium.sdk.feature.group,org.chromium.debug.feature.group,com.eclipsesource.jshint.feature.feature.group"},
 	{alias: 'pde-tools', name: 'net.jeeeyul.pdetools.feature.feature.group'},
 	{alias: 'phantomjs', name: 'org.nodeclipse.phantomjs.feature.feature.group'},
 	{alias: 'pluginslist', name: 'org.nodeclipse.pluginslist.feature.feature.group'},
@@ -129,48 +46,49 @@ var repositories = [
 	{name: 'indigo', url: 'http://download.eclipse.org/releases/indigo'},
 	{name: 'juno', url: 'http://download.eclipse.org/releases/juno'},
 	{name: '4.3', url: 'http://download.eclipse.org/eclipse/updates/4.3'}, // is part of kepler
-	{name: 'kepler', url: 'http://download.eclipse.org/releases/kepler'}, //current
-	{name: 'current', url: 'http://download.eclipse.org/releases/kepler'}, //current
+	{name: 'kepler', url: 'http://download.eclipse.org/releases/kepler'},
 	{name: '4.4', url: 'http://download.eclipse.org/eclipse/updates/4.4'},
 	{name: 'luna', url: 'http://download.eclipse.org/releases/luna'},
+	{name: '4.5', url: 'http://download.eclipse.org/eclipse/updates/4.5'},
+	{name: 'mars', url: 'http://download.eclipse.org/releases/mars'},
+	{name: 'current', url: 'http://download.eclipse.org/releases/luna'}, //current=luna
 ];
 
-/* from pom.xml
+/* environments; example from pom.xml :
 <environments>
-<environment>
-	<os>linux</os>
-	<ws>gtk</ws>
-	<arch>x86</arch>
-</environment>
-<environment>
-	<os>linux</os>
-	<ws>gtk</ws>
-	<arch>x86_64</arch>
-</environment>
-<environment>
-	<os>win32</os>
-	<ws>win32</ws>
-	<arch>x86</arch>
-</environment>
-<environment>
-	<os>win32</os>
-	<ws>win32</ws>
-	<arch>x86_64</arch>
-</environment>
-<environment>
-	<os>macosx</os>
-	<ws>cocoa</ws>
-	<arch>x86_64</arch>
-</environment>
+	<environment>
+		<os>linux</os>
+		<ws>gtk</ws>
+		<arch>x86</arch>
+	</environment>
+	<environment>
+		<os>linux</os>
+		<ws>gtk</ws>
+		<arch>x86_64</arch>
+	</environment>
+	<environment>
+		<os>win32</os>
+		<ws>win32</ws>
+		<arch>x86</arch>
+	</environment>
+	<environment>
+		<os>win32</os>
+		<ws>win32</ws>
+		<arch>x86_64</arch>
+	</environment>
+	<environment>
+		<os>macosx</os>
+		<ws>cocoa</ws>
+		<arch>x86_64</arch>
+	</environment>
 </environments>
 */
-
 var environments = [
-{name: 'linux32', node: 'linux-ia32', os:'linux', ws:'gtk', arch:'x86'},
-{name: 'linux64', node: 'linux-x64', os:'linux', ws:'gtk', arch:'x86_64'},
-{name: 'win32',	node: 'win32-ia32', os:'win32', ws:'win32', arch:'x86'},
-{name: 'win64',	node: 'win32-x64', os:'win32', ws:'win32', arch:'x86_64'},
-{name: 'macosx',	node: 'darwin-x64', os:'macosx', ws:'cocoa', arch:'x86_64'},
+	{name: 'linux32', node: 'linux-ia32', os:'linux', ws:'gtk', arch:'x86'},
+	{name: 'linux64', node: 'linux-x64', os:'linux', ws:'gtk', arch:'x86_64'},
+	{name: 'win32',	node: 'win32-ia32', os:'win32', ws:'win32', arch:'x86'},
+	{name: 'win64',	node: 'win32-x64', os:'win32', ws:'win32', arch:'x86_64'},
+	{name: 'macosx', node: 'darwin-x64', os:'macosx', ws:'cocoa', arch:'x86_64'},
 ];
 
 
@@ -261,18 +179,19 @@ if (argv.length === 2
 		console.log('mappings: '+JSON.stringify(plugins,null,2));
 	}
     console.log('\n    Examples:');
+    console.log('    nodeclipse install nodejs from nodeclipse,kepler');
     console.log('    nodeclipse install egit');
     console.log('    nodeclipse install markdown wikitext yaml');
-    console.log('    nodeclipse install from nodeclipse,kepler nodejs');
     console.log('    nodeclipse install from enide less');
-    console.log('    nodeclipse materialize from luna to e:/builder/eclipse1/');
+    console.log('    nodeclipse update jshint');
+    console.log('    nodeclipse materialize from luna to D:/Progs/EclipseLuna1/');
 
 	console.log('\n  Visit http://www.nodeclipse.org/ for News, post Shares, Installing details, Features list,'
 			+' Usage (incl Video, Demo) with all shortcuts, Help and Hints,'
 			+' Support options, Where Helping needed, How to thank and Contact us, also History page.');
 	console.log('Project page: https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.ui/templates#nodeclipse-cli-installer');
 	process.exit();
-};
+}
 
 //-- processing commands logic
 var verbose = false;
@@ -464,11 +383,11 @@ var onExitShowCode = function (code) {
 //}
 var onExitShowCodeAndContinue = function (code) {
 	console.log(what+' process exit code ' + code);
-	if (verbose) console.log(outputString);
+	if (verbose) { console.log(outputString); }
 	var array = outputString.split("\n");
 	var filtered = array.filter( function(s){return s.indexOf('feature.group')!==-1;} );
 	console.log(filtered);
-	if (code!=0) return;
+	if (code!=0) { return; }
 
 	var all_comma_separated_list = '';
 	for (var i=0; i<filtered.length; i++){
@@ -515,3 +434,90 @@ if ( command == 'list'){
 	console.log("Try nodeclipse help");
 	process.exit(1);
 }
+
+/*
+ * Docs and older notes
+ * 
+The Eclipse runtime options
+ http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html
+ ! but not in kepler Help as "Platform Plug-in Developer Guide" is missing
+ http://help.eclipse.org/kepler/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fmisc%2Fruntime-options.html
+using p2 director
+ https://wiki.eclipse.org/Equinox/p2/Director_application
+ http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html
+ https://wiki.eclipse.org/Equinox_p2_director_application/Examples/Install_into_eclipse_using_SDKProfile
+
+<targetProductFolder>/eclipsec.exe
+   -application org.eclipse.equinox.p2.director
+   -repository http://download.eclipse.org/releases/helios/
+   -installIU org.eclipse.cdt.feature.group/<version>
+
+Arguments Description
+    -application org.eclipse.equinox.p2.director: the application ID.
+    -metadataRepository: a comma separated list of metadata repository URLs where the software to be installed can be found.
+    -artifactRepository: a comma separated list of artifact repository URLs where the software artifacts can be found.
+    -repository: a comma separated list of repository URL where each entry denotes colocated meta-data and artifact repositories.
+    -installIU: a comma separated list of IUs to install. Each entry in the list is in the form <id> [ '/' <version> ]. If you are looking to install a feature, the identifier of the feature has to be suffixed with ".feature.group".
+    -uninstallIU: a comma separated list of IUs to uninstall. Each entry in the list is in the form <id> [ '/' <version> ].
+    -revert: Revert the installation to a previous state. The previous state can either be a tag (see -tag / -listtags) or a previous profile state [ the number representing the previous state of the profile as found in p2/org.eclipse.equinox.p2.engine/<profileId>/ ].
+    -purgeHistory: Remove the history of the profile registry.
+    -destination: the path of a folder in which the targeted product is located.
+    -list: lists all IU's found in the given repositories in a property like format. The optional arguments can be an comma separated list of entries where each entry is in the form <id> [ '/' <version> ], or a p2 QL query prefixed with Q:, or Q:group as shortcut for groups.
+    -listTags: list all the tags found for the given profile.
+    -listInstalledRoots: list all the roots IUs found in the given profile. Each entry is the list in the form id / version
+    -profile: the profile id containing the description of the targeted product. This ID is is defined by the eclipse.p2.profile property contained in the config.ini of the targeted product. For the Eclipse SDK the ID is "SDKProfile"
+    -profileProperties: a comma separated list of <key>=<value> pair. The property org.eclipse.update.install.features=true will cause the update manager features to be installed.
+    -bundlepool: the location of where the plug-ins and features will be stored. This value is only taken into account when a new profile is created. For an application where all the bundles are located into the plugins/ folder of the destination, set it to <destination>.
+    -p2.os: the OS to use when the profile is created. This will be used to filter which OS specific installable units need to be installed.
+    -p2.ws: the windowing system to use when the profile is created. This will be used to filter which WS specific installable units need to be installed.
+    -p2.arch: the architecture to use when the profile is created. This will be used to filter which architecture specific installable units need to be installed.
+    -roaming: indicates that the product resulting from the installation can be moved. This property only makes sense when the destination and bundle pool are in the same location. This value is only taken into account when the profile is created.
+    -shared: use a shared location for the install. The path defaults to ${user.home}/.p2.
+    -tag: a label. This allows to tag the profile state resulting from the operation being executed.
+    -verifyOnly: only verify that the actions can be performed. Don't actually install or remove anything.
+While doing these operations, you can disable the automatic mirror selection mechanism by setting the VM argument eclipse.p2.mirrors to false.
+
+eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -list
+OK
+
+http://www.vijayp.ca/blog/2011/09/why-eclipses-check-for-updates-is-horribly-slow-and-how-to-fix-it/
+ Add it after “eclipse”, or in eclipse.ini
+-Declipse.p2.mirrors=false
+
+org.nodeclipse.jjs.feature.feature.group[/0.10.0.201401270634]
+Succeeded with
+eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
+-> http://stackoverflow.com/questions/21574010/eclipse-how-to-pass-vm-arguments-from-command-line-without-changing-eclipse-i
+
+eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -tag org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
+-> -tag works!
+
+eclipsec -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.jjs.feature.feature.group -vmargs -Declipse.p2.mirrors=false
+-> file URL works!
+nodeclipse list jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/
+-> Operation completed in 1528 ms.
+
+eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.enide.maven.feature.feature.group -tag org.nodeclipse.enide.maven.feature.feature.jar,org.nodeclipse.enide.maven.feature.feature.group -vmargs -Declipse.p2.mirrors=false
+eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.enide.maven.feature.feature.group -tag org.nodeclipse.enide.maven.feature.feature.group -vmargs -Declipse.p2.mirrors=false
+nodeclipse install -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ maven
+all 3 OK
+
+nodeclipse install -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ maven gradle
+OK in ADT, but not in STS 3.4
+
+From http://stackoverflow.com/questions/19651482/how-to-install-all-features-from-a-p2-update-site-to-an-eclipse-using-the-comman
+eclipsec.exe -application org.eclipse.equinox.p2.director \
+   -repository <URL of some repository> \
+   -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
+
+eclipsec.exe -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
+-> produces list
+eclipsec.exe -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter("(org.eclipse.equinox.p2.type.group=true)"))"
+without \" -> empty output
+st. eclipsec -nosplash -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -list "Q:everything.select(x | x.properties ~= filter(\"(org.eclipse.equinox.p2.type.group=true)\"))"
+from Node -> empty output
+=> filtering list using JavaScript
+
+eclipsec.exe -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.3 -installIU org.eclipse.sdk.ide -tag InitialState -destination e:/eclipsediy/ -profile  SDKProfile -profileProperties org.eclipse.update.install.features=true -bundlepool d:/eclipsediy/ -p2.os win32 -p2.ws win32 -p2.arch x86 -roaming
+
+*/

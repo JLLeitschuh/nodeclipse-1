@@ -39,6 +39,8 @@ template-gradle-java     Gradle Java project\n\
 template-maven-java      Maven Java project\n\
 ";
 
+//android-application		Eclipse files for Android App\n\
+//android-library			Eclipse files for Android Library\n\
 
 require('shelljs/global');
 var fs= require('fs');

@@ -2,6 +2,7 @@
 /.settings/
 /.jshintrc
 /.project
+.*.md.html
 mongodb-replicaset
 z_snippets
 npm-debug.log

@@ -16,6 +16,8 @@ Check <http://www.nodeclipse.org/> on how to get Nodeclipse or Enide Studio
 
 ## Nodeclipse CLI Commands
 
+`nodeclipse -h`
+
 	Usage: nodeclipse [arguments]
 
 	Arguments:
@@ -30,12 +32,12 @@ Check <http://www.nodeclipse.org/> on how to get Nodeclipse or Enide Studio
 	  -V, --verbose            be verbose
 
 	Templates are just folders in this project sources:
-	  hello-world              The famous hello world HTTP server in 6 lines
-	  hello-coffee	           The same server written in CoffeeScript
-	  hello-typescript         The same server written in TypeScript
-	  hello-html		       Template with HTML file
-	  template-gradle-java     Gradle Java project
-	  template-maven-java      Maven Java project
+	  hello-world              	The famous hello world HTTP server in 6 lines
+	  hello-coffee	           	The same server written in CoffeeScript
+	  hello-typescript         	The same server written in TypeScript
+	  hello-html		       	Template with HTML file
+	  template-gradle-java     	Gradle Java project
+	  template-maven-java      	Maven Java project
 	  
 Examples:
 
@@ -51,6 +53,38 @@ Examples:
 
 
 ## Nodeclipse CLI installer
+
+`nodeclipse -h install`
+
+```
+	Nodeclipse CLI Installer
+	    nodeclipse help
+	    nodeclipse help aliases
+	  Usage (from folder with eclipse):
+	    nodeclipse list [<repository>]
+	      repository may be name (nodeclipse, kepler, luna) or URL (http of file)
+	        Repositories names(12): dev nodeclipse-updates enide-repository indigo juno 4.3 kepler 4.4 luna 4.5 mars current
+	      default repositoryURL is http://www.nodeclipse.org/updates/
+	      <repository> may be file e.g. jar:file:/D:/path/to/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/
+	    nodeclipse install <alias|exact.feature.name.feature.group> [...]
+	    nodeclipse install from <repository> <alias|exact.feature.name.feature.group> [...]
+	    nodeclipse uninstall <alias|exact.feature.name.feature.group> [...]
+	    nodeclipse update [from <repository>] <alias|exact.feature.name.feature.group> [...]
+	    nodeclipse install all from <repository> // BE CAREFUL WHAT YOU ASK FOR
+	    nodeclipse materialize [from <repository>] to <folder>
+	    nodeclipse materialize from <repository> [for <environemt>] to <folder>
+	        Environment names(5): linux32 linux64 win32 win64 macosx
+	        Plugin aliases(25): egit git gfm gradle hudson icons jjs jshint jsdt less markdown maven mongodb mongodb.shell moonrise nodejs pde-tools phantomjs pluginslist restclient shelled startexpl
+	orer themes wikitext yaml
+	
+	    Examples:
+	    nodeclipse install nodejs from nodeclipse,kepler
+	    nodeclipse install egit
+	    nodeclipse install markdown wikitext yaml
+	    nodeclipse install from enide less
+	    nodeclipse update jshint
+	    nodeclipse materialize from luna to D:/Progs/EclipseLuna1/
+```    
 
 Nodeclipse CLI installer is for installing/updating plugins into Eclipse/Enide Studio.
 It is much quicker way when you need to automate and know exactly what you need.
@@ -69,7 +103,7 @@ If while installing you get errors, that you don't know how to solve, use Eclips
   
 Issues: 
 - When updating, I noticed that Eclipse once reported conflict when installing 'nodejs', but was OK for second try.  
-- Cannot resolute to install required JSDT for Nodeclipse nodejs. Install JSDT version specific for your Eclipse version. (use Eclipse GUI)
+- Cannot resolute to install required JSDT for Nodeclipse nodejs. Install JSDT version specific for your Eclipse version using Eclipse GUI.
 
 ## Eclipse Workspace and Project
 
@@ -85,9 +119,10 @@ under https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.ui/t
 
 <https://npmjs.org/doc/developers.html>
 
-before publishing
+### Hint before publishing
+
 - try with `npm install . -g`
-- check that nodeclipse.js line ending is UNIX style (#101)
+- check that nodeclipse.js (inside `bin` folder) line ending is UNIX style (#101)
 
 [#4341](https://github.com/isaacs/npm/issues/4341) `common-templates/.gitignore` becomes `common-templates/.npmignore` 
 
@@ -97,7 +132,33 @@ before publishing
 
 <http://howtonode.org/how-to-module>
 
-### Ideas
+## History
+
+- 0.8.2 fix #101 (bug on MacOS); -g option
+- 0.8.3 fix general project template
+- 0.10.0 add 2 java templates
+- 0.10.5 add Nodeclipse CLI Installer (example `nodeclipse install markdown`)
+- 0.10.6 fix #101 again; total aliases=20 
+- 0.10.8 add maven, gradle features; install from .zip; install all 
+- 0.10.9 comma-sep-list of repositories; lookup for repositories.  
+	Examples: `nci install from kepler jsdt` 
+- 0.10.10 uninstall, materialize
+	Examples: `nci uninstall mongodb.shell` , `nci new from luna to d:/progs/eclipse-diy-luna/`
+- 0.11.0 `update` command as p2-director needs uninstall then install (example `nodeclipse update markdown`)
+- 0.17
+	- add mars and 4.5 repositories
+	- add explicitly `jshint` alias to do `nodeclipse update jshint` (it is also part of `nodejs` alias)
+- 0.17.1 Android templates are not ready	
+
+## News
+
+Check <http://www.nodeclipse.org/#news>
+
+## Ideas and TODOs
+
+	  android-application		Eclipse files for Android App (that can be create with  
+	  		`android create project -p AppPAKTGV -a MainAcivity -k com.example.apppaktgv -t android-19 -g -v 0.12.+`)	
+	  android-library			Eclipse files for Android Library
 
 	$ nodeclipse -h
 	Usage: nodeclipse [directory] [arguments]
@@ -139,20 +200,3 @@ List of workspace projects
 	
 	java -cp startup.jar -noSplash -data "D:\Source\MyProject\workspace" -application org.eclipse.jdt.apt.core.aptBuild
 
-## History
-
-- 0.8.2 fix #101 (bug on MacOS); -g option
-- 0.8.3 fix general project template
-- 0.10.0 add 2 java templates
-- 0.10.5 add Nodeclipse CLI Installer (example `nodeclipse install markdown`)
-- 0.10.6 fix #101 again; total aliases=20 
-- 0.10.8 add maven, gradle features; install from .zip; install all 
-- 0.10.9 comma-sep-list of repositories; lookup for repositories.  
-	Examples: `nci install from kepler jsdt` 
-- 0.10.10 uninstall, materialize
-	Examples: `nci uninstall mongodb.shell` , `nci new from luna to d:/progs/eclipse-diy-luna/`
-- 0.11.0 `update` command as p2-director needs uninstall then install (example `nodeclipse update markdown`)
-
-## News
-
-Check <http://www.nodeclipse.org/>
