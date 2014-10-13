@@ -54,6 +54,12 @@ Examples:
 
 ## Nodeclipse CLI installer
 
+Nodeclipse CLI installer is for installing/updating plugins into Eclipse/Enide Studio.
+It is much quicker way when you need to automate and know exactly what you need.
+Limitation: 
+ - no dependencies resolution.
+ - only for eclipse in current folder
+
 `nodeclipse -h install`
 
 ```
@@ -86,11 +92,9 @@ Examples:
 	    nodeclipse materialize from luna to D:/Progs/EclipseLuna1/
 ```    
 
-Nodeclipse CLI installer is for installing/updating plugins into Eclipse/Enide Studio.
-It is much quicker way when you need to automate and know exactly what you need.
 
 	cd path/to/eclipse
-	nodeclipse install egit
+	nodeclipse install markdown
 
 or if you are in a hurry
 
@@ -148,7 +152,8 @@ under https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.ui/t
 - 0.17
 	- add mars and 4.5 repositories
 	- add explicitly `jshint` alias to do `nodeclipse update jshint` (it is also part of `nodejs` alias)
-- 0.17.1 Android templates are not ready	
+- 0.17.1 Android templates are not ready
+- 0.17.2 add AngularJS, Color IDE Pack, Nodeclipse EditBox, Emmet, JDT Spelling, JSHint, TCF-Termnals, Zip Editor
 
 ## News
 

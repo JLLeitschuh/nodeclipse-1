@@ -3,21 +3,30 @@
  * All well-known open source licenses http://choosealicense.com/licenses/
  * require showing license and copyright notice from author
  */
-//TODO can't update
+
+// User is to list `help aliases` to see repository name
+
 //TODO epm install from nodeclipse,kepler nodejs
 // -> too long wating time, recommend to split or use &&
 // epm install from kepler jsdt
 // epm install nodejs
-//TODO specify repository for plugin, e.g. for `less` => not to add it automatically as delays may be big.
-// User is to list `help aliases` to see repository name
+//DONE specify repository for plugin, e.g. for `less` => not to add it automatically as delays may be big.
 
 var plugins = [
+	{alias: 'angularjs', name: 'angularjs-eclipse-feature.feature.group'},
+	// Color IDE Pack : ECT, Moonrise, Jeeeyuls, EditBox http://marketplace.eclipse.org/content/color-ide-pack
+	{alias: 'color', name: 'com.github.eclipsecolortheme.feature.feature.group,com.github.eclipseuitheme.themes.feature.feature.group,net.jeeeyul.eclipse.themes.feature.feature.group,pm.eclipse.editbox.feature.feature.group'},
+	{alias: 'editbox', name: 'pm.eclipse.editbox.feature.feature.group'},
+	{alias: 'ect', name: 'com.github.eclipsecolortheme.feature.feature.group'},
 	{alias: 'egit', name: 'org.eclipse.egit.feature.group'}, //TODO check if works without ',org.eclipse.jgit.feature.group' and updates both
-	{alias: 'git', name: 'gitaddon.feature.feature.group'},
+	{alias: 'ect', name: 'com.github.eclipsecolortheme.feature.feature.group'},
+	{alias: 'emmet', name: 'io.emmet.eclipse.feature.group'},
 	{alias: 'gfm', name: 'code.satyagraha.gfm.viewer.feature.feature.group'},
+	// not Gradle IDE Pack
 	{alias: 'gradle', name: 'org.nodeclipse.enide.gradle.feature.feature.group,org.nodeclipse.enide.editors.gradle.feature.feature.group'},
 	{alias: 'hudson', name: 'org.eclipse.mylyn.hudson.feature.group'},
 	{alias: 'icons', name: 'org.eclipse_icons.editor.feature.feature.group'},
+	{alias: 'jdt-spelling', name: 'jdt.spelling.feature.feature.group'},
 	{alias: 'jjs', name: 'org.nodeclipse.jjs.feature.feature.group'},
 	{alias: 'jshint', name: 'com.eclipsesource.jshint.feature.feature.group'},
 	{alias: 'jsdt', name: 'org.eclipse.wst.jsdt.feature.feature.group', repository: 'current'}, // requires kepler,etc update site
@@ -27,17 +36,20 @@ var plugins = [
 	{alias: 'mongodb', name: 'net.jumperz.app.MMonjaDB.feature.group'},
 	{alias: 'mongodb.shell', name: 'org.nodeclipse.mongodb.feature.feature.group'},
 	{alias: 'moonrise', name: 'com.github.eclipseuitheme.themes.feature.feature.group'},
-	//TODO org.nodeclipse.enide.nodejs.feature
-	{alias: 'nodejs', name: "org.nodeclipse.feature.group,org.chromium.sdk.feature.group,org.chromium.debug.feature.group,com.eclipsesource.jshint.feature.feature.group"},
+	//DONE org.nodeclipse.enide.nodejs.feature = org.nodeclipse.feature.group,org.chromium.sdk.feature.group,org.chromium.debug.feature.group
+	{alias: 'nodejs', name: "org.nodeclipse.enide.nodejs.feature.feature.group,com.eclipsesource.jshint.feature.feature.group,net.mihai-nita.ansicon.feature.group"},
 	{alias: 'pde-tools', name: 'net.jeeeyul.pdetools.feature.feature.group'},
 	{alias: 'phantomjs', name: 'org.nodeclipse.phantomjs.feature.feature.group'},
 	{alias: 'pluginslist', name: 'org.nodeclipse.pluginslist.feature.feature.group'},
 	{alias: 'restclient', name: 'code.google.restclient.tool.feature.feature.group'},
 	{alias: 'shelled', name: 'net.sourceforge.shelled.feature.group'},
 	{alias: 'startexplorer', name: 'de.bastiankrol.startexplorer.feature.feature.group'},
+	{alias: 'terminals', name: 'org.eclipse.tcf.te.terminals.feature.feature.group'},
+	{alias: 'tern', name: 'tern-feature.feature.group,tern-jsdt-feature.feature.group,tern-server-nodejs-feature.feature.group'},
 	{alias: 'themes', name: 'net.jeeeyul.eclipse.themes.feature.feature.group'},
 	{alias: 'wikitext', name: 'org.eclipse.mylyn.wikitext_feature.feature.group'}, // textile, mediawiki, tracwiki, twiki
 	{alias: 'yaml', name: 'org.dadacoalition.yedit.feature.group'},
+	{alias: 'zip', name: 'zipeditor.feature.group'},
 ];
 var repositories = [
 	{name: 'dev', url: 'jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/'},//hack to help author
