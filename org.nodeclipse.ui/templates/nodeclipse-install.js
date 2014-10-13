@@ -1,6 +1,6 @@
-/* 
+/*
  * Nodeclipse CLI Installer, Copyright 2014 Paul Verest within Nodeclipse, MIT license http://www.nodeclipse.org/
- * All well-known open source licenses http://choosealicense.com/licenses/ 
+ * All well-known open source licenses http://choosealicense.com/licenses/
  * require showing license and copyright notice from author
  */
 /*
@@ -13,12 +13,12 @@ using p2 director
  http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fp2_director.html
  https://wiki.eclipse.org/Equinox_p2_director_application/Examples/Install_into_eclipse_using_SDKProfile
 
-<targetProductFolder>/eclipsec.exe 
-   -application org.eclipse.equinox.p2.director 
+<targetProductFolder>/eclipsec.exe
+   -application org.eclipse.equinox.p2.director
    -repository http://download.eclipse.org/releases/helios/
    -installIU org.eclipse.cdt.feature.group/<version>
 
-Arguments Description 
+Arguments Description
     -application org.eclipse.equinox.p2.director: the application ID.
     -metadataRepository: a comma separated list of metadata repository URLs where the software to be installed can be found.
     -artifactRepository: a comma separated list of artifact repository URLs where the software artifacts can be found.
@@ -51,11 +51,11 @@ http://www.vijayp.ca/blog/2011/09/why-eclipses-check-for-updates-is-horribly-slo
 -Declipse.p2.mirrors=false
 
 org.nodeclipse.jjs.feature.feature.group[/0.10.0.201401270634]
-Succeeded with 
-eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false 
+Succeeded with
+eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
 -> http://stackoverflow.com/questions/21574010/eclipse-how-to-pass-vm-arguments-from-command-line-without-changing-eclipse-i
 
-eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -tag org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false 
+eclipsec -application org.eclipse.equinox.p2.director -repository http://www.nodeclipse.org/updates/ -installIU org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -tag org.nodeclipse.jjs.feature.feature.group/0.10.0.201401270634 -vmargs -Declipse.p2.mirrors=false
 -> -tag works!
 
 eclipsec -application org.eclipse.equinox.p2.director -repository jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/ -installIU org.nodeclipse.jjs.feature.feature.group -vmargs -Declipse.p2.mirrors=false
@@ -89,7 +89,7 @@ eclipsec.exe -application org.eclipse.equinox.p2.director -repository http://dow
 */
 
 //TODO can't update
-//TODO epm install from nodeclipse,kepler nodejs 
+//TODO epm install from nodeclipse,kepler nodejs
 // -> too long wating time, recommend to split or use &&
 // epm install from kepler jsdt
 // epm install nodejs
@@ -112,6 +112,7 @@ var plugins = [
 	{alias: 'mongodb.shell', name: 'org.nodeclipse.mongodb.feature.feature.group'},
 	{alias: 'moonrise', name: 'com.github.eclipseuitheme.themes.feature.feature.group'},
 	{alias: 'nodejs', name: "org.nodeclipse.feature.group,org.chromium.sdk.feature.group,org.chromium.debug.feature.group,com.eclipsesource.jshint.feature.feature.group"}, //TODO org.nodeclipse.enide.nodejs.feature
+	{alias: 'pde-tools', name: 'net.jeeeyul.pdetools.feature.feature.group'},
 	{alias: 'phantomjs', name: 'org.nodeclipse.phantomjs.feature.feature.group'},
 	{alias: 'pluginslist', name: 'org.nodeclipse.pluginslist.feature.feature.group'},
 	{alias: 'restclient', name: 'code.google.restclient.tool.feature.feature.group'},
@@ -122,7 +123,7 @@ var plugins = [
 	{alias: 'yaml', name: 'org.dadacoalition.yedit.feature.group'},
 ];
 var repositories = [
-	{name: 'dev', url: 'jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/'},//hack to help author                    
+	{name: 'dev', url: 'jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/'},//hack to help author
 	{name: 'nodeclipse-updates', url: 'http://www.nodeclipse.org/updates/'},
 	{name: 'enide-repository', url: 'https://raw.github.com/Enide/eclipse-p2-composite-repository/master/'},
 	{name: 'indigo', url: 'http://download.eclipse.org/releases/indigo'},
@@ -179,7 +180,7 @@ var getEnvironmentObject = function(){
 	//What processor architecture you're running on: 'arm', 'ia32', or 'x64'.
 	//console.log('This processor architecture is ' + process.arch);
 	//process.platform#
-	//What platform you're running on: 'darwin', 'freebsd', 'linux', 'sunos' or 'win32' 
+	//What platform you're running on: 'darwin', 'freebsd', 'linux', 'sunos' or 'win32'
 	//os.arch() + os.platform() + os.type() // -> x64win32Windows_NT
 	var lookupOS = function(platform_arch){ // uses repositories
 		for (var ei=0; ei<environments.length; ei++){
@@ -190,12 +191,12 @@ var getEnvironmentObject = function(){
 		}
 		return null;
 	};
-	
+
 	var os = require('os');
 	var platform_arch= os.platform()+'-'+os.arch();
-	
+
 	var environment = lookupOS(platform_arch);
-	
+
 	if (environment){
 		console.log(platform_arch+' -> '+ JSON.stringify(environment));
 	} else{
@@ -217,11 +218,11 @@ if (argv[2]=='i'){
 	argv[2]='install';
 }
 
-if (argv.length === 2 
-	|| argv[2]=='help' || argv[2]=='--help' || argv[2]=='-h' 
+if (argv.length === 2
+	|| argv[2]=='help' || argv[2]=='--help' || argv[2]=='-h'
 	//|| ( argv[2]=='list' && !argv[3]) //will list default repository
-	|| !(argv[2]=='install' || argv[2]=='i' || argv[2]=='materialize' || argv[2]=='new' || argv[2]=='list'  
-		|| argv[2]=='uninstall' || argv[2]=='update') 
+	|| !(argv[2]=='install' || argv[2]=='i' || argv[2]=='materialize' || argv[2]=='new' || argv[2]=='list'
+		|| argv[2]=='uninstall' || argv[2]=='update')
 	)
 {
 	console.log('    nodeclipse help');
@@ -233,7 +234,7 @@ if (argv.length === 2
 	for (var ri=0; ri<repositories.length; ri++){
 		repositoriesNames += repositories[ri].name+' ';
 	}
-	console.log('        '+repositoriesNames);	
+	console.log('        '+repositoriesNames);
 	console.log('      default repositoryURL is '+repository);
 	console.log('      <repository> may be file e.g. jar:file:/D:/path/to/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/');
 //	console.log('      repositoryURL may be file e.g. jar:file:/D:/Workspaces/Nodeclipse-DEV/nodeclipse-1/org.nodeclipse.site/target/org.nodeclipse.site-0.10.0-SNAPSHOT.zip!/');
@@ -249,7 +250,7 @@ if (argv.length === 2
 	for (var ei=0; ei<environments.length; ei++){
 		environmentNames += environments[ei].name+' ';
 	}
-	console.log('        '+environmentNames);	
+	console.log('        '+environmentNames);
 
 	var mappedAliases = '        Plugin aliases('+plugins.length+'): ';
 	for (var mi=0; mi<plugins.length; mi++){
@@ -265,8 +266,8 @@ if (argv.length === 2
     console.log('    nodeclipse install from nodeclipse,kepler nodejs');
     console.log('    nodeclipse install from enide less');
     console.log('    nodeclipse materialize from luna to e:/builder/eclipse1/');
-    
-	console.log('\n  Visit http://www.nodeclipse.org/ for News, post Shares, Installing details, Features list,' 
+
+	console.log('\n  Visit http://www.nodeclipse.org/ for News, post Shares, Installing details, Features list,'
 			+' Usage (incl Video, Demo) with all shortcuts, Help and Hints,'
 			+' Support options, Where Helping needed, How to thank and Contact us, also History page.');
 	console.log('Project page: https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.ui/templates#nodeclipse-cli-installer');
@@ -300,11 +301,11 @@ if (argv[2]=='list'){ // this does not work (from http://www.jshint.com/docs/): 
 			startingIndex = 5;
 		}
 	}
-} 
+}
 //TODO nci uninstall mongodb.shell
 else if (argv[2]=='uninstall'){
 	var command = 'uninstall';
-} 
+}
 else if (argv[2]=='update'){
 	var command = 'update';
 	if (argv[3]=='from'){// was  || argv[3]=='-repository'
@@ -313,7 +314,7 @@ else if (argv[2]=='update'){
 			startingIndex = 5;
 		}
 	}
-} 
+}
 //TODO nci new [from kepler] to e:/builder/eclipse1/
 else if (argv[2]=='materialize' || argv[2]=='new'){
 	var command = 'materialize';
@@ -421,12 +422,12 @@ var optionsUpdate = ['-nosplash', '-application', 'org.eclipse.equinox.p2.direct
 
 //DONE nci materialize from kepler to e:/builder/eclipse1/
 
-/* eclipsec.exe -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.3 
+/* eclipsec.exe -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.3
  -installIU org.eclipse.sdk.ide -tag InitialState -destination e:/eclipsediy/ -profile  SDKProfile
  -profileProperties org.eclipse.update.install.features=true -bundlepool d:/eclipsediy/ -p2.os win32 -p2.ws win32 -p2.arch x86 -roaming
 
-'-application', 'org.eclipse.equinox.p2.director', '-repository', 'http://download.eclipse.org/eclipse/updates/4.3', 
-'-installIU', 'org.eclipse.sdk.ide', '-tag', 'InitialState', '-destination', 'e:/eclipsediy/', 
+'-application', 'org.eclipse.equinox.p2.director', '-repository', 'http://download.eclipse.org/eclipse/updates/4.3',
+'-installIU', 'org.eclipse.sdk.ide', '-tag', 'InitialState', '-destination', 'e:/eclipsediy/',
 '-profile', 'SDKProfile', '-profileProperties', 'org.eclipse.update.install.features=true', '-bundlepool', 'd:/eclipsediy/',
 '-p2.os', 'win32', '-p2.ws', 'win32', '-p2.arch', 'x86', '-roaming'
 
@@ -458,7 +459,7 @@ var onExitShowCode = function (code) {
 //	var tag = 'retry_all_from_'+repository;
 //	optionsInstall = ['-nosplash', '-application', 'org.eclipse.equinox.p2.director', '-repository', repository,
 //	                  '-installIU', comma_separated_list, '-tag', tag];
-//	
+//
 //	var spawned = spawning(what, optionsInstall, log2consoleAndString, onExitShowCode);
 //}
 var onExitShowCodeAndContinue = function (code) {
@@ -468,7 +469,7 @@ var onExitShowCodeAndContinue = function (code) {
 	var filtered = array.filter( function(s){return s.indexOf('feature.group')!==-1;} );
 	console.log(filtered);
 	if (code!=0) return;
-	
+
 	var all_comma_separated_list = '';
 	for (var i=0; i<filtered.length; i++){
 		var feature = filtered[i].replace('=', '/').replace('\r', '');
@@ -479,7 +480,7 @@ var onExitShowCodeAndContinue = function (code) {
 	var tag = 'all_from_'+repository;
 	optionsInstall = ['-nosplash', '-application', 'org.eclipse.equinox.p2.director', '-repository', repository,
 	                      '-installIU', all_comma_separated_list, '-tag', tag, '-vmargs', '-Declipse.p2.mirrors=false'];
-	
+
 	var spawned = spawning(what, optionsInstall, log2console, onExitShowCode);
 };
 var spawning = function (what, options, dataHandler, closeHandler) {
@@ -494,11 +495,11 @@ var spawning = function (what, options, dataHandler, closeHandler) {
 };
 //-- subs }
 
-if ( command == 'list'){ 
+if ( command == 'list'){
 	var spawned = spawning(what, optionsList, log2console, onExitShowCode);
 } else if ( command == 'materialize'){
 	var spawned = spawning(what, optionsMaterialize, log2console, onExitShowCode);
-} else if (command == 'install') { 
+} else if (command == 'install') {
 	if (listInstallAllMode){
 		//spawn 2 times
 		var spawned = spawning(what, optionsList, log2consoleAndString, onExitShowCodeAndContinue);

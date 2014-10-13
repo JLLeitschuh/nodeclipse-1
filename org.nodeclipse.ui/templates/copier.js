@@ -197,7 +197,7 @@ var executeActions = function () {
 	inviteToSiteAsTheLastLine();
 }
 var copyDotProjectFile = function (eclipse, curfolder, what, name) {
-	if (!eclipse) eclipse = 'eclipse';
+	if (!eclipse) eclipse = 'eclipse'; //folder with nodeclipse .project
 	if (!what) eclipse = '/.project';
 	var str = cat(__dirname+'/'+eclipse + what).replace('${projectname}', name);
 	var destfile = curfolder + what;
