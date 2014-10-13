@@ -5,15 +5,13 @@
 	<projects>
 	</projects>
 	<buildSpec>
-		<!-- JSHint validation -->
 		<buildCommand>
 			<name>com.eclipsesource.jshint.ui.builder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<!-- no validation, JSDoc, TODOs processing -->
 		<buildCommand>
-			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
+			<name>tern.eclipse.ide.core.ternBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -21,5 +19,6 @@
 	<natures>
 		<nature>org.nodeclipse.ui.NodeNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>tern.eclipse.ide.core.ternnature</nature>
 	</natures>
 </projectDescription>
