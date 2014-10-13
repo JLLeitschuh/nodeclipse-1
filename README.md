@@ -28,6 +28,8 @@ Make your changes to the code and see it running (for some cases without launch 
 For example try changes Jade keywords in 
 [`src/org/nodeclipse/enide/editors/jade/highlight/Words.java`](https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.enide.editors.jade/src/org/nodeclipse/enide/editors/jade/highlight/Words.java) 
 
+There is also [Nodeclipse CLI Node.js project at `org.nodeclipse.ui\templates`](https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.ui/templates).
+
 To go on some minimal Java & Eclipse plugin development skills are needed for improving code base.
 Check "Plug-in development 101" <http://www.ibm.com/developerworks/library/os-eclipse-plugindev1/> as great tutorial by Chris Aniszczyk (2008).
 That will be great starting point, that lets you get understanding.
