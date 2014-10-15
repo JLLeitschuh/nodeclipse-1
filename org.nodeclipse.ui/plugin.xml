@@ -67,7 +67,7 @@
    </extension>
    <extension
          point="org.eclipse.ui.editors">
-         <!-- TextEditor based -->
+      <!-- TextEditor based -->
       <editor
             class="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
@@ -76,7 +76,16 @@
             id="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
             name="Nodeclipse TextEditor-based Editor">
       </editor>
-      
+      <!-- npm-gray icon -->
+      <editor 
+            class="org.eclipse.ui.editors.text.TextEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="npmignore"
+            icon="icons/npm/npm_gray.png"
+            id="org.nodeclipse.ui.editors.NodeEditor.npmignore"
+            name="TextEditor for .npmignore">
+      </editor>
       <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
@@ -104,6 +113,15 @@
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
       </editor>
+      <editor
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            filenames = "package.json"
+            icon="icons/npm/npm.png"
+            id="org.nodeclipse.ui.editors.NodeEditor.package.json"
+            name="Nodeclipse JSDT-based Editor for package.json">
+      </editor>
+      
       <!-- class is not on plugin classpath!
       <editor
             class="winterwell.markdown.editors.MarkdownEditor"
