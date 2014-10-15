@@ -99,7 +99,7 @@
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
-            extensions="json,jshintrc,tern-project"
+            extensions="json,jshintrc,tern-project,bowerrc"
             icon="icons/node_blue.png"
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
