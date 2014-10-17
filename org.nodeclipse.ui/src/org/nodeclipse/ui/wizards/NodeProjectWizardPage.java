@@ -44,6 +44,8 @@ public class NodeProjectWizardPage extends WizardPage {
     Button btnHelloCoffee;
     Button btnHelloTypeScript;
     Button btnHelloHtml;
+    // @since 0.18
+    Button btnHelloAngularjs;
     // @since 0.11
     Button btnHelloKoa;
     Button btnHelloNashorn;
@@ -221,6 +223,10 @@ public class NodeProjectWizardPage extends WizardPage {
         btnHelloHtml = new Button(templatesGroup, SWT.RADIO);
         btnHelloHtml.setText(Constants.TEMPLATE_HELLO_HTML);
         
+        // @since 0.18
+        btnHelloAngularjs = new Button(templatesGroup, SWT.RADIO);
+        btnHelloAngularjs.setText(Constants.TEMPLATE_HELLO_ANGULARJS);
+        
         // @since 0.11
         btnHelloKoa = new Button(templatesGroup, SWT.RADIO);
         btnHelloKoa.setText(Constants.TEMPLATE_HELLO_KOA);
@@ -243,6 +249,9 @@ public class NodeProjectWizardPage extends WizardPage {
          }
          if (btnHelloHtml.getSelection()) {
              return Constants.TEMPLATE_HELLO_HTML;
+         }
+         if (btnHelloAngularjs.getSelection()) {
+             return Constants.TEMPLATE_HELLO_ANGULARJS;
          }
          if (btnHelloKoa.getSelection()) {
              return Constants.TEMPLATE_HELLO_KOA;
