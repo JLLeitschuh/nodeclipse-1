@@ -125,7 +125,7 @@ public class CoffeeFileWizard extends Wizard implements INewWizard {
      */
 
     private InputStream openContentStream() {
-        String contents = "###\n * New coffeescript file\n###\n";
+        String contents = "###\n * http://usejsdoc.org/\n###\n";
         return new ByteArrayInputStream(contents.getBytes());
     }
 
