@@ -7,6 +7,6 @@ Only highlight HTML tags as keywords. Use [Nodeclipse EditBox](https://github.co
 
 ## To Develop
 
-- Import `org.nodeclipse.enide.editors.notxml` as existing Eclipse project in Eclipse with PDE (e.g. Eclipse Standard)
+- Import `org.nodeclipse.enide.editors.jade` as existing Eclipse project in Eclipse with PDE (e.g. Eclipse Standard)
 - open `plugins.xml`
 - click `Launch an Eclipse application in Debug mode`
