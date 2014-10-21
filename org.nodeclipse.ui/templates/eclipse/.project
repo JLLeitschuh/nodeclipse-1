@@ -11,7 +11,7 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<!-- no validation, JSDoc, TODOs processing -->
+		<!-- no validation, but for JSDoc and TODOs processing -->
 		<buildCommand>
 			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
 			<arguments>
