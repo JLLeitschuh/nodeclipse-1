@@ -2,7 +2,9 @@ package org.nodeclipse.ui.npm;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -11,12 +13,16 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.eclipse.debug.core.model.ILaunchConfigurationDelegate;
+import org.eclipse.jface.preference.IPreferenceStore;
 import org.nodeclipse.ui.Activator;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.Constants;
+import org.nodeclipse.ui.util.NodeclipseConsole;
 import org.nodeclipse.ui.util.OSUtils;
 
 public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
+	
+	private boolean warned = false;
 
     /*
      * (non-Javadoc)
@@ -39,17 +45,77 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
         String file = configuration.getAttribute(Constants.KEY_FILE_PATH, Constants.BLANK_STRING);
         String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 
+        File workingPath = (new File(filePath)).getParentFile();
+        
+        //env
+        String[] envp = getEnvironmentVariables(configuration);         
+        
         String[] cmds = {};
         cmds = cmdLine.toArray(cmds);
-        Process p = null;
-        if(OSUtils.isMacOS()) {
-        	String[] env = {"PATH=" + nodePath.substring(0, nodePath.lastIndexOf(File.separator))};
-        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile(), env);
-        } else {
-        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
-        }
+        
+//        Process p = null;
+//        if(OSUtils.isMacOS()) {
+//        	String[] env = {"PATH=" + nodePath.substring(0, nodePath.lastIndexOf(File.separator))};
+//        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile(), env);
+//        } else {
+//        	p = DebugPlugin.exec(cmds, (new File(filePath)).getParentFile());
+//        }
+        Process p = DebugPlugin.exec(cmds, workingPath, envp);
         DebugPlugin.newProcess(launch, p, Constants.NPM_PROCESS_MESSAGE + goal);
     }
+    
+    // copied from org.nodeclipse.debug.launch.LaunchConfigurationDelegate
+	private String[] getEnvironmentVariables(ILaunchConfiguration configuration) throws CoreException {
+		Map<String, String> envm = new HashMap<String, String>();
+		envm = configuration.getAttribute(Constants.ATTR_ENVIRONMENT_VARIABLES, envm);
+		
+		int envmSizeDelta = 4;
+		Map<String,String> all = null;
+		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
+		boolean passAllEnvVars = preferenceStore.getBoolean(PreferenceConstants.NODE_PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
+		if (passAllEnvVars){
+			all = System.getenv();
+			envmSizeDelta = all.size();
+		}
+		
+		String[] envp = new String[envm.size()+envmSizeDelta]; // see below
+		int idx = 0;
+		for(String key : envm.keySet()) {
+			String value = envm.get(key);
+			envp[idx++] = key + "=" + value;
+		}
+		
+		if (passAllEnvVars){
+			for (Map.Entry<String, String> entry : all.entrySet())
+			{
+			    //System.out.println(entry.getKey() + "/" + entry.getValue());
+			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
+			}
+		}else{
+			//+ #81
+			envp[idx++] = getEnvVariableEqualsString("PATH");
+			envp[idx++] = getEnvVariableEqualsString("TEMP");
+			envp[idx++] = getEnvVariableEqualsString("TMP");
+			envp[idx++] = getEnvVariableEqualsString("SystemDrive");
+		}
+		if (!warned ){
+			NodeclipseConsole.write("  These environment variables will be applied automatically to every `node` launch.\n");
+			StringBuilder sb = new StringBuilder(100);
+			for(int i=0; i<envp.length; i++){
+				sb.append("  ").append(envp[i]).append('\n');	
+			}
+			NodeclipseConsole.write(sb.toString());
+			warned = true;
+		}
+		return envp;
+	}
+
+	protected String getEnvVariableEqualsString(String envvarName){
+		String envvarValue = System.getenv(envvarName);
+		if (envvarValue==null) envvarValue = "";
+		return envvarName + "=" + envvarValue;		
+	}
+    
     
     private static String findNpm(String nodePath) {
         //TODO npm application path should be stored in preference.

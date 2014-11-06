@@ -23,6 +23,8 @@ public class Constants {
     public static final String NPM_CMD = "npm.cmd";
     public static final String NPM_PROCESS_MESSAGE = "NPM Process ";
     public static final String NPM_INSTALL = "install";
+    // copied from org.nodeclipse.debug.util.Constants
+	public static final String ATTR_ENVIRONMENT_VARIABLES = "attr_environment_variables";	
     
     public static final String FILE_LABEL = "File";
     public static final String SEARCH_LABEL = "Search...";
