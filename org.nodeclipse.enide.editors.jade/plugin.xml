@@ -8,8 +8,7 @@
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"            
             extensions="jade"
             id="org.nodeclipse.enide.editors.jade.editors.JadeEditor"
-            default="true"
-            name="Minimalist Jade Editor">
+            name="Minimalist Jade (Haml, Slim) Editor">
       </editor>
    </extension>
    
