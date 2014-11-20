@@ -12,13 +12,25 @@ Read <http://www.nodeclipse.org/> that has News, post Shares, Installing details
 Usage (incl Video, Demo) with all shortcuts, Help and Hints,
  Support options, Where Helping needed, How to thank and Contact us, also History page.
 
+### Personal message
+
+Hello, I am Paul Verest, one of Nodeclipse [contributors](https://github.com/Nodeclipse/nodeclipse-1/graphs/contributors).
+I am Java developer adopting Node.js ( and less PhantomJS, Nashorn etc Javascript ) into my set of tools.
+In January 2013 I just started developing Node.js in Eclipse without any plugins, but then I came to the point "how to debug?".
+That lead me to know Nodeclipse 0.2 by Tomoyuki Inagaki, that by that time was fork in his own account.
+We unified 0.2 back into Nodeclipse organization (it automatically got name `nodeclipse-1` because `nodeclipse` repository was there),
+the rest can be seen in [history](http://www.nodeclipse.org/history).
+
 ## Enhancing Nodeclipse
 
 First give a try (using [Eclipse IDE for Eclipse Committers](https://www.eclipse.org/downloads/)
 or any Eclipse/Enide Studio with PDE installed):
 
 - `git clone https://github.com/Nodeclipse/nodeclipse-1.git` or EGit equivalent
-- import as existing project "nodeclipse-1" (only root)
+- (optionally, recommended) run `mvn package` to make sure the build passes locally and you got all dependencies,  
+ this way you won't need waiting Eclipse downloading (that can make it unresponsive)
+- import as existing project "nodeclipse-1" (only root, that is general project, without any builds).
+ Now you already can navigate over code
 - in Project Explorer right-click a plugin project folder, e.g. "org.nodeclipse.enide.editors.jade",
  select "Select Import as Project"
 - right-click chosen plugin project as select Run As -> Eclipse Application
@@ -42,20 +54,11 @@ Even without skills above you can do even more helping by research. Start by rai
 describing what problem you want to solve, sharing some link. It maybe how to use Nodeclipse, new plugin to include,
 how to support newer JavaScript features, Node.js packages, other JS libs like AngularJS, EmberJS etc.
 
-### Personal message
-
-Hello, I am Paul Verest, one of Nodeclipse [contributors](https://github.com/Nodeclipse/nodeclipse-1/graphs/contributors).
-I am Java developer adopting Node.js ( and less PhantomJS, Nashorn etc Javascript ) into my set of tools.
-In January 2013 I just started developing Node.js in Eclipse without any plugins, but then I came to the point "how to debug?".
-That lead me to know Nodeclipse 0.2 by Tomoyuki Inagaki, that by that time was fork in his own account.
-We unified 0.2 back into Nodeclipse organization (it automatically got name `nodeclipse-1` because `nodeclipse` repository was there),
-the rest can be seen in [history](http://www.nodeclipse.org/history).
-
 ## Diving-In
 
 Try out next version from this sources just by `git clone`, `mvn package` , then install from .zip (see Maven build below for more).
-(Also there is an idea, that was tried in 0.9 iteration, to develop in GitHub fork and merge before release for a review.
- So see opened pull requests as well.)
+
+You don't need import all project, and please change only one project per Pull Request.
 
 Check README.md in project modules (e.g. `org.nodeclipse.debug` ). See launching Node.js logic in
 [LaunchConfigurationDelegate.java](https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.debug/src/org/nodeclipse/debug/launch/LaunchConfigurationDelegate.java)
@@ -82,9 +85,11 @@ Maven build is optional for full build with other plugins.
 
 ### Maven build
 
-Build
+[Maven](http://maven.apache.org/) build (using [Tycho plugin](http://eclipse.org/tycho/)) is headless build, that doesn't require Eclipse.
 
-`mvn package` or `mvn clean package -Pquick` builds in `org.nodeclipse.updates/target` with less external dependencies.
+From Nodeclipse-1 base folder just run `mvn package`. Run offline when to re-build `mvn clean package -o`. 
+
+`mvn clean package -Pquick` builds in `org.nodeclipse.updates/target` with less external dependencies.
 It is not enough for release, e.g. because JSHint is external plugin and there are 20 more others. 
 
 `mvn clean package -Pfull` builds in `org.nodeclipse.site/target`. For release.
@@ -94,11 +99,6 @@ It is not enough for release, e.g. because JSHint is external plugin and there a
 Before release
 
 `mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=0.17.0-SNAPSHOT -Pfull`
-
-
-[Maven](http://maven.apache.org/) build (using [Tycho plugin](http://eclipse.org/tycho/)) is headless build, that doesn't require Eclipse.
-
-From Nodeclipse-1 base folder just run `mvn package`. Run offline when to re-build `mvn clean package -o`. 
 
 #### Install site.zip (quick and simple way)
 
