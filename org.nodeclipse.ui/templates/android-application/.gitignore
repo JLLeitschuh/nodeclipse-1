@@ -1,0 +1,9 @@
+/gen/
+/bin/
+/.gradle/
+/build/
+/gradle-app.setting 
+.*.md.html  
+.DS_Store
+.idea/workspace.xml
+/local.properties
