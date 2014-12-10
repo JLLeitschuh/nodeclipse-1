@@ -475,36 +475,6 @@ function setDocumentScrollTop(ypos)
 <span class="pl-s3">load</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>fxinit.js<span class="pl-pds">&quot;</span></span>);</pre>
 </div> 
 <ul> 
- <li>javaextend.js</li> 
-</ul> 
-<div class="highlight highlight-js">
- <pre><span class="pl-c">// http://hg.openjdk.java.net/nashorn/jdk8/nashorn/raw-file/29b2b2ed954c/docs/JavaScriptingProgrammersGuide.html#jsextendconcrete</span>
-
-<span class="pl-c">/**</span>
-<span class="pl-c"> * Results: </span>
-<span class="pl-c">size invoked!</span>
-<span class="pl-c">add(i, e) invoked!</span>
-<span class="pl-c"></span>
-<span class="pl-c"> */</span>
-
-<span class="pl-s">var</span> ArrayList <span class="pl-k">=</span> Java.<span class="pl-sc">type</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>java.util.ArrayList<span class="pl-pds">&quot;</span></span>)
-<span class="pl-s">var</span> ArrayListExtender <span class="pl-k">=</span> Java.extend(ArrayList)
-<span class="pl-s">var</span> printSizeInvokedArrayList <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ArrayListExtender</span>() {
-    <span class="pl-en">size</span>: <span class="pl-st">function</span>() { <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>size invoked!<span class="pl-pds">&quot;</span></span>); }
-}
-<span class="pl-s">var</span> printAddInvokedArrayList <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ArrayListExtender</span>() {
-    <span class="pl-en">add</span>: <span class="pl-st">function</span>(<span class="pl-vpf">x</span>, <span class="pl-vpf">y</span>) {
-        <span class="pl-k">if</span>(<span class="pl-k">typeof</span>(y) <span class="pl-k">===</span> <span class="pl-s1"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span>) {
-            <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>add(e) invoked!<span class="pl-pds">&quot;</span></span>);
-        } <span class="pl-k">else</span> {
-            <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>add(i, e) invoked!<span class="pl-pds">&quot;</span></span>);
-        }
-    }
-};
-printSizeInvokedArrayList.<span class="pl-sc">size</span>();
-printAddInvokedArrayList.<span class="pl-s3">add</span>(<span class="pl-c1">33</span>, <span class="pl-c1">33</span>);</pre>
-</div> 
-<ul> 
  <li>fxinit.js</li> 
 </ul> 
 <div class="highlight highlight-js">
@@ -549,6 +519,36 @@ com.<span class="pl-s3">sun</span>.javafx.application.LauncherImpl.launchApplica
         }
     }
 })).class, <span class="pl-k">new</span> (Java.<span class="pl-sc">type</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>java.lang.String[]<span class="pl-pds">&quot;</span></span>))(<span class="pl-c1">0</span>));</pre>
+</div> 
+<ul> 
+ <li>javaextend.js</li> 
+</ul> 
+<div class="highlight highlight-js">
+ <pre><span class="pl-c">// http://hg.openjdk.java.net/nashorn/jdk8/nashorn/raw-file/29b2b2ed954c/docs/JavaScriptingProgrammersGuide.html#jsextendconcrete</span>
+
+<span class="pl-c">/**</span>
+<span class="pl-c"> * Results: </span>
+<span class="pl-c">size invoked!</span>
+<span class="pl-c">add(i, e) invoked!</span>
+<span class="pl-c"></span>
+<span class="pl-c"> */</span>
+
+<span class="pl-s">var</span> ArrayList <span class="pl-k">=</span> Java.<span class="pl-sc">type</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>java.util.ArrayList<span class="pl-pds">&quot;</span></span>)
+<span class="pl-s">var</span> ArrayListExtender <span class="pl-k">=</span> Java.extend(ArrayList)
+<span class="pl-s">var</span> printSizeInvokedArrayList <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ArrayListExtender</span>() {
+    <span class="pl-en">size</span>: <span class="pl-st">function</span>() { <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>size invoked!<span class="pl-pds">&quot;</span></span>); }
+}
+<span class="pl-s">var</span> printAddInvokedArrayList <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">ArrayListExtender</span>() {
+    <span class="pl-en">add</span>: <span class="pl-st">function</span>(<span class="pl-vpf">x</span>, <span class="pl-vpf">y</span>) {
+        <span class="pl-k">if</span>(<span class="pl-k">typeof</span>(y) <span class="pl-k">===</span> <span class="pl-s1"><span class="pl-pds">&quot;</span>undefined<span class="pl-pds">&quot;</span></span>) {
+            <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>add(e) invoked!<span class="pl-pds">&quot;</span></span>);
+        } <span class="pl-k">else</span> {
+            <span class="pl-s3">print</span>(<span class="pl-s1"><span class="pl-pds">&quot;</span>add(i, e) invoked!<span class="pl-pds">&quot;</span></span>);
+        }
+    }
+};
+printSizeInvokedArrayList.<span class="pl-sc">size</span>();
+printAddInvokedArrayList.<span class="pl-s3">add</span>(<span class="pl-c1">33</span>, <span class="pl-c1">33</span>);</pre>
 </div>
 </body>
 </html>
