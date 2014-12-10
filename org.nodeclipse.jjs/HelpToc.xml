@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?NLS TYPE="org.eclipse.help.toc"?>
 
-<toc label="Nodeclipse Help - JJS examples" link_to="JJS-Examples" topic="help/.index.md.html">
+<toc label="Nodeclipse Help - Nashorn" link_to="Nashorn" topic="help/.index.md.html">
+	<topic label="Online Nashorn User's Guide"  href="http://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/toc.html"/>
+	<topic label="Online jjs Tools Reference"  href="http://docs.oracle.com/javase/8/docs/technotes/tools/unix/jjs.html"/>
+	<topic label="Online jrunscript Tools Reference"  href="http://docs.oracle.com/javase/8/docs/technotes/tools/unix/jrunscript.html"/>
+	<!--
 	<topic label="javaextend.js"  href="help/javaextend.js"/>
 	<topic label="fxinit.js"  href="help/fxinit.js"/>
 	<topic label="fxhelloworld.js"  href="help/fxhelloworld.js"/>
+	-->
 </toc>

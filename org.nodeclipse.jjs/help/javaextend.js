@@ -1,4 +1,4 @@
- //javaextend.js
+//javaextend.js
 
 // http://hg.openjdk.java.net/nashorn/jdk8/nashorn/raw-file/29b2b2ed954c/docs/JavaScriptingProgrammersGuide.html#jsextendconcrete
 
