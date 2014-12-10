@@ -39,6 +39,7 @@ public class PreferenceConstants {
 	public static final String PHANTOMJS_DEBUG_AUTORUN = "phantomjs_debug_autorun";
 	public static final String JJS_PATH = "jjs_path";
 	public static final String JJS_JUST_JJS = "jjs_just_jjs";
+	public static final String JJS_OPTIONS = "jjs_options";
 	public static final String MONGODB_SHELL_PATH = "mongodb_shell_path";
 	public static final String MONGODB_SHELL_OPTIONS = "mongodb_shell_options";
 	

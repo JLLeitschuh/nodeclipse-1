@@ -3,6 +3,7 @@ package org.nodeclipse.jjs.preferences;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.FileFieldEditor;
+import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
@@ -15,6 +16,7 @@ public class JJSPreferencePage extends FieldEditorPreferencePage implements IWor
 
     private FileFieldEditor jjsPath;
     private BooleanFieldEditor jjsJustJJS;
+	private StringFieldEditor jjsOptions;
     
 	public JJSPreferencePage(){
 	       super(GRID);
@@ -29,12 +31,15 @@ public class JJSPreferencePage extends FieldEditorPreferencePage implements IWor
 
 	@Override
 	protected void createFieldEditors() {
-	       jjsPath = new FileFieldEditor(PreferenceConstants.JJS_PATH, "`jjs` path:", getFieldEditorParent());
-	        addField(jjsPath);
+       jjsJustJJS = new BooleanFieldEditor(PreferenceConstants.JJS_JUST_JJS, 
+        		"just `jjs` (find `jjs` on PATH. Useful when there are 2 or more JDK 8 instances)", getFieldEditorParent());
+       addField(jjsJustJJS);
 
-	        jjsJustJJS = new BooleanFieldEditor(PreferenceConstants.JJS_JUST_JJS, 
-	        		"just `jjs` (find `jjs` on PATH. Useful when there are 2 or more JDK 8 instances)", getFieldEditorParent());
-	        addField(jjsJustJJS);
+       jjsPath = new FileFieldEditor(PreferenceConstants.JJS_PATH, "`jjs` path:", getFieldEditorParent());
+       addField(jjsPath);
+
+       jjsOptions = new StringFieldEditor(PreferenceConstants.JJS_OPTIONS, "jjs options (jjs -h):", getFieldEditorParent());
+       addField(jjsOptions);
 	        
 	}
 

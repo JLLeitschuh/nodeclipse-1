@@ -60,6 +60,14 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 		}			
 		cmdLine.add(jjsPath);
 		
+		String jjsOptions= preferenceStore.getString(PreferenceConstants.JJS_OPTIONS);
+		if(!jjsOptions.equals("")) {
+			String[] sa = jjsOptions.split(" ");
+			for(String s : sa) {
+				cmdLine.add(s);
+			}			
+		}		
+		
 		if (isDebugMode) {
 			//TODO research how to debug
 		}
