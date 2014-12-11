@@ -67,12 +67,21 @@ public class NodePerspective implements IPerspectiveFactory {
         factory.addNewWizardShortcut("org.nodeclipse.phantomjs.wizards.PhantomjsProjectWizard"); // NON-NLS-1 @since 0.8
         factory.addNewWizardShortcut("org.nodeclipse.jjs.wizards.NashornProjectWizard"); // NON-NLS-1 @since 0.8
         factory.addNewWizardShortcut("org.nodeclipse.vertx.wizards.VertxProjectWizard"); // NON-NLS-1 @since 0.11
+        factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.project"); // NON-NLS-1
+        // auto new section
         factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.NodeFileWizard"); // NON-NLS-1
         factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.CoffeeFileWizard"); // NON-NLS-1
         factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.TypeScriptFileWizard"); // NON-NLS-1
-        factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.project"); // NON-NLS-1
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder"); // NON-NLS-1
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.file");// NON-NLS-1
+        //TODO Tern Wizards
+        // Tern JSON type def
+        // Tern (Server) Plugin
+        // Tern with Ace
+        // Tern with Orion
+        // Tern with CodeMirror
+        // http://ternjs.net/doc/manual.html#plugins
+        // https://github.com/angelozerr/tern.java/wiki/Tern-Toolings
     }
 
     private void addViewShortcuts() {
