@@ -74,12 +74,12 @@ public class NodePerspective implements IPerspectiveFactory {
         factory.addNewWizardShortcut("org.nodeclipse.ui.wizards.TypeScriptFileWizard"); // NON-NLS-1
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.folder"); // NON-NLS-1
         factory.addNewWizardShortcut("org.eclipse.ui.wizards.new.file");// NON-NLS-1
-        //TODO Tern Wizards
-        // Tern JSON type def
-        // Tern (Server) Plugin
-        // Tern with Ace
-        // Tern with Orion
-        // Tern with CodeMirror
+        // Tern Wizards
+        factory.addNewWizardShortcut("tern.eclipse.ide.tools.ui.wizards.NewTernDefWizard");// NON-NLS-1
+        factory.addNewWizardShortcut("tern.eclipse.ide.tools.ui.wizards.NewTernPluginWizard");// NON-NLS-1
+        factory.addNewWizardShortcut("tern.eclipse.ide.tools.ui.wizards.webbrowser.NewCodeMirrorWizard");// NON-NLS-1
+        factory.addNewWizardShortcut("tern.eclipse.ide.tools.ui.wizards.webbrowser.NewAceWizard");// NON-NLS-1
+        factory.addNewWizardShortcut("tern.eclipse.ide.tools.ui.wizards.webbrowser.NewOrionWizard");// NON-NLS-1
         // http://ternjs.net/doc/manual.html#plugins
         // https://github.com/angelozerr/tern.java/wiki/Tern-Toolings
     }
