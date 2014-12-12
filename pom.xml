@@ -131,8 +131,6 @@
 		<module>org.nodeclipse.enide.maven</module>
 		<module>features/org.nodeclipse.enide.maven.feature</module>
 		
-		<module>features/org.nodeclipse.enide.studio.included.feature</module>
-
 		<!-- 
 		<module>org.nodeclipse.site</module>
 		<module>org.nodeclipse.updates</module>
@@ -149,6 +147,7 @@
 	    <profile>
 	      <id>full</id>
 	      <modules>
+			<module>features/org.nodeclipse.enide.studio.included.feature</module>
 	        <module>org.nodeclipse.site</module>
 	      </modules>
 	    </profile>
