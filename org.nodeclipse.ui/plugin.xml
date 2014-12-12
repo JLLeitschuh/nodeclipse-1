@@ -268,13 +268,11 @@
 			<view id="org.eclipse.debug.ui.DebugView" 
                 relative="org.eclipse.ui.console.ConsoleView" 
                 relationship="stack"/>
-                <!--          	
 			<view id="org.eclipse.tcf.te.ui.terminals.TerminalsView"
 				relative="org.eclipse.debug.ui.DebugView"
 				relationship="stack"/>
-				-->
 			<view id="winterwell.markdown.views.MarkdownPreview" 
-                relative="org.eclipse.debug.ui.DebugView" 
+                relative="org.eclipse.tcf.te.ui.terminals.TerminalsView" 
                 relationship="stack"/>          	
 			<view id="org.eclipse.ui.views.ProblemView" 
                 relative="winterwell.markdown.views.MarkdownPreview" 
