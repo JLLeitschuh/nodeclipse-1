@@ -89,12 +89,12 @@ Maven build is optional for full build with other plugins.
 
 From Nodeclipse-1 base folder just run `mvn package`. Run offline when to re-build `mvn clean package -o`. 
 
-`mvn clean package -Pquick` builds in `org.nodeclipse.updates/target` with less external dependencies.
+`mvn clean package -Pquick` builds in `org.nodeclipse.site.quick/target` with less external dependencies.
 It is not enough for release, e.g. because JSHint is external plugin and there are 20 more others. 
 
 `mvn clean package -Pfull` builds in `org.nodeclipse.site/target`. For release.
 
--[] TODO: How to not repeat definitions in `.site` and `.updates` 
+-[] TODO not to repeat definitions in `.site` and `.updates` 
 
 Before release
 

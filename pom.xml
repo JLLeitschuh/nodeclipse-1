@@ -134,17 +134,13 @@
 		<module>org.nodeclipse.enide.maven</module>
 		<module>features/org.nodeclipse.enide.maven.feature</module>
 		
-		<!-- 
-		<module>org.nodeclipse.site</module>
-		<module>org.nodeclipse.updates</module>
-		 -->
 	</modules>
 
 	<profiles>
 	    <profile>
 	      <id>quick</id>
 	      <modules>
-	        <module>org.nodeclipse.updates</module>
+	        <module>org.nodeclipse.site.quick</module>
 	      </modules>
 	    </profile>
 	    <profile>
