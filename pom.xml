@@ -90,6 +90,9 @@
 	</properties>
 
 	<modules>
+		<module>org.nodeclipse.pluginslist.core</module>
+		<module>features/org.nodeclipse.pluginslist.feature</module>
+
 		<module>org.nodeclipse.help</module>
 
 		<module>org.nodeclipse.bundle.coffee</module>

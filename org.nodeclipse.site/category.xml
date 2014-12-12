@@ -15,12 +15,16 @@
 
    <category-def name="Nodeclipse" label="1st Nodeclipse Core (nodeclipse-1)">
       <description>
+        Nodeclipse Plugins List by Paul Verest,
         Nodeclipse-1 Core, Chromium Dev tools,
         JSHint integration by Ralf Sternberg 
         (together make minimal required set for Node.js and server side JavaScript)
         Enide Node.js is set of Node.js related feature (made for convenience) 
       </description>
    </category-def>
+   <feature url="features/org.nodeclipse.pluginslist.feature_0.0.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.0.0">
+      <category name="Tools"/>
+   </feature>
    <feature url="features/org.chromium.debug_0.3.9.qualifier.jar" id="org.chromium.debug" version="0.3.9.qualifier">
       <category name="Nodeclipse"/>
    </feature>
@@ -99,7 +103,6 @@
    -->
    <category-def name="Tools" label="Enide Tools Collection">
       <description>
-        Nodeclipse Plugins List by Paul Verest,
         Markdown Editor by Daniel Winterstein, 
         Github Flavored Markdown Viewer by Satyagraha, 
         RestClient Tool by Yadu Vendra, 
@@ -118,9 +121,6 @@
  		Zip Editor by Uwe Voigt with refresh from https://github.com/Nodeclipse/zipeditor
       </description>
    </category-def>
-   <feature url="features/org.nodeclipse.pluginslist.feature_0.1.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.1.0.qualifier">
-      <category name="Tools"/>
-   </feature>
    <feature url="features/markdown.editor.feature_1.1.0.qualifier.jar" id="markdown.editor.feature" version="1.1.0.qualifier">
       <category name="Tools"/>
    </feature>
