@@ -250,11 +250,29 @@
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="org.nodeclipse.ui.perspectives.NodePerspective">
-			<viewShortcut id="winterwell.markdown.views.MarkdownPreview"/>
+            
+			<viewShortcut id="org.eclipse.angularjs.ui.views.AngularExplorerView"/>
+            <viewShortcut id="org.eclipse.debug.ui.DebugView"/>
+            <viewShortcut id="org.eclipse.pde.runtime.LogView"/>
 			<viewShortcut id="code.satyagraha.gfm.viewer.views.GfmView"/>
+			<viewShortcut id="winterwell.markdown.views.MarkdownPreview"/>
+			<viewShortcut id="org.eclipse.tcf.te.ui.terminals.TerminalsView"/>
+			<!--
+			<view id="org.eclipse.tcf.te.ui.terminals.TerminalsView"
+				relative="org.eclipse.debug.ui.DebugView"
+				relationship="stack"/>
+			<view id="org.eclipse.ui.console.ConsoleView" 
+                relative="org.eclipse.tcf.te.ui.terminals.TerminalsView" 
+                relationship="stack"/>
+           -->              	
 			<view id="org.eclipse.debug.ui.DebugView" 
                 relative="org.eclipse.ui.console.ConsoleView" 
-                relationship="stack"/>          	
+                relationship="stack"/>
+                <!--          	
+			<view id="org.eclipse.tcf.te.ui.terminals.TerminalsView"
+				relative="org.eclipse.debug.ui.DebugView"
+				relationship="stack"/>
+				-->
 			<view id="winterwell.markdown.views.MarkdownPreview" 
                 relative="org.eclipse.debug.ui.DebugView" 
                 relationship="stack"/>          	
@@ -263,18 +281,13 @@
                 relationship="stack"/>   
 			<view id="org.eclipse.pde.runtime.LogView" 
                 relative="org.eclipse.ui.views.ProblemView" 
-                relationship="stack"/> 
-<!-- was Markdown, GFM, Problems
-			<view id="winterwell.markdown.views.MarkdownPreview" 
-                relative="org.eclipse.debug.ui.DebugView" 
-                relationship="stack"/>          	
+                relationship="stack"/>
+                 
+			<!-- was GFM          	
 			<view id="code.satyagraha.gfm.viewer.views.GfmView" 
                 relative="winterwell.markdown.views.MarkdownPreview" 
                 relationship="stack"/>          	
-			<view id="org.eclipse.ui.views.ProblemView" 
-                relative="code.satyagraha.gfm.viewer.views.GfmView" 
-                relationship="stack"/>   
--->
+			-->
                         	
       </perspectiveExtension>
       <perspectiveExtension
