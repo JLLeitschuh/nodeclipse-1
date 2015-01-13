@@ -1,0 +1,3 @@
+[submodule "eclipse-import-projects-plugin"]
+	path = eclipse-import-projects-plugin
+	url = https://github.com/Nodeclipse/eclipse-import-projects-plugin.git
