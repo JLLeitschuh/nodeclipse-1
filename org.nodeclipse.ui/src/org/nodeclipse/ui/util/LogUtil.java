@@ -6,8 +6,8 @@ import org.eclipse.core.runtime.Status;
 import org.nodeclipse.ui.Activator;
 
 /**
- * 
- * @author ?, Paul Verest
+ * Nodeclipse Log Util
+ * @author Lamb Gao, Paul Verest
  */
 public class LogUtil {
 
