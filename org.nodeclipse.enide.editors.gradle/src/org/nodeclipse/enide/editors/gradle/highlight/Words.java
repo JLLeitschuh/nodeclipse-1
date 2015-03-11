@@ -13,14 +13,28 @@ public class Words {
         // Groovy stuff
         "def", 
         
-		// Gradle
+		// Gradle DSL http://gradle.org/docs/current/dsl/ {
+        // Build script blocks
+		//        allprojects { }
+		//        artifacts { }
+		//        buildscript { }
+		//        configurations { }
+		//        dependencies { }
+		//        repositories { }
+		//        sourceSets { }
+		//        subprojects { }
+		//        publishing { }
+        "allprojects", "artifacts", "buildscript", "configurations",
+        "dependencies", "repositories", "sourceSets", "subprojects", "publishing",
+        //?
 		"task", "apply", "sourceCompatibility", 
-        "repositories", "dependencies", "test",
+        "test",
         "version","group", "name",
-        "buildscript", 
-        "allprojects", "subprojects", "project",
+        
+        "project",
         "ext", 
         "plugins", //since 2.1
+        //}
         
         // Android plugin
         "android", "compileOptions", 
