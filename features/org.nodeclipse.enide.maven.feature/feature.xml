@@ -7,6 +7,7 @@
 
    <description url="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.maven">
       Enide Maven is alternative and completion to m2e (Maven Integration for Eclipse).
+See https://github.com/nodeclipse/nodeclipse-1/
 
 Launch build or execute Java class.
 Project does not need to be Maven project. Just `pom.xml` would be enough.
@@ -19,11 +20,13 @@ Executed string is shown is Console, so you can check and learn.
    </description>
 
    <copyright url="http://www.nodeclipse.org/">
-      Copyright (c) 2014 Paul Verest, All rights reserved.
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    </copyright>
 
    <license url="http://choosealicense.com/licenses/mit/">
-The MIT License (MIT)
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
+   
+      The MIT License (MIT)
 
 Copyright (c) 2014 Paul Verest, Nodeclipse
    

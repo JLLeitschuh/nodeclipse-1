@@ -7,14 +7,15 @@
 
    <description url="http://www.nodeclipse.org/">
       Vert.x JS
+See https://github.com/nodeclipse/nodeclipse-1/
    </description>
 
    <copyright url="http://www.nodeclipse.org/">
-      Copyright (c) 2014 Enide, Paul Verest, other Nodeclipse authors. http://www.nodeclipse.org/
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    </copyright>
 
-   <license url="http://www.apache.org/licenses/LICENSE-2.0">
-      Copyright (c) 2014 Enide, Paul Verest, other Nodeclipse authors. http://www.nodeclipse.org/
+   <license url="http://choosealicense.com/licenses/mit/">
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    
       Apache License
 Version 2.0, January 2004

@@ -7,6 +7,7 @@
 
    <description url="https://github.com/Nodeclipse/nodeclipse-1/tree/master/org.nodeclipse.enide.gradle">
       Enide Gradle is alternative and completion to `Gradle Integration for Eclipse`.
+See https://github.com/nodeclipse/nodeclipse-1/
 
 Launch build or Gradle GUI.
 Project does not need to be Gradle project. Just `build.gradle` would be enough.
@@ -21,10 +22,12 @@ Executed string is shown is Console, so you can check and learn.
    </description>
 
    <copyright url="http://www.nodeclipse.org/">
-      Copyright (c) 2014 Paul Verest, All rights reserved.
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    </copyright>
 
    <license url="http://choosealicense.com/licenses/mit/">
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
+   
       The MIT License (MIT)
 
 Copyright (c) 2014 Paul Verest, Nodeclipse

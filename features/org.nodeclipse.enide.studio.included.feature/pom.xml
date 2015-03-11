@@ -16,5 +16,29 @@
 
 	<name>org.nodeclipse.enide.studio.included.feature</name>
 	<description>Features included in Enide Studio</description>
+	
+	<repositories>
+		<!-- SECTION not in Nodeclipse-1 p2 repo -->
+		<!-- TCF Terminal 
+		<repository>
+			<id>TCF-Terminal</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/tools/tcf/terminals_luna</url>
+		</repository>
+		-->
+		
+		<!-- Use previous // Fail back if some repos are unavailable 
+		<repository>
+			<id>fail-back</id>
+			<layout>p2</layout>
+			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.17/</url>
+		</repository>
+		-->
+		
+		
+	
+		<!-- SECTION copy/paste from org.nodeclipse.site\pom.xml -->
+	</repositories>
+	
 </project>
 

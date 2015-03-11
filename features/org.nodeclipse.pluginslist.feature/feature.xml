@@ -5,16 +5,17 @@
       version="0.17.0.qualifier"
       provider-name="Nodeclipse organization">
 
-   <description url="http://www.example.com/description">
+   <description url="http://www.nodeclipse.org/">
       Nodeclipse Plugins List is convenient way to install Eclipse plugins.
+See https://github.com/nodeclipse/nodeclipse-1/
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      Copyright (c) 2013-2014 Paul Verest within Nodeclipse
+   <copyright url="http://www.nodeclipse.org/">
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    </copyright>
 
-   <license url="http://www.example.com/license">
-      Copyright (c) 2013-2014 Paul Verest within Nodeclipse
+   <license url="http://choosealicense.com/licenses/mit/">
+      Copyright (c) 2014, 2015 Paul Verest, All rights reserved.
    </license>
 
    <plugin
