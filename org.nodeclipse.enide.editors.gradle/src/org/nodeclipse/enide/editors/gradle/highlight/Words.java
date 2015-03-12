@@ -44,6 +44,7 @@ public class Words {
         "defaultConfig", "signingConfigs", "buildTypes",//
         "productFlavors", "debug", "release",//
         "lintOptions", "packagingOptions",
+        "aaptOptions", "dexOptions",
         
         // other plugins
         "robolectric",
