@@ -37,6 +37,32 @@ public class Words {
         //}
         
         // Android plugin
+//        defaultConfig {v}	
+//        The default configuration, inherited by all build flavors (if any are defined).
+//        sourceSets {v}	
+//        Configures the source sets. Note that the Android plugin uses its own implementation of source sets, AndroidSourceSet.
+//        buildTypes {v}	
+//        Configures the build types.
+//        signingConfigs {v}	
+//        Configures the signing configs.
+//        productFlavors {v}	
+//        Configures the product flavors.
+//        testOptions {v}	
+//        Configures the test options.
+//        aaptOptions {v}	
+//        Configures aapt options.
+//        lintOptions {v}	
+//        Configure lint options.
+//        dexOptions {v}	
+//        Configures dex options.
+//        compileOptions {v}	
+//        Configures compile options.
+//        packagingOptions {v}	
+//        Configures packaging options.
+//        jacoco {v}	
+//        Configures JaCoCo options.
+//        splits {v}	
+//        Configures APK splits.        
         "android", "compileOptions", 
         "compileSdkVersion", "buildToolsVersion",//
         "sourceSets", "main", "manifest",//
@@ -45,6 +71,8 @@ public class Words {
         "productFlavors", "debug", "release",//
         "lintOptions", "packagingOptions",
         "aaptOptions", "dexOptions", "adbOptions",
+        "testOptions",
+        "jacoco", "splits",
         
         // other plugins
         "robolectric",

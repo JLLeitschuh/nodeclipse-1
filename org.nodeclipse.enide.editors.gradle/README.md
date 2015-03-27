@@ -20,6 +20,7 @@ and <http://www.nodeclipse.org/projects/gradle/android>
 ## Possible things to consider
 
 - Get inspired by Gradle DSL <http://gradle.org/docs/current/dsl/>
+- Android Plugin DSL Reference, `android-gradle-plugin-dsl.zip` downloadable from <http://developer.android.com/tools/building/plugin-for-gradle.html> 
 - Outline, take a look how implemented in <https://github.com/winterstein/Eclipse-Markdown-Editor-Plugin>
  raise an issue if you know better example
  
