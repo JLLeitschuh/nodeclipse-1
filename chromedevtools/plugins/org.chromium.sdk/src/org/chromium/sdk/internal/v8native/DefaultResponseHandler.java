@@ -79,6 +79,27 @@ public class DefaultResponseHandler {
     command2EventProcessorGetter.put(DebuggerCommand.BREAK /* event */, bppGetter);
     command2EventProcessorGetter.put(DebuggerCommand.EXCEPTION /* event */, bppGetter);
 
+    // Nodeclipse Issue 189 / node issue 25266
+    // Treat the "compileError" event as if it were
+    // the "afterCompile" event...
+    // This is a workaround for an apparent problem in node
+    // that was introduced in v0.11.14. The reported problem
+    // is that when a new script is required and compiled, 
+    // the compileError event is generated instead of the 
+    // afterCompile event.
+    // If this does in fact turn out to be a node issue,
+    // then presumably this workaround would be version-specific,
+    // and would only need to be activated for certain versions
+    // of node.
+    command2EventProcessorGetter.put(DebuggerCommand.COMPILE_ERROR /* event */,
+        new ProcessorGetter() {
+      @Override
+      AfterCompileProcessor get(DefaultResponseHandler instance) {
+        return instance.afterCompileProcessor;
+      }
+    });
+    // <end> Nodeclipse Issue 189 / node issue 25266
+
     command2EventProcessorGetter.put(DebuggerCommand.AFTER_COMPILE /* event */,
         new ProcessorGetter() {
       @Override

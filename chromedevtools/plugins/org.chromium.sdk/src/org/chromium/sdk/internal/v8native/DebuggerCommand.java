@@ -33,6 +33,7 @@ public enum DebuggerCommand {
   BREAK("break"),
   EXCEPTION("exception"),
   AFTER_COMPILE("afterCompile"),
+  COMPILE_ERROR("compileError"),
   SCRIPT_COLLECTED("scriptCollected"),
   ;
 
