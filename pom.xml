@@ -156,6 +156,14 @@
 	        <module>org.nodeclipse.site.test</module>
 	      </modules>
 	    </profile>
+	    <profile>
+	      <id>all</id><!-- for version update -->
+	      <modules>
+	        <module>org.nodeclipse.site.quick</module>
+	        <module>features/org.nodeclipse.enide.studio.included.feature</module>
+	        <module>org.nodeclipse.site</module>
+	      </modules>
+	    </profile>
 	</profiles>
 
 	<repositories>
