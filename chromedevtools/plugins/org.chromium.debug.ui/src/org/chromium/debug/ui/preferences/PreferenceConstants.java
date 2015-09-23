@@ -26,4 +26,6 @@ public class PreferenceConstants {
 	public static final RGB DEFAULT_COLOR_NUMBER = new RGB(0, 0, 0);
 	public static final RGB DEFAULT_COLOR_NORMAL = new RGB(0, 0, 0);
 
+	public static final String TREAT_NODE_012_COMPILE_ERROR = "nodeclipse189";
+
 }	

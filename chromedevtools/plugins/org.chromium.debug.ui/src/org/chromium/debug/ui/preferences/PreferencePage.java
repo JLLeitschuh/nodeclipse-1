@@ -8,7 +8,6 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
-//+
 
 /**
  * @author Benjamin gurok
@@ -16,6 +15,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  */
 public class PreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
+	private BooleanFieldEditor treatCompileErrorAsAfterCompile;
 	private ColorFieldEditor colorComment;
     private ColorFieldEditor colorDoc;
     private ColorFieldEditor colorKeyword;
@@ -38,6 +38,14 @@ public class PreferencePage extends FieldEditorPreferencePage implements IWorkbe
 	protected void createFieldEditors() {
 		
 	    Composite parent = getFieldEditorParent();
+	    
+	    // Nodeclipse/nodeclipse-1/issues/189
+	    treatCompileErrorAsAfterCompile = new BooleanFieldEditor(PreferenceConstants.TREAT_NODE_012_COMPILE_ERROR, 
+        		"#189 Treat the 'compileError' event as the 'afterCompile' event "
+        				+"(for Node v0.11.14..0.12.2, see  joyent/node#25266 joyent/node#25358)", getFieldEditorParent());
+	    treatCompileErrorAsAfterCompile.setEnabled(false, parent);
+        addField(treatCompileErrorAsAfterCompile);
+	    
 
         colorComment = new ColorFieldEditor(PreferenceConstants.KEY_COLOR_COMMENT, "Comment color:", parent);
         addField(colorComment);
