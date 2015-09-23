@@ -108,8 +108,26 @@
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
-            extensions="json,jshintrc,tern-project,bowerrc"
+            extensions="json,jshintrc"
             icon="icons/node_blue.png"
+            id="org.nodeclipse.ui.editors.NodeEditor"
+            name="Nodeclipse JSDT-based Editor">
+      </editor>
+      <editor 
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="tern-project"
+            icon="icons/tern.png"
+            id="org.nodeclipse.ui.editors.NodeEditor"
+            name="Nodeclipse JSDT-based Editor">
+      </editor>
+      <editor 
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="bowerrc"
+            icon="icons/bower16.png"
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
       </editor>
