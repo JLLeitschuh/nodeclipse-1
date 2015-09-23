@@ -54,12 +54,12 @@
 		<repository>
 			<id>winterwell.markdown</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/enide/Markdown/1.1.0/</url>
+			<url>http://www.nodeclipse.org/updates/markdown/</url>
 		</repository>
 		<repository>
 			<id>gfm.viewer</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/satyagraha/generic/1.8.3/</url>
+			<url>http://dl.bintray.com/satyagraha/generic/1.9.3/</url>
 		</repository>
 		<!-- [ERROR] Internal error: java.lang.RuntimeException: org.eclipse.equinox.p2.core.ProvisionException: Unable to connect to repository https://svn.codespot.com/a/eclipselabs.org/restclient-tool/trunk/eclipse/update/artifacts.xml: Connection to https://svn.codespot.com refused: Connection timed out: connect -> [Help 1]
 		<repository>
@@ -83,11 +83,13 @@
 			<layout>p2</layout>
 			<url>http://jeeeyul.github.io/update/</url>
 		</repository>
+		<!--  
 		<repository>
 			<id>Regular-Expression</id>
 			<layout>p2</layout>
 			<url>http://zapletnev.github.io/eclipse-regexp/repository/</url>
 		</repository>
+		-->
 		<repository>
 			<id>net.jumperz.app.MMonjaDB</id>
 			<layout>p2</layout>
@@ -103,11 +105,14 @@
 			<layout>p2</layout>
 			<url>https://sourceforge.net/projects/eclipsejsonedit/files/update</url>
 		</repository>
+		<!-- failed old and new for 1.1
 		<repository>
 			<id>jsontools</id>
 			<layout>p2</layout>
 			<url>https://bitbucket.org/denmiroch/jsontools/src/default/JsonSite/</url>
+			<url>https://bitbucket.org/denmiroch/jsontools/raw/ae2e9d683249ef989d940b441e00b74df729164c/JsonSite/site.xml</url>
 		</repository>
+		-->
 		<!-- 
 		<repository>
 			<id>less</id>
@@ -132,11 +137,13 @@
 			<url>http://dl.bintray.com/nodeclipse/EditBox/0.60.0/</url>-->
 			<url>http://nodeclipse.github.io/updates/editbox/</url>
 		</repository>
+		<!--  
 		<repository>
 			<id>axmor-typescript</id>
 			<layout>p2</layout>
 			<url>http://axmor.bitbucket.org/typecs/stable/update-site/</url>
 		</repository>
+		-->
 		<repository>
 			<id>io.emmet.eclipse</id>
 			<layout>p2</layout>
@@ -165,11 +172,11 @@
 		</repository>
 		
 					
-		<!-- General --> 
+		<!-- General -->
 		<repository>
 			<id>it.unibz.instasearch.feature.indigo</id>
 			<layout>p2</layout>
-			<url>http://code.inf.unibz.it/instasearch/downloads/</url>
+			<url>http://dl.bintray.com/ajermakovics/InstaSearch/</url>
 		</repository>
 		<repository>
 			<id>com.xored.glance</id>

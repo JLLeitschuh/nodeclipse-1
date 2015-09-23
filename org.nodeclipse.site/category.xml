@@ -51,7 +51,7 @@
    </feature>
    <!-- 
    -->
-   <feature url="features/com.eclipsesource.jshint.feature" id="com.eclipsesource.jshint.feature" version="0.9.9.qualifier">
+   <feature url="features/com.eclipsesource.jshint.feature" id="com.eclipsesource.jshint.feature" version="0.9.10.qualifier">
       <category name="Nodeclipse"/>
    </feature>
 
@@ -109,22 +109,20 @@
         StartExplorer (on any OS) by Bastian Krol,
         Icons Editor by Jabier Martinez (requires org.eclipse.draw2d), 
  		PDE-Tools and Eclipse Themes by Jeeeyul, 
- 		Regular Expression by Igor Zapletnev,
  		MonjaDB (MongoDB GUI) by Kanatoko Anvil,
  		ShellEd https://sourceforge.net/projects/shelled/ requires 'bundle org.eclipse.dltk.core [4.0.0,6.0.0)'
  		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools
  		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
  		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/
  		Nodeclipse EditBox (created in 2009-2011 by Piotr Metel) https://github.com/Nodeclipse/EditBox
- 		TypEcs by axmor.com
  		Emmet (ex-Zen Coding) Eclipse plugin by Sergey Chikuyonok
  		Zip Editor by Uwe Voigt with refresh from https://github.com/Nodeclipse/zipeditor
       </description>
    </category-def>
-   <feature url="features/markdown.editor.feature_1.1.0.qualifier.jar" id="markdown.editor.feature" version="1.1.0.qualifier">
+   <feature url="features/markdown.editor.feature_1.2.0.qualifier.jar" id="markdown.editor.feature" version="1.2.0.qualifier">
       <category name="Tools"/>
    </feature>
-   <feature url="features/code.satyagraha.gfm.viewer.feature_1.8.3.qualifier.jar" id="code.satyagraha.gfm.viewer.feature" version="1.8.3.qualifier">
+   <feature url="features/code.satyagraha.gfm.viewer.feature_1.9.3.qualifier.jar" id="code.satyagraha.gfm.viewer.feature" version="1.9.3.qualifier">
       <category name="Tools"/>
    </feature>
    <feature url="features/de.bastiankrol.startexplorer.feature_0.0.0.jar" id="de.bastiankrol.startexplorer.feature" version="0.0.0">
@@ -157,9 +155,12 @@
    <feature url="features/pm.eclipse.editbox.feature_0.0.0.qualifier.jar" id="pm.eclipse.editbox.feature" version="0.0.0">
       <category name="Tools"/>
    </feature>
+   <!--
+ 		TypEcs by axmor.com
    <feature url="features/com.axmor.eclipse.typescript.feature_0.0.0.qualifier.jar" id="com.axmor.eclipse.typescript.feature" version="0.0.0">
       <category name="Tools"/>
    </feature>
+   -->
    <feature url="features/io.emmet.eclipse_0.0.0.qualifier.jar" id="io.emmet.eclipse" version="0.0.0">
       <category name="Tools"/>
    </feature>
@@ -197,7 +198,9 @@
         Eclipse 4 Moonrise dark color UI theme by Andrea Guarinoni github.com/guari 
       </description>
    </category-def>
-   <feature url="it.unibz.instasearch.feature.indigo_1.5.5.qualifier.jar" id="it.unibz.instasearch.feature.indigo" version="1.5.5.qualifier">
+	<!--     
+   -->
+   <feature url="it.unibz.instasearch.feature.indigo_1.5.6.qualifier.jar" id="it.unibz.instasearch.feature.indigo" version="1.5.6.qualifier">
       <category name="General"/>
    </feature>
    <feature url="features/com.xored.glance_1.1.1.qualifier.jar" id="com.xored.glance" version="1.1.1.qualifier">
