@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.enide.editors.jade.feature"
       label="Minimalist Jade Editor"
-      version="0.17.0.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">

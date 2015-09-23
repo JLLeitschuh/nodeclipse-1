@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse.pluginslist.feature"
       label="Nodeclipse Plugins List"
-      version="0.17.0.qualifier"
+      version="1.0.0.qualifier"
       provider-name="Nodeclipse organization">
 
    <description url="http://www.nodeclipse.org/">
