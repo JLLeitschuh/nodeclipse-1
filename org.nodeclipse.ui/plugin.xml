@@ -71,7 +71,7 @@
       <editor
             class="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="js,njs"
+            extensions="js,njs,_js"
             icon="icons/node.png"
             id="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
             name="Nodeclipse TextEditor-based Editor">
