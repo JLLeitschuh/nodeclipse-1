@@ -65,27 +65,19 @@
          </description>
       </wizard>
    </extension>
+   
    <extension
          point="org.eclipse.ui.editors">
-      <!-- TextEditor based -->
+      <!-- old TextEditor based Nodejs Editor -->
       <editor
             class="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            extensions="js,njs,_js"
+            extensions="js,njs,_js,json,bowerrc,jshintrc,tern-project,bowerrc"
             icon="icons/node.png"
             id="org.nodeclipse.ui.editors.NodeclipseNodejsEditor"
-            name="Nodeclipse TextEditor-based Editor">
+            name="Nodeclipse Nodejs Editor">
       </editor>
-      <!-- npm-gray icon -->
-      <editor 
-            class="org.eclipse.ui.editors.text.TextEditor"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            default="true"
-            extensions="npmignore"
-            icon="icons/npm/npm_gray.png"
-            id="org.nodeclipse.ui.editors.NodeEditor.npmignore"
-            name="TextEditor for .npmignore">
-      </editor>
+      <!-- Nodeclipse JSDT-based Editor -->
       <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
@@ -95,22 +87,14 @@
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
       </editor>
-      <editor
-            class="org.nodeclipse.ui.editors.NodeEditor"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            filenames = "www"
-            icon="icons/node_red.png"
-            id="org.nodeclipse.ui.editors.NodeEditor"
-            name="Nodeclipse JSDT-based Editor">
-      </editor>
-      <!-- just for different icons for json,jshintrc,tern-project,bowerrc  -->
+      <!-- Nodeclipse JSDT-based Editor: just for different icons for json,jshintrc,tern-project,bowerrc  -->
       <editor 
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
-            extensions="json"
+            extensions="json,bowerrc"
             icon="icons/node_blue.png"
-            id="org.nodeclipse.ui.editors.NodeEditor"
+            id="org.nodeclipse.ui.editors.NodeEditor.json"
             name="Nodeclipse JSDT-based Editor">
       </editor>
       <editor 
@@ -119,7 +103,7 @@
             default="true"
             extensions="jshintrc"
             icon="icons/jsh_16.png"
-            id="org.nodeclipse.ui.editors.NodeEditor"
+            id="org.nodeclipse.ui.editors.NodeEditor.jshintrc"
             name="Nodeclipse JSDT-based Editor">
       </editor>
       <editor 
@@ -128,16 +112,18 @@
             default="true"
             extensions="tern-project"
             icon="icons/tern.png"
-            id="org.nodeclipse.ui.editors.NodeEditor"
+            id="org.nodeclipse.ui.editors.NodeEditor.tern-project"
             name="Nodeclipse JSDT-based Editor">
       </editor>
+      <!--
+      -->
       <editor 
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
             extensions="bowerrc"
             icon="icons/bower16.png"
-            id="org.nodeclipse.ui.editors.NodeEditor"
+            id="org.nodeclipse.ui.editors.NodeEditor.bowerrc"
             name="Nodeclipse JSDT-based Editor">
       </editor>
       <editor
@@ -146,31 +132,26 @@
             filenames = "package.json"
             icon="icons/npm/npm.png"
             id="org.nodeclipse.ui.editors.NodeEditor.package.json"
-            name="Nodeclipse JSDT-based Editor for package.json">
+            name="Nodeclipse JSDT-based Editor">
       </editor>
-      
-      <!-- class is not on plugin classpath!
       <editor
-            class="winterwell.markdown.editors.MarkdownEditor"
-            contributorClass="winterwell.markdown.editors.ActionBarContributor"
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            filenames = "www"
+            icon="icons/node_red.png"
+            id="org.nodeclipse.ui.editors.NodeEditor.www"
+            name="Nodeclipse JSDT-based Editor">
+      </editor>
+      <!-- TextEditor npm-gray icon -->
+      <editor 
+            class="org.eclipse.ui.editors.text.TextEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
-            extensions="litcoffee"
-            icon="icons/coffee.png"
-            id="org.nodeclipse.ui.editors.LitCoffeeEditor"
-            name="LitCoffee (Markdown) Editor">
+            extensions="npmignore"
+            icon="icons/npm/npm_gray.png"
+            id="org.nodeclipse.ui.editors.NodeEditor.npmignore"
+            name="TextEditor for .npmignore">
       </editor>
-      -->
-      <!-- TODO above Editor for litcoffee fails
-       compare to
-      <editor
-            name="Markdown Editor"
-            extensions="txt,md"
-            icon="icons/notepad.gif"
-            contributorClass="winterwell.markdown.editors.ActionBarContributor"
-            class="winterwell.markdown.editors.MarkdownEditor"
-            id="winterwell.markdown.editors.MarkdownEditor">
-      </editor>
-       -->
     </extension>
     
 	<extension point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer"
