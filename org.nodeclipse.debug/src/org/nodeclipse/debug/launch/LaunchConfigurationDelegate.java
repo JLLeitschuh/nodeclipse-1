@@ -273,6 +273,7 @@ public class LaunchConfigurationDelegate implements
 			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
 			}
 		}else{
+			envp[idx++] = getEnvVariableEqualsString("APPDATA"); //#197
 			//+ #81
 			envp[idx++] = getEnvVariableEqualsString("PATH");
 			envp[idx++] = getEnvVariableEqualsString("TEMP");

@@ -92,6 +92,7 @@ public class LaunchConfigurationDelegate implements ILaunchConfigurationDelegate
 			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
 			}
 		}else{
+			envp[idx++] = getEnvVariableEqualsString("APPDATA"); //#197
 			//+ #81
 			envp[idx++] = getEnvVariableEqualsString("PATH");
 			envp[idx++] = getEnvVariableEqualsString("TEMP");
