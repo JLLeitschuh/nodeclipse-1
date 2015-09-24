@@ -2,7 +2,7 @@
 <feature
       id="org.nodeclipse"
       label="Nodeclipse Core and Node.js"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Nodeclipse/Enide">
 
    <description url="http://www.nodeclipse.org/">
