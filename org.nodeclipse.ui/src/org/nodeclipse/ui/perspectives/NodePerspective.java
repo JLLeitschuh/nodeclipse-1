@@ -23,7 +23,9 @@ public class NodePerspective implements IPerspectiveFactory {
     public static final String ID_GFM_VIEW = "code.satyagraha.gfm.viewer.views.GfmView";
     public static final String ID_DEBUG_VIEW = "org.eclipse.debug.ui.DebugView";
     public static final String ID_LOG_VIEW = "org.eclipse.pde.runtime.LogView";
-    public static final String ID_TERN_EXPLORER_VIEW = "tern.eclipse.ide.ui.views.TernExplorerView";
+    public static final String ID_TERN_OUTLINE_VIEW = "tern.eclipse.ide.ui.views.TernOutlineView";
+    public static final String ID_TERN_EXPLORER_VIEW = "tern.eclipse.ide.ui.views.TernExplorerView"; //TODO delete in 2016
+    
     
     private IPageLayout factory;
 
@@ -70,6 +72,7 @@ public class NodePerspective implements IPerspectiveFactory {
 
         IFolderLayout rightTopRight = factory.createFolder("rightTopRight", IPageLayout.RIGHT, 0.75f, factory.getEditorArea());
         rightTopRight.addView(IPageLayout.ID_OUTLINE);
+        rightTopRight.addView(ID_TERN_OUTLINE_VIEW);
         rightTopRight.addView(ID_TERN_EXPLORER_VIEW);
         rightTopRight.addView(IPageLayout.ID_TASK_LIST);
     }
