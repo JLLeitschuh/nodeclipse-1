@@ -90,7 +90,7 @@
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
-            extensions="js,njs"
+            extensions="js,njs,_js"
             icon="icons/node_top_right_corner_file.png"
             id="org.nodeclipse.ui.editors.NodeEditor"
             name="Nodeclipse JSDT-based Editor">
