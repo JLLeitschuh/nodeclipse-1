@@ -13,5 +13,5 @@
 
 	<artifactId>org.nodeclipse.pluginslist.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
-	<name>org.nodeclipse.pluginslist :: feature</name>
+	<name>org.nodeclipse.pluginslist (feature)</name>
 </project>
