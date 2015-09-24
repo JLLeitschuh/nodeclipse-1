@@ -129,6 +129,14 @@
       <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            filenames = "bower.json"
+            icon="icons/bower16.png"
+            id="org.nodeclipse.ui.editors.NodeEditor.bower.json"
+            name="Nodeclipse JSDT-based Editor">
+      </editor>
+      <editor
+            class="org.nodeclipse.ui.editors.NodeEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             filenames = "package.json"
             icon="icons/npm/npm.png"
             id="org.nodeclipse.ui.editors.NodeEditor.package.json"
