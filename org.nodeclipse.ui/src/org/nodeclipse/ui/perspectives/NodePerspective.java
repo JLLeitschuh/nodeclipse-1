@@ -54,9 +54,11 @@ public class NodePerspective implements IPerspectiveFactory {
         left.addView(IPageLayout.ID_PROJECT_EXPLORER);
 
         IFolderLayout rightBottom = factory.createFolder("rightBottom", IPageLayout.BOTTOM, 0.75f, factory.getEditorArea());// NON-NLS-1
-        if (viewRegistry.find(ID_TERMINALS_VIEW) != null){
-        	rightBottom.addView(ID_TERMINALS_VIEW);        
-        }
+        // remove over Bug 478249 - [terminal][regression] Launching Terminal freezes Eclipse forever ; activating Terminal freezes UI for 13s
+        // https://bugs.eclipse.org/bugs/show_bug.cgi?id=478249
+//        if (viewRegistry.find(ID_TERMINALS_VIEW) != null){
+//        	rightBottom.addView(ID_TERMINALS_VIEW);        
+//        }
         rightBottom.addView(IConsoleConstants.ID_CONSOLE_VIEW);
         rightBottom.addView(ID_DEBUG_VIEW);
         if (viewRegistry.find(ID_MARKDOWN_VIEW) != null){
@@ -83,6 +85,8 @@ public class NodePerspective implements IPerspectiveFactory {
 		factory.addShowViewShortcut(IPageLayout.ID_PROJECT_EXPLORER);
 		factory.addShowViewShortcut(IPageLayout.ID_NAVIGATE_ACTION_SET);
 		factory.addShowViewShortcut(IPageLayout.ID_OUTLINE);
+		factory.addShowViewShortcut(ID_TERN_OUTLINE_VIEW);
+		factory.addShowViewShortcut(ID_TERN_EXPLORER_VIEW);
 		factory.addShowViewShortcut(IPageLayout.ID_BOOKMARKS);
     	 
         factory.addShowViewShortcut("org.eclipse.team.ui.GenericHistoryView"); // NON-NLS-1
