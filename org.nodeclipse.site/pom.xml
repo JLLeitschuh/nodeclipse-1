@@ -133,9 +133,7 @@
 		<repository>
 			<id>editbox</id>
 			<layout>p2</layout>
-			<!-- <url>http://editbox.sourceforge.net/updates/</url> 
-			<url>http://dl.bintray.com/nodeclipse/EditBox/0.60.0/</url>-->
-			<url>http://nodeclipse.github.io/updates/editbox/</url>
+			<url>http://nodeclipse.github.io/updates/editbox-0.70.0/</url>
 		</repository>
 		<!--  
 		<repository>
@@ -183,12 +181,13 @@
 			<layout>p2</layout>
 			<url>http://eclipse-glance.googlecode.com/svn/site/</url>
 		</repository>
+		<!-- 
 		<repository>
 			<id>nodeclipse.github.io</id>
 			<layout>p2</layout>
 			<url>http://nodeclipse.github.io/updates/eclipse-color-theme/</url>
 		</repository>
-		<!-- 
+		-->
 		<repository>
 			<id>com.github.eclipsecolortheme.feature</id>
 			<layout>p2</layout>
@@ -197,9 +196,8 @@
 		<repository>
 			<id>net.jeeeyul.eclipse.themes.updatesite</id>
 			<layout>p2</layout>
-			<url>http://jeeeyul.github.io/eclipse-themes/update-site/</url>
+			<url>http://eclipse.jeeeyul.net/update/</url>
 		</repository>
-		 -->
 		<repository>
 			<id>moonrise.com.github.eclipseuitheme.themes.feature</id>
 			<layout>p2</layout>
