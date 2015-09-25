@@ -17,7 +17,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
  * Our sample action implements workbench action delegate.
  * The action proxy will be created by the workbench and
  * shown in the UI. When the user tries to use the action,
- * this delegate will be created and execution will be 
+ * this delegate will be created and execution will be
  * delegated to it.
  * @see IWorkbenchWindowActionDelegate
  */
@@ -36,7 +36,7 @@ public class PluginsListAction implements IWorkbenchWindowActionDelegate {
 	 * @see IWorkbenchWindowActionDelegate#run
 	 */
 	public void run(IAction action) {
-		
+
 //		<http://stackoverflow.com/questions/18151203/eclipse-plugin-how-to-open-standard-view-like-internalwebbrowser-with-java>
 //
 //			To open the `Internal Browser` you need this code:
@@ -49,38 +49,32 @@ public class PluginsListAction implements IWorkbenchWindowActionDelegate {
 //
 //			    final IWebBrowser browser = PlatformUI.getWorkbench().getBrowserSupport().createBrowser("abc");
 //			    browser.openURL(new URL("http://www.google.de"));
-	
+
 			    int style = IWorkbenchBrowserSupport.AS_EDITOR | IWorkbenchBrowserSupport.LOCATION_BAR | IWorkbenchBrowserSupport.NAVIGATION_BAR | IWorkbenchBrowserSupport.STATUS;
 			    IWebBrowser browser;
 				try {
-					browser = WorkbenchBrowserSupport.getInstance().createBrowser(style, "NodeclipsePluginsListID", "NodeclipsePluginsList", "Nodeclipse Plugins List");
+					browser = WorkbenchBrowserSupport.getInstance().createBrowser(style,
+							Constants.LIST_BROWSER_ID, Constants.LIST_BROWSER_NAME, Constants.LIST_BROWSER_TOOLTIP);
 				} catch (PartInitException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
-					MessageDialog.openInformation(
-							window.getShell(),
-							"Eclipse Plugin Archetype",
-							"Hello, Maven+Eclipse world,\n org.nodeclipse.pluginslist is built with Tycho");
+					MessageDialog.openError(
+						window.getShell(),
+						Constants.ERROR1_MESSAGE,
+						Constants.ERROR1_MESSAGE+" to show "+Constants.LIST_BROWSER_NAME);
 					return;
 				}
 			    try {
-					browser.openURL(new URL("http://www.nodeclipse.org/updates/list"));
+					browser.openURL(Constants.listUrl);
 				} catch (PartInitException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (MalformedURLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		    
-			    
-		
+
 	}
 
 	/**
-	 * Selection in the workbench has been changed. We 
+	 * Selection in the workbench has been changed. We
 	 * can change the state of the 'real' action here
-	 * if we want, but this can only happen after 
+	 * if we want, but this can only happen after
 	 * the delegate has been created.
 	 * @see IWorkbenchWindowActionDelegate#selectionChanged
 	 */
