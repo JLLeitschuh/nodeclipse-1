@@ -13,7 +13,7 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/node_top_right_corner_new.png"
             id="org.nodeclipse.ui.wizards.NodeProjectWizard"
-            name="Node.js Project"
+            name="&amp;Node.js Project"
             project="true">
          <description>
             Create a new Node.js project (or add .project file to an existing project and import)
@@ -25,7 +25,7 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/e_16x16_top_right_corner_new.png"
             id="org.nodeclipse.ui.wizards.ExpressProjectWizard"
-            name="Node.js Express Project"
+            name="Node.js &amp;Express Project"
             project="true">
          <description>
             Create a new Node.js project with Express.js framework (Express should be installed before with <code>npm install -g express</code>)
@@ -37,7 +37,7 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/node_top_right_corner_file_top_right_corner_new.png"
             id="org.nodeclipse.ui.wizards.NodeFileWizard"
-            name="JavaScript File">
+            name="&amp;JavaScript File">
          <description>
             Create a new JavaScript file
          </description>
@@ -48,7 +48,7 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/coffee_top_right_corner_new.png"
             id="org.nodeclipse.ui.wizards.CoffeeFileWizard"
-            name="CoffeeScript File">
+            name="&amp;CoffeeScript File">
          <description>
             Create a new CoffeeScript file
          </description>
@@ -59,13 +59,13 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/typescript_16_top_right_corner_new.png"
             id="org.nodeclipse.ui.wizards.TypeScriptFileWizard"
-            name="TypeScript File">
+            name="&amp;TypeScript File">
          <description>
             Create a new TypeScript file
          </description>
       </wizard>
    </extension>
-   
+
    <extension
          point="org.eclipse.ui.editors">
       <!-- old TextEditor based Nodejs Editor -->
@@ -88,7 +88,7 @@
             name="Nodeclipse JSDT-based Editor">
       </editor>
       <!-- Nodeclipse JSDT-based Editor: just for different icons for json,jshintrc,tern-project,bowerrc  -->
-      <editor 
+      <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
@@ -97,7 +97,7 @@
             id="org.nodeclipse.ui.editors.NodeEditor.json"
             name="Nodeclipse JSDT-based Editor">
       </editor>
-      <editor 
+      <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
@@ -106,7 +106,7 @@
             id="org.nodeclipse.ui.editors.NodeEditor.jshintrc"
             name="Nodeclipse JSDT-based Editor">
       </editor>
-      <editor 
+      <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
@@ -117,7 +117,7 @@
       </editor>
       <!--
       -->
-      <editor 
+      <editor
             class="org.nodeclipse.ui.editors.NodeEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
@@ -151,7 +151,7 @@
             name="Nodeclipse JSDT-based Editor">
       </editor>
       <!-- TextEditor npm-gray icon -->
-      <editor 
+      <editor
             class="org.eclipse.ui.editors.text.TextEditor"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             default="true"
@@ -161,7 +161,7 @@
             name="TextEditor for .npmignore">
       </editor>
     </extension>
-    
+
 	<extension point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer"
 	   id="nodeclispe_textual_proposals"
 	   name="Nodeclipse Text Proposals">
@@ -177,8 +177,8 @@
 	   </javaCompletionProposalComputer>
 	   <proposalCategory icon="icons/node.png"/>
 	 </extension>
-     
-     
+
+
 	<extension point="org.eclipse.debug.ui.toggleBreakpointsTargetFactories">
 	    <toggleTargetFactory
 	            id="org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory"

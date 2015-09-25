@@ -14,7 +14,7 @@
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/phantomjs_top_right_corner_new.png"
             id="org.nodeclipse.phantomjs.wizards.PhantomjsProjectWizard"
-            name="PhantomJS Project"
+            name="&amp;PhantomJS Project"
             project="true">
          <description>
             Create a new PhantomJS project (or add .project file to an existing project)
@@ -54,71 +54,71 @@
             name="PhantomJS Editor">
       </editor>
     </extension>
-    
-	<extension 
-          point="org.eclipse.debug.core.launchConfigurationTypes"> 
-        <launchConfigurationType 
-            delegate="org.nodeclipse.phantomjs.launch.LaunchConfigurationDelegate" 
-            id="org.nodeclipse.phantomjs.launch.LaunchConfigurationType" 
+
+	<extension
+          point="org.eclipse.debug.core.launchConfigurationTypes">
+        <launchConfigurationType
+            delegate="org.nodeclipse.phantomjs.launch.LaunchConfigurationDelegate"
+            id="org.nodeclipse.phantomjs.launch.LaunchConfigurationType"
             modes="run, debug"
             name="PhantomJS Script">
-        </launchConfigurationType> 
+        </launchConfigurationType>
     </extension>
     <extension
-          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
-       <launchConfigurationTypeImage   
-             configTypeID= "org.nodeclipse.phantomjs.launch.LaunchConfigurationType"   
-             icon= "icons/phantomjs_bottom_right_corner_run_half_size.png"   
-             id= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTypeImage" >   
-       </launchConfigurationTypeImage>   
-    </extension>
-    <!-- phantomjs run/debug -->  
-    <extension   
-          point= "org.eclipse.debug.ui.launchShortcuts" >   
-       <shortcut   
-             class= "org.nodeclipse.phantomjs.launch.LaunchShortcut"   
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >
+       <launchConfigurationTypeImage
+             configTypeID= "org.nodeclipse.phantomjs.launch.LaunchConfigurationType"
              icon= "icons/phantomjs_bottom_right_corner_run_half_size.png"
-             id= "org.nodeclipse.phantomjs.launch.LaunchShortcut"   
-             label= "PhantomJS Script"   
+             id= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTypeImage" >
+       </launchConfigurationTypeImage>
+    </extension>
+    <!-- phantomjs run/debug -->
+    <extension
+          point= "org.eclipse.debug.ui.launchShortcuts" >
+       <shortcut
+             class= "org.nodeclipse.phantomjs.launch.LaunchShortcut"
+             icon= "icons/phantomjs_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.phantomjs.launch.LaunchShortcut"
+             label= "PhantomJS Script"
              modes= "run, debug" >
           <configurationType
                 id= "org.nodeclipse.phantomjs.launch.LaunchConfigurationType" >
-          </configurationType>   
-           <contextualLaunch>   
-              <enablement>   
-                 <with   
-                       variable= "selection" >   
-                    <count   
-                          value= "1" >   
-                    </count>   
-                    <iterate>   
-                       <or>   
-                          <test   
-                                property= "org.eclipse.debug.ui.matchesPattern"   
-                                value= "*.js" >   
-                          </test>   
-                          <test   
-                                property= "org.eclipse.debug.ui.matchesPattern"   
-                                value= "*.pjs" >   
-                          </test>   
-                       </or>   
-                    </iterate>   
-                 </with>   
-              </enablement>   
-           </contextualLaunch>   
-       </shortcut>   
+          </configurationType>
+           <contextualLaunch>
+              <enablement>
+                 <with
+                       variable= "selection" >
+                    <count
+                          value= "1" >
+                    </count>
+                    <iterate>
+                       <or>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "*.js" >
+                          </test>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "*.pjs" >
+                          </test>
+                       </or>
+                    </iterate>
+                 </with>
+              </enablement>
+           </contextualLaunch>
+       </shortcut>
    </extension>
-   
+
 
    <extension
         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-        <launchConfigurationTabGroup   
-       		class= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTabGroup"   
-      		id= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTabGroup"   
-        	type= "org.nodeclipse.phantomjs.launch.LaunchConfigurationType" >   
+        <launchConfigurationTabGroup
+       		class= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTabGroup"
+      		id= "org.nodeclipse.phantomjs.launch.LaunchConfigurationTabGroup"
+        	type= "org.nodeclipse.phantomjs.launch.LaunchConfigurationType" >
 		</launchConfigurationTabGroup>
    </extension>
-   
+
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
@@ -134,6 +134,6 @@
             name="PhantomJS">
       </page>
    </extension>
-   
-   
+
+
 </plugin>

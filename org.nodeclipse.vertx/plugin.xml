@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 Copyright (c) 2014 Enide, Paul Verest & other Nodeclipse authors. http://www.nodeclipse.org/
 -->
 <?eclipse version="3.4"?>
@@ -17,7 +17,7 @@ Copyright (c) 2014 Enide, Paul Verest & other Nodeclipse authors. http://www.nod
             finalPerspective="org.nodeclipse.ui.perspectives.NodePerspective"
             icon="icons/dot-x-16_top_right_corner_new.png"
             id="org.nodeclipse.vertx.wizards.VertxProjectWizard"
-            name="Vert.x JavaScript Project"
+            name="&amp;Vert.x JavaScript Project"
             project="true">
          <description>
             Create a new Vert.x JavaScript project (or add .project file to an existing project)
@@ -58,67 +58,67 @@ Copyright (c) 2014 Enide, Paul Verest & other Nodeclipse authors. http://www.nod
       </editor>
     </extension>
 
-	<extension 
-          point="org.eclipse.debug.core.launchConfigurationTypes"> 
-        <launchConfigurationType 
-            delegate="org.nodeclipse.vertx.launch.LaunchConfigurationDelegate" 
-            id="org.nodeclipse.vertx.launch.LaunchConfigurationType" 
-            modes="run, debug" 
+	<extension
+          point="org.eclipse.debug.core.launchConfigurationTypes">
+        <launchConfigurationType
+            delegate="org.nodeclipse.vertx.launch.LaunchConfigurationDelegate"
+            id="org.nodeclipse.vertx.launch.LaunchConfigurationType"
+            modes="run, debug"
             name="Vert.x JS Application">
-        </launchConfigurationType> 
+        </launchConfigurationType>
     </extension>
     <extension
-          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >   
-       <launchConfigurationTypeImage   
-             configTypeID= "org.nodeclipse.vertx.launch.LaunchConfigurationType"   
-             icon= "icons/dot-x-16_bottom_right_corner_run_half_size.png"   
-             id= "org.nodeclipse.vertx.launch.LaunchConfigurationTypeImage" >   
-       </launchConfigurationTypeImage>   
+          point= "org.eclipse.debug.ui.launchConfigurationTypeImages" >
+       <launchConfigurationTypeImage
+             configTypeID= "org.nodeclipse.vertx.launch.LaunchConfigurationType"
+             icon= "icons/dot-x-16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.vertx.launch.LaunchConfigurationTypeImage" >
+       </launchConfigurationTypeImage>
     </extension>
-    <!-- vertx run/debug -->  
-    <extension   
-          point= "org.eclipse.debug.ui.launchShortcuts" >   
-       <shortcut   
-             class= "org.nodeclipse.vertx.launch.LaunchShortcut"   
-             icon= "icons/dot-x-16_bottom_right_corner_run_half_size.png" 
-             id= "org.nodeclipse.debug.launch.LaunchShortcut"   
-             label= "Vert.x JS Application"   
-             modes= "run, debug" >   
+    <!-- vertx run/debug -->
+    <extension
+          point= "org.eclipse.debug.ui.launchShortcuts" >
+       <shortcut
+             class= "org.nodeclipse.vertx.launch.LaunchShortcut"
+             icon= "icons/dot-x-16_bottom_right_corner_run_half_size.png"
+             id= "org.nodeclipse.debug.launch.LaunchShortcut"
+             label= "Vert.x JS Application"
+             modes= "run, debug" >
           <configurationType
                 id= "org.nodeclipse.vertx.launch.LaunchConfigurationType" >
-          </configurationType>   
-           <contextualLaunch>   
-              <enablement>   
-                 <with   
-                       variable= "selection" >   
-                    <count   
-                          value= "1" >   
-                    </count>   
-                    <iterate>   
-                       <or>   
-                          <test   
-                                property= "org.eclipse.debug.ui.matchesPattern"   
-                                value= "*.js" >   
-                          </test>   
-                          <test   
-                                property= "org.eclipse.debug.ui.matchesPattern"   
-                                value= "*.vjs" >   
-                          </test>   
-                       </or>   
-                    </iterate>   
-                 </with>   
-              </enablement>   
-           </contextualLaunch>   
-       </shortcut>   
+          </configurationType>
+           <contextualLaunch>
+              <enablement>
+                 <with
+                       variable= "selection" >
+                    <count
+                          value= "1" >
+                    </count>
+                    <iterate>
+                       <or>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "*.js" >
+                          </test>
+                          <test
+                                property= "org.eclipse.debug.ui.matchesPattern"
+                                value= "*.vjs" >
+                          </test>
+                       </or>
+                    </iterate>
+                 </with>
+              </enablement>
+           </contextualLaunch>
+       </shortcut>
    </extension>
-   
+
 
    <extension
         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-        <launchConfigurationTabGroup   
-       		class= "org.nodeclipse.vertx.launch.LaunchConfigurationTabGroup"   
-      		id= "org.nodeclipse.vertx.launch.LaunchConfigurationTabGroup"   
-        	type= "org.nodeclipse.vertx.launch.LaunchConfigurationType" >   
+        <launchConfigurationTabGroup
+       		class= "org.nodeclipse.vertx.launch.LaunchConfigurationTabGroup"
+      		id= "org.nodeclipse.vertx.launch.LaunchConfigurationTabGroup"
+        	type= "org.nodeclipse.vertx.launch.LaunchConfigurationType" >
 		</launchConfigurationTabGroup>
    </extension>
 
