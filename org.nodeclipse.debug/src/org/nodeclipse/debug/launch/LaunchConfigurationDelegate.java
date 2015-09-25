@@ -35,7 +35,7 @@ import org.nodeclipse.ui.util.NodeclipseConsole;
 /**
  * launch() implements starting Node and passing all parameters.
  * Node is launched as node, coffee, coffee -c, tsc or node-dev(or other monitors)
- * 
+ *
  * @author Lamb, Tomoyuki, Pushkar, Paul Verest
  */
 public class LaunchConfigurationDelegate implements
@@ -43,12 +43,12 @@ public class LaunchConfigurationDelegate implements
 	private static RuntimeProcess nodeProcess = null; //since 0.7 it should be debuggable instance
 	//@since 0.7. contain all running Node thread, including under debug. Non Thread-safe, as it should be only in GUI thread
 	//private static List<RuntimeProcess> nodeRunningProcesses = new LinkedList<RuntimeProcess>();
-	
+
 	private boolean warned = false;
-	
+
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.debug.core.model.ILaunchConfigurationDelegate#launch(org.
 	 * eclipse.debug.core.ILaunchConfiguration, java.lang.String,
@@ -58,30 +58,30 @@ public class LaunchConfigurationDelegate implements
 	@Override
 	public void launch(ILaunchConfiguration configuration, String mode,
 			ILaunch launch, IProgressMonitor monitor) throws CoreException {
-		
+
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		boolean allowedMany = preferenceStore.getBoolean(PreferenceConstants.NODE_ALLOW_MANY);//@since 0.7
 		boolean isDebugMode = mode.equals(ILaunchManager.DEBUG_MODE);
 
 		if (allowedMany){//@since 0.7
-			if ( isDebugMode  
+			if ( isDebugMode
 				&& (nodeProcess != null && !nodeProcess.isTerminated()) ) {
 				showErrorDialog("Only 1 node process can be debugged in 1 Eclipse instance!\n\n"+
 				"Open other Eclipse/Enide Studio with different node debug port configurred. ");
 				return;
 			}
-		
-		}else{	
+
+		}else{
 			if(nodeProcess != null && !nodeProcess.isTerminated()) {
 				//throw new CoreException(new Status(IStatus.OK, ChromiumDebugPlugin.PLUGIN_ID, null, null));
 				showErrorDialog("Other node process is running!");
 				return;
 				//TODO suggest to terminate and start new
-			}	
+			}
 		}
 
-		 
-		// Using configuration to build command line	
+
+		// Using configuration to build command line
 		List<String> cmdLine = new ArrayList<String>();
 
 		if (preferenceStore.getBoolean(PreferenceConstants.NODE_JUST_NODE)){
@@ -96,10 +96,10 @@ public class LaunchConfigurationDelegate implements
 				Dialogs.showPreferencesDialog("Node.js runtime is not correctly configured.\n\n"
 						+ "Please goto Window -> Prefrences -> Nodeclipse and configure the correct location");
 				return;
-			}			
+			}
 			cmdLine.add(nodePath);
 		}
-		
+
 		if (isDebugMode) {
 			// -brk says to Node runtime wait until Chromium Debugger starts and connects
 			// that is causing "stop on first line" behavior,
@@ -113,16 +113,16 @@ public class LaunchConfigurationDelegate implements
 			if (nodeDebugPort==0) { nodeDebugPort=5858;};
 			cmdLine.add("--debug"+brk+"="+nodeDebugPort); //--debug-brk=5858
 		}
-		
+
 		//@since 0.9 from Preferences
 		String nodeOptions= preferenceStore.getString(PreferenceConstants.NODE_OPTIONS);
 		if(!nodeOptions.equals("")) {
 			String[] sa = nodeOptions.split(" ");
 			for(String s : sa) {
 				cmdLine.add(s);
-			}			
+			}
 		}
-		
+
 		String nodeArgs = configuration.getAttribute(Constants.ATTR_NODE_ARGUMENTS, "");
 		if(!nodeArgs.equals("")) {
 			String[] sa = nodeArgs.split(" ");
@@ -130,7 +130,7 @@ public class LaunchConfigurationDelegate implements
 				cmdLine.add(s);
 			}
 		}
-		
+
 		String file = configuration.getAttribute(Constants.KEY_FILE_PATH,	Constants.BLANK_STRING);
 		String extension = null;
 		int i = file.lastIndexOf('.');
@@ -142,15 +142,15 @@ public class LaunchConfigurationDelegate implements
 			// by default assume
 			extension = "js";
 		}
-		
+
 		// #57 running app.js with node-dev, forever, supervisor, nodemon etc
 		// https://github.com/Nodeclipse/nodeclipse-1/issues/57
 		String nodeMonitor = configuration.getAttribute(Constants.ATTR_NODE_MONITOR, "");
 		if(!nodeMonitor.equals("")) { // any value
 			//TODO support selection, now only one
-			
+
 			String nodeMonitorPath= preferenceStore.getString(PreferenceConstants.NODE_MONITOR_PATH);
-			
+
 			// Check if the node monitor location is correctly configured
 			File nodeMonitorFile = new File(nodeMonitorPath);
 			if(!nodeMonitorFile.exists()){
@@ -181,7 +181,7 @@ public class LaunchConfigurationDelegate implements
 			//String typescriptCompiler = configuration.getAttribute(Constants.ATTR_TYPESCRIPT_COMPILER, "");
 			cmdLine.add(preferenceStore.getString(PreferenceConstants.TYPESCRIPT_COMPILER_PATH));
 		}
-		
+
 		String filePath = ResourcesPlugin.getWorkspace().getRoot().findMember(file).getLocation().toOSString();
 		// path is relative, so can not found it.
 		cmdLine.add(filePath);
@@ -194,7 +194,7 @@ public class LaunchConfigurationDelegate implements
 				cmdLine.add(s);
 			}
 		}
-		
+
 		String programArgs = configuration.getAttribute(Constants.ATTR_PROGRAM_ARGUMENTS, "");
 		if(!programArgs.equals("")) {
 			String[] sa = programArgs.split(" ");
@@ -216,41 +216,43 @@ public class LaunchConfigurationDelegate implements
 		if (workingPath == null){
 			workingPath = (new File(filePath)).getParentFile();
 		}
-		
+
 		//env
-		String[] envp = getEnvironmentVariables(configuration); 
-		
+		String[] envp = getEnvironmentVariables(configuration);
+
 		for(String s : cmdLine) NodeclipseConsole.write(s+" ");
 		NodeclipseConsole.write("\n");
-		
+
 		String[] cmds = {};
 		cmds = cmdLine.toArray(cmds);
 		// Launch a process to run/debug. See also #71 (output is less or no output)
 		Process p = DebugPlugin.exec(cmds, workingPath, envp);
 		// no way to get private p.handle from java.lang.ProcessImpl
-		RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE); 
+		RuntimeProcess process = (RuntimeProcess)DebugPlugin.newProcess(launch, p, Constants.PROCESS_MESSAGE);
 		if (isDebugMode) {
-			if(!process.isTerminated()) { 
+			if(!process.isTerminated()) {
 				int nodeDebugPort = preferenceStore.getInt(PreferenceConstants.NODE_DEBUG_PORT);
 				NodeDebugUtil.launch(mode, launch, monitor, nodeDebugPort);
 			}
 		}
-		
+
 		if (allowedMany){ //@since 0.7
 			if (isDebugMode){
-				nodeProcess = process;	
+				nodeProcess = process;
 			}
 			//nodeRunningProcesses.add(process);
 		}else{
-			nodeProcess = process;	
+			nodeProcess = process;
 		}
 	}
-	
+
+	public static String[] NODE_ENV_VAR_SET = new String[]{"APPDATA","PATH","TEMP","TMP","SystemDrive"}; // #81, #197
+
 	private String[] getEnvironmentVariables(ILaunchConfiguration configuration) throws CoreException {
 		Map<String, String> envm = new HashMap<String, String>();
 		envm = configuration.getAttribute(Constants.ATTR_ENVIRONMENT_VARIABLES, envm);
-		
-		int envmSizeDelta = 4;
+
+		int envmSizeDelta = NODE_ENV_VAR_SET.length;
 		Map<String,String> all = null;
 		IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
 		boolean passAllEnvVars = preferenceStore.getBoolean(PreferenceConstants.NODE_PASS_ALL_ENVIRONMENT_VARIABLES);//@since 0.12
@@ -258,14 +260,14 @@ public class LaunchConfigurationDelegate implements
 			all = System.getenv();
 			envmSizeDelta = all.size();
 		}
-		
+
 		String[] envp = new String[envm.size()+envmSizeDelta]; // see below
 		int idx = 0;
 		for(String key : envm.keySet()) {
 			String value = envm.get(key);
 			envp[idx++] = key + "=" + value;
 		}
-		
+
 		if (passAllEnvVars){
 			for (Map.Entry<String, String> entry : all.entrySet())
 			{
@@ -273,18 +275,15 @@ public class LaunchConfigurationDelegate implements
 			    envp[idx++] = entry.getKey() + "=" + entry.getValue();
 			}
 		}else{
-			envp[idx++] = getEnvVariableEqualsString("APPDATA"); //#197
-			//+ #81
-			envp[idx++] = getEnvVariableEqualsString("PATH");
-			envp[idx++] = getEnvVariableEqualsString("TEMP");
-			envp[idx++] = getEnvVariableEqualsString("TMP");
-			envp[idx++] = getEnvVariableEqualsString("SystemDrive");
+			for (String envVarName : NODE_ENV_VAR_SET){
+				envp[idx++] = getEnvVariableEqualsString(envVarName);
+			}
 		}
 		if (!warned ){
 			NodeclipseConsole.write("  These environment variables will be applied automatically to every `node` launch.\n");
 			StringBuilder sb = new StringBuilder(100);
 			for(int i=0; i<envp.length; i++){
-				sb.append("  ").append(envp[i]).append('\n');	
+				sb.append("  ").append(envp[i]).append('\n');
 			}
 			NodeclipseConsole.write(sb.toString());
 			warned = true;
@@ -295,21 +294,21 @@ public class LaunchConfigurationDelegate implements
 	protected String getEnvVariableEqualsString(String envvarName){
 		String envvarValue = System.getenv(envvarName);
 		if (envvarValue==null) envvarValue = "";
-		return envvarName + "=" + envvarValue;		
+		return envvarName + "=" + envvarValue;
 	}
-	
+
 	private void showErrorDialog(final String message) {
 		Display.getDefault().syncExec(new Runnable() {
 			public void run() {
 				Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 
-				MessageDialog dialog = new MessageDialog(shell, "Nodeclipse", null, message, 
+				MessageDialog dialog = new MessageDialog(shell, "Nodeclipse", null, message,
 						MessageDialog.ERROR, new String[] { "OK" }, 0);
 				dialog.open();
 			}
 		});
 	}
-	
+
 	public static void terminateNodeProcess() {
 		if(nodeProcess != null) {
 			try {
