@@ -100,7 +100,7 @@ It is not enough for release, e.g. because JSHint is external plugin and there a
 
 Before release
 
-`mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=1.0.1-SNAPSHOT -Pall`
+`mvn -Dtycho.mode=maven org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=1.0.2-SNAPSHOT -Pall`
 
 #### Install site.zip (quick and simple way)
 

@@ -10,7 +10,7 @@ Copyright (c) 2014 Paul Verest & other Nodeclipse authors. http://www.nodeclipse
 	<parent>
 		<groupId>org.nodeclipse.nodeclipse-1</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	 
 	<artifactId>org.nodeclipse.vertx</artifactId>
