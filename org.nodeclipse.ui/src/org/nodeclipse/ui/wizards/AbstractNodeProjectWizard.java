@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.eclipse.core.internal.resources.Workspace;
 import org.eclipse.core.internal.utils.FileUtil;
@@ -41,6 +44,7 @@ import org.nodeclipse.ui.nature.NodeNature;
 import org.nodeclipse.ui.perspectives.NodePerspective;
 import org.nodeclipse.ui.preferences.PreferenceConstants;
 import org.nodeclipse.ui.util.LogUtil;
+import org.nodeclipse.ui.util.VersionUtil;
 import org.osgi.framework.Bundle;
 
 /**
@@ -92,36 +96,49 @@ public abstract class AbstractNodeProjectWizard extends Wizard implements INewWi
     
     //+ to let overriding
     protected String getProjectNature(){
-		return NodeNature.NATURE_ID;    	
+		return NodeNature.NATURE_ID;
     }
     
     /**
-     * Set project natures to current type + JavaScriptCore nature
+     * Set project natures to current type + optionally JSDT/Tern nature
      * @param newProjectHandle IProject
      * @param location URI
      * @return
      */
     protected IProjectDescription createProjectDescription(IProject newProjectHandle, URI location) {
-		IWorkspace workspace = ResourcesPlugin.getWorkspace();
-		final IProjectDescription description = workspace.newProjectDescription(newProjectHandle.getName());
-		description.setLocationURI(location);
-		String[] natures = description.getNatureIds();
-		int numberOfAddedNatures = 2;
-		boolean addTernNature = store.getBoolean(PreferenceConstants.ADD_TERN_NATURE);
+    	boolean addJsdtNature = store.getBoolean(PreferenceConstants.ADD_JSDT_NATURE);
+    	boolean addTernNature = store.getBoolean(PreferenceConstants.ADD_TERN_NATURE);
+		int numberOfAddedNatures = 1; //always at least 1
+		if (addJsdtNature){
+			numberOfAddedNatures++;
+		}
 		if (addTernNature){
 			numberOfAddedNatures++;
 		}
+    	
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		final IProjectDescription pd = workspace.newProjectDescription(newProjectHandle.getName());
+		pd.setLocationURI(location);
+		String[] natures = pd.getNatureIds();
 		String[] newNatures = new String[natures.length + numberOfAddedNatures];
 		System.arraycopy(natures, 0, newNatures, 0, natures.length);
-		newNatures[natures.length] = getProjectNature();
-		newNatures[natures.length+1] = JavaScriptCore.NATURE_ID;
-		if (addTernNature){
-			newNatures[natures.length+2] = PreferenceConstants.ADD_TERN_NATURE_VALUE;
-		}		
-		description.setNatureIds(newNatures);    	
 		
-		return description;
+		int newNaturesIndex = natures.length;
+		newNatures[newNaturesIndex] = getProjectNature();
+		if (addJsdtNature){
+			newNatures[++newNaturesIndex] = JavaScriptCore.NATURE_ID;
+		}
+		if (addTernNature){
+			newNatures[++newNaturesIndex] = PreferenceConstants.ADD_TERN_NATURE_VALUE;
+		}		
+		pd.setNatureIds(newNatures);    	
+		
+		pd.setComment("Created with Nodeclipse "+VersionUtil.versionString+" at "+DATE_FORMAT.format(new Date()));
+		return pd;
     }
+    
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+
 
     protected void generateTemplates(String path, IProject projectHandle) throws CoreException {
 		Bundle bundle = Activator.getDefault().getBundle();

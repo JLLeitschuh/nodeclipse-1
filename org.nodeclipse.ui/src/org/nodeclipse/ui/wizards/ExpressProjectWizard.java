@@ -95,8 +95,8 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 		newNatures[natures.length] = NodeNature.NATURE_ID;
 		description.setNatureIds(newNatures);
 */
-		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean exists = isExistingProjectFolder(description);
+		final IProjectDescription pd = createProjectDescription(newProjectHandle, location);
+		final boolean exists = isExistingProjectFolder(pd);
 		final String projectName = mainPage.getProjectName();
 		final String templateEngine = mainPage.getSelectedTemplateEngine();
 		final String stylesheetEngine = mainPage.getSelectedStylesheetEngine();
@@ -105,7 +105,7 @@ public class ExpressProjectWizard extends AbstractNodeProjectWizard {
 			@Override
 			public void run(IProgressMonitor monitor)
 					throws InvocationTargetException, InterruptedException {
-				createProject(description, monitor);				
+				createProject(pd, monitor);				
 				if(exists == true) {
 					return;
 				}

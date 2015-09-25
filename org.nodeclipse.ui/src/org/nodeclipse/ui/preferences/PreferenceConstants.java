@@ -1,5 +1,7 @@
 package org.nodeclipse.ui.preferences;
 
+import org.eclipse.wst.jsdt.core.JavaScriptCore;
+
 /**
  * Constant definitions for plug-in preferences
  * 
@@ -15,6 +17,8 @@ public class PreferenceConstants {
 	public static final String NODE_APPLICATION_ARGUMENTS = "node_application_arguments";
 	public static final String NODE_ALLOW_MANY = "node_allow_many";
 	public static final String NODE_PASS_ALL_ENVIRONMENT_VARIABLES = "node_pass_all_environment_variables";
+	public static final String ADD_JSDT_NATURE = "add_jsdt_nature";
+	//public static final String ADD_JSDT_NATURE_VALUE = JavaScriptCore.NATURE_ID; //"org.eclipse.wst.jsdt.core.jsNature";
 	public static final String ADD_TERN_NATURE = "add_tern_nature";
 	public static final String ADD_TERN_NATURE_VALUE = "tern.eclipse.ide.core.ternnature";
 	public static final String NODE_SOURCES_PATH = "node_sources_lib_path";
