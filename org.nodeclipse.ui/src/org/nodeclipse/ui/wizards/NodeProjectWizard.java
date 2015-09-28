@@ -83,16 +83,16 @@ public class NodeProjectWizard extends AbstractNodeProjectWizard implements INew
 		newNatures[natures.length] = NodeNature.NATURE_ID;
 		description.setNatureIds(newNatures);
 */
-		final IProjectDescription description = createProjectDescription(newProjectHandle, location);
-		final boolean existingProjectFolder = isExistingProjectFolder(description);
+		final IProjectDescription pd = createProjectDescription(newProjectHandle, location);
+		final boolean existingProjectFolder = isExistingProjectFolder(pd);
 		final String template = mainPage.getSelectedTemplate();
 
-		IRunnableWithProgress op = new IRunnableWithProgress() {
+		IRunnableWithProgress runnable = new IRunnableWithProgress() {
 			@Override
 			public void run(IProgressMonitor monitor)
 					throws InvocationTargetException, InterruptedException {
 				CreateProjectOperation op = new CreateProjectOperation(
-						description, WINDOW_TITLE);
+						pd, WINDOW_TITLE);
 				try {
 					op.execute(monitor,
 							WorkspaceUndoUtil.getUIInfoAdapter(getShell()));
@@ -135,7 +135,7 @@ public class NodeProjectWizard extends AbstractNodeProjectWizard implements INew
 		};
 
 		try {
-			getContainer().run(true, true, op);
+			getContainer().run(true, true, runnable);
 		} catch (InvocationTargetException e) {
 			LogUtil.error(e);
 		} catch (InterruptedException e) {

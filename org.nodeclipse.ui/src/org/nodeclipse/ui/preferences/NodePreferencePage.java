@@ -45,6 +45,7 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
     private StringFieldEditor nodeApplicationArguments;
     private BooleanFieldEditor nodeAllowMany;
     private BooleanFieldEditor nodePassAllEnvVars;
+    private BooleanFieldEditor addJsdtNature;
     private BooleanFieldEditor addTernNature;
     private DirectoryFieldEditor nodeSourcesPath;
     private BooleanFieldEditor useNodejsBaseModuleDefinitions;
@@ -149,6 +150,9 @@ public class NodePreferencePage extends FieldEditorPreferencePage implements IWo
         		"pass all environment variables of Eclipse to launched Node.js app", getFieldEditorParent());
         addField(nodePassAllEnvVars);
 
+        addJsdtNature = new BooleanFieldEditor(PreferenceConstants.ADD_JSDT_NATURE, 
+        		"add JSDT nature to newly created projects", getFieldEditorParent());
+        addField(addJsdtNature);
         addTernNature = new BooleanFieldEditor(PreferenceConstants.ADD_TERN_NATURE, 
         		"add Tern nature to newly created projects", getFieldEditorParent());
         addField(addTernNature);
