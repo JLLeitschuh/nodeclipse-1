@@ -17,7 +17,7 @@
          </menu>
           -->
          <action
-               label="&amp;GitHub Nodeclipse organization"
+               label="Nodeclipse effort on &amp;GitHub"
                icon="icons/github-cat_green.png"
                class="org.nodeclipse.pluginslist.core.GithubAction"
                tooltip="https://github.com/nodeclipse/"
@@ -35,7 +35,7 @@
                id="org.nodeclipse.pluginslist.core.PluginsListAction">
          </action>
          <action
-               label="&amp;Stackoverflow.com nodeclipse questions"
+               label="Nodeclipse support on &amp;Stackoverflow"
                icon="icons/stackoverflow16.png"
                class="org.nodeclipse.pluginslist.core.StackoverflowAction"
                tooltip="http://stackoverflow.com/tags/nodeclipse"
