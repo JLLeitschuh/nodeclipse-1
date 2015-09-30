@@ -228,8 +228,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- mvn site http://nodeclipse.github.io/ -->
-			<!-- https://github.com/github/maven-plugins -->
+			<!-- mvn site http://nodeclipse.github.io/
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -241,7 +240,17 @@
 						<version>1.4</version>
 					</dependency>
 				</dependencies>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>post-site</phase>
+					</execution>
+				</executions>
 			</plugin>
+			-->
+			<!-- https://github.com/github/maven-plugins
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
@@ -262,6 +271,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 
 		</plugins>
 	</build>

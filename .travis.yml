@@ -1,6 +1,6 @@
 sudo: false
 language: java
-script: mvn clean package -Pfull && mvn -pl org.nodeclipse.site site -Pfull
+script: mvn clean package -Pfull && mvn -pl org.nodeclipse.site com.github.github:site-maven-plugin:site -Pfull
 
 notifications:
   email: false
