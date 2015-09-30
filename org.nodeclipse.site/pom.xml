@@ -18,33 +18,33 @@
 
 	<repositories>
 		<!-- for Full Build with Maven/Tycho (or Git Submodules)-->
-		
-		
+
+
 		<!-- Nodeclipse -->
 		<repository>
 			<id>jshint-eclipse</id>
 			<layout>p2</layout>
 			<url>http://github.eclipsesource.com/jshint-eclipse/updates/</url>
 		</repository>
-		
-		
+
+
 		<!-- Minimalist Editors -->
 		<repository>
 			<id>org.dadacoalition.yedit</id>
 			<layout>p2</layout>
 			<url>http://dadacoalition.org/yedit</url>
 		</repository>
-		<!-- 
+		<!--
 		-->
 		<repository>
 			<id>git-addon</id>
 			<layout>p2</layout>
 			<url>http://www.nodeclipse.org/git/addon/</url>
 		</repository>
-		
+
 
 		<!-- Enide Tools Collection -->
-		<!-- 
+		<!--
 		<repository>
 			<id>plugin-list</id>
 			<layout>p2</layout>
@@ -83,7 +83,7 @@
 			<layout>p2</layout>
 			<url>http://jeeeyul.github.io/update/</url>
 		</repository>
-		<!--  
+		<!--
 		<repository>
 			<id>Regular-Expression</id>
 			<layout>p2</layout>
@@ -94,7 +94,7 @@
 			<id>net.jumperz.app.MMonjaDB</id>
 			<layout>p2</layout>
 			<url>http://www.jumperz.net/update/</url>
-		</repository>		
+		</repository>
 		<repository>
 			<id>shelled</id>
 			<layout>p2</layout>
@@ -113,7 +113,7 @@
 			<url>https://bitbucket.org/denmiroch/jsontools/raw/ae2e9d683249ef989d940b441e00b74df729164c/JsonSite/site.xml</url>
 		</repository>
 		-->
-		<!-- 
+		<!--
 		<repository>
 			<id>less</id>
 			<layout>p2</layout>
@@ -135,7 +135,7 @@
 			<layout>p2</layout>
 			<url>http://nodeclipse.github.io/updates/editbox-0.70.0/</url>
 		</repository>
-		<!--  
+		<!--
 		<repository>
 			<id>axmor-typescript</id>
 			<layout>p2</layout>
@@ -159,8 +159,8 @@
 			<layout>p2</layout>
 			<url>http://nodeclipse.github.io/updates/zipeditor/</url>
 		</repository>
-		
-				 
+
+
 		<!-- JavaTools -->
 		<repository>
 			<id>jdt.spelling.feature</id>
@@ -168,8 +168,8 @@
 			<!-- <url>http://www.stuarthendren.net/update/</url>  -->
 			<url>http://jdt.spelling.s3-website-us-east-1.amazonaws.com</url>
 		</repository>
-		
-					
+
+
 		<!-- General -->
 		<repository>
 			<id>it.unibz.instasearch.feature.indigo</id>
@@ -181,7 +181,7 @@
 			<layout>p2</layout>
 			<url>http://eclipse-glance.googlecode.com/svn/site/</url>
 		</repository>
-		<!-- 
+		<!--
 		<repository>
 			<id>nodeclipse.github.io</id>
 			<layout>p2</layout>
@@ -203,8 +203,8 @@
 			<layout>p2</layout>
 			<url>https://raw.github.com/guari/eclipse-ui-theme/master/com.github.eclipseuitheme.themes.updatesite</url>
 		</repository>
-		
-		
+
+
 		<!-- coffeescript-eclipse -->
 		<repository>
 			<id>coffeescript-eclipse</id>
@@ -240,25 +240,25 @@
 			<layout>p2</layout>
 			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
-		
-		
+
+
 		<!-- Fail back if some repos are unavailable -->
 		<repository>
 			<id>fail-back</id>
 			<layout>p2</layout>
 			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.15/</url>
 		</repository>
-		
-		
+
+
 		<!-- outdated -->
 		<!--
 		<repository>
 			<id>winterwell.markdown</id>
 			<layout>p2</layout>
 			<url>http://winterwell.com/software/updatesite/</url>
-		</repository> 
-		--> 
-		
+		</repository>
+		-->
+
 		<!-- can't be bundled
 		<repository>
 			<id>Closure-by-Vincent.Simonet.p2f</id>
@@ -269,8 +269,33 @@
 			<id>quicksearch</id>
 			<layout>p2</layout>
 			<url>http://dist.springsource.com/release/TOOLS/update/e4.3/</url>
-		</repository>	
-		 -->		
+		</repository>
+		 -->
 	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.12</version>
+				<configuration>
+					<repositoryOwner>Nodeclipse</repositoryOwner>
+					<repositoryName>nodeclipse-1</repositoryName>
+					<message>Releasing update site for ${project.version}</message>
+					<path>updatesite</path>
+					<oauth2Token>${env.github_oauth2Token}</oauth2Token>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

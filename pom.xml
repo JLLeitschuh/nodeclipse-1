@@ -7,8 +7,8 @@
 	<artifactId>parent</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
-	<!-- Information block, used within maven site 
+
+	<!-- Information block, used within maven site
 	More Project Information http://maven.apache.org/pom.html -->
 	<name>Nodeclipse-1</name>
     <url>http://nodeclipse.github.io</url>
@@ -33,7 +33,7 @@
     <ciManagement>
     	<system>Travis CI</system>
     	<url>http://travis-ci.org/Nodeclipse/nodeclipse-1</url>
-    </ciManagement>    
+    </ciManagement>
 	<developers>
 		<developer>
 			<id>lamb</id>
@@ -60,7 +60,7 @@
 			</roles>
 		</developer>
 	</developers>
-	<!-- 
+	<!--
 	<contributors>
 	</contributors>
 	<mailingLists>
@@ -77,7 +77,7 @@
 			<url>D:\TEMP\site\</url>
 		</site>
 	</distributionManagement>
-	
+
 
 	<prerequisites>
 		<maven>3.0</maven>
@@ -104,7 +104,7 @@
 
 		<module>chromedevtools</module>
 		<module>org.nodeclipse.debug</module>
-		
+
 		<module>org.nodeclipse.phantomjs</module>
 		<module>features/org.nodeclipse.phantomjs.feature</module>
 		<module>org.nodeclipse.jjs</module>
@@ -114,26 +114,26 @@
 		<!-- @since 0.11 Nodeclipse Vert.x -->
 		<module>org.nodeclipse.vertx</module>
 		<module>features/org.nodeclipse.vertx.feature</module>
-		
+
 		<module>features/org.nodeclipse.feature</module>
-		
+
 		<!-- @since 0.12.0 Jade Editor -->
 		<module>org.nodeclipse.enide.editors.jade</module>
 		<module>features/org.nodeclipse.enide.editors.jade.feature</module>
-		
-		<module>features/org.nodeclipse.enide.nodejs.feature</module>		
-		
+
+		<module>features/org.nodeclipse.enide.nodejs.feature</module>
+
 		<!-- @since 0.9.0 Gradle Editor -->
 		<module>org.nodeclipse.enide.editors.gradle</module>
 		<module>features/org.nodeclipse.enide.editors.gradle.feature</module>
-		
+
 		<!-- @since 0.10.0 Enide Gradle and Enide Maven -->
 		<module>org.nodeclipse.common</module>
 		<module>org.nodeclipse.enide.gradle</module>
 		<module>features/org.nodeclipse.enide.gradle.feature</module>
 		<module>org.nodeclipse.enide.maven</module>
 		<module>features/org.nodeclipse.enide.maven.feature</module>
-		
+
 	</modules>
 
 	<profiles>
@@ -191,7 +191,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -227,7 +227,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- mvn site -->
+			<!-- mvn site disabled http://nodeclipse.github.io/ -->
+			<!-- https://github.com/github/maven-plugins
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -240,7 +241,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<!-- https://github.com/github/maven-plugins -->
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
@@ -258,10 +258,11 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 		</plugins>
 	</build>
 
-	
+
 	<reporting>
 		<plugins>
 			<plugin><!-- http://mojo.codehaus.org/taglist-maven-plugin/usage.html -->

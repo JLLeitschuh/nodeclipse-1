@@ -1,5 +1,6 @@
 sudo: false
 language: java
+script: mvn clean install site
 
 notifications:
   email: false
