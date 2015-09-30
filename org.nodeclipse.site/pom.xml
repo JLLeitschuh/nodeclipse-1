@@ -282,7 +282,7 @@
 				<configuration>
 					<repositoryOwner>Nodeclipse</repositoryOwner>
 					<repositoryName>nodeclipse-1</repositoryName>
-					<message>Releasing update site for ${project.version}</message>
+					<message>Releasing updatesite for ${project.version}</message>
 					<path>updatesite</path>
 					<oauth2Token>${env.github_oauth2Token}</oauth2Token>
 				</configuration>
