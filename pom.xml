@@ -250,7 +250,7 @@
 					<repositoryName>nodeclipse-1</repositoryName>
 					<message>Puplishing site for ${project.version}</message>
 					<path>site</path>
-					<oauth2Token>${env.github_oauth2Token}</oauth2Token>
+					<oauth2Token>${env.githubuser_oauth2Token}</oauth2Token>
 				</configuration>
 				<executions>
 					<execution>
