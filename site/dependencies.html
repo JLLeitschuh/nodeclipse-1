@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150930" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>org.nodeclipse.mongodb - Project Dependencies</title>
+    <title>org.nodeclipse.mongodb.feature - Project Dependencies</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -79,14 +79,6 @@
 </li>
                               </ul>
             </li>
-                  
-                      <li class="dropdown-submenu">
-                                      <a href="project-reports.html"  title="Project Reports">Project Reports</a>
-              <ul class="dropdown-menu">
-                                  <li>      <a href="taglist.html"  title="Tag List">Tag List</a>
-</li>
-                              </ul>
-            </li>
                           </ul>
       </li>
                   </ul>
@@ -104,7 +96,7 @@
           <div id="banner">
         <div class="pull-left">
                                     <a href="http://www.nodeclipse.org/" id="bannerLeft">
-                                                                                                <img src="../header3.png"  alt="Nodeclipse"/>
+                                                                                                <img src="../../header3.png"  alt="Nodeclipse"/>
                 </a>
                       </div>
         <div class="pull-right">  </div>
@@ -223,13 +215,6 @@
             </li>
               </ul>
         </li>
-                                                                    
-      <li>
-    
-                          <a href="project-reports.html" title="Project Reports">
-          <i class="icon-chevron-right"></i>
-        Project Reports</a>
-                  </li>
             </ul>
                 
                     
@@ -318,6 +303,12 @@
 <td>eclipse-plugin</td>
 <td>-</td></tr>
 <tr class="b">
+<td>org.nodeclipse.nodeclipse-1</td>
+<td><a class="externalLink" href="http://nodeclipse.github.io/org.nodeclipse.mongodb">org.nodeclipse.mongodb</a></td>
+<td>1.0.2-SNAPSHOT</td>
+<td>eclipse-plugin</td>
+<td>-</td></tr>
+<tr class="a">
 <td>org.nodeclipse.nodeclipse-1</td>
 <td><a class="externalLink" href="http://nodeclipse.github.io/org.nodeclipse.ui">org.nodeclipse.ui</a></td>
 <td>1.0.2-SNAPSHOT</td>
@@ -1017,14 +1008,14 @@
 <div class="section">
 <h3>Dependency Tree<a name="Dependency_Tree"></a></h3>
 <ul>
-<li>org.nodeclipse.nodeclipse-1:org.nodeclipse.mongodb:eclipse-plugin:1.0.2-SNAPSHOT <img id="_img1" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep0', '_img1' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep0" style="display:none">
+<li>org.nodeclipse.nodeclipse-1:org.nodeclipse.mongodb.feature:eclipse-feature:1.0.2-SNAPSHOT <img id="_img1" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep0', '_img1' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep0" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
-<th>org.nodeclipse.mongodb</th></tr>
+<th>org.nodeclipse.mongodb.feature</th></tr>
 <tr class="b">
 <td>
-<p><b>Description: </b>org.nodeclipse.mongodb</p>
-<p><b>URL: </b><a class="externalLink" href="http://nodeclipse.github.io/org.nodeclipse.mongodb">http://nodeclipse.github.io/org.nodeclipse.mongodb</a></p>
+<p><b>Description: </b>org.nodeclipse.mongodb.feature Nodeclipse MongoDB Shell Integration</p>
+<p><b>URL: </b><a class="externalLink" href="http://nodeclipse.github.io/features/org.nodeclipse.mongodb.feature">http://nodeclipse.github.io/features/org.nodeclipse.mongodb.feature</a></p>
 <p><b>Project License: </b>No license is defined for this project.</p></td></tr></table></div>
 <ul>
 <li>p2.eclipse-plugin:javax.annotation:jar:1.1.0.v201209060031 (system) <img id="_img3" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep2', '_img3' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep2" style="display:none">
@@ -1717,49 +1708,58 @@
 <p><b>Description: </b>org.nodeclipse.ui</p>
 <p><b>URL: </b><a class="externalLink" href="http://nodeclipse.github.io/org.nodeclipse.ui">http://nodeclipse.github.io/org.nodeclipse.ui</a></p>
 <p><b>Project License: </b>No license is defined for this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.w3c.dom.smil:jar:1.0.1.v200903091627 (system) <img id="_img195" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep194', '_img195' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep194" style="display:none">
+<li>org.nodeclipse.nodeclipse-1:org.nodeclipse.mongodb:eclipse-plugin:1.0.2-SNAPSHOT (provided) <img id="_img195" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep194', '_img195' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep194" style="display:none">
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>org.nodeclipse.mongodb</th></tr>
+<tr class="b">
+<td>
+<p><b>Description: </b>org.nodeclipse.mongodb</p>
+<p><b>URL: </b><a class="externalLink" href="http://nodeclipse.github.io/org.nodeclipse.mongodb">http://nodeclipse.github.io/org.nodeclipse.mongodb</a></p>
+<p><b>Project License: </b>No license is defined for this project.</p></td></tr></table></div></li>
+<li>p2.eclipse-plugin:org.w3c.dom.smil:jar:1.0.1.v200903091627 (system) <img id="_img197" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep196', '_img197' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep196" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.w3c.dom.smil:jar:1.0.1.v200903091627</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.w3c.dom.events:jar:3.0.0.draft20060413_v201105210656 (system) <img id="_img197" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep196', '_img197' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep196" style="display:none">
+<li>p2.eclipse-plugin:org.w3c.dom.events:jar:3.0.0.draft20060413_v201105210656 (system) <img id="_img199" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep198', '_img199' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep198" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.w3c.dom.events:jar:3.0.0.draft20060413_v201105210656</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86:jar:3.102.1.v20140206-1358 (system) <img id="_img199" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep198', '_img199' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep198" style="display:none">
+<li>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86:jar:3.102.1.v20140206-1358 (system) <img id="_img201" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep200', '_img201' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep200" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86:jar:3.102.1.v20140206-1358</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img201" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep200', '_img201' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep200" style="display:none">
+<li>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img203" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep202', '_img203' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep202" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86_64:jar:3.102.1.v20140206-1358</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86:jar:3.102.1.v20140206-1358 (system) <img id="_img203" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep202', '_img203' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep202" style="display:none">
+<li>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86:jar:3.102.1.v20140206-1358 (system) <img id="_img205" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep204', '_img205' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep204" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86:jar:3.102.1.v20140206-1358</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img205" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep204', '_img205' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep204" style="display:none">
+<li>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img207" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep206', '_img207' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep206" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86_64:jar:3.102.1.v20140206-1358</th></tr>
 <tr class="b">
 <td>
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li>
-<li>p2.eclipse-plugin:org.eclipse.swt.cocoa.macosx.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img207" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep206', '_img207' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep206" style="display:none">
+<li>p2.eclipse-plugin:org.eclipse.swt.cocoa.macosx.x86_64:jar:3.102.1.v20140206-1358 (system) <img id="_img209" src="./images/icon_info_sml.gif" alt="Information" onclick="toggleDependencyDetail( '_dep208', '_img209' );" style="cursor: pointer;vertical-align:text-bottom;"></img><div id="_dep208" style="display:none">
 <table border="0" class="table table-striped">
 <tr class="a">
 <th>p2.eclipse-plugin:org.eclipse.swt.cocoa.macosx.x86_64:jar:3.102.1.v20140206-1358</th></tr>
@@ -1768,7 +1768,7 @@
 <p><b>Description: </b>There is currently no description associated with this project.</p></td></tr></table></div></li></ul></li></ul></div></div><a name="Licenses"></a>
 <div class="section">
 <h2>Licenses<a name="Licenses"></a></h2>
-<p><b>Unknown: </b>org.chromium.debug.core, org.chromium.debug.ui, org.chromium.sdk, org.chromium.sdk.wip.eclipse, org.nodeclipse.bundle.coffee, org.nodeclipse.bundle.express, org.nodeclipse.common, org.nodeclipse.debug, org.nodeclipse.mongodb, org.nodeclipse.ui</p></div><a name="Dependency_File_Details"></a>
+<p><b>Unknown: </b>org.chromium.debug.core, org.chromium.debug.ui, org.chromium.sdk, org.chromium.sdk.wip.eclipse, org.nodeclipse.bundle.coffee, org.nodeclipse.bundle.express, org.nodeclipse.common, org.nodeclipse.debug, org.nodeclipse.mongodb, org.nodeclipse.mongodb.feature, org.nodeclipse.ui</p></div><a name="Dependency_File_Details"></a>
 <div class="section">
 <h2>Dependency File Details<a name="Dependency_File_Details"></a></h2>
 <table border="0" class="table table-striped">
@@ -1845,6 +1845,14 @@
 <td>-</td>
 <td>-</td></tr>
 <tr class="b">
+<td>org.nodeclipse.mongodb-1.0.2-SNAPSHOT.jar</td>
+<td>18.41 kB</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+<tr class="a">
 <td>org.nodeclipse.ui-1.0.2-SNAPSHOT.jar</td>
 <td>466.15 kB</td>
 <td>-</td>
@@ -1852,7 +1860,7 @@
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Total</th>
 <th>Size</th>
 <th>Entries</th>
@@ -1860,17 +1868,17 @@
 <th>Packages</th>
 <th>Java Version</th>
 <th>Debug Information</th></tr>
-<tr class="b">
-<td>9</td>
-<td>2.56 MB</td>
+<tr class="a">
+<td>10</td>
+<td>2.58 MB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>0.0</td>
 <td>-</td></tr>
-<tr class="a">
-<td>provided: 9</td>
-<td>provided: 2.56 MB</td>
+<tr class="b">
+<td>provided: 10</td>
+<td>provided: 2.58 MB</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -2000,672 +2008,679 @@
 <td>-</td>
 <td>-</td></tr>
 <tr class="a">
+<td>org.nodeclipse.nodeclipse-1:org.nodeclipse.mongodb:eclipse-plugin:1.0.2-SNAPSHOT</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td></tr>
+<tr class="b">
 <td>org.nodeclipse.nodeclipse-1:org.nodeclipse.ui:eclipse-plugin:1.0.2-SNAPSHOT</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:com.ibm.icu:jar:50.1.1.v201304230130</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:javax.annotation:jar:1.1.0.v201209060031</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:javax.inject:jar:1.0.0.v20091030</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:javax.xml:jar:1.3.4.v201005080400</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.apache.batik.css:jar:1.6.0.v201011041432</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.apache.batik.util:jar:1.6.0.v201011041432</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.apache.batik.util.gui:jar:1.6.0.v201011041432</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.compare:jar:3.5.401.v20130709-1308</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.compare.core:jar:3.5.300.v20130514-1224</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.commands:jar:3.6.100.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.contenttype:jar:3.4.200.v20130326-1255</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.databinding:jar:1.4.1.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.databinding.observable:jar:1.4.1.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.databinding.property:jar:1.4.200.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.expressions:jar:3.4.501.v20131118-1915</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.filebuffers:jar:3.5.300.v20130225-1821</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.filesystem:jar:1.4.0.v20130514-1240</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.jobs:jar:3.5.300.v20130429-1813</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.resources:jar:3.8.101.v20130717-0806</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.core.runtime:jar:3.9.100.v20131218-1515</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.core.variables:jar:3.2.700.v20130402-1741</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.debug.core:jar:3.8.0.v20130514-0954</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.debug.ui:jar:3.9.0.v20130516-1713</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.core.commands:jar:0.10.2.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.core.contexts:jar:1.3.1.v20130905-0905</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.core.di:jar:1.3.0.v20130514-1256</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.core.di.extensions:jar:0.11.100.v20130514-1256</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.core.services:jar:1.1.0.v20130515-1343</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.bindings:jar:0.10.102.v20140117-1939</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.css.core:jar:0.10.100.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.css.swt:jar:0.11.0.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.css.swt.theme:jar:0.9.100.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.di:jar:1.0.0.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.model.workbench:jar:1.0.1.v20131118-1956</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.services:jar:1.0.1.v20131118-1940</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.widgets:jar:1.0.0.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.workbench:jar:1.0.2.v20131202-1739</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.workbench.addons.swt:jar:1.0.2.v20131129-1621</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.workbench.renderers.swt:jar:0.11.2.v20140205-1834</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.workbench.swt:jar:0.12.2.v20140117-1939</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.e4.ui.workbench3:jar:0.12.0.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.emf.common:jar:2.9.2.v20131212-0545</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.emf.ecore:jar:2.9.2.v20131212-0545</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.emf.ecore.change:jar:2.9.0.v20131212-0545</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.emf.ecore.xmi:jar:2.9.1.v20131212-0545</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.app:jar:1.3.100.v20130327-1442</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.bidi:jar:0.10.0.v20130327-1442</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.common:jar:3.6.200.v20130402-1505</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.ds:jar:1.4.101.v20130813-1853</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.event:jar:1.3.0.v20130327-1442</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.p2.core:jar:2.3.0.v20130327-2119</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.p2.engine:jar:2.3.0.v20130526-2122</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.p2.metadata:jar:2.2.0.v20130523-1557</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.p2.metadata.repository:jar:1.2.100.v20130327-2119</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.p2.repository:jar:2.3.0.v20130412-2032</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.preferences:jar:3.5.100.v20130422-1538</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.registry:jar:3.5.301.v20130717-1549</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.equinox.security:jar:1.2.0.v20130424-1801</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.equinox.util:jar:1.0.500.v20130404-1337</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.help:jar:3.6.0.v20130326-1254</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.jface:jar:3.9.1.v20130725-1141</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.jface.databinding:jar:1.6.200.v20130515-1857</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.jface.text:jar:3.8.101.v20130802-1147</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ltk.core.refactoring:jar:3.6.100.v20130605-1748</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.ltk.ui.refactoring:jar:3.7.100.v20130605-1748</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.osgi:jar:3.9.1.v20140110-1610</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.osgi.services:jar:3.3.100.v20130513-1956</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.search:jar:3.9.1.v20131121-1346</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.swt:jar:3.102.1.v20140206-1334</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.swt.cocoa.macosx.x86_64:jar:3.102.1.v20140206-1358</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86:jar:3.102.1.v20140206-1358</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.swt.gtk.linux.x86_64:jar:3.102.1.v20140206-1358</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86:jar:3.102.1.v20140206-1358</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.swt.win32.win32.x86_64:jar:3.102.1.v20140206-1358</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.team.core:jar:3.7.0.v20130514-1224</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.team.ui:jar:3.7.1.v20130729-1104</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.text:jar:3.5.300.v20130515-1451</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ui:jar:3.105.0.v20130522-1122</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.ui.console:jar:3.5.200.v20130514-0954</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ui.editors:jar:3.8.100.v20130513-1637</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.ui.forms:jar:3.6.1.v20130822-1117</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ui.ide:jar:3.9.2.v20131004-0923</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.ui.navigator:jar:3.5.300.v20130517-0139</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ui.views:jar:3.6.100.v20130326-1250</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.ui.workbench:jar:3.105.2.v20140211-1711</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.ui.workbench.texteditor:jar:3.8.101.v20130729-1318</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.wst.jsdt.core:jar:1.3.1.v201401291437</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.eclipse.wst.jsdt.manipulation:jar:1.0.400.v201204261600</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.eclipse.wst.jsdt.ui:jar:1.1.401.v201401171657</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.w3c.css.sac:jar:1.3.1.v200903091627</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.w3c.dom.events:jar:3.0.0.draft20060413_v201105210656</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>p2.eclipse-plugin:org.w3c.dom.smil:jar:1.0.1.v200903091627</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>p2.eclipse-plugin:org.w3c.dom.svg:jar:1.1.0.v201011041433</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <th>Total</th>
 <th>kepler</th>
 <th>sonatype-snapshots</th>
 <th>sonatype</th>
 <th>apache-snapshots</th>
 <th>central</th></tr>
-<tr class="b">
-<td>103 (provided: 9, system: 94)</td>
+<tr class="a">
+<td>104 (provided: 10, system: 94)</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
