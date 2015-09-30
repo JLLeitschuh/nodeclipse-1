@@ -234,12 +234,13 @@
 			<layout>p2</layout>
 			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
 		</repository>
-		<!-- can't be fully bundled -->
+		<!-- can't be fully bundled
 		<repository>
 			<id>Closure-by-Vincent.Simonet</id>
 			<layout>p2</layout>
 			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
+		-->
 
 
 		<!-- Fail back if some repos are unavailable -->
@@ -278,7 +279,7 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.12</version>
+				<version>${github-site-maven-plugin-version}</version>
 				<configuration>
 					<repositoryOwner>Nodeclipse</repositoryOwner>
 					<repositoryName>nodeclipse-1</repositoryName>

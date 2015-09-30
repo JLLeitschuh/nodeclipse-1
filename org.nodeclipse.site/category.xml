@@ -17,9 +17,9 @@
       <description>
         Nodeclipse Plugins List by Paul Verest,
         Nodeclipse-1 Core, Chromium Dev tools,
-        JSHint integration by Ralf Sternberg 
+        JSHint integration by Ralf Sternberg
         (together make minimal required set for Node.js and server side JavaScript)
-        Enide Node.js is set of Node.js related feature (made for convenience) 
+        Enide Node.js is set of Node.js related feature (made for convenience)
       </description>
    </category-def>
    <feature url="features/org.nodeclipse.pluginslist.feature_0.0.0.qualifier.jar" id="org.nodeclipse.pluginslist.feature" version="0.0.0">
@@ -49,7 +49,7 @@
    <feature url="features/org.nodeclipse.enide.editors.jade.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.editors.jade.feature" version="0.0.0">
       <category name="Nodeclipse"/>
    </feature>
-   <!-- 
+   <!--
    -->
    <feature url="features/com.eclipsesource.jshint.feature" id="com.eclipsesource.jshint.feature" version="0.9.10.qualifier">
       <category name="Nodeclipse"/>
@@ -62,7 +62,7 @@
          TODO make them really optional.
       </description>
    </category-def>
-   <!--  
+   <!--
    -->
    <feature url="features/org.nodeclipse.bundle.coffee.feature_1.6.3.qualifier.jar" id="org.nodeclipse.bundle.coffee.feature" version="1.6.3.qualifier">
       <category name="npm-bundle"/>
@@ -70,7 +70,7 @@
    <feature url="features/org.nodeclipse.bundle.express.feature_3.2.5.qualifier.jar" id="org.nodeclipse.bundle.express.feature" version="3.2.5.qualifier">
       <category name="npm-bundle"/>
    </feature>
-   
+
 
 	<category-def name="Minimalist" label="Enide Minimalist Tools">
       <description>
@@ -80,7 +80,7 @@
         Nodeclipse Git Addon by Paul Verest,
       	YAML YEdit by http://dadacoalition.org/yedit
       </description>
-	</category-def>   
+	</category-def>
    <feature url="features/org.nodeclipse.enide.editors.gradle.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.editors.gradle.feature" version="0.0.0">
       <category name="Minimalist"/>
    </feature>
@@ -90,7 +90,7 @@
    <feature url="features/org.nodeclipse.enide.maven.feature_0.0.0.qualifier.jar" id="org.nodeclipse.enide.maven.feature" version="0.0.0">
       <category name="Minimalist"/>
    </feature>
-   <!-- 
+   <!--
    -->
    <feature url="features/org.dadacoalition.yedit.feature_0.0.0.qualifier.jar" id="org.dadacoalition.yedit" version="0.0.0">
       <category name="Minimalist"/>
@@ -99,20 +99,20 @@
       <category name="Minimalist"/>
    </feature>
 
-   <!--    
+   <!--
    -->
    <category-def name="Tools" label="Enide Tools Collection">
       <description>
-        Markdown Editor by Daniel Winterstein, 
-        Github Flavored Markdown Viewer by Satyagraha, 
-        RestClient Tool by Yadu Vendra, 
+        Markdown Editor by Daniel Winterstein,
+        Github Flavored Markdown Viewer by Satyagraha,
+        RestClient Tool by Yadu Vendra,
         StartExplorer (on any OS) by Bastian Krol,
-        Icons Editor by Jabier Martinez (requires org.eclipse.draw2d), 
- 		PDE-Tools and Eclipse Themes by Jeeeyul, 
+        Icons Editor by Jabier Martinez (requires org.eclipse.draw2d),
+ 		PDE-Tools and Eclipse Themes by Jeeeyul,
  		MonjaDB (MongoDB GUI) by Kanatoko Anvil,
  		ShellEd https://sourceforge.net/projects/shelled/ requires 'bundle org.eclipse.dltk.core [4.0.0,6.0.0)'
  		Json Tools by Denis Mirochnik https://bitbucket.org/denmiroch/jsontools
- 		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse   
+ 		Ansy Console by Mihai Nita http://www.mihai-nita.net/eclipse
  		Grep Console by Marian Schedenig http://marian.schedenig.name/projects/grep-console/
  		Nodeclipse EditBox (created in 2009-2011 by Piotr Metel) https://github.com/Nodeclipse/EditBox
  		Emmet (ex-Zen Coding) Eclipse plugin by Sergey Chikuyonok
@@ -167,7 +167,7 @@
    <feature url="features/zipeditor_0.0.0.qualifier.jar" id="zipeditor" version="0.0.0">
       <category name="Tools"/>
    </feature>
-   <!--  
+   <!--
  		Rinzo XML Editor by Claudio Cancinos
    <feature url="features/ar.com.tadp.xml.rinzo.core.feature_0.0.0.qualifier.jar" id="ar.com.tadp.xml.rinzo.core.feature" version="0.0.0">
       <category name="Tools"/>
@@ -176,8 +176,8 @@
       <category name="Tools"/>
    </feature>
    -->
- 
- 
+
+
    <category-def name="JavaTools" label="Java Tools">
       <description>
       	JDT Spelling by Stuart Hendren http://www.stuarthendren.net
@@ -186,19 +186,19 @@
    <feature url="features/jdt.spelling.feature_0.0.0.qualifier.jar" id="jdt.spelling.feature" version="0.0.0">
       <category name="JavaTools"/>
    </feature>
- 
-   <!--    
-   --> 
+
+   <!--
+   -->
    <category-def name="General" label="General plugins">
       <description>
-        InstaSearch by Andrejs Jermakovics https://github.com/ajermakovics/eclipse-instasearch, 
+        InstaSearch by Andrejs Jermakovics https://github.com/ajermakovics/eclipse-instasearch,
         Glance by Xored (Highlight anywhere, Ctrl+Alt+F)
         Eclipse Color Theme (for Editors) by http://eclipse-color-theme.github.com
         Eclipse 4 color Themes by Jeeeyul (requires 'org.eclipse.xtend2.lib`),
-        Eclipse 4 Moonrise dark color UI theme by Andrea Guarinoni github.com/guari 
+        Eclipse 4 Moonrise dark color UI theme by Andrea Guarinoni github.com/guari
       </description>
    </category-def>
-	<!--     
+	<!--
    -->
    <feature url="it.unibz.instasearch.feature.indigo_1.5.6.qualifier.jar" id="it.unibz.instasearch.feature.indigo" version="1.5.6.qualifier">
       <category name="General"/>
@@ -219,8 +219,8 @@
 	  <category name="General"/>
    </feature>
   <!-- net.jeeeyul.swtend is required by net.jeeeyul.eclipse.themes.feature -->
-  
-  
+
+
    <!-- as of csep v0.3, we should not include it, as it creates more questions than solves, bug since 4.3.1
    Adding anyway in dire hope
    <category-def name="coffeescript-eclipse" label="coffeescript-eclipse">
@@ -232,14 +232,14 @@
       <category name="coffeescript-eclipse"/>
    </feature>
     -->
-  
-   <!--    
+
+   <!--
  	-->
    <category-def name="Other" label="Other Optional Tools">
       <description>
       	JSON Edit by https://sourceforge.net/projects/eclipsejsonedit
         EclipseRunner by Lukasz Wachowicz and Bartosz Roznowski (Runner View) http://code.google.com/p/eclipserunnerplugin/
-        PracticallyMacro by Ernest Pasour (Macros for Editors using BeanShell.org) http://sourceforge.net/projects/practicalmacro/ 
+        PracticallyMacro by Ernest Pasour (Macros for Editors using BeanShell.org) http://sourceforge.net/projects/practicalmacro/
         SelectionExplorer by Sandip Chitales
         Open Closed Projects by Sandip Chitales
  		(some parts are missing) Eclipse plugin for LESS by Vincent Simonet http://www.normalesup.org/~simonet/soft/ow/eclipse-less.en.html
@@ -260,12 +260,14 @@
     <feature url="features/OpenClosedProjectsFeature_1.0.5.qualifier.jar" id="OpenClosedProjectsFeature" version="1.0.5.qualifier">
       <category name="Other"/>
    </feature>
+   <!--
    <feature url="features/net.vtst.ow.eclipse.less.feature_0.0.0.qualifier.jar" id="net.vtst.ow.eclipse.less.feature" version="0.0.0">
       <category name="Other"/>
    </feature>
-   
- 
-   
+   -->
+
+
+
    <!-- can't be used
    needs Xtend
    <feature url="features/net.vtst.ow.eclipse.soy.feature_1.0.9.qualifier.jar" id="net.vtst.ow.eclipse.soy.feature" version="1.0.9.qualifier">
@@ -283,7 +285,7 @@
       <category name="Tools"/>
    </feature>
    -->
-   
-   
+
+
 
 </site>
