@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150930" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>org.chromium.sdk - Tag List report</title>
+    <title>org.chromium.debug.core - Tag List report</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -188,227 +188,119 @@
 <th>Total number of occurrences</th>
 <th>Tag strings used by tag class</th></tr>
 <tr class="b">
-<td><a href="#tag_class_5">Todo Work</a></td>
-<td>40</td>
+<td><a href="#tag_class_6">Todo Work</a></td>
+<td>21</td>
 <td>todo, FIXME</td></tr></table>
 <p>Each tag is detailed below:</p>
 <div class="section">
-<h3><a name="tag_class_5">Todo Work</a><a name="Todo_Work"></a></h3>
-<p><b>Number of occurrences found in the code: 40</b></p>
+<h3><a name="tag_class_6">Todo Work</a><a name="Todo_Work"></a></h3>
+<p><b>Number of occurrences found in the code: 21</b></p>
 <table border="0" class="table table-striped">
 <tr class="a">
-<th>org.chromium.sdk.ConnectionLogger</th>
+<th>org.chromium.debug.core.model.BreakpointSynchronizer</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>consider removing it out of logging.</td>
-<td>40</td></tr>
+<td>(peter.rybin): Consider supporting inline scripts here.</td>
+<td>494</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.DebugContext</th>
+<th>org.chromium.debug.core.model.ChromiumLineBreakpoint</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>consider redesigning it with subtypes.</td>
-<td>70</td></tr>
+<td>rename 'remove' -&gt; 'remote'.</td>
+<td>193</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.DebugEventListener</th>
+<td>support source mapping perhaps.</td>
+<td>233</td></tr>
+<tr class="b">
+<td>check earlier in UI.</td>
+<td>238</td></tr>
+<tr class="a">
+<th>org.chromium.debug.core.model.ConnectedTargetData</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>consider adding disconnect reason here.</td>
-<td>33</td></tr>
+<td>(peter.rybin): from Alexander Pavlov: I think you need to fire a terminate event after this line, for consolePseudoProcess if one is not null.</td>
+<td>198</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.JavascriptVm</th>
+<td>(peter.rybin): maybe have one instance of listener for all targets?</td>
+<td>232</td></tr>
+<tr class="b">
+<th>org.chromium.debug.core.model.JavascriptVmEmbedder</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>(peter.rybin): clean-up this interface; maybe decrease number of methods.</td>
+<td>65</td></tr>
+<tr class="b">
+<th>org.chromium.debug.core.model.LineBreakpointAdapter</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>(apavlov): Implement method breakpoints if feasible.</td>
+<td>92</td></tr>
+<tr class="b">
+<td>(apavlov): Implement method breakpoints if feasible.</td>
+<td>96</td></tr>
+<tr class="a">
+<td>(apavlov): Implement watchpoints if feasible.</td>
+<td>102</td></tr>
+<tr class="b">
+<td>(apavlov): Implement watchpoints if feasible.</td>
+<td>106</td></tr>
+<tr class="a">
+<th>org.chromium.debug.core.model.PushChangesPlan</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>support notification about collected scripts in all backends.</td>
-<td>79</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.JsEvaluateContext</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>support thrown JavaScript exception here. Currently they are passed as pseudoobject.</td>
-<td>22</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.JsObject</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>make it return list of JsObjectProperty once hacks for supporting exceptions are removed.</td>
-<td>26</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.JsScope</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>consider adding object getter for both with and global scopes.</td>
-<td>13</td></tr>
-<tr class="a">
-<td>add &quot;block&quot; type (corresponds to block scope in JavaScript 1.7).</td>
+<td>fix the rough behavior (inside this call).</td>
 <td>24</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.JsVariable</th>
-<th>Line</th></tr>
 <tr class="a">
-<td>do not decorate property name with square brackets, http://code.google.com/p/chromedevtools/issues/detail?id=77</td>
-<td>42</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.RemoteValueMapping</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>add methods that describe mapping life-cycle and its other properties.</td>
-<td>13</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.StandaloneVm</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>align this with {@link JavascriptVm#getVersion()} method.</td>
-<td>39</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.TabDebugEventListener</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>consider adding close reason here.</td>
-<td>29</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.UpdatableScript</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>add an explicit output parameter about whether VM was resumed or not.</td>
-<td>18</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.BrowserFactoryImpl</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>rename it somehow. It's not only a browser factory.</td>
-<td>22</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.shellprotocol.BrowserImpl</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): get rid of this structure (if we can get rid of corresponding notification)</td>
-<td>88</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.shellprotocol.SessionManager</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): notify listeners here in case they are interested</td>
-<td>167</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.shellprotocol.tools.devtools.DevToolsServiceHandler</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>properly handle errors here, in particular throw IOException if timeout.</td>
-<td>201</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.shellprotocol.tools.v8debugger.ChromeDevToolSessionManager</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): Here we are probably supposed to compare it with our context id.</td>
-<td>107</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.standalonev8.StandaloneVmImpl</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): check version here</td>
-<td>137</td></tr>
-<tr class="b">
-<td>(peter.rybin): support {@code immediate} in protocol</td>
-<td>249</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.internal.transport.Handshaker</th>
+<th>org.chromium.debug.core.model.ResourceManager</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>(prybin): expose this as a parameter or get rid of this option if we don't need it.</td>
-<td>42</td></tr>
+<td>(peter.rybin): support adding scripts to one resource at once not to rewrite file every time.</td>
+<td>85</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.internal.transport.SocketWrapper</th>
+<th>org.chromium.debug.core.model.StackFrame</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>consider renaming into AutoLoggingSocketWrapper</td>
-<td>21</td></tr>
+<td>update stack frames in Eclipse debug framework. However this branch is never reachable with current V8 implementation.</td>
+<td>164</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.internal.v8native.BreakpointImpl</th>
+<th>org.chromium.debug.core.model.ValueBase</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>make this code thread-safe.</td>
-<td>159</td></tr>
+<td>support clearing with cache clear.</td>
+<td>76</td></tr>
 <tr class="a">
-<th>org.chromium.sdk.internal.v8native.CallFrameImpl</th>
+<th>org.chromium.debug.core.model.Variable</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>(apavlov): Terry says: we need to use the [e.g. Rhino] AST to decide if line is debuggerword. If so, find the next sequential line. The below works for simple scripts but doesn't take into account comments, etc.</td>
-<td>105</td></tr>
-<tr class="a">
-<td>(peter.rybin): do we really need this thing? (advancing to the next line?) stopping on &quot;debugger;&quot; seems to be a quite natural thing.</td>
-<td>109</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.v8native.ContextBuilder</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): complete it</td>
-<td>130</td></tr>
-<tr class="b">
-<td>(peter.rybin): implement</td>
-<td>135</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.internal.v8native.DebugSession</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>consider loading all scripts synchronously on session start.</td>
-<td>179</td></tr>
-<tr class="a">
-<td>(peter.rybin): make some kind of option out of this</td>
-<td>289</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.v8native.InternalContext</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin): document this</td>
-<td>30</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.v8native.JavascriptVmImpl</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>make sure we do not return those scripts that are reported compiled but not loaded yet.</td>
-<td>36</td></tr>
-<tr class="b">
-<td>(peter.rybin): This message will be obsolete in JavaSE-1.6.</td>
-<td>110</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.internal.v8native.protocol.input.EventNotification</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>(peter.rybin): does this field really exist?</td>
-<td>40</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.internal.v8native.value.ExceptionDataImpl</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>make it thread-safe.</td>
-<td>37</td></tr>
-<tr class="a">
-<th>org.chromium.sdk.internal.v8native.value.JsArrayImpl</th>
-<th>Line</th></tr>
-<tr class="b">
-<td>(peter.rybin) optimize it: either read &quot;length&quot; from remote or count PropertyReference rather than JsVariableImpl</td>
-<td>46</td></tr>
-<tr class="a">
-<td>(peter.rybin): rename propRefs</td>
-<td>50</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.v8native.value.JsObjectBase</th>
-<th>Line</th></tr>
-<tr class="a">
-<td>(peter.rybin) Maybe assert that context is valid here</td>
-<td>273</td></tr>
-<tr class="b">
-<th>org.chromium.sdk.internal.v8native.value.JsVariableImpl</th>
-<th>Line</th></tr>
+<td>(peter.rybin): use it in UI.</td>
+<td>174</td></tr>
 <tr class="a">
 <td>(apavlov): fix once V8 supports it</td>
-<td>98</td></tr>
+<td>289</td></tr>
 <tr class="b">
-<td>(apavlov): implement once the readability metadata are available</td>
-<td>103</td></tr>
+<th>org.chromium.debug.core.model.VmResource</th>
+<th>Line</th></tr>
 <tr class="a">
-<td>(apavlov): currently V8 does not support it</td>
-<td>109</td></tr></table></div></div>
+<td>(peter.rybin): redesign this method to normally work with html resources.</td>
+<td>46</td></tr>
+<tr class="b">
+<th>org.chromium.debug.core.util.JavaScriptRegExpSupport</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>complete the list.</td>
+<td>41</td></tr>
+<tr class="b">
+<th>org.chromium.debug.core.util.JsValueStringifier</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>(apavlov): implement good stringification of other types?</td>
+<td>101</td></tr>
+<tr class="b">
+<th>org.chromium.debug.core.util.ScriptTargetMapping</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>re-design program and handle errors nicer than RuntimeException's</td>
+<td>59</td></tr></table></div></div>
                   </div>
             </div>
           </div>
