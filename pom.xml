@@ -227,8 +227,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- mvn site disabled http://nodeclipse.github.io/ -->
-			<!-- https://github.com/github/maven-plugins
+			<!-- mvn site http://nodeclipse.github.io/ -->
+			<!-- https://github.com/github/maven-plugins -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -244,21 +244,24 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.8</version>
+				<version>0.12</version>
 				<configuration>
+					<repositoryOwner>Nodeclipse</repositoryOwner>
+					<repositoryName>nodeclipse-1</repositoryName>
 					<message>Creating site for ${project.version}</message>
-					<server>github</server>
+					<path>site</path>
+					<oauth2Token>${env.github_oauth2Token}</oauth2Token>
 				</configuration>
 				<executions>
 					<execution>
 						<goals>
 							<goal>site</goal>
 						</goals>
-						<phase>post-site</phase>
+						<phase>site</phase>
 					</execution>
 				</executions>
 			</plugin>
-			-->
+
 		</plugins>
 	</build>
 
