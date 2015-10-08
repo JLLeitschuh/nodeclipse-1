@@ -26,8 +26,8 @@
                id="org.nodeclipse.pluginslist.core.GithubAction">
          </action>
          <action
-               label="&amp;Nodeclipse Plugins List"
-               icon="icons/green.png"
+               label="&amp;Nodeclipse List of Plugins"
+               icon="icons/tennis_ball_16x16_bottom_right_corner_green_half_size.png"
                class="org.nodeclipse.pluginslist.core.PluginsListAction"
                tooltip="Nodeclipse Plugins List is convenient way to install Eclipse plugins"
                menubarPath="help/Nodeclipse"
