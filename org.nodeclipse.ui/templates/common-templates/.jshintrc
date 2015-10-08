@@ -1,7 +1,7 @@
 {
 	// --------------------------------------------------------------------
-	// JSHint Nodeclipse Configuration v0.18
-	// Strict Edition with some relaxations and switch to Node.js, no `use strict`
+	// JSHint Nodeclipse Configuration v1.1.0
+	// Strict Edition with some relaxations and switch to Node.js, no `use strict`, Allow ES.next (ECMAScript 6)
 	// by Ory Band, Michael Haschke, Paul Verest
 	// https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/common-templates/.jshintrc
 	// JSHint Documentation is at http://www.jshint.com/docs/options/
