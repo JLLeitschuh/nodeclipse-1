@@ -17,14 +17,14 @@ public class PhantomjsPreferencePage extends FieldEditorPreferencePage implement
     private FileFieldEditor phanthomjsPath;
     private BooleanFieldEditor phanthomjsDebugAutorun;
     private IntegerFieldEditor phanthomjsDebugPort;
-    
+
 	public PhantomjsPreferencePage(){
 	       super(GRID);
 		    setPreferenceStore(org.nodeclipse.ui.Activator.getDefault().getPreferenceStore());
 		    setImageDescriptor(org.nodeclipse.phantomjs.Activator.getImageDescriptor("icons/phantomjs.png"));
 	        setDescription("PhantomJS settings");
 	}
-	
+
 	@Override
 	public void init(IWorkbench workbench) {
 	}
@@ -35,11 +35,13 @@ public class PhantomjsPreferencePage extends FieldEditorPreferencePage implement
         addField(phanthomjsPath);
 
         phanthomjsDebugPort = new IntegerFieldEditor(PreferenceConstants.PHANTOMJS_DEBUG_PORT, "PhantomJS debug port:", getFieldEditorParent());
+        phanthomjsDebugPort.setEnabled(false, getFieldEditorParent());
         addField(phanthomjsDebugPort);
 
         phanthomjsDebugAutorun = new BooleanFieldEditor(PreferenceConstants.PHANTOMJS_DEBUG_AUTORUN, "PhantomJS debug autorun", getFieldEditorParent());
+        phanthomjsDebugAutorun.setEnabled(false, getFieldEditorParent());
         addField(phanthomjsDebugAutorun);
-        
+
 	}
 
 }
