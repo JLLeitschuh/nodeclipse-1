@@ -2,20 +2,20 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-<!-- default="true" -->
    <extension
          point="org.eclipse.ui.editors">
       <editor
             class="org.nodeclipse.enide.editors.gradle.editors.GradleEditor"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"            
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
             extensions="gradle"
             icon="icons/gradle-icon-16x16.png"
             id="org.nodeclipse.enide.editors.gradle.editors.GradleEditor"
             name="Minimalist Gradle Editor">
       </editor>
    </extension>
-   
-   
+
+
   <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
@@ -31,6 +31,6 @@
             name="Gradle Editor">
       </page>
    </extension>
-   
-   
+
+
 </plugin>
