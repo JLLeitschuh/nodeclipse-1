@@ -254,7 +254,7 @@ Check also [developers news](https://github.com/Nodeclipse/nodeclipse-blog#news)
 * [t#4 [Low priority enhancement] Option to Run project default module (taken from package.json),
  when righ-clicking project folder](https://github.com/tomotaro1065/nodeclipse/issues/4)
 - (Optional) Support for Sublime Text
-- Improving Code Assist with convention-based <code>completions.json<code>
+- Improving Code Assist with convention-based <code>completions.json</code>
 - JSquared Editor
 
 ### 1.0
