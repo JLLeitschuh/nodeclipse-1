@@ -1,10 +1,14 @@
 # Nodeclipse - Node.js & Java development in Eclipse-based IDE
 
 [![Build Status](https://secure.travis-ci.org/Nodeclipse/nodeclipse-1.png)](http://travis-ci.org/Nodeclipse/nodeclipse-1)
+Maven build `mvn package` is of course passing, but I can't find time to make continious delivery #195
+
+
+Release ![](https://api.bintray.com/packages/nodeclipse/nodeclipse/nodeclipse-1/images/download.svg)
+
 <a href="http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=759140" title="Drag and drop into a running Eclipse
  to install Nodeclipse"><img src="http://marketplace.eclipse.org/sites/all/modules/custom/marketplace/images/installbutton.png"/></a>
 
-Release ![](https://api.bintray.com/packages/nodeclipse/nodeclipse/nodeclipse-1/images/download.svg)
 
 ![nodeclipse-logo](Nodeclipse_logo_light.png)
 
