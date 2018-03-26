@@ -1,8 +1,9 @@
 # Nodeclipse - Node.js & Java development in Eclipse-based IDE
 
+<!--
 [![Build Status](https://secure.travis-ci.org/Nodeclipse/nodeclipse-1.png)](http://travis-ci.org/Nodeclipse/nodeclipse-1)
 Maven build `mvn package` is of course passing, but I can't find time to make continious delivery #195
-
+-->
 
 Release ![](https://api.bintray.com/packages/nodeclipse/nodeclipse/nodeclipse-1/images/download.svg)
 
@@ -14,7 +15,7 @@ Release ![](https://api.bintray.com/packages/nodeclipse/nodeclipse/nodeclipse-1/
 
 ## Developing with Nodeclipse, Enide Studio
 
-Read <http://www.nodeclipse.org/> that has News, post Shares, Installing details, Features list,
+Read <https://nodeclipse.github.io/> that has News, post Shares, Installing details, Features list,
 Usage (incl Video, Demo) with all shortcuts, Help and Hints,
  Support options, Where Helping needed, How to thank and Contact us, also History page.
 
