@@ -24,7 +24,7 @@
 		<repository>
 			<id>jshint-eclipse</id>
 			<layout>p2</layout>
-			<url>http://github.eclipsesource.com/jshint-eclipse/updates/</url>
+			<url>https://github.eclipsesource.com/jshint-eclipse/updates/</url>
 		</repository>
 
 
@@ -32,14 +32,14 @@
 		<repository>
 			<id>org.dadacoalition.yedit</id>
 			<layout>p2</layout>
-			<url>http://dadacoalition.org/yedit</url>
+			<url>https://dadacoalition.org/yedit</url>
 		</repository>
 		<!--
 		-->
 		<repository>
 			<id>git-addon</id>
 			<layout>p2</layout>
-			<url>http://www.nodeclipse.org/git/addon/</url>
+			<url>https://www.nodeclipse.org/git/addon/</url>
 		</repository>
 
 
@@ -48,18 +48,18 @@
 		<repository>
 			<id>plugin-list</id>
 			<layout>p2</layout>
-			<url>http://www.nodeclipse.org/updates/pluginslist/</url>
+			<url>https://www.nodeclipse.org/updates/pluginslist/</url>
 		</repository>
 		-->
 		<repository>
 			<id>winterwell.markdown</id>
 			<layout>p2</layout>
-			<url>http://www.nodeclipse.org/updates/markdown/</url>
+			<url>https://www.nodeclipse.org/updates/markdown/</url>
 		</repository>
 		<repository>
 			<id>gfm.viewer</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/satyagraha/generic/1.9.3/</url>
+			<url>https://dl.bintray.com/satyagraha/generic/1.9.3/</url>
 		</repository>
 		<!-- [ERROR] Internal error: java.lang.RuntimeException: org.eclipse.equinox.p2.core.ProvisionException: Unable to connect to repository https://svn.codespot.com/a/eclipselabs.org/restclient-tool/trunk/eclipse/update/artifacts.xml: Connection to https://svn.codespot.com refused: Connection timed out: connect -> [Help 1]
 		<repository>
@@ -71,29 +71,29 @@
 		<repository>
 			<id>startexplorer</id>
 			<layout>p2</layout>
-			<url>http://basti1302.github.com/startexplorer/update/</url>
+			<url>https://basti1302.github.com/startexplorer/update/</url>
 		</repository>
 		<repository>
 			<id>Icons-Editor</id>
 			<layout>p2</layout>
-			<url>http://eclipse-icons-editor.eclipselabs.org.codespot.com/git/site/org.eclipse_icons.editor.site/</url>
+			<url>https://eclipse-icons-editor.eclipselabs.org.codespot.com/git/site/org.eclipse_icons.editor.site/</url>
 		</repository>
 		<repository>
 			<id>jeeeyul</id>
 			<layout>p2</layout>
-			<url>http://jeeeyul.github.io/update/</url>
+			<url>https://jeeeyul.github.io/update/</url>
 		</repository>
 		<!--
 		<repository>
 			<id>Regular-Expression</id>
 			<layout>p2</layout>
-			<url>http://zapletnev.github.io/eclipse-regexp/repository/</url>
+			<url>https://zapletnev.github.io/eclipse-regexp/repository/</url>
 		</repository>
 		-->
 		<repository>
 			<id>net.jumperz.app.MMonjaDB</id>
 			<layout>p2</layout>
-			<url>http://www.jumperz.net/update/</url>
+			<url>https://www.jumperz.net/update/</url>
 		</repository>
 		<repository>
 			<id>shelled</id>
@@ -117,47 +117,47 @@
 		<repository>
 			<id>less</id>
 			<layout>p2</layout>
-			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
+			<url>https://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
 		 -->
 		<repository>
 			<id>ansy-console</id>
 			<layout>p2</layout>
-			<url>http://www.mihai-nita.net/eclipse</url>
+			<url>https://www.mihai-nita.net/eclipse</url>
 		</repository>
 		<repository>
 			<id>grep-console</id>
 			<layout>p2</layout>
-			<url>http://eclipse.schedenig.name</url>
+			<url>https://eclipse.schedenig.name</url>
 		</repository>
 		<repository>
 			<id>editbox</id>
 			<layout>p2</layout>
-			<url>http://nodeclipse.github.io/updates/editbox-0.70.0/</url>
+			<url>https://nodeclipse.github.io/updates/editbox-0.70.0/</url>
 		</repository>
 		<!--
 		<repository>
 			<id>axmor-typescript</id>
 			<layout>p2</layout>
-			<url>http://axmor.bitbucket.org/typecs/stable/update-site/</url>
+			<url>https://axmor.bitbucket.org/typecs/stable/update-site/</url>
 		</repository>
 		-->
 		<repository>
 			<id>io.emmet.eclipse</id>
 			<layout>p2</layout>
-			<url>http://emmet.io/eclipse/updates/</url>
+			<url>https://emmet.io/eclipse/updates/</url>
 		</repository>
 		<!--
 		<repository>
 			<id>Rinzo-XML-Editor</id>
 			<layout>p2</layout>
-			<url>http://editorxml.sourceforge.net/updates/</url>
+			<url>https://editorxml.sourceforge.net/updates/</url>
 		</repository>
 		-->
 		<repository>
 			<id>zipeditor</id>
 			<layout>p2</layout>
-			<url>http://nodeclipse.github.io/updates/zipeditor/</url>
+			<url>https://nodeclipse.github.io/updates/zipeditor/</url>
 		</repository>
 
 
@@ -166,7 +166,7 @@
 			<id>jdt.spelling.feature</id>
 			<layout>p2</layout>
 			<!-- <url>http://www.stuarthendren.net/update/</url>  -->
-			<url>http://jdt.spelling.s3-website-us-east-1.amazonaws.com</url>
+			<url>https://jdt.spelling.s3-website-us-east-1.amazonaws.com</url>
 		</repository>
 
 
@@ -174,29 +174,29 @@
 		<repository>
 			<id>it.unibz.instasearch.feature.indigo</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/ajermakovics/InstaSearch/</url>
+			<url>https://dl.bintray.com/ajermakovics/InstaSearch/</url>
 		</repository>
 		<repository>
 			<id>com.xored.glance</id>
 			<layout>p2</layout>
-			<url>http://eclipse-glance.googlecode.com/svn/site/</url>
+			<url>https://eclipse-glance.googlecode.com/svn/site/</url>
 		</repository>
 		<!--
 		<repository>
 			<id>nodeclipse.github.io</id>
 			<layout>p2</layout>
-			<url>http://nodeclipse.github.io/updates/eclipse-color-theme/</url>
+			<url>https://nodeclipse.github.io/updates/eclipse-color-theme/</url>
 		</repository>
 		-->
 		<repository>
 			<id>com.github.eclipsecolortheme.feature</id>
 			<layout>p2</layout>
-			<url>http://eclipse-color-theme.github.com/update</url>
+			<url>https://eclipse-color-theme.github.com/update</url>
 		</repository>
 		<repository>
 			<id>net.jeeeyul.eclipse.themes.updatesite</id>
 			<layout>p2</layout>
-			<url>http://eclipse.jeeeyul.net/update/</url>
+			<url>https://eclipse.jeeeyul.net/update/</url>
 		</repository>
 		<repository>
 			<id>moonrise.com.github.eclipseuitheme.themes.feature</id>
@@ -209,7 +209,7 @@
 		<repository>
 			<id>coffeescript-eclipse</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/nodeclipse/CoffeeScriptEditor/0.4.0-201403250304/</url>
+			<url>https://dl.bintray.com/nodeclipse/CoffeeScriptEditor/0.4.0-201403250304/</url>
 		</repository>
 
 
@@ -217,28 +217,28 @@
 		<repository>
 			<id>EclipseRunner</id>
 			<layout>p2</layout>
-			<url>http://eclipserunnerplugin.googlecode.com/svn/trunk/EclipseRunnerSite</url>
+			<url>https://eclipserunnerplugin.googlecode.com/svn/trunk/EclipseRunnerSite</url>
 		</repository>
 		<repository>
 			<id>practicallymacro</id>
 			<layout>p2</layout>
-			<url>http://puremvcnotificationviewer.googlecode.com/svn/trunk/PracticallyMacroGoogleUpdateSite</url>
+			<url>https://puremvcnotificationviewer.googlecode.com/svn/trunk/PracticallyMacroGoogleUpdateSite</url>
 		</repository>
 		<repository>
 			<id>SelectionExplorer</id>
 			<layout>p2</layout>
-			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/SelectionExplorerUpdateSite</url>
+			<url>https://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/SelectionExplorerUpdateSite</url>
 		</repository>
 		<repository>
 			<id>OpenClosedProjectsFeature</id>
 			<layout>p2</layout>
-			<url>http://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
+			<url>https://sandipchitaleseclipseplugins.googlecode.com/svn/trunk/OpenClosedProjectsFeatureUpdateSite/</url>
 		</repository>
 		<!-- can't be fully bundled
 		<repository>
 			<id>Closure-by-Vincent.Simonet</id>
 			<layout>p2</layout>
-			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
+			<url>https://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
 		-->
 
@@ -247,7 +247,7 @@
 		<repository>
 			<id>fail-back</id>
 			<layout>p2</layout>
-			<url>http://dl.bintray.com/nodeclipse/nodeclipse/0.15/</url>
+			<url>https://dl.bintray.com/nodeclipse/nodeclipse/0.15/</url>
 		</repository>
 
 
@@ -256,7 +256,7 @@
 		<repository>
 			<id>winterwell.markdown</id>
 			<layout>p2</layout>
-			<url>http://winterwell.com/software/updatesite/</url>
+			<url>https://winterwell.com/software/updatesite/</url>
 		</repository>
 		-->
 
@@ -264,12 +264,12 @@
 		<repository>
 			<id>Closure-by-Vincent.Simonet.p2f</id>
 			<layout>p2</layout>
-			<url>http://www.normalesup.org/~simonet/soft/ow/update/</url>
+			<url>https://www.normalesup.org/~simonet/soft/ow/update/</url>
 		</repository>
 		<repository>
 			<id>quicksearch</id>
 			<layout>p2</layout>
-			<url>http://dist.springsource.com/release/TOOLS/update/e4.3/</url>
+			<url>https://dist.springsource.com/release/TOOLS/update/e4.3/</url>
 		</repository>
 		 -->
 	</repositories>

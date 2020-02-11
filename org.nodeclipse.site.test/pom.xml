@@ -20,7 +20,7 @@
 		<repository>
 			<id>eexplorer</id>
 			<layout>p2</layout>
-			<url>http://culmat.github.io/eExplorer/updatesite/</url>
+			<url>https://culmat.github.io/eExplorer/updatesite/</url>
 		</repository>
 	</repositories>
 
